@@ -16,6 +16,10 @@ namespace Teachersteams
                 .Include("~/Scripts/libs/ui-bootstrap-tpls-*")
                 .Include("~/Scripts/libs/angular/angular-animate.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/scripts")
+                .IncludeDirectory("~/Scripts/services", "*.js")
+                .IncludeDirectory("~/Scripts/controllers", "*.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap/bootstrap.css",
                       "~/Content/site.css"));
