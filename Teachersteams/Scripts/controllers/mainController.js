@@ -1,5 +1,5 @@
-﻿var app = angular.module("singlePageApp", ['ui.bootstrap', 'services']);
-app.controller('MainController', ['$scope', '$vk', function ($scope, $vk) {
+﻿var app = angular.module("ttSinglePageApp", ['ui.bootstrap', 'services']);
+app.controller('ttMainController', ['$scope', '$vk', function ($scope, $vk) {
     VK.init(function () {
         $vk.call('users.get', {})
             .then(function (r) {
