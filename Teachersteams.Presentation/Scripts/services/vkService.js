@@ -1,4 +1,4 @@
-﻿angular.module('services', [])
+﻿angular.module('ttServices', [])
     .factory('$vk', ['$q', function ($q) {
         return {
             call: function (method, data) {

@@ -1,0 +1,32 @@
+﻿<nav ng-controller="ttNavigationController" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/page1">TeachersTeams</a>
+        </div>
+        <div class="navbar-collapse" ng-class="isCollapsed ? 'collapse' : 'in'">
+            <ul class="nav navbar-nav" ng-show="isTeacher">
+                <li ng-class="getClass('/page1')"><a href="#/page1">Groups</a></li>
+                <li ng-class="getClass('/page2')"><a href="#/page2">Board</a></li>
+                <li ng-class="getClass('/page3')"><a href="#/page3">Notifications</a></li>
+                <li ng-class="getClass('/page4')"><a href="#/page4">About</a></li>
+            </ul>
+            <ul class="nav navbar-nav" ng-hide="isTeacher">
+                <li ng-class="getClass('/page5')"><a href="#/page5">Groups</a></li>
+                <li ng-class="getClass('/page6')"><a href="#/page6">Board</a></li>
+                <li ng-class="getClass('/page7')"><a href="#/page7">Notifications</a></li>
+                <li ng-class="getClass('/page4')"><a href="#/page4">About</a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <span>Teacher</span>
+                <input type="checkbox" ng-model="isTeacher" ui-switch="{color: '#5BC0DE'}" />
+                <span>Student</span>
+            </form>
+        </div>
+    </div>
+</nav>

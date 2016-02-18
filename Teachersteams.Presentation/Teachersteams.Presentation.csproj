@@ -105,11 +105,13 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Scripts\directives\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CommonTemplatesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -119,14 +121,20 @@
   <ItemGroup>
     <Content Include="Content\bootstrap\bootstrap.css" />
     <Content Include="Content\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\switchery.css" />
+    <Content Include="Content\switchery.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\controllers\mainController.js" />
+    <Content Include="Scripts\controllers\navigationController.js" />
     <Content Include="Scripts\libs\angular\angular-animate.js" />
     <Content Include="Scripts\libs\angular\angular-animate.min.js" />
     <Content Include="Scripts\libs\angular\angular.js" />
     <Content Include="Scripts\libs\angular\angular.min.js" />
+    <Content Include="Scripts\libs\angular\ng-switchery.js" />
+    <Content Include="Scripts\libs\angular\switchery.js" />
+    <Content Include="Scripts\libs\angular\switchery.min.js" />
     <Content Include="Scripts\libs\modernizr-2.6.2.js" />
     <Content Include="Scripts\libs\ui-bootstrap-tpls-1.1.2.js" />
     <Content Include="Scripts\libs\ui-bootstrap-tpls-1.1.2.min.js" />
@@ -155,6 +163,7 @@
     <Content Include="Content\bootstrap\bootstrap.css.map" />
     <Content Include="Content\bootstrap\bootstrap.min.css.map" />
     <None Include="Project_Readme.html" />
+    <Content Include="Views\CommonTemplates\NavbarTemplate.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

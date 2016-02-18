@@ -1,5 +1,7 @@
-﻿var app = angular.module("ttSinglePageApp", ['ui.bootstrap', 'services']);
+﻿var app = angular.module("ttSinglePageApp", ['ui.bootstrap', 'ttServices', 'NgSwitchery']);
 app.controller('ttMainController', ['$scope', '$vk', function ($scope, $vk) {
+    $scope.isTeacher = true;
+
     VK.init(function () {
         $vk.call('users.get', {})
             .then(function (r) {
