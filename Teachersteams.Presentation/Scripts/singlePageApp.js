@@ -1,21 +1,36 @@
 ﻿var app = angular.module("ttSinglePageApp", ['ui.router', 'ui.bootstrap', 'ttServices', 'NgSwitchery']);
 app.config(function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise("/groups");
+    $urlRouterProvider.otherwise("/teacher/groups");
     $stateProvider
-        .state('groups', {
-            url: '/groups',
+        .state('teacher/groups', {
+            url: '/teacher/groups',
             templateUrl: '/Groups/Teacher',
             controller: 'ttTeacherGroupsController'
         })
-        .state('board', {
-            url: '/board',
-            templateUrl: '/Board',
-            controller: 'ttBoardController'
+        .state('teacher/board', {
+            url: '/teacher/board',
+            templateUrl: '/Board/Teacher',
+            controller: 'ttTeacherBoardController'
         })
-        .state('notifications', {
-            url: '/notifications',
-            templateUrl: '/Notifications',
-            controller: 'ttNotificationsController'
+        .state('teacher/notifications', {
+            url: '/teacher/notifications',
+            templateUrl: '/Notifications/Teacher',
+            controller: 'ttTeacherNotificationsController'
+        })
+        .state('student/groups', {
+            url: '/student/groups',
+            templateUrl: '/Groups/Student',
+            controller: 'ttStudentGroupsController'
+        })
+        .state('student/board', {
+            url: '/student/board',
+            templateUrl: '/Board/Student',
+            controller: 'ttStudentBoardController'
+        })
+        .state('student/notifications', {
+            url: '/student/notifications',
+            templateUrl: '/Notifications/Student',
+            controller: 'ttStudentNotificationsController'
         })
         .state('about', {
             url: '/about',

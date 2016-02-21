@@ -11,16 +11,16 @@
         </div>
         <div class="navbar-collapse" ng-class="isCollapsed ? 'collapse' : 'in'">
             <ul class="nav navbar-nav" ng-show="isTeacher">
-                <li ng-class="getClass('/teacher/groups')"><a href="#/teacher/groups">Groups</a></li>
-                <li ng-class="getClass('/teacher/board')"><a href="#/teacher/board">Board</a></li>
-                <li ng-class="getClass('/teacher/notifications')"><a href="#/teacher/notifications">Notifications</a></li>
-                <li ng-class="getClass('/about')"><a href="#/about">About</a></li>
+                <li ng-class="getClass('/teacher/groups')"><a ui-sref="teacher/groups">Groups</a></li>
+                <li ng-class="getClass('/teacher/board')"><a ui-sref="teacher/board">Board</a></li>
+                <li ng-class="getClass('/teacher/notifications')"><a ui-sref="teacher/notifications">Notifications</a></li>
+                <li ng-class="getClass('/about')"><a ui-sref="about">About</a></li>
             </ul>
             <ul class="nav navbar-nav" ng-hide="isTeacher">
-                <li ng-class="getClass('/page5')"><a href="#/page5">Groups</a></li>
-                <li ng-class="getClass('/page6')"><a href="#/page6">Board</a></li>
-                <li ng-class="getClass('/page7')"><a href="#/page7">Notifications</a></li>
-                <li ng-class="getClass('/page4')"><a href="#/page4">About</a></li>
+                <li ng-class="getClass('/page5')"><a ui-sref="student/groups">Groups</a></li>
+                <li ng-class="getClass('/page6')"><a ui-sref="student/board">Board</a></li>
+                <li ng-class="getClass('/page7')"><a ui-sref="student/notifications">Notifications</a></li>
+                <li ng-class="getClass('/page4')"><a ui-sref="about">About</a></li>
             </ul>
             <form class="navbar-form navbar-right">
                 <span>Teacher</span>
