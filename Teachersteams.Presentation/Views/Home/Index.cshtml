@@ -5,14 +5,12 @@
     <meta name="viewport" content="width=device-width" />
     <title>Teachersteams</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/mainlibs")
     <script src="https://vk.com/js/api/xd_connection.js?2" type="text/javascript"></script>
 </head>
 <body ng-controller="ttMainController">
     <div ng-include="'@Url.Action("NavbarTemplate", "CommonTemplates")'"></div>
     <div class="container body-content">
-        <div>{{firstName}} {{lastName}}</div>
-        <hr/>
+        <div ui-view></div>
         <footer>
             <p>&copy; @DateTime.Now.Year - Teachersteams</p>
         </footer>

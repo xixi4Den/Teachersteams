@@ -1,4 +1,4 @@
-﻿var app = angular.module("ttSinglePageApp", ['ui.bootstrap', 'ttServices', 'NgSwitchery']);
+﻿var app = angular.module("ttSinglePageApp");
 app.controller('ttMainController', ['$scope', '$vk', function ($scope, $vk) {
     $scope.isTeacher = true;
 
