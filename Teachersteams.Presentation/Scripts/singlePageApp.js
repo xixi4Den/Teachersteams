@@ -4,32 +4,39 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('teacher/groups', {
             url: '/teacher/groups',
-            templateUrl: '/Groups/Teacher',
+            templateUrl: '/Teacher/Group',
             controller: 'ttTeacherGroupsController'
+        })
+        .state('teacher/groups.details', {
+            url: '/teacher/groups/details/{groupId}',
+            templateUrl: '/Teacher/Group/Details',
+            controller: function ($scope, $stateParams) {
+                $scope.groupId = $stateParams.groupId;
+            }
         })
         .state('teacher/board', {
             url: '/teacher/board',
-            templateUrl: '/Board/Teacher',
+            templateUrl: '/Teacher/Board',
             controller: 'ttTeacherBoardController'
         })
         .state('teacher/notifications', {
             url: '/teacher/notifications',
-            templateUrl: '/Notifications/Teacher',
+            templateUrl: '/Teacher/Notification',
             controller: 'ttTeacherNotificationsController'
         })
         .state('student/groups', {
             url: '/student/groups',
-            templateUrl: '/Groups/Student',
+            templateUrl: '/Student/Group',
             controller: 'ttStudentGroupsController'
         })
         .state('student/board', {
             url: '/student/board',
-            templateUrl: '/Board/Student',
+            templateUrl: '/Student/Board',
             controller: 'ttStudentBoardController'
         })
         .state('student/notifications', {
             url: '/student/notifications',
-            templateUrl: '/Notifications/Student',
+            templateUrl: '/Student/Notification',
             controller: 'ttStudentNotificationsController'
         })
         .state('about', {

@@ -108,6 +108,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Student\Controllers\" />
+    <Folder Include="Areas\Student\Models\" />
+    <Folder Include="Areas\Student\Views\Shared\" />
+    <Folder Include="Areas\Teacher\Models\" />
+    <Folder Include="Areas\Teacher\Views\Shared\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\directives\" />
   </ItemGroup>
@@ -115,8 +120,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Student\StudentAreaRegistration.cs" />
+    <Compile Include="Areas\Teacher\Controllers\GroupController.cs" />
+    <Compile Include="Areas\Teacher\TeacherAreaRegistration.cs" />
     <Compile Include="Controllers\CommonTemplatesController.cs" />
-    <Compile Include="Controllers\GroupsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -172,9 +179,12 @@
     <Content Include="Content\bootstrap\bootstrap.min.css.map" />
     <Content Include="Content\site.less" />
     <Content Include="Content\colors.less" />
+    <Content Include="Areas\Teacher\Views\web.config" />
+    <Content Include="Areas\Student\Views\web.config" />
+    <Content Include="Areas\Teacher\Views\Group\Index.cshtml" />
+    <Content Include="Areas\Teacher\Views\Group\Details.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\CommonTemplates\NavbarTemplate.cshtml" />
-    <Content Include="Views\Groups\Teacher.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

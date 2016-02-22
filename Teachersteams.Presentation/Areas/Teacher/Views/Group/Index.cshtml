@@ -1,0 +1,26 @@
+﻿<div class="container-fluid">
+    <div class="page-header">
+        <h1>Groups <small>where you are teacher</small></h1>
+    </div>
+    <div class="row">
+        <button class="btn btn-default btn-info pull-right">Add Group</button>
+    </div>
+    <div class="row tt-groups-content">
+        <div class="col-md-3 col-sm-3 col-xs-3">
+            <div class="tt-group-list">
+                <div class="list-group">
+                    <a ng-repeat="group in groups"
+                       ui-sref="teacher/groups.details({ groupId: group.id })"
+                       class="list-group-item">{{ group.name }}</a>
+                </div>
+                <ul class="pager">
+                    <li><a href="#">&larr;</a></li>
+                    <li><a href="#">&rarr;</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-9 col-sm-9 col-sx-9">
+            <div ui-view class="tt-group-details"></div>
+        </div>
+    </div>
+</div>
