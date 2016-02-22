@@ -1,6 +1,5 @@
 ﻿var app = angular.module("ttSinglePageApp", ['ui.router', 'ui.bootstrap', 'ttServices', 'NgSwitchery']);
 app.config(function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise("/teacher/groups");
     $stateProvider
         .state('teacher/groups', {
             url: '/teacher/groups',
@@ -41,7 +40,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state('about', {
             url: '/about',
-            templateUrl: '/About',
+            templateUrl: '/Home/About',
             controller: 'ttAboutController'
         });
 });

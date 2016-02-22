@@ -1,17 +1,17 @@
 ﻿using System.Web.Mvc;
 
-namespace Teachersteams.Controllers
+namespace Teachersteams.Areas.Student.Controllers
 {
-    public class HomeController : Controller
+    public class GroupController : Controller
     {
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Details()
         {
             return View();
         }
-    }
+	}
 }

@@ -23,9 +23,9 @@
                 <li ng-class="getClass('/page4')"><a ui-sref="about">About</a></li>
             </ul>
             <form class="navbar-form navbar-right">
-                <span>Teacher</span>
-                <input type="checkbox" ng-model="isTeacher" ui-switch="{color: '#5BC0DE'}" />
                 <span>Student</span>
+                <input type="checkbox" ng-model="$parent.$parent.isTeacher" ui-switch="{color: '#FFF', secondaryColor: '#5BC0DE'}" class="js-switch" />
+                <span>Teacher</span>
             </form>
         </div>
     </div>

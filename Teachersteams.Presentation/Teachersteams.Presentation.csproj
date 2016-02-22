@@ -108,7 +108,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Student\Controllers\" />
     <Folder Include="Areas\Student\Models\" />
     <Folder Include="Areas\Student\Views\Shared\" />
     <Folder Include="Areas\Teacher\Models\" />
@@ -120,8 +119,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Student\Controllers\BoardController.cs" />
+    <Compile Include="Areas\Student\Controllers\GroupController.cs" />
+    <Compile Include="Areas\Student\Controllers\NotificationController.cs" />
     <Compile Include="Areas\Student\StudentAreaRegistration.cs" />
+    <Compile Include="Areas\Teacher\Controllers\BoardController.cs" />
     <Compile Include="Areas\Teacher\Controllers\GroupController.cs" />
+    <Compile Include="Areas\Teacher\Controllers\NotificationController.cs" />
     <Compile Include="Areas\Teacher\TeacherAreaRegistration.cs" />
     <Compile Include="Controllers\CommonTemplatesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -138,9 +142,15 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\controllers\aboutController.js" />
     <Content Include="Scripts\controllers\mainController.js" />
     <Content Include="Scripts\controllers\navigationController.js" />
+    <Content Include="Scripts\controllers\studentBoardController.js" />
+    <Content Include="Scripts\controllers\studentGroupsController.js" />
+    <Content Include="Scripts\controllers\studentNotificationsController.js" />
+    <Content Include="Scripts\controllers\teacherBoardController.js" />
     <Content Include="Scripts\controllers\teacherGroupsController.js" />
+    <Content Include="Scripts\controllers\teacherNotificationsController.js" />
     <Content Include="Scripts\libs\angular\angular-animate.js" />
     <Content Include="Scripts\libs\angular\angular-animate.min.js" />
     <Content Include="Scripts\libs\angular\angular-ui-router.js" />
@@ -183,8 +193,15 @@
     <Content Include="Areas\Student\Views\web.config" />
     <Content Include="Areas\Teacher\Views\Group\Index.cshtml" />
     <Content Include="Areas\Teacher\Views\Group\Details.cshtml" />
+    <Content Include="Areas\Teacher\Views\Board\Index.cshtml" />
+    <Content Include="Areas\Teacher\Views\Notification\Index.cshtml" />
+    <Content Include="Areas\Student\Views\Group\Index.cshtml" />
+    <Content Include="Areas\Student\Views\Group\Details.cshtml" />
+    <Content Include="Areas\Student\Views\Board\Index.cshtml" />
+    <Content Include="Areas\Student\Views\Notification\Index.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\CommonTemplates\NavbarTemplate.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
