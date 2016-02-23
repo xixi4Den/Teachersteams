@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teachersteams", "Teachersteams\Teachersteams.csproj", "{81405E8B-7678-4139-BA57-D5D825AE7853}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teachersteams.Presentation", "Teachersteams.Presentation\Teachersteams.Presentation.csproj", "{81405E8B-7678-4139-BA57-D5D825AE7853}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teachersteams.Api", "Teachersteams.Api\Teachersteams.Api.csproj", "{5242A3F7-EE93-4F83-9106-F23D05CB7412}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{81405E8B-7678-4139-BA57-D5D825AE7853}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81405E8B-7678-4139-BA57-D5D825AE7853}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81405E8B-7678-4139-BA57-D5D825AE7853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5242A3F7-EE93-4F83-9106-F23D05CB7412}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5242A3F7-EE93-4F83-9106-F23D05CB7412}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5242A3F7-EE93-4F83-9106-F23D05CB7412}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5242A3F7-EE93-4F83-9106-F23D05CB7412}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

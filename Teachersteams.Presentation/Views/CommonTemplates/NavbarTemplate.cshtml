@@ -1,0 +1,32 @@
+﻿<nav ng-controller="ttNavigationController" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/page1">TeachersTeams</a>
+        </div>
+        <div class="navbar-collapse" ng-class="isCollapsed ? 'collapse' : 'in'">
+            <ul class="nav navbar-nav" ng-show="isTeacher">
+                <li ui-sref-active="active"><a ui-sref="teacher/groups">Groups</a></li>
+                <li ui-sref-active="active"><a ui-sref="teacher/board">Board</a></li>
+                <li ui-sref-active="active"><a ui-sref="teacher/notifications">Notifications</a></li>
+                <li ui-sref-active="active"><a ui-sref="about">About</a></li>
+            </ul>
+            <ul class="nav navbar-nav" ng-hide="isTeacher">
+                <li ui-sref-active="active"><a ui-sref="student/groups">Groups</a></li>
+                <li ui-sref-active="active"><a ui-sref="student/board">Board</a></li>
+                <li ui-sref-active="active"><a ui-sref="student/notifications">Notifications</a></li>
+                <li ui-sref-active="active"><a ui-sref="about">About</a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <span>Student</span>
+                <input type="checkbox" ng-model="$parent.$parent.isTeacher" ui-switch="{color: '#FFF', secondaryColor: '#5BC0DE'}" class="js-switch" />
+                <span>Teacher</span>
+            </form>
+        </div>
+    </div>
+</nav>
