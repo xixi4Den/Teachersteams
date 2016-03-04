@@ -10,6 +10,7 @@ namespace Teachersteams.Business
         {
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
+            AutofacConfiguration.Configure();
         }
     }
 }
