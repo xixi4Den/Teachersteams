@@ -3,9 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teachersteams.Presentation", "Teachersteams.Presentation\Teachersteams.Presentation.csproj", "{81405E8B-7678-4139-BA57-D5D825AE7853}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{2D53CE8D-BD1C-42CA-8AB0-D12625C6F5A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teachersteams.Api", "Teachersteams.Api\Teachersteams.Api.csproj", "{5242A3F7-EE93-4F83-9106-F23D05CB7412}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Access", "Data Access", "{E6DF255A-E11A-40AF-AC0B-D0BC4D8D48B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{94A91885-CAAC-4DFD-BA28-CEF50B9AD51B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{3DCEB71B-5991-480B-BD75-77950E181873}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5D3A62E8-10F0-478C-9B3E-F099A0F13442}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teachersteams.Presentation", "Presentation\Teachersteams.Presentation\Teachersteams.Presentation.csproj", "{81405E8B-7678-4139-BA57-D5D825AE7853}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teachersteams.Api", "Business\Teachersteams.Api\Teachersteams.Api.csproj", "{5242A3F7-EE93-4F83-9106-F23D05CB7412}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{64395E65-014E-404B-8384-0BAA41D21001}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teachersteams.Business", "Business\Teachersteams.Business\Teachersteams.Business.csproj", "{51F8F8A4-9418-472B-98E4-E52E281C40A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teachersteams.Shared", "Shared\Teachersteams.Shared\Teachersteams.Shared.csproj", "{2B0636E0-A6DE-46A3-BB49-202BCA860B6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teachersteams.DataAccess", "Data Access\Teachersteams.DataAccess\Teachersteams.DataAccess.csproj", "{2AC000BF-5AC7-4A23-80F1-8F7E5FFE74E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teachersteams.Domain", "Domain\Teachersteams.Domain\Teachersteams.Domain.csproj", "{BDE1A423-86DC-4852-BCF7-81BFD2C884F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +41,32 @@ Global
 		{5242A3F7-EE93-4F83-9106-F23D05CB7412}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5242A3F7-EE93-4F83-9106-F23D05CB7412}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5242A3F7-EE93-4F83-9106-F23D05CB7412}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51F8F8A4-9418-472B-98E4-E52E281C40A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51F8F8A4-9418-472B-98E4-E52E281C40A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51F8F8A4-9418-472B-98E4-E52E281C40A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51F8F8A4-9418-472B-98E4-E52E281C40A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B0636E0-A6DE-46A3-BB49-202BCA860B6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B0636E0-A6DE-46A3-BB49-202BCA860B6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B0636E0-A6DE-46A3-BB49-202BCA860B6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B0636E0-A6DE-46A3-BB49-202BCA860B6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AC000BF-5AC7-4A23-80F1-8F7E5FFE74E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AC000BF-5AC7-4A23-80F1-8F7E5FFE74E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AC000BF-5AC7-4A23-80F1-8F7E5FFE74E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AC000BF-5AC7-4A23-80F1-8F7E5FFE74E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDE1A423-86DC-4852-BCF7-81BFD2C884F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDE1A423-86DC-4852-BCF7-81BFD2C884F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDE1A423-86DC-4852-BCF7-81BFD2C884F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDE1A423-86DC-4852-BCF7-81BFD2C884F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BDE1A423-86DC-4852-BCF7-81BFD2C884F6} = {2D53CE8D-BD1C-42CA-8AB0-D12625C6F5A4}
+		{2AC000BF-5AC7-4A23-80F1-8F7E5FFE74E3} = {E6DF255A-E11A-40AF-AC0B-D0BC4D8D48B3}
+		{5242A3F7-EE93-4F83-9106-F23D05CB7412} = {94A91885-CAAC-4DFD-BA28-CEF50B9AD51B}
+		{51F8F8A4-9418-472B-98E4-E52E281C40A6} = {94A91885-CAAC-4DFD-BA28-CEF50B9AD51B}
+		{81405E8B-7678-4139-BA57-D5D825AE7853} = {3DCEB71B-5991-480B-BD75-77950E181873}
+		{2B0636E0-A6DE-46A3-BB49-202BCA860B6B} = {64395E65-014E-404B-8384-0BAA41D21001}
 	EndGlobalSection
 EndGlobal
