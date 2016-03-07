@@ -12,9 +12,9 @@ namespace Teachersteams.DataAccess
     public class Repository<T>: IRepository<T>
         where T : Entity
     {
-        private readonly DbContext context;
+        private readonly Context context;
 
-        public Repository(DbContext context)
+        public Repository(Context context)
         {
             this.context = context;
         }
@@ -39,14 +39,14 @@ namespace Teachersteams.DataAccess
             return entity;
         }
 
-        public T GetSingleOrDefault(BaseQueryParameters parameters)
+        public T GetSingleOrDefault(QueryParameters<T> parameters)
         {
             IQueryable<T> queryable = DbSet.AsQueryable();
             queryable = ApplyFilterParameters(queryable, parameters);
             return queryable.SingleOrDefault();
         }
 
-        public T GetFirstOrDefault(BaseQueryParameters parameters)
+        public T GetFirstOrDefault(QueryParameters<T> parameters)
         {
             IQueryable<T> queryable = DbSet.AsQueryable();
             queryable = ApplyFilterParameters(queryable, parameters);
@@ -56,10 +56,10 @@ namespace Teachersteams.DataAccess
 
         public IEnumerable<T> GetAll()
         {
-            return GetAll(BaseQueryParameters.Empty);
+            return GetAll(QueryParameters<T>.Empty);
         }
 
-        public IEnumerable<T> GetAll(BaseQueryParameters parameters)
+        public IEnumerable<T> GetAll(QueryParameters<T> parameters)
         {
             IQueryable<T> queryable = DbSet.AsQueryable();
             queryable = ApplyFilterParameters(queryable, parameters);
@@ -68,14 +68,14 @@ namespace Teachersteams.DataAccess
             return queryable.ToList();
         }
 
-        public int Count(BaseQueryParameters parameters)
+        public int Count(QueryParameters<T> parameters)
         {
             IQueryable<T> queryable = DbSet.AsQueryable();
             queryable = ApplyFilterParameters(queryable, parameters);
             return queryable.Count();
         }
 
-        public bool Any(BaseQueryParameters parameters)
+        public bool Any(QueryParameters<T> parameters)
         {
             IQueryable<T> queryable = DbSet.AsQueryable();
             queryable = ApplyFilterParameters(queryable, parameters);
@@ -107,35 +107,35 @@ namespace Teachersteams.DataAccess
             Delete(entity);
         }
 
-        protected virtual IQueryable<T> ApplyFilterParameters(IQueryable<T> queryable, BaseQueryParameters parameters)
+        protected virtual IQueryable<T> ApplyFilterParameters(IQueryable<T> queryable, QueryParameters<T> parameters)
         {
             if (parameters != null)
             {
-                if (parameters.Ids != null && parameters.Ids.Any())
+                if (parameters.FilterRules != null)
                 {
-                    queryable = queryable.Where(x => parameters.Ids.Contains(x.Id));
+                    return queryable.Where(parameters.FilterRules);
                 }
             }
             return queryable;
         } 
 
-        private IQueryable<T> ApplySortParameters(IQueryable<T> queryable, BaseQueryParameters parameters)
+        private IQueryable<T> ApplySortParameters(IQueryable<T> queryable, QueryParameters<T> parameters)
         {
             if (parameters != null)
             {
-                if (parameters.SortSettings != null)
+                if (parameters.SortRules != null)
                 {
-                    // apply sort rules
+                    return parameters.SortRules(queryable);
                 }
             }
             return queryable;
         }
 
-        private IQueryable<T> ApplyPageParameters(IQueryable<T> queryable, BaseQueryParameters parameters)
+        private IQueryable<T> ApplyPageParameters(IQueryable<T> queryable, QueryParameters<T> parameters)
         {
             if (parameters != null)
             {
-                if (parameters.PageSettings != null)
+                if (parameters.PageRules != null)
                 {
                     // apply page rules
                 }

@@ -29,7 +29,7 @@ namespace Teachersteams.Domain
         /// <param name="parameters">The query parameters.</param>
         /// <returns>The single entity that satisfies query parameters or null otherwise.</returns>
         /// <exception cref="InvalidOperationException">More than one entity satisfies query parameters.</exception>
-        T GetSingleOrDefault<T>(BaseQueryParameters parameters) where T : Entity;
+        T GetSingleOrDefault<T>(QueryParameters<T> parameters) where T : Entity;
 
         /// <summary>
         /// Gets first entity from the repository of the {T} entity.
@@ -37,7 +37,7 @@ namespace Teachersteams.Domain
         /// <typeparam name="T">Type of entity.</typeparam>
         /// <param name="parameters">The query parameters.</param>
         /// <returns>The first entity that satisfies query parameters or null otherwise.</returns>
-        T GetFirstOrDefault<T>(BaseQueryParameters parameters) where T : Entity;
+        T GetFirstOrDefault<T>(QueryParameters<T> parameters) where T : Entity;
 
         /// <summary>
         /// Gets all entities from the repository of the {T} entity.
@@ -52,7 +52,7 @@ namespace Teachersteams.Domain
         /// <typeparam name="T">Type of entity.</typeparam>
         /// <param name="parameters">The query parameters.</param>
         /// <returns>The list of entities.</returns>
-        IEnumerable<T> GetAll<T>(BaseQueryParameters parameters) where T : Entity;
+        IEnumerable<T> GetAll<T>(QueryParameters<T> parameters) where T : Entity;
 
         /// <summary>
         /// Gets count of entities that correspond query parametes from the repository of the {T} entity.
@@ -60,7 +60,7 @@ namespace Teachersteams.Domain
         /// <typeparam name="T">Type of entity.</typeparam>
         /// <param name="parameters">The query parameters.</param>
         /// <returns>The count of entities.</returns>
-        int Count<T>(BaseQueryParameters parameters) where T : Entity;
+        int Count<T>(QueryParameters<T> parameters) where T : Entity;
 
         /// <summary>
         /// Indicates is there any entities that correspond query parameters from the repository of the {T} entity.
@@ -68,7 +68,7 @@ namespace Teachersteams.Domain
         /// <typeparam name="T">Type of entity.</typeparam>
         /// <param name="parameters">The query parameters.</param>
         /// <returns>The query parameters.</returns>
-        bool Any<T>(BaseQueryParameters parameters) where T : Entity;
+        bool Any<T>(QueryParameters<T> parameters) where T : Entity;
 
         /// <summary>
         /// Saves entity in the repository of the {T} entity.

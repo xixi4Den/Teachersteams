@@ -26,14 +26,14 @@ namespace Teachersteams.Domain
         /// <param name="parameters"></param>
         /// <returns>The single entity that satisfies query parameters or null otherwise.</returns>
         /// <exception cref="InvalidOperationException">More than one entity satisfies query parameters.</exception>
-        T GetSingleOrDefault(BaseQueryParameters parameters);
+        T GetSingleOrDefault(QueryParameters<T> parameters);
 
         /// <summary>
         /// Gets first entity from the repository.
         /// </summary>
         /// <param name="parameters">The query parameters.</param>
         /// <returns>The first entity that satisfies query parameters or null otherwise.</returns>
-        T GetFirstOrDefault(BaseQueryParameters parameters);
+        T GetFirstOrDefault(QueryParameters<T> parameters);
 
         /// <summary>
         /// Gets all entities from the repository.
@@ -46,20 +46,20 @@ namespace Teachersteams.Domain
         /// </summary>
         /// <param name="parameters">The query parameters.</param>
         /// <returns>The list of entities.</returns>
-        IEnumerable<T> GetAll(BaseQueryParameters parameters);
+        IEnumerable<T> GetAll(QueryParameters<T> parameters);
 
         /// <summary>
         /// Gets count of entities that correspond query parametes.
         /// </summary>
         /// <param name="parameters">The query parameters.</param>
         /// <returns>The count of entities.</returns>
-        int Count(BaseQueryParameters parameters);
+        int Count(QueryParameters<T> parameters);
 
         /// <summary>
         /// Indicates is there any entities that correspond query parameters.
         /// </summary>
         /// <param name="parameters">The query parameters.</param>
-        bool Any(BaseQueryParameters parameters);
+        bool Any(QueryParameters<T> parameters);
 
         /// <summary>
         /// Saves entity in the repository.

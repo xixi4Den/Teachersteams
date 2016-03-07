@@ -1,4 +1,4 @@
-﻿using Shared.Framework.Dependency;
+﻿using Teachersteams.Shared.Dependency;
 
 namespace Teachersteams.Business.Services
 {

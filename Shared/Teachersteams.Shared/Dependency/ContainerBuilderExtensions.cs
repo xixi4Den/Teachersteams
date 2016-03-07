@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using Autofac;
 
-namespace Shared.Framework.Dependency
+namespace Teachersteams.Shared.Dependency
 {
     public static class ContainerBuilderExtensions
     {

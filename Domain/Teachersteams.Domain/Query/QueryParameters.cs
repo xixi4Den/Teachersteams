@@ -1,26 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 
 namespace Teachersteams.Domain.Query
 {
     /// <summary>
     /// Base class for query parameters. Includes sort settings, filter settings, page settings and other parameters for retrieving entities from repository.
     /// </summary>
-    public class BaseQueryParameters
+    public class QueryParameters<T> where T : Entity
     {
         /// <summary>
-        /// Represents list of unique identifiers.
+        /// Represents filter rules to be applied in repository.
         /// </summary>
-        public IEnumerable<Guid> Ids
+        public Expression<Func<T, bool>> FilterRules
         {
-            get; 
+            get;
             set;
         }
 
         /// <summary>
         /// Represents sort rules to be applied in repository.
         /// </summary>
-        public SortSettings SortSettings
+        public Func<IQueryable<T>, IOrderedQueryable<T>> SortRules
         {
             get; 
             set;
@@ -29,20 +30,20 @@ namespace Teachersteams.Domain.Query
         /// <summary>
         /// Represents page rules to be applied in repository.
         /// </summary>
-        public PageSettings PageSettings
+        public PageSettings PageRules
         {
-            get; 
+            get;
             set;
         }
 
         /// <summary>
         /// Gets empty parameters.
         /// </summary>
-        public static BaseQueryParameters Empty
+        public static QueryParameters<T> Empty
         {
             get
             {
-                return new BaseQueryParameters();
+                return new QueryParameters<T>();
             }
         }
     }

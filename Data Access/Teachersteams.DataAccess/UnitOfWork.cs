@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Diagnostics.Contracts;
 using Teachersteams.Domain;
 using Teachersteams.Domain.Query;
 using Teachersteams.Shared.Utilities;
+using Teachersteams.Shared.Validation;
 using Group = Teachersteams.Domain.Entities.Group;
 
 namespace Teachersteams.DataAccess
@@ -14,12 +14,11 @@ namespace Teachersteams.DataAccess
         private readonly DbContext context;
         private readonly IDictionary<Type, object> repositories;
 
-        protected UnitOfWork(DbContext context,
-            IRepository<Group> groupRepository)
+        public UnitOfWork(Context context, IRepository<Group> groupRepository)
         {
             Contract.Requires<ArgumentNullException>(context != null, "context cannot be null");
-            this.context = context;
             repositories = new Dictionary<Type,object>();
+            this.context = context;
 
             RegisterRepository(groupRepository);
         }
@@ -34,12 +33,12 @@ namespace Teachersteams.DataAccess
             return GetRepository<T>().Get(id);
         }
 
-        public T GetSingleOrDefault<T>(BaseQueryParameters parameters) where T : Entity
+        public T GetSingleOrDefault<T>(QueryParameters<T> parameters) where T : Entity
         {
             return GetRepository<T>().GetSingleOrDefault(parameters);
         }
 
-        public T GetFirstOrDefault<T>(BaseQueryParameters parameters) where T : Entity
+        public T GetFirstOrDefault<T>(QueryParameters<T> parameters) where T : Entity
         {
             return GetRepository<T>().GetFirstOrDefault(parameters);
         }
@@ -49,17 +48,17 @@ namespace Teachersteams.DataAccess
             return GetRepository<T>().GetAll();
         }
 
-        public IEnumerable<T> GetAll<T>(BaseQueryParameters parameters) where T : Entity
+        public IEnumerable<T> GetAll<T>(QueryParameters<T> parameters) where T : Entity
         {
             return GetRepository<T>().GetAll(parameters);
         }
 
-        public int Count<T>(BaseQueryParameters parameters) where T : Entity
+        public int Count<T>(QueryParameters<T> parameters) where T : Entity
         {
             return GetRepository<T>().Count(parameters);
         }
 
-        public bool Any<T>(BaseQueryParameters parameters) where T : Entity
+        public bool Any<T>(QueryParameters<T> parameters) where T : Entity
         {
             return GetRepository<T>().Any(parameters);
         }

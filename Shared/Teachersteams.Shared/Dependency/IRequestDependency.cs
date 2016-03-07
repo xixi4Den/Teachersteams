@@ -1,4 +1,4 @@
-﻿namespace Shared.Framework.Dependency
+﻿namespace Teachersteams.Shared.Dependency
 {
     /// <summary>
     /// Instance per request dependency marker interface.

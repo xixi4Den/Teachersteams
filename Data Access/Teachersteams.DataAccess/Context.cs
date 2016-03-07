@@ -9,7 +9,8 @@ namespace Teachersteams.DataAccess
 
         public Context(): base(DefaultConnection)
         {
-            
+            //to copy EntityFramework.SqlServer.dll to bin folder of Startup project. Otherwise we do not use this .dll and it is not copied, but we need it.
+            var ensureDllIsCopied = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
