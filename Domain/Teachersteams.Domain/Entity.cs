@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Teachersteams.Domain
 {
@@ -10,10 +11,31 @@ namespace Teachersteams.Domain
         /// <summary>
         /// Unique identifier.
         /// </summary>
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id
         {
             get; 
             set;
+        }
+
+        /// <summary>
+        /// Concurrency check property.
+        /// </summary>
+        public byte[] Version
+        {
+            get; 
+            set;
+        }
+
+        /// <summary>
+        /// Determines whether entity is new.
+        /// </summary>
+        public virtual bool IsNew
+        {
+            get
+            {
+                return Id == Guid.Empty;
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Teachersteams.Domain.Exceptions;
 using Teachersteams.Domain.Query;
 
 namespace Teachersteams.Domain
@@ -16,6 +17,7 @@ namespace Teachersteams.Domain
         /// </summary>
         /// <param name="id">The unique identifier of the entity.</param>
         /// <returns>The entity that was found.</returns>
+        /// <exception cref="DataNotFoundException">The entity with specified unique identifier is not found.</exception>
         T Get(Guid id);
 
         /// <summary>
@@ -76,6 +78,7 @@ namespace Teachersteams.Domain
         /// Deletes the entity by id from the repository.
         /// </summary>
         /// <param name="id">The unique identifier of the entity.</param>
+        /// <exception cref="DataNotFoundException">The entity with specified unique identifier is not found.</exception>
         void Delete(Guid id);
     }
 }

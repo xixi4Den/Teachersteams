@@ -27,21 +27,23 @@ namespace Teachersteams.Domain.Query
         }
 
         /// <summary>
-        /// Represents filter rules to be applied in repository.
-        /// </summary>
-        public FilterSettings FilterSettings
-        {
-            get; 
-            set;
-        }
-
-        /// <summary>
         /// Represents page rules to be applied in repository.
         /// </summary>
         public PageSettings PageSettings
         {
             get; 
             set;
+        }
+
+        /// <summary>
+        /// Gets empty parameters.
+        /// </summary>
+        public static BaseQueryParameters Empty
+        {
+            get
+            {
+                return new BaseQueryParameters();
+            }
         }
     }
 }

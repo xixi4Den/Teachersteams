@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Teachersteams.Domain.Query;
 
 namespace Teachersteams.Domain
@@ -11,8 +12,7 @@ namespace Teachersteams.Domain
         /// <summary>
         /// Commits all changes to database.
         /// </summary>
-        /// <returns></returns>
-        int Commit();
+        void Commit();
 
         /// <summary>
         /// Gets entity by id from the repository of the {T} entity.
@@ -44,7 +44,7 @@ namespace Teachersteams.Domain
         /// </summary>
         /// <typeparam name="T">Type of entity.</typeparam>
         /// <returns>The list of entities.</returns>
-        T GetAll<T>() where T : Entity;
+        IEnumerable<T> GetAll<T>() where T : Entity;
 
         /// <summary>
         /// Gets all entities that correspond query parameters from the repository of the {T} entity.
@@ -52,7 +52,7 @@ namespace Teachersteams.Domain
         /// <typeparam name="T">Type of entity.</typeparam>
         /// <param name="parameters">The query parameters.</param>
         /// <returns>The list of entities.</returns>
-        T GetAll<T>(BaseQueryParameters parameters) where T : Entity;
+        IEnumerable<T> GetAll<T>(BaseQueryParameters parameters) where T : Entity;
 
         /// <summary>
         /// Gets count of entities that correspond query parametes from the repository of the {T} entity.
