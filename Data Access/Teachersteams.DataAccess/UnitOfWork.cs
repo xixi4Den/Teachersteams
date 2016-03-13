@@ -14,13 +14,14 @@ namespace Teachersteams.DataAccess
         private readonly DbContext context;
         private readonly IDictionary<Type, object> repositories;
 
-        public UnitOfWork(Context context, IRepository<Group> groupRepository)
+        public UnitOfWork(Context context,
+            Func<DbContext, IRepository<Group>> groupRepositoryFactory)
         {
             Contract.Requires<ArgumentNullException>(context != null, "context cannot be null");
             repositories = new Dictionary<Type,object>();
             this.context = context;
 
-            RegisterRepository(groupRepository);
+            RegisterRepository(groupRepositoryFactory(context));
         }
 
         public void Commit()

@@ -25,8 +25,8 @@ namespace Teachersteams.Api
             builder.RegisterApiControllers(ApiAssembly);
             builder.RegisterWebApiFilterProvider(config);
             builder.RegisterModule<DataAccessModule>();
+            builder.RegisterModule<BusinessModule>();
             builder.RegisterDependencies(ApiAssembly);
-            builder.RegisterDependencies(typeof(ITestService).Assembly);
             var container = builder.Build();
             config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
         }

@@ -5,6 +5,12 @@
     /// </summary>
     public class PageSettings
     {
+        public PageSettings(int index, int size)
+        {
+            Index = index;
+            Size = size;
+        }
+
         /// <summary>
         /// Page index.
         /// </summary>
