@@ -56,21 +56,20 @@
   <ItemGroup>
     <Compile Include="Attributes\GroupRetrieverMetaAttribute.cs" />
     <Compile Include="Enums\GroupFilterType.cs" />
-    <Compile Include="MapperExtensions.cs" />
+    <Compile Include="Extensions\MapperExtensions.cs" />
     <Compile Include="Modules\BusinessModule.cs" />
-    <Compile Include="Services\Mapping\MapProfile.cs" />
+    <Compile Include="Services\Mapping\GroupMapProfile.cs" />
     <Compile Include="Utils\MapperUtils.cs" />
     <Compile Include="Retrievers\Group\AllGroupRetriever.cs" />
     <Compile Include="Retrievers\Group\AssistGroupRetriever.cs" />
     <Compile Include="Retrievers\Group\OwnGroupRetriever.cs" />
     <Compile Include="Retrievers\Group\Contract\IGroupRetriever.cs" />
+    <Compile Include="ViewModels\AddGroupViewModel.cs" />
     <Compile Include="ViewModels\GroupTitleViewModel.cs" />
     <Compile Include="Modules\DataAccessModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\GroupService.cs" />
     <Compile Include="Services\IGroupService.cs" />
-    <Compile Include="Services\ITestService.cs" />
-    <Compile Include="Services\TestService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Data Access\Teachersteams.DataAccess\Teachersteams.DataAccess.csproj">

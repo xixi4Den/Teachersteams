@@ -8,7 +8,7 @@ namespace Teachersteams.Business.Modules
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<Context>().AsSelf().AsImplementedInterfaces();
+            builder.RegisterType<Context>().AsSelf().AsImplementedInterfaces().InstancePerLifetimeScope();
             RegisterRepository(builder);
             RegisterUnitOfWork(builder);
             base.Load(builder);

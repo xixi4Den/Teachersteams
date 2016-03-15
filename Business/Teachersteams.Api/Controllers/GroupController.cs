@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Web.Http;
 using Teachersteams.Business.Enums;
 using Teachersteams.Business.Services;
+using Teachersteams.Business.ViewModels;
 
 namespace Teachersteams.Api.Controllers
 {
@@ -27,10 +28,12 @@ namespace Teachersteams.Api.Controllers
         //    return "value";
         //}
 
-        //// POST api/group
-        //public void Post([FromBody]string value)
-        //{
-        //}
+        // POST api/group
+        public HttpResponseMessage Post([FromBody]AddGroupViewModel viewModel)
+        {
+            var id = groupService.CreateGroup(viewModel);
+            return Request.CreateResponse(HttpStatusCode.OK, id);
+        }
 
         //// PUT api/group/5
         //public void Put(int id, [FromBody]string value)

@@ -11,7 +11,7 @@ namespace Teachersteams.DataAccess
 {
     public class UnitOfWork: BaseDisposable, IUnitOfWork
     {
-        private readonly DbContext context;
+        private readonly Context context;
         private readonly IDictionary<Type, object> repositories;
 
         public UnitOfWork(Context context,

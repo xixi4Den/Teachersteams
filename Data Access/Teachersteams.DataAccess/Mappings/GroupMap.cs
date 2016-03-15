@@ -21,6 +21,8 @@ namespace Teachersteams.DataAccess.Mappings
             Property(t => t.CreateDate).HasColumnName("CreateDate").IsRequired();
             Property(t => t.OwnerId).HasColumnName("OwnerId").IsRequired();
             Property(t => t.PictureLink).HasColumnName("PictureLink").IsOptional();
+
+            //Ignore(t => t.Version);
         }
     }
 }

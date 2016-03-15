@@ -3,6 +3,7 @@ using System.Linq;
 using AutoMapper;
 using Teachersteams.Business.Attributes;
 using Teachersteams.Business.Enums;
+using Teachersteams.Business.Extensions;
 using Teachersteams.Business.Retrievers.Group.Contract;
 using Teachersteams.Business.ViewModels;
 using Teachersteams.Domain;

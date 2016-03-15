@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using AutoMapper;
 
-namespace Teachersteams.Business
+namespace Teachersteams.Business.Extensions
 {
     public static class MapperExtensions
     {

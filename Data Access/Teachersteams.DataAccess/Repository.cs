@@ -19,6 +19,11 @@ namespace Teachersteams.DataAccess
             this.context = context;
         }
 
+        public Context Context
+        {
+            get { return context; }
+        }
+
         private IDbSet<T> DbSet
         {
             get
