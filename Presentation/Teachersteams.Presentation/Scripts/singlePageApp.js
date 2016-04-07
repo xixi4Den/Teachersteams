@@ -1,5 +1,5 @@
-﻿var app = angular.module("ttSinglePageApp", ['ui.router', 'ui.bootstrap', 'ttServices', 'NgSwitchery']);
-app.config(function ($stateProvider, $urlRouterProvider) {
+﻿var app = angular.module("ttApp");
+app.config(function ($stateProvider) {
     $stateProvider
         .state('teacher/groups', {
             url: '/teacher/groups',
@@ -44,3 +44,26 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             controller: 'ttAboutController'
         });
 });
+
+app.config(['ngDialogProvider', function (ngDialogProvider) {
+    ngDialogProvider.setDefaults({
+        className: 'ngdialog-theme-default',
+        showClose: true,
+        closeByDocument: true,
+        closeByEscape: true
+    });
+}]);
+
+app.config(['ngToastProvider', function (ngToastProvider) {
+    ngToastProvider.configure({
+        animation: 'slide',
+        dismissOnTimeout: true,
+        timeout: 4000,
+        dismissButton: true,
+        horizontalPosition: 'right',
+        verticalPosition: 'top',
+        maxNumber: 5
+    });
+}]);
+
+app.value('AppContext', {});

@@ -34,6 +34,42 @@ namespace Teachersteams.Shared.Validation
             throw exception;
         }
 
+        /// <summary>
+        /// Intended to check that object is not null.
+        /// </summary>
+        /// <typeparam name="TException">Type of exception to throw.</typeparam>
+        /// <param name="obj">Object to check.</param>
+        /// <param name="message">Exception message.</param>
+        public static void NotNull<TException>(object obj, string message = null)
+            where TException : Exception
+        {
+            if (obj != null)
+            {
+                return;
+            }
+
+            var exception = CreateException<TException>(message);
+            throw exception;
+        }
+
+        /// <summary>
+        /// Intended to check that string is not null and not empty.
+        /// </summary>
+        /// <typeparam name="TException">Type of exception to throw.</typeparam>
+        /// <param name="str">String to check.</param>
+        /// <param name="message">Exception message.</param>
+        public static void NotNullAndNotEmpty<TException>(string str, string message = null)
+            where TException : Exception
+        {
+            if (!string.IsNullOrEmpty(str))
+            {
+                return;
+            }
+
+            var exception = CreateException<TException>(message);
+            throw exception;
+        }
+
         private static TException CreateException<TException>(string parameter)
         {
             if (parameter == null)

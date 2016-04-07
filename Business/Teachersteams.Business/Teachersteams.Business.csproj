@@ -56,6 +56,8 @@
   <ItemGroup>
     <Compile Include="Attributes\GroupRetrieverMetaAttribute.cs" />
     <Compile Include="Enums\GroupFilterType.cs" />
+    <Compile Include="Exceptions\BusinessException.cs" />
+    <Compile Include="Exceptions\GroupTitleAlreadyExistsException.cs" />
     <Compile Include="Extensions\MapperExtensions.cs" />
     <Compile Include="Modules\BusinessModule.cs" />
     <Compile Include="Services\Mapping\GroupMapProfile.cs" />

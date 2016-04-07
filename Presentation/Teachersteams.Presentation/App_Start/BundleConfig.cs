@@ -13,21 +13,30 @@ namespace Teachersteams.Presentation
                 .Include("~/Scripts/libs/angular/angular.js")
                 .Include("~/Scripts/libs/angular/angular-ui-router.js")
                 .Include("~/Scripts/libs/angular/angular-animate.js")
+                .Include("~/Scripts/libs/angular/angular-sanitize.js")
+                .Include("~/Scripts/libs/angular/angular-messages.js")
                 .Include("~/Scripts/libs/ui-bootstrap-tpls-*")
                 .Include("~/Scripts/libs/switchery.js")
-                .Include("~/Scripts/libs/ng-switchery.js"));
+                .Include("~/Scripts/libs/ng-switchery.js")
+                .Include("~/Scripts/libs/ngDialog.js")
+                .Include("~/Scripts/libs/ngToast.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/scripts")
+                .Include("~/Scripts/modules.js")
                 .Include("~/Scripts/singlePageApp.js")
                 .IncludeDirectory("~/Scripts/services", "*.js")
                 .IncludeDirectory("~/Scripts/controllers", "*.js")
                 .IncludeDirectory("~/Scripts/directives", "*.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/colors.less",
-                "~/Content/bootstrap/bootstrap.css",
-                "~/Content/site.less",
-                "~/Content/switchery.css"));
+            bundles.Add(new StyleBundle("~/Content/css")
+                .Include("~/Content/colors.less")
+                .Include("~/Content/bootstrap/bootstrap.css")
+                .Include("~/Content/site.less")
+                .Include("~/Content/transitions.less")
+                .Include("~/Content/switchery/switchery.css")
+                .Include("~/Content/loader.css")
+                .IncludeDirectory("~/Content/ngDialog", "*.css")
+                .IncludeDirectory("~/Content/ngToast", "*.css"));
         }
     }
 }

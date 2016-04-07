@@ -1,0 +1,35 @@
+﻿<div class="dialog-contents">
+    <div class="add-group-dialog">
+        <h4>Создание учебной группы</h4>
+        <div>
+            <form novalidate name="addGroupForm">
+                <div class="form-group" ng-class="{ 'has-error': addGroupForm.title.$touched && addGroupForm.title.$invalid,
+                 'has-success': addGroupForm.title.$touched && addGroupForm.title.$valid }">
+                    <div class="input-group">
+                        <input type="text" name="title" ng-model="data.title" class="form-control" placeholder="Enter title" required ng-maxlength="30" />
+                        <span ng-show="addGroupForm.title.$touched && addGroupForm.title.$invalid"
+                              class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                        <span ng-show="addGroupForm.title.$touched && addGroupForm.title.$valid"
+                              class="input-group-addon"><span class="glyphicon glyphicon-ok"></span></span>
+                    </div>
+                    <div class="error-messages" ng-messages="addGroupForm.title.$error" ng-show="addGroupForm.title.$touched && addGroupForm.title.$invalid">
+                        <p ng-message="required">Title is required.</p>
+                        <p ng-message="maxlength">Title is too long.</p>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error': addGroupForm.description.$touched && addGroupForm.description.$invalid,
+                 'has-success': addGroupForm.description.$touched && addGroupForm.description.$valid }">
+                    <textarea name="description" ng-model="data.description" class="form-control" rows="5" placeholder="Here you can describe groupe in more details" ng-maxlength="500"></textarea>
+                    <div class="error-messages" ng-messages="addGroupForm.description.$error" ng-show="addGroupForm.description.$touched && addGroupForm.description.$invalid">
+                        <p ng-message="maxlength">Description is too long.</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="ngdialog-buttons">
+            <button type="button" class="btn-default ngdialog-button" ng-click="cancel()">Cancel</button>
+            <button type="button" class="btn-info ngdialog-button" ng-click="create()">Create</button>
+        </div>
+    </div>
+</div>

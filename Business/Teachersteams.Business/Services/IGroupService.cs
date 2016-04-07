@@ -10,6 +10,6 @@ namespace Teachersteams.Business.Services
     {
         IEnumerable<GroupTitleViewModel> GetTeacherGroupTitles(string userId, GroupFilterType groupFilter, int pageIndex, int pageSize);
 
-        Guid CreateGroup(AddGroupViewModel viewModel);
+        GroupTitleViewModel CreateGroup(AddGroupViewModel viewModel);
     }
 }

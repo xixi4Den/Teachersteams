@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Web.Configuration;
+using System.Web.Mvc;
 
 namespace Teachersteams.Presentation.Controllers
 {
@@ -12,6 +13,14 @@ namespace Teachersteams.Presentation.Controllers
         public ActionResult About()
         {
             return View();
+        }
+
+        public JsonResult Settings()
+        {
+            return Json(new
+            {
+                BusinessApiUrl = WebConfigurationManager.AppSettings["BusinessApiUrl"]
+            }, JsonRequestBehavior.AllowGet);
         }
     }
 }

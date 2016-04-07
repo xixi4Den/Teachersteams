@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="ttSinglePageApp">
+<html ng-app="ttApp">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -9,8 +9,10 @@
 </head>
 <body ng-controller="ttMainController">
     <div ng-include="'@Url.Action("NavbarTemplate", "CommonTemplates")'"></div>
+    <div loader></div>
+    <toast></toast>
     <div class="container body-content">
-        <div ui-view></div>
+        <div ui-view class="appear-animation"></div>
         <footer>
             <p>&copy; @DateTime.Now.Year - Teachersteams</p>
         </footer>

@@ -142,7 +142,8 @@ namespace Teachersteams.DataAccess
             {
                 if (parameters.PageRules != null)
                 {
-                    // apply page rules
+                    var p = parameters.PageRules;
+                    return queryable.Skip((p.Index - 1)*p.Size).Take(p.Size);
                 }
             }
             return queryable;

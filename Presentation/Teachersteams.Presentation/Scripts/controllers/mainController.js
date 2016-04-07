@@ -1,5 +1,5 @@
-﻿var app = angular.module("ttSinglePageApp");
-app.controller('ttMainController', ['$scope', '$vk', '$state', function ($scope, $vk, $state) {
+﻿var app = angular.module("ttControllers");
+app.controller('ttMainController', ['$scope', '$vk', '$state', '$http', 'AppContext', 'ngToast', function ($scope, $vk, $state, $http, AppContext, ngToast) {
     $scope.isTeacher = false;
     $scope.$watch('isTeacher', function (newValue, oldValue) {
         if (newValue) {
@@ -9,14 +9,21 @@ app.controller('ttMainController', ['$scope', '$vk', '$state', function ($scope,
         }
     });
 
-    VK.init(function () {
+    $http.get('/Home/Settings').success(function (response, status) {
+        AppContext.apiUrl = response.BusinessApiUrl;
+    });
+
+    $vk.init(function () {
         $vk.call('users.get', {})
             .then(function (r) {
-                $scope.firstName = r.response[0].first_name;
-                $scope.lastName = r.response[0].last_name;
-            },
+                AppContext.firstName = r.response[0].first_name;
+                AppContext.lastName = r.response[0].last_name;
+                AppContext.uid = r.response[0].uid;
+                },
             function (r) {
                 console.log("Error!!!");
             });
     });
+
+    $scope.isLoading = false;
 }]);

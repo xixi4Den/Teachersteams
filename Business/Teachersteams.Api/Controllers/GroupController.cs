@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Teachersteams.Business.Enums;
@@ -16,6 +17,7 @@ namespace Teachersteams.Api.Controllers
             this.groupService = groupService;
         }
 
+        [HttpGet]
         public HttpResponseMessage GetForTeacher(string userId, GroupFilterType filterType, int pageIndex, int pageSize)
         {
             var groups = groupService.GetTeacherGroupTitles(userId, filterType, pageIndex, pageSize);
@@ -29,10 +31,16 @@ namespace Teachersteams.Api.Controllers
         //}
 
         // POST api/group
-        public HttpResponseMessage Post([FromBody]AddGroupViewModel viewModel)
+        [HttpPost]
+        public HttpResponseMessage Post(string userId, [FromBody]AddGroupViewModel viewModel)
         {
-            var id = groupService.CreateGroup(viewModel);
-            return Request.CreateResponse(HttpStatusCode.OK, id);
+            if (ModelState.IsValid)
+            {
+                viewModel.OwnerId = userId;
+                var group = groupService.CreateGroup(viewModel);
+                return Request.CreateResponse(HttpStatusCode.Created, group);
+            }
+            return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
         }
 
         //// PUT api/group/5

@@ -1,5 +1,12 @@
-﻿var app = angular.module("ttSinglePageApp");
-app.controller('ttTeacherGroupsController', function ($scope) {
-    $scope.groups = [{ id: 1, name: 'Test Group' }, { id: 2, name: 'Super group' }, { id: 3, name: 'English' },
-        { id: 4, name: 'Math' }, { id: 5, name: 'Driving' }];
-});
+﻿var app = angular.module("ttControllers");
+app.controller('ttTeacherGroupsController', ['$scope', 'ngDialog', function ($scope, ngDialog) {
+    $scope.createGroup = function(e) {
+        var dialog = ngDialog.open({ template: '/Teacher/Group/Create', controller: 'ttCreateGroupController' });
+        dialog.closePromise.then(function (newGroup) {
+            var result = newGroup.value;
+            if ((typeof result !== "undefined") && result.hasOwnProperty('Id') && (typeof result.Id !== "undefined")) {
+                $scope.$broadcast('create_group', result);
+            }
+        });
+    }
+}]);

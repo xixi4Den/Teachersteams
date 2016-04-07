@@ -1,6 +1,12 @@
-﻿angular.module('ttServices', [])
+﻿angular.module('ttServices')
     .factory('$vk', ['$q', function ($q) {
         return {
+            init: function(func) {
+                VK.init(function() {
+                    func();
+                });
+            },
+
             call: function (method, data) {
                 var deferred = $q.defer();
                 VK.api(method, data, function (result) {

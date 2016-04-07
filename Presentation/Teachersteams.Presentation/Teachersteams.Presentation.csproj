@@ -61,6 +61,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
@@ -94,16 +98,13 @@
     </Reference>
     <Reference Include="System.Net.Http.WebRequest">
     </Reference>
-    <Reference Include="System.Web.Optimization">
-      <HintPath>..\..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
-    </Reference>
-    <Reference Include="WebGrease">
-      <Private>True</Private>
-      <HintPath>..\..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
-    </Reference>
     <Reference Include="Antlr3.Runtime">
       <Private>True</Private>
       <HintPath>..\..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -113,7 +114,6 @@
     <Folder Include="Areas\Teacher\Models\" />
     <Folder Include="Areas\Teacher\Views\Shared\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\directives\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -128,6 +128,7 @@
     <Compile Include="Areas\Teacher\Controllers\NotificationController.cs" />
     <Compile Include="Areas\Teacher\TeacherAreaRegistration.cs" />
     <Compile Include="Controllers\CommonTemplatesController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -137,12 +138,28 @@
   <ItemGroup>
     <Content Include="Content\bootstrap\bootstrap.css" />
     <Content Include="Content\bootstrap\bootstrap.min.css" />
-    <Content Include="Content\switchery.css" />
-    <Content Include="Content\switchery.min.css" />
+    <Content Include="Content\error.css" />
+    <Content Include="Content\images\error\bg.png" />
+    <Content Include="Content\images\error\bg1.png" />
+    <Content Include="Content\images\error\error404.png" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\images\error\error500.png" />
+    <Content Include="Content\loader.css" />
+    <Content Include="Content\ngDialog\ngDialog-custom-width.css" />
+    <Content Include="Content\ngDialog\ngDialog-theme-default.css" />
+    <Content Include="Content\ngDialog\ngDialog.css" />
+    <Content Include="Content\ngDialog\ngDialog.min.css" />
+    <Content Include="Content\ngToast\ngToast-animations.css" />
+    <Content Include="Content\ngToast\ngToast-animations.min.css" />
+    <Content Include="Content\ngToast\ngToast.css" />
+    <Content Include="Content\ngToast\ngToast.min.css" />
+    <Content Include="Content\switchery\switchery.css" />
+    <Content Include="Content\switchery\switchery.min.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\controllers\aboutController.js" />
+    <Content Include="Scripts\controllers\createGroupController.js" />
+    <Content Include="Scripts\controllers\groupListController.js" />
     <Content Include="Scripts\controllers\mainController.js" />
     <Content Include="Scripts\controllers\navigationController.js" />
     <Content Include="Scripts\controllers\studentBoardController.js" />
@@ -151,18 +168,29 @@
     <Content Include="Scripts\controllers\teacherBoardController.js" />
     <Content Include="Scripts\controllers\teacherGroupsController.js" />
     <Content Include="Scripts\controllers\teacherNotificationsController.js" />
+    <Content Include="Scripts\directives\loaderDirective.js" />
     <Content Include="Scripts\libs\angular\angular-animate.js" />
     <Content Include="Scripts\libs\angular\angular-animate.min.js" />
+    <Content Include="Scripts\libs\angular\angular-messages.js" />
+    <Content Include="Scripts\libs\angular\angular-messages.min.js" />
+    <Content Include="Scripts\libs\angular\angular-sanitize.js" />
     <Content Include="Scripts\libs\angular\angular-ui-router.js" />
     <Content Include="Scripts\libs\angular\angular-ui-router.min.js" />
     <Content Include="Scripts\libs\angular\angular.js" />
     <Content Include="Scripts\libs\angular\angular.min.js" />
     <Content Include="Scripts\libs\ng-switchery.js" />
+    <Content Include="Scripts\libs\ngDialog.js" />
+    <Content Include="Scripts\libs\ngDialog.min.js" />
+    <Content Include="Scripts\libs\ngToast.js" />
+    <Content Include="Scripts\libs\ngToast.min.js" />
     <Content Include="Scripts\libs\switchery.js" />
     <Content Include="Scripts\libs\switchery.min.js" />
     <Content Include="Scripts\libs\modernizr-2.6.2.js" />
     <Content Include="Scripts\libs\ui-bootstrap-tpls-1.1.2.js" />
     <Content Include="Scripts\libs\ui-bootstrap-tpls-1.1.2.min.js" />
+    <Content Include="Scripts\modules.js" />
+    <Content Include="Scripts\services\groupService.js" />
+    <Content Include="Scripts\services\userHttpService.js" />
     <Content Include="Scripts\services\vkService.js" />
     <Content Include="Scripts\singlePageApp.js" />
     <Content Include="Web.config" />
@@ -181,9 +209,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <Content Include="Content\bootstrap\bootstrap.css.map" />
     <Content Include="Content\bootstrap\bootstrap.min.css.map" />
@@ -199,9 +224,20 @@
     <Content Include="Areas\Student\Views\Group\Details.cshtml" />
     <Content Include="Areas\Student\Views\Board\Index.cshtml" />
     <Content Include="Areas\Student\Views\Notification\Index.cshtml" />
+    <Content Include="Areas\Teacher\Views\Group\Create.cshtml" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\transitions.less" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\CommonTemplates\NavbarTemplate.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Error\InternalError.cshtml" />
+    <Content Include="Views\Error\_ErrorLayout.cshtml" />
+    <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Scripts\libs\angular\angular-sanitize.min.js" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

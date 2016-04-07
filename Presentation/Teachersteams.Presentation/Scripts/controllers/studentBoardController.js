@@ -1,4 +1,4 @@
-﻿var app = angular.module("ttSinglePageApp");
+﻿var app = angular.module("ttControllers");
 app.controller('ttStudentBoardController', function ($scope) {
 
 });

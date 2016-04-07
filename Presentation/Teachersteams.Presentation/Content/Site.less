@@ -1,14 +1,74 @@
-﻿body {
+﻿@import "colors";
+
+html, body{
+    height:100%;
+}
+
+.overlay{
+  opacity:    0.5; 
+  background: #000; 
+  width:      100%;
+  height:     100%; 
+  z-index:    10;
+  top:        0; 
+  left:       0; 
+  position:   fixed; 
+}
+
+.dialog-contents{
+    padding: 0px;
+}
+
+.input-group .form-control {
+    margin: 0px;
+}
+
+.input-group{
+    width: 100%;
+}
+
+.has-error .form-control, .has-error span{
+    border-color: @error-color !important;
+}
+
+.has-success .form-control, .has-success span{
+    border-color: @success-color !important;
+}
+
+.error-messages{
+    position: absolute;
+    background: @error-color;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px 10px 0px;
+    color: @light-font-color;
+    
+    p{
+        margin: 0px;
+    }
+
+    :after{
+        position: absolute;
+        top: -5px;
+        left: 20px;
+        content: "";
+        border-style: solid;
+        border-width: 0 10px 10px 10px;
+        border-color: transparent transparent @error-color transparent;
+    }
+}
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 
     .body-content {
         margin: 0 15px;
 
-        .page-header{
+        .page-header {
             margin: 10px;
 
-            h1{
+            h1 {
                 margin: 0;
             }
         }
@@ -18,6 +78,14 @@
 
             .tt-group-list {
                 padding: 0;
+
+                .tt-group-items {
+                    height: 210px;
+
+                    a.tt-group-item {
+                        overflow-x: hidden;
+                    }
+                }
             }
         }
     }
