@@ -1,12 +1,8 @@
-﻿<tabset>
-    <tab title="Info" template-url="/Teacher/Group/InfoTab"></tab>
-    <tab title="Students">
-        @*<div ng-include="'@Url.Action("StudentsTab", "Group" , new { area="Teacher" })'"></div>*@
-    </tab>
-    <tab title="Teachers">
-        @*<div ng-include="'@Url.Action("TeachersTab", "Group" , new { area="Teacher" })'"></div>*@
-    </tab>
-    <tab title="Tasks">
-        @*<div ng-include="'@Url.Action("TasksTab", "Group" , new { area="Teacher" })'"></div>*@
-    </tab>
+﻿@using Teachersteams.Presentation.Resources
+
+<tabset>
+    <tab title="@Resource.GroupInfoTabTitle" template-url="@Url.Action("InfoTab", "Group" , new { area="Teacher" })"></tab>
+    <tab title="@Resource.GroupStudentsTabTitle"></tab>
+    <tab title="@Resource.GroupTeachersTabTitle"></tab>
+    <tab title="@Resource.GroupTasksTabTitle"></tab>
 </tabset>

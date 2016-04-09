@@ -115,11 +115,29 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Creation Date.
+        /// </summary>
+        public static string GroupCreateDateLabel {
+            get {
+                return ResourceManager.GetString("GroupCreateDateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Group description is too long.
         /// </summary>
         public static string GroupDescriptionIsLongValidationMessage {
             get {
                 return ResourceManager.GetString("GroupDescriptionIsLongValidationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string GroupDescriptionLabel {
+            get {
+                return ResourceManager.GetString("GroupDescriptionLabel", resourceCulture);
             }
         }
         
@@ -133,11 +151,56 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Info.
+        /// </summary>
+        public static string GroupInfoTabTitle {
+            get {
+                return ResourceManager.GetString("GroupInfoTabTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Owner.
+        /// </summary>
+        public static string GroupOwnerLabel {
+            get {
+                return ResourceManager.GetString("GroupOwnerLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Groups.
         /// </summary>
         public static string GroupsTabTitle {
             get {
                 return ResourceManager.GetString("GroupsTabTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Students.
+        /// </summary>
+        public static string GroupStudentsTabTitle {
+            get {
+                return ResourceManager.GetString("GroupStudentsTabTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tasks.
+        /// </summary>
+        public static string GroupTasksTabTitle {
+            get {
+                return ResourceManager.GetString("GroupTasksTabTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Teachers.
+        /// </summary>
+        public static string GroupTeachersTabTitle {
+            get {
+                return ResourceManager.GetString("GroupTeachersTabTitle", resourceCulture);
             }
         }
         
@@ -156,6 +219,15 @@ namespace Teachersteams.Presentation.Resources {
         public static string GroupTitleIsRequiredValidationMessage {
             get {
                 return ResourceManager.GetString("GroupTitleIsRequiredValidationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        public static string GroupTitleLabel {
+            get {
+                return ResourceManager.GetString("GroupTitleLabel", resourceCulture);
             }
         }
         
