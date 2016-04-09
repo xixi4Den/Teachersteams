@@ -1,6 +1,8 @@
-﻿<uib-tabset>
-    <uib-tab heading="Info"></uib-tab>
-    <uib-tab heading="Students"></uib-tab>
-    <uib-tab heading="Teachers"></uib-tab>
-    <uib-tab heading="Tasks"></uib-tab>
-</uib-tabset>
+﻿@using Teachersteams.Presentation.Resources
+
+<tabset>
+    <tab title="@Resource.GroupInfoTabTitle" template-url="@Url.Action("InfoTab", "Group" , new { area="Teacher" })"></tab>
+    <tab title="@Resource.GroupStudentsTabTitle"></tab>
+    <tab title="@Resource.GroupTeachersTabTitle"></tab>
+    <tab title="@Resource.GroupTasksTabTitle"></tab>
+</tabset>

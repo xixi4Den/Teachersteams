@@ -201,4 +201,28 @@
   <data name="UnexpectedErrorTitle" xml:space="preserve">
     <value>Unknown error</value>
   </data>
+  <data name="GroupCreateDateLabel" xml:space="preserve">
+    <value>Creation Date</value>
+  </data>
+  <data name="GroupDescriptionLabel" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="GroupInfoTabTitle" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="GroupOwnerLabel" xml:space="preserve">
+    <value>Owner</value>
+  </data>
+  <data name="GroupStudentsTabTitle" xml:space="preserve">
+    <value>Students</value>
+  </data>
+  <data name="GroupTasksTabTitle" xml:space="preserve">
+    <value>Tasks</value>
+  </data>
+  <data name="GroupTeachersTabTitle" xml:space="preserve">
+    <value>Teachers</value>
+  </data>
+  <data name="GroupTitleLabel" xml:space="preserve">
+    <value>Title</value>
+  </data>
 </root>

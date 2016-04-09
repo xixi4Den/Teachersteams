@@ -1,6 +1,7 @@
 ﻿angular.module('ttApp', [
     'ui.router',
     'ui.bootstrap',
+    'ui.bootstrap.tabset',
     'ngAnimate',
     'NgSwitchery',
     'ngDialog',

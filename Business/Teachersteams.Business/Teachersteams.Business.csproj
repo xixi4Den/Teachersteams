@@ -67,6 +67,7 @@
     <Compile Include="Retrievers\Group\OwnGroupRetriever.cs" />
     <Compile Include="Retrievers\Group\Contract\IGroupRetriever.cs" />
     <Compile Include="ViewModels\AddGroupViewModel.cs" />
+    <Compile Include="ViewModels\GroupInfoViewModel.cs" />
     <Compile Include="ViewModels\GroupTitleViewModel.cs" />
     <Compile Include="Modules\DataAccessModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

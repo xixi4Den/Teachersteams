@@ -70,6 +70,24 @@ namespace Teachersteams.Shared.Validation
             throw exception;
         }
 
+        /// <summary>
+        /// Intended to check that object is not null.
+        /// </summary>
+        /// <typeparam name="TException">Type of exception to throw.</typeparam>
+        /// <typeparam name="TArg">Type of value to check.</typeparam>
+        /// <param name="message">Exception message.</param>
+        public static void NotDefault<TArg, TException>(TArg value, string message = null)
+            where TException : Exception
+        {
+            if (!Equals(value, default(TArg)))
+            {
+                return;
+            }
+
+            var exception = CreateException<TException>(message);
+            throw exception;
+        }
+
         private static TException CreateException<TException>(string parameter)
         {
             if (parameter == null)

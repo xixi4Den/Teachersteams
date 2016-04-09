@@ -36,7 +36,7 @@ namespace Teachersteams.Business.Services
         public GroupTitleViewModel CreateGroup(AddGroupViewModel viewModel)
         {
             Contract.NotNull<ArgumentNullException>(viewModel);
-            CheckViewModelTitle(viewModel);
+            CheckGroupTitle(viewModel);
             var groupEntity = mapper.Map<Group>(viewModel);
             groupEntity.CreateDate = DateTime.UtcNow;
             unitOfWork.InsertOrUpdate(groupEntity);
@@ -44,7 +44,15 @@ namespace Teachersteams.Business.Services
             return mapper.Map<GroupTitleViewModel>(groupEntity);
         }
 
-        private void CheckViewModelTitle(AddGroupViewModel viewModel)
+        public GroupInfoViewModel GetGroupInfo(Guid groupId)
+        {
+            Contract.NotDefault<Guid, ArgumentException>(groupId);
+
+            var group = unitOfWork.Get<Group>(groupId);
+            return mapper.Map<GroupInfoViewModel>(group);
+        }
+
+        private void CheckGroupTitle(AddGroupViewModel viewModel)
         {
             Contract.NotNullAndNotEmpty<ArgumentNullException>(viewModel.Title);
 
