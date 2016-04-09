@@ -1,5 +1,5 @@
 ﻿var app = angular.module("ttControllers");
-app.controller('ttMainController', ['$scope', '$vk', '$state', '$http', 'AppContext', 'ngToast', function ($scope, $vk, $state, $http, AppContext, ngToast) {
+app.controller('ttMainController', ['$scope', '$vk', '$state', '$http', 'AppContext', function ($scope, $vk, $state, $http, AppContext) {
     $scope.isTeacher = false;
     $scope.$watch('isTeacher', function (newValue, oldValue) {
         if (newValue) {

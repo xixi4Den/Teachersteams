@@ -159,6 +159,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\controllers\aboutController.js" />
     <Content Include="Scripts\controllers\createGroupController.js" />
+    <Content Include="Scripts\controllers\groupInfoTabController.js" />
     <Content Include="Scripts\controllers\groupListController.js" />
     <Content Include="Scripts\controllers\mainController.js" />
     <Content Include="Scripts\controllers\navigationController.js" />
@@ -169,6 +170,7 @@
     <Content Include="Scripts\controllers\teacherGroupsController.js" />
     <Content Include="Scripts\controllers\teacherNotificationsController.js" />
     <Content Include="Scripts\directives\loaderDirective.js" />
+    <Content Include="Scripts\directives\tabsetDirective.js" />
     <Content Include="Scripts\libs\angular\angular-animate.js" />
     <Content Include="Scripts\libs\angular\angular-animate.min.js" />
     <Content Include="Scripts\libs\angular\angular-messages.js" />
@@ -230,6 +232,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Content\transitions.less" />
+    <Content Include="Areas\Teacher\Views\Group\InfoTab.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\CommonTemplates\NavbarTemplate.cshtml" />
     <Content Include="Views\Home\About.cshtml" />

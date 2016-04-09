@@ -2,14 +2,8 @@
 
 namespace Teachersteams.Business.ViewModels
 {
-    public class AddGroupViewModel
+    public class GroupInfoViewModel
     {
-        public Guid Id
-        {
-            get;
-            set;
-        }
-
         public string Title
         {
             get;
@@ -17,6 +11,12 @@ namespace Teachersteams.Business.ViewModels
         }
 
         public string Description
+        {
+            get;
+            set;
+        }
+
+        public DateTime CreateDate
         {
             get;
             set;

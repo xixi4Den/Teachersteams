@@ -18,5 +18,10 @@ namespace Teachersteams.Presentation.Areas.Teacher.Controllers
         {
             return View();
         }
+
+        public ActionResult InfoTab()
+        {
+            return View();
+        }
 	}
 }

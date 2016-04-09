@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.Contracts;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -24,13 +25,18 @@ namespace Teachersteams.Api.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, groups);
         }
 
-        //// GET api/group/5
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
+        [HttpGet]
+        public HttpResponseMessage Get(Guid? id, string userId)
+        {
+            if (!id.HasValue)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "incorrect argument");
+            }
 
-        // POST api/group
+            var groupInfo = groupService.GetGroupInfo(id.Value);
+            return Request.CreateResponse(HttpStatusCode.OK, groupInfo);
+        }
+
         [HttpPost]
         public HttpResponseMessage Post(string userId, [FromBody]AddGroupViewModel viewModel)
         {
