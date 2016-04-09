@@ -1,7 +1,9 @@
-﻿@{
-    ViewBag.Title = "Unknown error";
+﻿@using Teachersteams.Presentation.Resources
+
+@{
+    ViewBag.Title = Resource.UnexpectedErrorTitle;
     Layout = "~/Views/Error/_ErrorLayout.cshtml";
 }
 
-<p>OOPS! Unexpected Error Occurred!</p>
-<p>Sorry</p>
+<p>@Resource.UnexpectedErrorDescription</p>
+<p>@Resource.SorryString</p>
