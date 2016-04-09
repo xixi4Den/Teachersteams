@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Teachersteams.Presentation.Resources
+
+<!DOCTYPE html>
 <html>
 <head>
     <title>@ViewBag.Title</title>
@@ -9,14 +11,14 @@
     <div class="wrap">
         <div class="header">
             <div class="logo">
-                <h1><a href="#">Ohh</a></h1>
+                <h1><a href="#">@Resource.Ohh</a></h1>
             </div>
         </div>
 
         <div class="content">
             @RenderBody()
             <div class="copy-right">
-                <p>&#169 Denis Hihich</p>
+                <p>&#169 @Resource.SiteTitle</p>
             </div>
         </div>
     </div>
