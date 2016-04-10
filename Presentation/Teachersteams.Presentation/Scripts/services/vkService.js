@@ -17,6 +17,21 @@
                     }
                 });
                 return deferred.promise;
+            },
+
+            simpleCall: function (method, data) {
+                var deferred = $q.defer();
+                VK.init(function () {
+                    VK.api(method, data, function (result) {
+                        if (result.response) {
+                            return deferred.resolve(result);
+                        } else {
+                            return deferred.reject(result);
+                        }
+                    });
+                    return deferred;
+                });
+                return deferred.promise;
             }
         }
     }]);

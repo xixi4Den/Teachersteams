@@ -1,6 +1,5 @@
 ﻿var app = angular.module("ttControllers");
 app.controller('ttCreateGroupController', ['$scope', '$ttGroupService', 'ngToast', function ($scope, $ttGroupService, ngToast) {
-    //var deferred = $q.defer();
 
     $scope.create = function (e) {
         if ($scope.addGroupForm.$valid) {
