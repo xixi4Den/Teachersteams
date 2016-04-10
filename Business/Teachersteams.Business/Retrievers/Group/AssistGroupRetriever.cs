@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Teachersteams.Business.Attributes;
 using Teachersteams.Business.Enums;
 using Teachersteams.Business.Retrievers.Group.Contract;
-using Teachersteams.Business.ViewModels;
+using Teachersteams.Business.ViewModels.Group;
 using Teachersteams.Domain;
 
 namespace Teachersteams.Business.Retrievers.Group

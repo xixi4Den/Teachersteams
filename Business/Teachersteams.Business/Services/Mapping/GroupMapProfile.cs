@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Teachersteams.Business.ViewModels;
+using Teachersteams.Business.ViewModels.Group;
 using Teachersteams.Domain.Entities;
 
 namespace Teachersteams.Business.Services.Mapping

@@ -206,6 +206,7 @@
     <Content Include="Scripts\modules.js" />
     <Content Include="Scripts\services\groupService.js" />
     <Content Include="Scripts\services\userHttpService.js" />
+    <Content Include="Scripts\services\teacherService.js" />
     <Content Include="Scripts\services\vkService.js" />
     <Content Include="Scripts\singlePageApp.js" />
     <Content Include="Web.config" />

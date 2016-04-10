@@ -5,7 +5,7 @@ using Teachersteams.Business.Attributes;
 using Teachersteams.Business.Enums;
 using Teachersteams.Business.Extensions;
 using Teachersteams.Business.Retrievers.Group.Contract;
-using Teachersteams.Business.ViewModels;
+using Teachersteams.Business.ViewModels.Group;
 using Teachersteams.Domain;
 using Teachersteams.Domain.Query;
 

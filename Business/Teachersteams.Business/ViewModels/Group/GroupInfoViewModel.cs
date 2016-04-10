@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Teachersteams.Business.ViewModels
+namespace Teachersteams.Business.ViewModels.Group
 {
     public class GroupInfoViewModel
     {

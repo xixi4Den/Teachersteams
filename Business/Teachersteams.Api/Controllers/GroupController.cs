@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Web.Http;
 using Teachersteams.Business.Enums;
 using Teachersteams.Business.Services;
-using Teachersteams.Business.ViewModels;
+using Teachersteams.Business.ViewModels.Group;
 
 namespace Teachersteams.Api.Controllers
 {
