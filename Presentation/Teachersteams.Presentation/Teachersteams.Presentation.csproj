@@ -167,6 +167,7 @@
     <Content Include="Content\switchery\switchery.css" />
     <Content Include="Content\switchery\switchery.min.css" />
     <Content Include="Content\ui-grid\ui-grid.css" />
+    <Content Include="Scripts\directives\noItemsMessageDirective.js" />
     <Content Include="Scripts\libs\ui-grid.js" />
     <Content Include="Content\ui-grid\ui-grid.min.css" />
     <Content Include="Scripts\libs\ui-grid.min.js" />
@@ -211,6 +212,7 @@
     <Content Include="Scripts\libs\underscore.js" />
     <Content Include="Scripts\libs\underscore.min.js" />
     <Content Include="Scripts\modules.js" />
+    <Content Include="Scripts\services\gridHelper.js" />
     <Content Include="Scripts\services\groupService.js" />
     <Content Include="Scripts\services\userHttpService.js" />
     <Content Include="Scripts\services\teacherService.js" />
