@@ -31,10 +31,10 @@ app.controller('ttGroupTeachersTabController', [
             enableHorizontalScrollbar: uiGridConstants.scrollbars.NEVER,
             enableVerticalScrollbar: uiGridConstants.scrollbars.NEVER,
             columnDefs: [
-              { name: 'Photo', field: 'photo', enableSorting: false, width: 70, cellClass: 'ui-grid-hcenter', cellTemplate: 'photo-template' },
-              { name: 'Uid', enableSorting: true, width: 100, cellClass: 'ui-grid-vcenter' },
-              { name: 'FullName', enableSorting: false, width: 170, cellClass: 'ui-grid-vcenter' },
-              { name: 'Actions', enableSorting: false, cellTemplate: 'actions-template' }
+              { name: window.resources.photoColumnName, field: 'Photo', enableSorting: false, width: 70, cellClass: 'ui-grid-hcenter', cellTemplate: 'photo-template' },
+              { name: window.resources.uidColumnName, field: 'Uid', enableSorting: true, width: 100, cellClass: 'ui-grid-vcenter' },
+              { name: window.resources.fullnameColumnName, field: 'FullName', enableSorting: false, width: 170, cellClass: 'ui-grid-vcenter' },
+              { name: window.resources.actionsColumnName, enableSorting: false, cellTemplate: 'actions-template' }
             ],
             onRegisterApi: function (gridApi) {
                 $scope.gridApi = gridApi;

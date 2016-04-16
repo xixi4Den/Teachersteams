@@ -240,4 +240,19 @@
   <data name="TeacherNamePlaseholderMessage" xml:space="preserve">
     <value>Введите имя учителя здесь</value>
   </data>
+  <data name="NoItems" xml:space="preserve">
+    <value>Нет данных</value>
+  </data>
+  <data name="TeachersGridActionsColumnName" xml:space="preserve">
+    <value>Действия</value>
+  </data>
+  <data name="TeachersGridFullNameColumnName" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="TeachersGridPhotoColumnName" xml:space="preserve">
+    <value>Фото</value>
+  </data>
+  <data name="TeachersGridUidColumnName" xml:space="preserve">
+    <value>Uid</value>
+  </data>
 </root>

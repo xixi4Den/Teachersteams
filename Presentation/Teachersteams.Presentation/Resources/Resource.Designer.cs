@@ -286,6 +286,15 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No items.
+        /// </summary>
+        public static string NoItems {
+            get {
+                return ResourceManager.GetString("NoItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No resoults.
         /// </summary>
         public static string NoResultsMessage {
@@ -399,6 +408,42 @@ namespace Teachersteams.Presentation.Resources {
         public static string TeacherNamePlaseholderMessage {
             get {
                 return ResourceManager.GetString("TeacherNamePlaseholderMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Actions.
+        /// </summary>
+        public static string TeachersGridActionsColumnName {
+            get {
+                return ResourceManager.GetString("TeachersGridActionsColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Full Name.
+        /// </summary>
+        public static string TeachersGridFullNameColumnName {
+            get {
+                return ResourceManager.GetString("TeachersGridFullNameColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Photo.
+        /// </summary>
+        public static string TeachersGridPhotoColumnName {
+            get {
+                return ResourceManager.GetString("TeachersGridPhotoColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uid.
+        /// </summary>
+        public static string TeachersGridUidColumnName {
+            get {
+                return ResourceManager.GetString("TeachersGridUidColumnName", resourceCulture);
             }
         }
         
