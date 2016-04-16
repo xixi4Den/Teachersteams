@@ -19,14 +19,17 @@ namespace Teachersteams.Presentation
                 .Include("~/Scripts/libs/switchery.js")
                 .Include("~/Scripts/libs/ng-switchery.js")
                 .Include("~/Scripts/libs/ngDialog.js")
-                .Include("~/Scripts/libs/ngToast.js"));
+                .Include("~/Scripts/libs/ngToast.js")
+                .Include("~/Scripts/libs/ui-grid.js")
+                .Include("~/Scripts/libs/underscore.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/scripts")
                 .Include("~/Scripts/modules.js")
                 .Include("~/Scripts/singlePageApp.js")
                 .IncludeDirectory("~/Scripts/services", "*.js")
                 .IncludeDirectory("~/Scripts/controllers", "*.js")
-                .IncludeDirectory("~/Scripts/directives", "*.js"));
+                .IncludeDirectory("~/Scripts/directives", "*.js")
+                .Include("~/Scripts/sortingDirection.js"));
 
             bundles.Add(new StyleBundle("~/Content/css")
                 .Include("~/Content/colors.less")
@@ -36,7 +39,8 @@ namespace Teachersteams.Presentation
                 .Include("~/Content/switchery/switchery.css")
                 .Include("~/Content/loader.css")
                 .IncludeDirectory("~/Content/ngDialog", "*.css")
-                .IncludeDirectory("~/Content/ngToast", "*.css"));
+                .IncludeDirectory("~/Content/ngToast", "*.css")
+                .Include("~/Content/ui-grid/ui-grid.css"));
         }
     }
 }

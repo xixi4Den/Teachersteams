@@ -166,6 +166,11 @@
     <Content Include="Content\ngToast\ngToast.min.css" />
     <Content Include="Content\switchery\switchery.css" />
     <Content Include="Content\switchery\switchery.min.css" />
+    <Content Include="Content\ui-grid\ui-grid.css" />
+    <Content Include="Scripts\libs\ui-grid.js" />
+    <Content Include="Content\ui-grid\ui-grid.min.css" />
+    <Content Include="Scripts\libs\ui-grid.min.js" />
+    <Content Include="Content\ui-grid\ui-grid.svg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\controllers\aboutController.js" />
@@ -203,12 +208,15 @@
     <Content Include="Scripts\libs\modernizr-2.6.2.js" />
     <Content Include="Scripts\libs\ui-bootstrap-tpls-1.1.2.js" />
     <Content Include="Scripts\libs\ui-bootstrap-tpls-1.1.2.min.js" />
+    <Content Include="Scripts\libs\underscore.js" />
+    <Content Include="Scripts\libs\underscore.min.js" />
     <Content Include="Scripts\modules.js" />
     <Content Include="Scripts\services\groupService.js" />
     <Content Include="Scripts\services\userHttpService.js" />
     <Content Include="Scripts\services\teacherService.js" />
     <Content Include="Scripts\services\vkService.js" />
     <Content Include="Scripts\singlePageApp.js" />
+    <Content Include="Scripts\sortingDirection.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -260,6 +268,9 @@
     <Content Include="Areas\Teacher\Views\Group\InfoTab.cshtml" />
     <Content Include="Areas\Teacher\Views\Group\TeachersTab.cshtml" />
     <Content Include="Areas\Teacher\Views\Group\InviteTeacherDialog.cshtml" />
+    <Content Include="Content\ui-grid\ui-grid.eot" />
+    <Content Include="Content\ui-grid\ui-grid.ttf" />
+    <Content Include="Content\ui-grid\ui-grid.woff" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\CommonTemplates\NavbarTemplate.cshtml" />
     <Content Include="Views\Home\About.cshtml" />

@@ -7,6 +7,8 @@
     'ngDialog',
     'ngMessages',
     'ngToast',
+    'ui.grid',
+    'ui.grid.pagination',
     'ttControllers',
     'ttDirectives'
 ]);

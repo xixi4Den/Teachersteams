@@ -5,6 +5,8 @@ namespace Teachersteams.Domain.Entities
 {
     public abstract class BaseUser: Entity
     {
+        protected BaseUser() { }
+
         protected BaseUser(string uid, Guid groupId)
         {
             Uid = uid;

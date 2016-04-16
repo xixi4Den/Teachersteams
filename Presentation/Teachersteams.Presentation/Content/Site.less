@@ -35,6 +35,19 @@ html, body{
     border-color: @success-color !important;
 }
 
+.ui-grid-vcenter div{
+    position: relative;
+    top: 15%;
+}
+
+.ui-grid-hcenter div{
+    text-align: center;
+}
+
+.ui-grid-cell-content{
+    margin: 0px;
+}
+
 .error-messages{
     position: absolute;
     background: @error-color;
@@ -90,8 +103,16 @@ body {
 
             .tt-tab-content{
                 padding: 20px;
+
+                .invite-user-row{
+                    margin-bottom: 10px;
+                }
             }
         }
+    }
+
+    footer{
+        text-align: center;
     }
 }
 
