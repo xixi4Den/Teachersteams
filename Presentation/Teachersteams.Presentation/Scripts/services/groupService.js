@@ -1,7 +1,7 @@
 ﻿angular.module('ttServices')
     .factory('$ttGroupService', ['$userHttp', function ($userHttp) {
         var getUrl = 'group/GetForTeacher';
-        var getInfoUrl = 'group/';
+        var getInfoUrl = 'group/Get/';
         var createUrl = 'group/Post';
 
         return {

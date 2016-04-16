@@ -1,25 +1,33 @@
 ﻿@using Teachersteams.Presentation.Resources
 
-<section ng-controller="ttGroupInfoTabController">
+<section ng-controller="ttGroupInfoTabController" class="tt-tab-content">
     <dl>
-        <dt class="col-md-3 col-sm-3 col-xs-3">@Resource.GroupTitleLabel</dt>
-        <dd class="col-md-9 col-sm-9 col-xs-9" ng-bind="title"></dd>
+        <div class="row">
+            <dt class="col-md-3 col-sm-3 col-xs-3">@Resource.GroupTitleLabel</dt>
+            <dd class="col-md-9 col-sm-9 col-xs-9" ng-bind="title"></dd>
+        </div>
 
-        <dt class="col-md-3 col-sm-3 col-xs-3">@Resource.GroupCreateDateLabel</dt>
-        <dd class="col-md-9 col-sm-9 col-xs-9" ng-bind="createDate | date: MM/dd/yyyy"></dd>
+        <div class="row">
+            <dt class="col-md-3 col-sm-3 col-xs-3">@Resource.GroupCreateDateLabel</dt>
+            <dd class="col-md-9 col-sm-9 col-xs-9" ng-bind="createDate | date: MM/dd/yyyy"></dd>
+        </div>
 
-        <dt class="col-md-3 col-sm-3 col-xs-3">@Resource.GroupDescriptionLabel</dt>
-        <dd class="col-md-9 col-sm-9 col-xs-9">
-            <p ng-show="description.length > 0" ng-bind="description"></p>
-            <p ng-hide="description.length">&mdash;</p>
-        </dd>
+        <div class="row">
+            <dt class="col-md-3 col-sm-3 col-xs-3">@Resource.GroupDescriptionLabel</dt>
+            <dd class="col-md-9 col-sm-9 col-xs-9">
+                <p ng-show="description.length > 0" ng-bind="description"></p>
+                <p ng-hide="description.length">&mdash;</p>
+            </dd>
+        </div>
 
-        <dt class="col-md-3 col-sm-3 col-xs-3">@Resource.GroupOwnerLabel</dt>
-        <dd class="col-md-9 col-sm-9 col-xs-9">
-            <p ng-bind="ownerName"></p>
-            <div>
-                <img ng-src="{{ownerPhoto}}" />
-            </div>
-        </dd>
+        <div class="row">
+            <dt class="col-md-3 col-sm-3 col-xs-3">@Resource.GroupOwnerLabel</dt>
+            <dd class="col-md-9 col-sm-9 col-xs-9">
+                <p ng-bind="ownerName"></p>
+                <div>
+                    <img ng-src="{{ownerPhoto}}" />
+                </div>
+            </dd>
+        </div>
     </dl>
 </section>

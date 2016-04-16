@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Teachersteams.Business.Enums;
-using Teachersteams.Business.ViewModels;
+using Teachersteams.Business.ViewModels.Group;
 using Teachersteams.Shared.Dependency;
 
 namespace Teachersteams.Business.Services

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using Teachersteams.Business.Enums;
 using Teachersteams.Business.Retrievers.Group.Contract;
-using Teachersteams.Business.ViewModels;
 using Teachersteams.Domain;
 using Teachersteams.Business.Attributes;
+using Teachersteams.Business.ViewModels.Group;
 
 namespace Teachersteams.Business.Retrievers.Group
 {

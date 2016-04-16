@@ -35,6 +35,24 @@ html, body{
     border-color: @success-color !important;
 }
 
+.ui-grid-vcenter div{
+    position: relative;
+    top: 15%;
+}
+
+.ui-grid-hcenter div{
+    text-align: center;
+}
+
+.ui-grid-cell-content{
+    margin: 0px;
+}
+
+p.no-items{
+    text-align: center;
+    margin-top: 5px;
+}
+
 .error-messages{
     position: absolute;
     background: @error-color;
@@ -87,6 +105,33 @@ body {
                     }
                 }
             }
+
+            .tt-tab-content{
+                padding: 20px;
+
+                .invite-user-row{
+                    margin-bottom: 10px;
+                }
+            }
         }
+    }
+
+    footer{
+        text-align: center;
+    }
+}
+
+.invite-teacher-dialog{
+    .info-icons{
+        min-height: 25px;
+
+        p{
+            padding: 0px;
+            margin: 0px;
+        }
+    }
+
+    .photo{
+        margin: 10px;
     }
 }

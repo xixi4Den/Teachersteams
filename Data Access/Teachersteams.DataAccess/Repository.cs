@@ -133,7 +133,8 @@ namespace Teachersteams.DataAccess
                     return parameters.SortRules(queryable);
                 }
             }
-            return queryable;
+            //sorts by id because Skip() method works only with sorted queries
+            return queryable.OrderBy(x => x.Id);
         }
 
         private IQueryable<T> ApplyPageParameters(IQueryable<T> queryable, QueryParameters<T> parameters)

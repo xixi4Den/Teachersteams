@@ -3,8 +3,8 @@
 <!DOCTYPE html>
 <html ng-app="ttApp">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
     <title>@Resource.SiteTitle</title>
     @Styles.Render("~/Content/css")
     <script src="https://vk.com/js/api/xd_connection.js?2" type="text/javascript"></script>
@@ -19,7 +19,16 @@
             <p>&copy; @DateTime.Now.Year - @Resource.SiteTitle</p>
         </footer>
     </div>
-@Scripts.Render("~/bundles/libs")
-@Scripts.Render("~/bundles/scripts")
+    @Scripts.Render("~/bundles/libs")
+    @Scripts.Render("~/bundles/scripts")
 </body>
 </html>
+
+<script type="text/javascript">
+    resources = {
+        photoColumnName: "@Resource.TeachersGridPhotoColumnName",
+        uidColumnName: "@Resource.TeachersGridUidColumnName",
+        fullnameColumnName: "@Resource.TeachersGridFullNameColumnName",
+        actionsColumnName: "@Resource.TeachersGridActionsColumnName"
+    }
+</script>

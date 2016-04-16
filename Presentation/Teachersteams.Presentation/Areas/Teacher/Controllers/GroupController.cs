@@ -14,12 +14,22 @@ namespace Teachersteams.Presentation.Areas.Teacher.Controllers
             return View();
         }
 
-        public ActionResult Create()
+        public ActionResult CreateDialog()
         {
             return View();
         }
 
         public ActionResult InfoTab()
+        {
+            return View();
+        }
+
+        public ActionResult TeachersTab()
+        {
+            return View();
+        }
+
+        public ActionResult InviteTeacherDialog()
         {
             return View();
         }

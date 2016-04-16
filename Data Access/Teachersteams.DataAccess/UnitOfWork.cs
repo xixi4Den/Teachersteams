@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using Teachersteams.Domain;
+using Teachersteams.Domain.Entities;
 using Teachersteams.Domain.Query;
 using Teachersteams.Shared.Utilities;
 using Teachersteams.Shared.Validation;
@@ -15,13 +16,17 @@ namespace Teachersteams.DataAccess
         private readonly IDictionary<Type, object> repositories;
 
         public UnitOfWork(Context context,
-            Func<DbContext, IRepository<Group>> groupRepositoryFactory)
+            Func<DbContext, IRepository<Group>> groupRepositoryFactory,
+            Func<DbContext, IRepository<Teacher>> teacherRepositoryFactory,
+            Func<DbContext, IRepository<Student>> studentRepositoryFactory)
         {
             Contract.Requires<ArgumentNullException>(context != null, "context cannot be null");
             repositories = new Dictionary<Type,object>();
             this.context = context;
 
             RegisterRepository(groupRepositoryFactory(context));
+            RegisterRepository(teacherRepositoryFactory(context));
+            RegisterRepository(studentRepositoryFactory(context));
         }
 
         public void Commit()

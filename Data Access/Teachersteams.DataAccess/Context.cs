@@ -16,6 +16,8 @@ namespace Teachersteams.DataAccess
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new GroupMap());
+            modelBuilder.Configurations.Add(new TeacherMap());
+            modelBuilder.Configurations.Add(new StudentMap());
         }
     }
 }

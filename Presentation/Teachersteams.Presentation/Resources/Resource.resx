@@ -225,4 +225,34 @@
   <data name="GroupTitleLabel" xml:space="preserve">
     <value>Title</value>
   </data>
+  <data name="FieldIsRequiredValidationMessage" xml:space="preserve">
+    <value>Please fill in this field. It cannot be empty.</value>
+  </data>
+  <data name="InviteButtonLabel" xml:space="preserve">
+    <value>Invite</value>
+  </data>
+  <data name="InviteTeacherDilaogTitle" xml:space="preserve">
+    <value>Invite teacher</value>
+  </data>
+  <data name="NoResultsMessage" xml:space="preserve">
+    <value>No resoults</value>
+  </data>
+  <data name="TeacherNamePlaseholderMessage" xml:space="preserve">
+    <value>Type user name here</value>
+  </data>
+  <data name="NoItems" xml:space="preserve">
+    <value>No items</value>
+  </data>
+  <data name="TeachersGridActionsColumnName" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="TeachersGridFullNameColumnName" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="TeachersGridPhotoColumnName" xml:space="preserve">
+    <value>Photo</value>
+  </data>
+  <data name="TeachersGridUidColumnName" xml:space="preserve">
+    <value>Uid</value>
+  </data>
 </root>
