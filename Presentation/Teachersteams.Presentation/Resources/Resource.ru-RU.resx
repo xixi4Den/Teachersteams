@@ -189,7 +189,7 @@
   <data name="StudentSwitchLabel" xml:space="preserve">
     <value>Студент</value>
   </data>
-  <data name="SubHeaderGroups" xml:space="preserve">
+  <data name="TeachersGroupsSubHeader" xml:space="preserve">
     <value>в которых вы преподаете</value>
   </data>
   <data name="TeacherSwitchLabel" xml:space="preserve">
@@ -257,5 +257,8 @@
   </data>
   <data name="InviteStudentDilaogTitle" xml:space="preserve">
     <value>Пригласить студента</value>
+  </data>
+  <data name="StudentsGroupsSubHeader" xml:space="preserve">
+    <value>в которых вы учитесь</value>
   </data>
 </root>

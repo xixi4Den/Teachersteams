@@ -1,8 +1,4 @@
-﻿@using Teachersteams.Presentation.Resources
-
-<tabset>
-    <tab title="@Resource.GroupInfoTabTitle" template-url="@Url.Action("InfoTab", "Group" , new { area = "Teacher" })"></tab>
-    <tab title="@Resource.GroupStudentsTabTitle" template-url="@Url.Action("StudentsTab", "Group", new { area = "Teacher" })"></tab>
-    <tab title="@Resource.GroupTeachersTabTitle" template-url="@Url.Action("TeachersTab", "Group" , new { area="Teacher" })"></tab>
-    <tab title="@Resource.GroupTasksTabTitle"></tab>
-</tabset>
+﻿@Html.Partial("GroupDetails", new ViewDataDictionary
+{
+    {"Area", "Teacher"}
+})

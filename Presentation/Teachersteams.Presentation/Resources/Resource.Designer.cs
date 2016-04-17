@@ -394,20 +394,20 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to where you are a student.
+        /// </summary>
+        public static string StudentsGroupsSubHeader {
+            get {
+                return ResourceManager.GetString("StudentsGroupsSubHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Student.
         /// </summary>
         public static string StudentSwitchLabel {
             get {
                 return ResourceManager.GetString("StudentSwitchLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to where you are a teacher.
-        /// </summary>
-        public static string SubHeaderGroups {
-            get {
-                return ResourceManager.GetString("SubHeaderGroups", resourceCulture);
             }
         }
         
@@ -453,6 +453,15 @@ namespace Teachersteams.Presentation.Resources {
         public static string TeachersGridUidColumnName {
             get {
                 return ResourceManager.GetString("TeachersGridUidColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to where you are a teacher.
+        /// </summary>
+        public static string TeachersGroupsSubHeader {
+            get {
+                return ResourceManager.GetString("TeachersGroupsSubHeader", resourceCulture);
             }
         }
         

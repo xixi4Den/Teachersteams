@@ -37,9 +37,10 @@ namespace Teachersteams.Business.Modules
 
         private void RegisterGroupRetrievers(ContainerBuilder builder)
         {
-            RegisterGroupRetriever<AllGroupRetriever>(builder);
+            RegisterGroupRetriever<AllTeacherGroupRetriever>(builder);
             RegisterGroupRetriever<OwnGroupRetriever>(builder);
-            RegisterGroupRetriever<AssistGroupRetriever>(builder);
+            RegisterGroupRetriever<TeacherAssistantRetriever>(builder);
+            RegisterGroupRetriever<StudentGroupRetriever>(builder);
         }
 
         private void RegisterGroupRetriever<T>(ContainerBuilder builder)

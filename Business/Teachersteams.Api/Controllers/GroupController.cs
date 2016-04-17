@@ -19,9 +19,9 @@ namespace Teachersteams.Api.Controllers
         }
 
         [HttpGet]
-        public HttpResponseMessage GetForTeacher(string userId, GroupFilterType filterType, int pageIndex, int pageSize)
+        public HttpResponseMessage GetTitles(string userId, GroupFilterType filterType, int pageIndex, int pageSize)
         {
-            var groups = groupService.GetTeacherGroupTitles(userId, filterType, pageIndex, pageSize);
+            var groups = groupService.GetGroupTitles(userId, filterType, pageIndex, pageSize);
             return Request.CreateResponse(HttpStatusCode.OK, groups);
         }
 

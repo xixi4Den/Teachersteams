@@ -5,6 +5,6 @@ namespace Teachersteams.Business.Retrievers.Group.Contract
 {
     public interface IGroupRetriever
     {
-        IEnumerable<GroupTitleViewModel> Retrieve(string ownerId, int pageIndex, int pageSize);
+        IEnumerable<GroupTitleViewModel> Retrieve(string uid, int pageIndex, int pageSize);
     }
 }

@@ -1,6 +1,6 @@
 ﻿angular.module('ttServices')
     .factory('$ttGroupService', ['$userHttp', function ($userHttp) {
-        var getUrl = 'group/GetForTeacher';
+        var getUrl = 'group/GetTitles';
         var getInfoUrl = 'group/Get/';
         var createUrl = 'group/Post';
 
@@ -10,8 +10,8 @@
             },
 
             get: function (filterType, index, maxCount) {
-                if (filterType < 0 || filterType > 2) {
-                    throw new Error("unsupported filter type");
+                if (filterType < 0 || filterType > 3) {
+                    throw new Error("unsupported group filter type");
                 }
                 if (index <= 0) {
                     throw new Error("index for retrieving a portion of groups should be positive");

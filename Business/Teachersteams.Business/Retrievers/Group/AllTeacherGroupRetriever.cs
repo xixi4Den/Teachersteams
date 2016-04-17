@@ -1,25 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using Teachersteams.Business.Attributes;
 using Teachersteams.Business.Enums;
 using Teachersteams.Business.Retrievers.Group.Contract;
-using Teachersteams.Business.ViewModels.Group;
 using Teachersteams.Domain;
+using Teachersteams.Business.Attributes;
+using Teachersteams.Business.ViewModels.Group;
 
 namespace Teachersteams.Business.Retrievers.Group
 {
 
-    [GroupRetrieverMeta(GroupFilterType.Assist)]
-    public class AssistGroupRetriever : IGroupRetriever
+    [GroupRetrieverMeta(GroupFilterType.AllForTeacher)]
+    public class AllTeacherGroupRetriever : IGroupRetriever
     {
         private readonly IUnitOfWork unitOfWork;
 
-        public AssistGroupRetriever(IUnitOfWork unitOfWork)
+        public AllTeacherGroupRetriever(IUnitOfWork unitOfWork)
         {
             this.unitOfWork = unitOfWork;
         }
 
-        public IEnumerable<GroupTitleViewModel> Retrieve(string userId, int pageIndex, int pageSize)
+        public IEnumerable<GroupTitleViewModel> Retrieve(string uid, int pageIndex, int pageSize)
         {
             throw new NotImplementedException();
         }

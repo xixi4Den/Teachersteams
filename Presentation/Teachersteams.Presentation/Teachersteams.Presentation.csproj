@@ -170,7 +170,10 @@
     <Content Include="Scripts\controllers\groupUsersTabBaseController.js" />
     <Content Include="Scripts\controllers\inviteUserDilaogBaseController.js" />
     <Content Include="Scripts\controllers\inviteStudentDialogController.js" />
+    <Content Include="Scripts\controllers\studentGroupListController.js" />
+    <Content Include="Scripts\controllers\teacherGroupListController.js" />
     <Content Include="Scripts\directives\noItemsMessageDirective.js" />
+    <Content Include="Scripts\groupFilterType.js" />
     <Content Include="Scripts\libs\ui-grid.js" />
     <Content Include="Content\ui-grid\ui-grid.min.css" />
     <Content Include="Scripts\libs\ui-grid.min.js" />
@@ -180,7 +183,7 @@
     <Content Include="Scripts\controllers\aboutController.js" />
     <Content Include="Scripts\controllers\createGroupController.js" />
     <Content Include="Scripts\controllers\groupInfoTabController.js" />
-    <Content Include="Scripts\controllers\groupListController.js" />
+    <Content Include="Scripts\controllers\groupListBaseController.js" />
     <Content Include="Scripts\controllers\groupTeachersTabController.js" />
     <Content Include="Scripts\controllers\inviteTeacherDialogController.js" />
     <Content Include="Scripts\controllers\mainController.js" />
@@ -282,6 +285,9 @@
     <Content Include="Areas\Teacher\Views\Shared\TeacherGridItemsTemplate.cshtml" />
     <Content Include="Areas\Teacher\Views\Shared\StudentGridItemsTemplate.cshtml" />
     <Content Include="Areas\Teacher\Views\Shared\SearchUserRowTemplate.cshtml" />
+    <Content Include="Areas\Student\Views\Group\InfoTab.cshtml" />
+    <Content Include="Areas\Student\Views\Group\TeachersTab.cshtml" />
+    <Content Include="Areas\Student\Views\Group\StudentsTab.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\CommonTemplates\NavbarTemplate.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
@@ -292,6 +298,8 @@
     <Content Include="Scripts\libs\angular\angular-sanitize.min.js" />
     <Content Include="Views\Shared\GroupList.cshtml" />
     <Content Include="Views\Shared\PhotoTemplate.cshtml" />
+    <Content Include="Views\Shared\GroupInfo.cshtml" />
+    <Content Include="Views\Shared\GroupDetails.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

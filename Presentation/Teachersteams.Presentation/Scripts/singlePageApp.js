@@ -28,6 +28,13 @@ app.config(function ($stateProvider) {
             templateUrl: '/Student/Group',
             controller: 'ttStudentGroupsController'
         })
+        .state('student/groups.details', {
+            url: '/student/groups/details/{groupId}',
+            templateUrl: '/Student/Group/Details',
+            controller: function ($scope, $stateParams) {
+                $scope.groupId = $stateParams.groupId;
+            }
+        })
         .state('student/board', {
             url: '/student/board',
             templateUrl: '/Student/Board',

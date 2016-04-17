@@ -1,7 +1,12 @@
-﻿<div class="tt-group-list" ng-controller="ttGroupListController">
+﻿@{
+    string ngController = ViewData.ContainsKey("NgController") ? ViewData["NgController"].ToString() : string.Empty;
+    string ngItemUiSref = ViewData.ContainsKey("NgItemUiSref") ? ViewData["NgItemUiSref"].ToString() : string.Empty;
+}
+
+<div class="tt-group-list" ng-controller="@ngController">
     <div class="list-group tt-group-items">
         <a ng-repeat="group in groups"
-           ui-sref="teacher/groups.details({ groupId: group.Id })"
+           ui-sref="@ngItemUiSref"
            class="list-group-item tt-group-item scale-animation">{{ group.Title }}</a>
     </div>
     <ul class="pager">

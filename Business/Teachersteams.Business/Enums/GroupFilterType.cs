@@ -2,8 +2,9 @@
 {
     public enum GroupFilterType
     {
-        All = 0,
+        AllForTeacher = 0,
         Own = 1,
-        Assist = 2,
+        ForTeacherAssistant = 2,
+        ForStudent = 3,
     }
 }

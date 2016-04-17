@@ -1,1 +1,19 @@
-﻿Student's groups
+﻿@using Teachersteams.Presentation.Resources
+
+<div class="container-fluid">
+    <div class="page-header">
+        <h1>@Resource.HeaderGroups <small>@Resource.StudentsGroupsSubHeader</small></h1>
+    </div>
+    <div class="row tt-groups-content">
+        <div class="col-md-3 col-sm-3 col-xs-3">
+            @Html.Partial("GroupList", new ViewDataDictionary
+            {
+                {"NgController", "ttStudentGroupListController"},
+                {"NgItemUiSref", "student/groups.details({ groupId: group.Id })"}
+            })
+        </div>
+        <div class="col-md-9 col-sm-9 col-sx-9">
+            <div ui-view class="tt-group-details scale-animation"></div>
+        </div>
+    </div>
+</div>

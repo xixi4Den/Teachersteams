@@ -13,7 +13,7 @@
     <div ng-include="'@Url.Action("NavbarTemplate", "CommonTemplates")'"></div>
     <div loader></div>
     <toast></toast>
-    <div class="container body-content">
+    <div ng-if="isInitDone" class="container body-content">
         <div ui-view class="appear-animation"></div>
         <footer>
             <p>&copy; @DateTime.Now.Year - @Resource.SiteTitle</p>
