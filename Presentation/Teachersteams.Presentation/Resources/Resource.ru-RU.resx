@@ -255,4 +255,7 @@
   <data name="TeachersGridUidColumnName" xml:space="preserve">
     <value>Uid</value>
   </data>
+  <data name="InviteStudentDilaogTitle" xml:space="preserve">
+    <value>Пригласить студента</value>
+  </data>
 </root>

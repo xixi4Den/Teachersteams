@@ -112,7 +112,6 @@
     <Folder Include="Areas\Student\Models\" />
     <Folder Include="Areas\Student\Views\Shared\" />
     <Folder Include="Areas\Teacher\Models\" />
-    <Folder Include="Areas\Teacher\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -167,6 +166,10 @@
     <Content Include="Content\switchery\switchery.css" />
     <Content Include="Content\switchery\switchery.min.css" />
     <Content Include="Content\ui-grid\ui-grid.css" />
+    <Content Include="Scripts\controllers\groupStudentsTabController.js" />
+    <Content Include="Scripts\controllers\groupUsersTabBaseController.js" />
+    <Content Include="Scripts\controllers\inviteUserDilaogBaseController.js" />
+    <Content Include="Scripts\controllers\inviteStudentDialogController.js" />
     <Content Include="Scripts\directives\noItemsMessageDirective.js" />
     <Content Include="Scripts\libs\ui-grid.js" />
     <Content Include="Content\ui-grid\ui-grid.min.css" />
@@ -214,8 +217,10 @@
     <Content Include="Scripts\modules.js" />
     <Content Include="Scripts\services\gridHelper.js" />
     <Content Include="Scripts\services\groupService.js" />
+    <Content Include="Scripts\services\studentService.js" />
     <Content Include="Scripts\services\userHttpService.js" />
     <Content Include="Scripts\services\teacherService.js" />
+    <Content Include="Scripts\services\userService.js" />
     <Content Include="Scripts\services\vkService.js" />
     <Content Include="Scripts\singlePageApp.js" />
     <Content Include="Scripts\sortingDirection.js" />
@@ -261,7 +266,7 @@
     <Content Include="Areas\Student\Views\Group\Details.cshtml" />
     <Content Include="Areas\Student\Views\Board\Index.cshtml" />
     <Content Include="Areas\Student\Views\Notification\Index.cshtml" />
-    <Content Include="Areas\Teacher\Views\Group\CreateDialog.cshtml" />
+    <Content Include="Areas\Teacher\Views\Group\CreateGroupDialog.cshtml" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
@@ -269,10 +274,14 @@
     <Content Include="Content\transitions.less" />
     <Content Include="Areas\Teacher\Views\Group\InfoTab.cshtml" />
     <Content Include="Areas\Teacher\Views\Group\TeachersTab.cshtml" />
-    <Content Include="Areas\Teacher\Views\Group\InviteTeacherDialog.cshtml" />
+    <Content Include="Areas\Teacher\Views\Group\InviteUserDialog.cshtml" />
     <Content Include="Content\ui-grid\ui-grid.eot" />
     <Content Include="Content\ui-grid\ui-grid.ttf" />
     <Content Include="Content\ui-grid\ui-grid.woff" />
+    <Content Include="Areas\Teacher\Views\Group\StudentsTab.cshtml" />
+    <Content Include="Areas\Teacher\Views\Shared\TeacherGridItemsTemplate.cshtml" />
+    <Content Include="Areas\Teacher\Views\Shared\StudentGridItemsTemplate.cshtml" />
+    <Content Include="Areas\Teacher\Views\Shared\SearchUserRowTemplate.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\CommonTemplates\NavbarTemplate.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
@@ -282,6 +291,7 @@
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Scripts\libs\angular\angular-sanitize.min.js" />
     <Content Include="Views\Shared\GroupList.cshtml" />
+    <Content Include="Views\Shared\PhotoTemplate.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

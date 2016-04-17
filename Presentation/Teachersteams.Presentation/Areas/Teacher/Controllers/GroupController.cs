@@ -14,7 +14,7 @@ namespace Teachersteams.Presentation.Areas.Teacher.Controllers
             return View();
         }
 
-        public ActionResult CreateDialog()
+        public ActionResult CreateGroupDialog()
         {
             return View();
         }
@@ -29,7 +29,12 @@ namespace Teachersteams.Presentation.Areas.Teacher.Controllers
             return View();
         }
 
-        public ActionResult InviteTeacherDialog()
+        public ActionResult StudentsTab()
+        {
+            return View();
+        }
+
+        public ActionResult InviteUserDialog()
         {
             return View();
         }

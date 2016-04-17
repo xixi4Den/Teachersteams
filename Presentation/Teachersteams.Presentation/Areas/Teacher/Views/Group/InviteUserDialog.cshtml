@@ -1,0 +1,54 @@
+﻿@using Teachersteams.Presentation.Resources
+
+<div class="dialog-contents">
+    <div class="invite-user-dialog">
+        <h4 ng-bind="ngDialogData.title"></h4>
+        <div>
+            <form novalidate name="inviteUserForm">
+                <div class="form-group" ng-class="{ 'has-error': inviteUserForm.user.$touched && inviteUserForm.user.$invalid,
+                 'has-success': inviteUserForm.user.$touched && inviteUserForm.user.$valid }">
+                    <div class="input-group info-icons">
+                        <p ng-show="loadingLocations">
+                            <span class="glyphicon glyphicon-refresh"></span>
+                        </p>
+                        <p ng-show="noResults">
+                            <span class="glyphicon glyphicon-remove"></span> @Resource.NoResultsMessage
+                        </p>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" name="user" ng-model="result" placeholder="@Resource.TeacherNamePlaseholderMessage"
+                               uib-typeahead="user as user.first_name + ' ' + user.last_name for user in getUsers($viewValue)"
+                               typeahead-loading="loadingLocations" typeahead-no-results="noResults"
+                               class="form-control" typeahead-editable="false" id="user-input"
+                               typeahead-template-url="searchUserRowTemplate" required/>
+                        <span ng-show="inviteUserForm.user.$touched && inviteUserForm.user.$invalid" class="input-group-addon">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </span>
+                        <span ng-show="inviteUserForm.user.$touched && inviteUserForm.user.$valid" class="input-group-addon">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </span>
+                    </div>
+                    <div class="error-messages" ng-messages="inviteUserForm.user.$error" ng-show="inviteUserForm.user.$touched && inviteUserForm.user.$invalid">
+                        <p ng-message="parse">@Resource.FieldIsRequiredValidationMessage</p>
+                        <p ng-message="required">@Resource.FieldIsRequiredValidationMessage</p>
+                    </div>
+                    <div class="photo">
+                        <img ng-show="result" ng-src="{{result.photo_medium}}">
+                    </div>
+
+                </div>
+            </form>
+        </div>
+        <div class="ngdialog-buttons">
+            <button type="button" class="btn-default ngdialog-button" ng-click="cancel()">@Resource.CloseButtonLabel</button>
+            <button type="button" class="btn-info ngdialog-button" ng-click="invite()">@Resource.InviteButtonLabel</button>
+        </div>
+    </div>
+</div>
+
+<script type="text/ng-template" id="searchUserRowTemplate">
+    <a>
+        <img ng-src="{{match.model.photo_medium}}" width="32">
+        <span ng-bind-html="match.label | uibTypeaheadHighlight:query"></span>
+    </a>
+</script>

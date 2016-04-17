@@ -1,12 +1,12 @@
 ﻿var app = angular.module("ttControllers");
-app.controller('ttInviteTeacherDialogController', [
+app.controller('ttInviteStudentDialogController', [
     '$scope',
-    '$ttTeacherService',
+    '$ttStudentService',
     '$controller',
-    function ($scope, $ttTeacherService, $controller) {
+    function ($scope, $ttStudentService, $controller) {
         $controller('ttInviteUserDialogBaseController', { $scope: $scope });
 
         $scope.inviteInternal = function (invitation) {
-            return $ttTeacherService.invite(invitation);
+            return $ttStudentService.invite(invitation);
         }
-}]);
+    }]);

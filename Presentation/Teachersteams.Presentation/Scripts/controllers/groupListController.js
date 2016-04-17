@@ -24,7 +24,7 @@ app.controller('ttGroupListController', ['$scope', '$ttGroupService', function (
 
     $scope.previous = function () {
         var previousIndex = $scope.index - 1;
-        if (previousIndex > 1) {
+        if (previousIndex >= 1) {
             getGroups(previousIndex);
         }
     }

@@ -277,6 +277,15 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invite student.
+        /// </summary>
+        public static string InviteStudentDilaogTitle {
+            get {
+                return ResourceManager.GetString("InviteStudentDilaogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invite teacher.
         /// </summary>
         public static string InviteTeacherDilaogTitle {

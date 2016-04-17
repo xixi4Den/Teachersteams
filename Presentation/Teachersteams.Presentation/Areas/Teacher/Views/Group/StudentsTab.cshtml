@@ -1,0 +1,14 @@
+﻿@using Teachersteams.Presentation.Resources
+
+<section ng-controller="ttGroupStudentsTabController" class="tt-tab-content">
+    <div class="row invite-user-row">
+        <button class="btn btn-info" ng-click="invite()">@Resource.InviteButtonLabel</button>
+    </div>
+    <div class="row">
+        <div id="studentsGrid" ui-grid="gridOptions" ui-grid-pagination class="grid" no-items-message data-show-empty-msg="@Resource.NoItems"></div>
+    </div>
+</section>
+
+@Html.Partial("PhotoTemplate")
+
+@Html.Partial("StudentGridItemsTemplate")

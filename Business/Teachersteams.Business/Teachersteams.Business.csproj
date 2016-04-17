@@ -64,10 +64,13 @@
     <Compile Include="Helpers\GridOptionsHelper.cs" />
     <Compile Include="Helpers\IGridOptionsHelper.cs" />
     <Compile Include="Modules\BusinessModule.cs" />
-    <Compile Include="Services\IUserService.cs" />
+    <Compile Include="Services\IStudentService.cs" />
+    <Compile Include="Services\ITeacherService.cs" />
     <Compile Include="Services\Mapping\GroupMapProfile.cs" />
     <Compile Include="Services\Mapping\UserMapProfile.cs" />
-    <Compile Include="Services\UserService.cs" />
+    <Compile Include="Services\StudentService.cs" />
+    <Compile Include="Services\TeacherService.cs" />
+    <Compile Include="Services\UserBaseService.cs" />
     <Compile Include="Utils\MapperUtils.cs" />
     <Compile Include="Retrievers\Group\AllGroupRetriever.cs" />
     <Compile Include="Retrievers\Group\AssistGroupRetriever.cs" />

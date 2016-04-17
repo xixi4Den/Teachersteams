@@ -4,7 +4,6 @@ using System.Linq;
 using System.Linq.Expressions;
 using Teachersteams.Business.Enums;
 using Teachersteams.Business.ViewModels.Grid;
-using Teachersteams.Domain.Entities;
 using Teachersteams.Shared.Validation;
 
 namespace Teachersteams.Business.Helpers
@@ -33,7 +32,7 @@ namespace Teachersteams.Business.Helpers
                 var direction = directionMapping[gridOptions.SortingDirection];
 
                 return x => (IOrderedQueryable<TEntity>)x.Provider
-                    .CreateQuery<Teacher>(Expression.Call(typeof (Queryable), direction,
+                    .CreateQuery<TEntity>(Expression.Call(typeof (Queryable), direction,
                         new[] {typeOfT, propertyType}, x.Expression, orderExpression));
 
             }

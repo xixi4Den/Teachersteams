@@ -1,0 +1,6 @@
+﻿<script type="text/ng-template" id="actions-template">
+    <div class="ui-grid-cell-contents">
+        <button class="btn btn-info" ng-show="isApproved(row)" ng-click="grid.appScope.test(grid, row)"><span class="glyphicon glyphicon-flag"></span></button>
+        <button class="btn btn-danger" ng-show="isApproved(row)" ng-click="grid.appScope.test(grid, row)"><span class="glyphicon glyphicon-trash"></span></button>
+    </div>
+</script>

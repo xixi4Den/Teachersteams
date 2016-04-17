@@ -8,39 +8,37 @@ using Teachersteams.Business.ViewModels.User;
 
 namespace Teachersteams.Api.Controllers
 {
-    public class TeacherController : ApiController
+    public class StudentController : ApiController
     {
-        private readonly ITeacherService teacherService;
+        private readonly IStudentService studentService;
 
-        public TeacherController(ITeacherService teacherService)
+        public StudentController(IStudentService studentService)
         {
-            this.teacherService = teacherService;
+            this.studentService = studentService;
         }
 
         [HttpPost]
-        public HttpResponseMessage Post(string userId, [FromBody]TeacherViewModel viewModel)
+        public HttpResponseMessage Post(string userId, [FromBody]StudentViewModel viewModel)
         {
             if (ModelState.IsValid)
             {
-                var teacher = teacherService.Invite(viewModel);
+                var teacher = studentService.Invite(viewModel);
                 return Request.CreateResponse(HttpStatusCode.Created, teacher);
             }
             return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
         }
 
-        //[Route("api/teacher/{groupId}/list")]
         [HttpGet]
         public HttpResponseMessage Get(Guid groupId, string userId, [FromUri]GridOptions options)
         {
-            var teachers = teacherService.GetUsers(groupId, options);
+            var teachers = studentService.GetUsers(groupId, options);
             return Request.CreateResponse(HttpStatusCode.OK, teachers);
         }
 
-        //[Route("api/teacher/{groupId}/count")]
         [HttpGet]
         public HttpResponseMessage Count(Guid groupId, string userId)
         {
-            var teachers = teacherService.Count(groupId);
+            var teachers = studentService.Count(groupId);
             return Request.CreateResponse(HttpStatusCode.OK, teachers);
         }
     }
