@@ -29,7 +29,8 @@ namespace Teachersteams.Presentation
                 .IncludeDirectory("~/Scripts/services", "*.js")
                 .IncludeDirectory("~/Scripts/controllers", "*.js")
                 .IncludeDirectory("~/Scripts/directives", "*.js")
-                .Include("~/Scripts/sortingDirection.js"));
+                .Include("~/Scripts/sortingDirection.js")
+                .Include("~/Scripts/groupFilterType.js"));
 
             bundles.Add(new StyleBundle("~/Content/css")
                 .Include("~/Content/colors.less")
