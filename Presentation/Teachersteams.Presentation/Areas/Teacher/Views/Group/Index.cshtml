@@ -11,7 +11,7 @@
         <div class="col-md-3 col-sm-3 col-xs-3">
             @Html.Partial("GroupList", new ViewDataDictionary
             {
-                {"NgController", "ttTeacherGroupListController"},
+                {"NgController", "ttGroupListControllerForTeacher"},
                 {"NgItemUiSref", "teacher/groups.details({ groupId: group.Id })"},
                 {"NoGroupsDescription", Resource.NoGroupsDescriptionForTeacher}
             })

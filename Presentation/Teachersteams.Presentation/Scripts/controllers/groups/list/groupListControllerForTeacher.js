@@ -1,5 +1,5 @@
 ﻿var app = angular.module("ttControllers");
-app.controller('ttTeacherGroupListController', ['$scope', 'GroupFilterType', '$controller', function ($scope, GroupFilterType, $controller) {
+app.controller('ttGroupListControllerForTeacher', ['$scope', 'GroupFilterType', '$controller', function ($scope, GroupFilterType, $controller) {
     $controller('ttGroupListBaseController', { $scope: $scope });
 
     $scope.filterType = GroupFilterType.Own;

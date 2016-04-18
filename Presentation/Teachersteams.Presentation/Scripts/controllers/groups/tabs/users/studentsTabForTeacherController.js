@@ -1,9 +1,9 @@
 ﻿var app = angular.module("ttControllers");
-app.controller('ttStudentsTabForTeacherController', [
+app.controller('ttStudentsTabControllerForTeacher', [
     '$scope',
     '$controller',
     function ($scope, $controller) {
-        $controller('ttBaseStudentsTabController', { $scope: $scope });
+        $controller('ttStudentsTabBaseController', { $scope: $scope });
         $controller('ttBaseInviteUserController', { $scope: $scope });
 
         $scope.inviteDilaogController = 'ttInviteStudentDialogController';

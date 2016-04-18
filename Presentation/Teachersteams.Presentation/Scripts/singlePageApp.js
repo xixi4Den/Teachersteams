@@ -4,7 +4,7 @@ app.config(function ($stateProvider) {
         .state('teacher/groups', {
             url: '/teacher/groups',
             templateUrl: '/Teacher/Group',
-            controller: 'ttTeacherGroupsController'
+            controller: 'ttGroupsControllerForTeacher'
         })
         .state('teacher/groups.details', {
             url: '/teacher/groups/details/{groupId}',
@@ -16,17 +16,17 @@ app.config(function ($stateProvider) {
         .state('teacher/board', {
             url: '/teacher/board',
             templateUrl: '/Teacher/Board',
-            controller: 'ttTeacherBoardController'
+            controller: 'ttBoardControllerForTeacher'
         })
         .state('teacher/notifications', {
             url: '/teacher/notifications',
             templateUrl: '/Teacher/Notification',
-            controller: 'ttTeacherNotificationsController'
+            controller: 'ttNotificationsControllerForTeacher'
         })
         .state('student/groups', {
             url: '/student/groups',
             templateUrl: '/Student/Group',
-            controller: 'ttStudentGroupsController'
+            controller: 'ttGroupsControllerForStudent'
         })
         .state('student/groups.details', {
             url: '/student/groups/details/{groupId}',
@@ -38,12 +38,12 @@ app.config(function ($stateProvider) {
         .state('student/board', {
             url: '/student/board',
             templateUrl: '/Student/Board',
-            controller: 'ttStudentBoardController'
+            controller: 'ttBoardControllerForStudent'
         })
         .state('student/notifications', {
             url: '/student/notifications',
             templateUrl: '/Student/Notification',
-            controller: 'ttStudentNotificationsController'
+            controller: 'ttNotificationsControllerForStudent'
         })
         .state('about', {
             url: '/about',

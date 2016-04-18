@@ -1,5 +1,5 @@
 ﻿var app = angular.module("ttControllers");
-app.controller('ttCreateGroupController', ['$scope', '$ttGroupService', 'ngToast', function ($scope, $ttGroupService, ngToast) {
+app.controller('ttCreateGroupDialogController', ['$scope', '$ttGroupService', 'ngToast', function ($scope, $ttGroupService, ngToast) {
 
     $scope.create = function (e) {
         if ($scope.addGroupForm.$valid) {

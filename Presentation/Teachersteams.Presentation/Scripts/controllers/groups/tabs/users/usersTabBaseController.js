@@ -1,5 +1,5 @@
 ﻿var app = angular.module("ttControllers");
-app.controller('ttBaseUsersTabController', [
+app.controller('ttUsersTabBaseController', [
     '$scope',
     'uiGridConstants',
     '$stateParams',

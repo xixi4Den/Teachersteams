@@ -8,7 +8,7 @@
         <div class="col-md-3 col-sm-3 col-xs-3">
             @Html.Partial("GroupList", new ViewDataDictionary
             {
-                {"NgController", "ttStudentGroupListController"},
+                {"NgController", "ttGroupListControllerForStudent"},
                 {"NgItemUiSref", "student/groups.details({ groupId: group.Id })"},
                 {"NoGroupsDescription", Resource.NoGroupsDescriptionForStudent}
             })
