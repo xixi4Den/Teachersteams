@@ -1,4 +1,3 @@
 ﻿var app = angular.module("ttControllers");
-app.controller('ttStudentGroupsController', function ($scope) {
-
-});
+app.controller('ttStudentGroupsController', ['$scope', function ($scope) {
+}]);

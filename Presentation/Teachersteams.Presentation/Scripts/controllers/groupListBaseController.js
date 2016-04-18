@@ -3,6 +3,7 @@ app.controller('ttGroupListBaseController', ['$scope', '$ttGroupService', functi
     $scope.maxCount = 5;
     $scope.index = 1;
     $scope.filterType = null;
+    $scope.isEmpty = false;
 
     $scope.getGroups = function (index) {
         $ttGroupService.get($scope.filterType, index, $scope.maxCount)
@@ -10,6 +11,9 @@ app.controller('ttGroupListBaseController', ['$scope', '$ttGroupService', functi
                 if (response.data.length > 0) {
                     $scope.groups = response.data;
                     $scope.index = index;
+                    $scope.isEmpty = false;
+                } else {
+                    $scope.isEmpty = true;
                 }
             });
     };
