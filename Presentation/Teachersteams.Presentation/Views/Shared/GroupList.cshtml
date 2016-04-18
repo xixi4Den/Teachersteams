@@ -1,11 +1,26 @@
-﻿<div class="tt-group-list" ng-controller="ttGroupListController">
-    <div class="list-group tt-group-items">
-        <a ng-repeat="group in groups"
-           ui-sref="teacher/groups.details({ groupId: group.Id })"
-           class="list-group-item tt-group-item scale-animation">{{ group.Title }}</a>
+﻿@using Teachersteams.Presentation.Resources
+@{
+    string ngController = ViewData.ContainsKey("NgController") ? ViewData["NgController"].ToString() : string.Empty;
+    string ngItemUiSref = ViewData.ContainsKey("NgItemUiSref") ? ViewData["NgItemUiSref"].ToString() : string.Empty;
+    string noGroupsDescription = ViewData.ContainsKey("NoGroupsDescription") ? ViewData["NoGroupsDescription"].ToString() : string.Empty;
+}
+
+<div class="tt-group-list" ng-controller="@ngController">
+    <div ng-hide="isEmpty">
+        <div class="list-group tt-group-items">
+            <a ng-repeat="group in groups"
+               ui-sref="@ngItemUiSref"
+               class="list-group-item tt-group-item scale-animation">{{ group.Title }}</a>
+        </div>
+        <ul class="pager">
+            <li><a href="#" ng-click="previous()">&larr;</a></li>
+            <li><a href="#" ng-click="next()">&rarr;</a></li>
+        </ul>
     </div>
-    <ul class="pager">
-        <li><a href="#" ng-click="previous()">&larr;</a></li>
-        <li><a href="#" ng-click="next()">&rarr;</a></li>
-    </ul>
+    <div ng-show="isEmpty" class="no-groups">
+        <div class="jumbotron">
+            <h3>@Resource.NoGroupsMessage</h3>
+            <p>@noGroupsDescription</p>
+        </div>
+    </div>
 </div>

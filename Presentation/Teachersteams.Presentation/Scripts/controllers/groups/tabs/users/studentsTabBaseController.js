@@ -1,13 +1,10 @@
 ﻿var app = angular.module("ttControllers");
-app.controller('ttGroupStudentsTabController', [
+app.controller('ttStudentsTabBaseController', [
     '$scope',
     '$ttStudentService',
     '$controller',
     function ($scope, $ttStudentService, $controller) {
-        $controller('ttGroupUsersTabBaseController', { $scope: $scope });
-
-        $scope.inviteDilaogController = 'ttInviteStudentDialogController';
-        $scope.inviteDialogData = { title: window.resources.inviteStudentDilaogTitle };
+        $controller('ttUsersTabBaseController', { $scope: $scope });
 
         $scope.gridOptions.columnDefs = [
               { name: window.resources.photoColumnName, field: 'Photo', enableSorting: false, width: 70, cellClass: 'ui-grid-hcenter', cellTemplate: 'photo-template' },
@@ -16,6 +13,4 @@ app.controller('ttGroupStudentsTabController', [
         ];
         $scope.gridItemsCountFn = $ttStudentService.count;
         $scope.gridItemsGetFn = $ttStudentService.get;
-
-        $scope.initialize();
     }]);

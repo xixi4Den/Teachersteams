@@ -9,6 +9,8 @@ app.controller('ttMainController', ['$scope', '$vk', '$state', '$http', 'AppCont
         }
     });
 
+    $scope.isInitDone = false;
+
     $http.get('/Home/Settings').success(function (response, status) {
         AppContext.apiUrl = response.BusinessApiUrl;
     });
@@ -19,6 +21,7 @@ app.controller('ttMainController', ['$scope', '$vk', '$state', '$http', 'AppCont
                 AppContext.firstName = r.response[0].first_name;
                 AppContext.lastName = r.response[0].last_name;
                 AppContext.uid = r.response[0].uid;
+                $scope.isInitDone = true;
                 },
             function (r) {
                 console.log("Error!!!");

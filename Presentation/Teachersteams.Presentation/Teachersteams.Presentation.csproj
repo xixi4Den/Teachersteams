@@ -166,11 +166,19 @@
     <Content Include="Content\switchery\switchery.css" />
     <Content Include="Content\switchery\switchery.min.css" />
     <Content Include="Content\ui-grid\ui-grid.css" />
-    <Content Include="Scripts\controllers\groupStudentsTabController.js" />
-    <Content Include="Scripts\controllers\groupUsersTabBaseController.js" />
-    <Content Include="Scripts\controllers\inviteUserDilaogBaseController.js" />
-    <Content Include="Scripts\controllers\inviteStudentDialogController.js" />
+    <Content Include="Scripts\controllers\groups\tabs\users\invite\baseInviteUserController.js" />
+    <Content Include="Scripts\controllers\groups\tabs\users\studentsTabBaseController.js" />
+    <Content Include="Scripts\controllers\groups\tabs\users\teachersTabBaseController.js" />
+    <Content Include="Scripts\controllers\groups\tabs\users\studentsTabForTeacherController.js" />
+    <Content Include="Scripts\controllers\groups\tabs\users\usersTabBaseController.js" />
+    <Content Include="Scripts\controllers\groups\tabs\users\invite\inviteUserDilaogBaseController.js" />
+    <Content Include="Scripts\controllers\groups\tabs\users\invite\inviteStudentDialogController.js" />
+    <Content Include="Scripts\controllers\groups\list\groupListControllerForStudent.js" />
+    <Content Include="Scripts\controllers\groups\tabs\users\studentsTabControllerForStudent.js" />
+    <Content Include="Scripts\controllers\groups\list\groupListControllerForTeacher.js" />
+    <Content Include="Scripts\controllers\groups\tabs\users\teachersTabControllerForStudent.js" />
     <Content Include="Scripts\directives\noItemsMessageDirective.js" />
+    <Content Include="Scripts\groupFilterType.js" />
     <Content Include="Scripts\libs\ui-grid.js" />
     <Content Include="Content\ui-grid\ui-grid.min.css" />
     <Content Include="Scripts\libs\ui-grid.min.js" />
@@ -178,19 +186,19 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\controllers\aboutController.js" />
-    <Content Include="Scripts\controllers\createGroupController.js" />
-    <Content Include="Scripts\controllers\groupInfoTabController.js" />
-    <Content Include="Scripts\controllers\groupListController.js" />
-    <Content Include="Scripts\controllers\groupTeachersTabController.js" />
-    <Content Include="Scripts\controllers\inviteTeacherDialogController.js" />
+    <Content Include="Scripts\controllers\groups\createGroupDialogController.js" />
+    <Content Include="Scripts\controllers\groups\tabs\groupInfoTabController.js" />
+    <Content Include="Scripts\controllers\groups\list\groupListBaseController.js" />
+    <Content Include="Scripts\controllers\groups\tabs\users\teachersTabControllerForTeacher.js" />
+    <Content Include="Scripts\controllers\groups\tabs\users\invite\inviteTeacherDialogController.js" />
     <Content Include="Scripts\controllers\mainController.js" />
     <Content Include="Scripts\controllers\navigationController.js" />
-    <Content Include="Scripts\controllers\studentBoardController.js" />
-    <Content Include="Scripts\controllers\studentGroupsController.js" />
-    <Content Include="Scripts\controllers\studentNotificationsController.js" />
-    <Content Include="Scripts\controllers\teacherBoardController.js" />
-    <Content Include="Scripts\controllers\teacherGroupsController.js" />
-    <Content Include="Scripts\controllers\teacherNotificationsController.js" />
+    <Content Include="Scripts\controllers\board\boardControllerForStudent.js" />
+    <Content Include="Scripts\controllers\groups\groupsControllerForStudent.js" />
+    <Content Include="Scripts\controllers\notifications\notificationsControllerForStudent.js" />
+    <Content Include="Scripts\controllers\board\boardControllerForTeacher.js" />
+    <Content Include="Scripts\controllers\groups\groupsControllerForTeacher.js" />
+    <Content Include="Scripts\controllers\notifications\notificationsControllerForTeacher.js" />
     <Content Include="Scripts\directives\loaderDirective.js" />
     <Content Include="Scripts\directives\tabsetDirective.js" />
     <Content Include="Scripts\libs\angular\angular-animate.js" />
@@ -282,6 +290,9 @@
     <Content Include="Areas\Teacher\Views\Shared\TeacherGridItemsTemplate.cshtml" />
     <Content Include="Areas\Teacher\Views\Shared\StudentGridItemsTemplate.cshtml" />
     <Content Include="Areas\Teacher\Views\Shared\SearchUserRowTemplate.cshtml" />
+    <Content Include="Areas\Student\Views\Group\InfoTab.cshtml" />
+    <Content Include="Areas\Student\Views\Group\TeachersTab.cshtml" />
+    <Content Include="Areas\Student\Views\Group\StudentsTab.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\CommonTemplates\NavbarTemplate.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
@@ -292,6 +303,8 @@
     <Content Include="Scripts\libs\angular\angular-sanitize.min.js" />
     <Content Include="Views\Shared\GroupList.cshtml" />
     <Content Include="Views\Shared\PhotoTemplate.cshtml" />
+    <Content Include="Views\Shared\GroupInfo.cshtml" />
+    <Content Include="Views\Shared\GroupDetails.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

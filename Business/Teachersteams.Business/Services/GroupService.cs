@@ -28,9 +28,9 @@ namespace Teachersteams.Business.Services
             this.mapper = mapper;
         }
 
-        public IEnumerable<GroupTitleViewModel> GetTeacherGroupTitles(string userId, GroupFilterType filterType, int pageIndex, int pageSize)
+        public IEnumerable<GroupTitleViewModel> GetGroupTitles(string uid, GroupFilterType filterType, int pageIndex, int pageSize)
         {
-            return groupRetrievers[filterType].Retrieve(userId, pageIndex, pageSize);
+            return groupRetrievers[filterType].Retrieve(uid, pageIndex, pageSize);
         }
 
         public GroupTitleViewModel CreateGroup(AddGroupViewModel viewModel)

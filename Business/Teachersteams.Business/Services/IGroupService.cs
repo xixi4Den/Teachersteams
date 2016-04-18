@@ -8,7 +8,7 @@ namespace Teachersteams.Business.Services
 {
     public interface IGroupService : IRequestDependency
     {
-        IEnumerable<GroupTitleViewModel> GetTeacherGroupTitles(string userId, GroupFilterType groupFilter, int pageIndex, int pageSize);
+        IEnumerable<GroupTitleViewModel> GetGroupTitles(string uid, GroupFilterType groupFilter, int pageIndex, int pageSize);
 
         GroupTitleViewModel CreateGroup(AddGroupViewModel viewModel);
 

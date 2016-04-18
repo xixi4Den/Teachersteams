@@ -8,6 +8,7 @@ using Teachersteams.Business.Retrievers.Group.Contract;
 using Teachersteams.Business.ViewModels.Group;
 using Teachersteams.Domain;
 using Teachersteams.Domain.Query;
+using DataGroup = Teachersteams.Domain.Entities.Group;
 
 namespace Teachersteams.Business.Retrievers.Group
 {
@@ -24,11 +25,11 @@ namespace Teachersteams.Business.Retrievers.Group
             this.mapper = mapper;
         }
 
-        public IEnumerable<GroupTitleViewModel> Retrieve(string userId, int pageIndex, int pageSize)
+        public IEnumerable<GroupTitleViewModel> Retrieve(string uid, int pageIndex, int pageSize)
         {
-            var parameters = new QueryParameters<Domain.Entities.Group>
+            var parameters = new QueryParameters<DataGroup>
             {
-                FilterRules = x => x.OwnerId == userId,
+                FilterRules = x => x.OwnerId == uid,
                 PageRules = new PageSettings(pageIndex, pageSize),
                 SortRules = x => x.OrderByDescending(group => group.CreateDate)
             };

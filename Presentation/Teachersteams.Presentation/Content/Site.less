@@ -80,44 +80,66 @@ body {
     padding-top: 50px;
     padding-bottom: 20px;
 
-    .body-content {
-        margin: 0 15px;
+    .body-wrapper{
+        .main-content {
+            margin: 0 15px;
 
-        .page-header {
-            margin: 10px;
+            .page-header {
+                margin: 10px;
 
-            h1 {
-                margin: 0;
-            }
-        }
-
-        .tt-groups-content {
-            margin-top: 10px;
-
-            .tt-group-list {
-                padding: 0;
-
-                .tt-group-items {
-                    height: 210px;
-
-                    a.tt-group-item {
-                        overflow-x: hidden;
-                    }
+                h1 {
+                    margin: 0;
                 }
             }
 
-            .tt-tab-content{
-                padding: 20px;
+            .tt-groups-content {
+                margin-top: 10px;
 
-                .invite-user-row{
-                    margin-bottom: 10px;
+                .tt-group-list {
+                    padding: 0;
+
+                    .tt-group-items {
+                        height: 210px;
+
+                        a.tt-group-item {
+                            overflow-x: hidden;
+                        }
+                    }
+
+                    .no-groups{
+                        margin-top: 10px;
+                        text-align: center;
+
+                        .jumbotron{
+                            padding: 10px 5px 20px;
+                            
+                            h3{
+                                margin-bottom: 30px;
+                            }
+
+                            p{
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+
+                .tt-tab-content{
+                    padding: 20px;
+
+                    .invite-user-row{
+                        margin-bottom: 10px;
+                    }
                 }
             }
         }
     }
 
-    footer{
+    footer {
         text-align: center;
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
     }
 }
 

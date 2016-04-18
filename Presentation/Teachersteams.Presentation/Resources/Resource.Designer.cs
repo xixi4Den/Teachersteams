@@ -295,6 +295,33 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You do not study in any group..
+        /// </summary>
+        public static string NoGroupsDescriptionForStudent {
+            get {
+                return ResourceManager.GetString("NoGroupsDescriptionForStudent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There are not groups that satisfied the selected filter..
+        /// </summary>
+        public static string NoGroupsDescriptionForTeacher {
+            get {
+                return ResourceManager.GetString("NoGroupsDescriptionForTeacher", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No groups.
+        /// </summary>
+        public static string NoGroupsMessage {
+            get {
+                return ResourceManager.GetString("NoGroupsMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No items.
         /// </summary>
         public static string NoItems {
@@ -394,20 +421,20 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to where you are a student.
+        /// </summary>
+        public static string StudentsGroupsSubHeader {
+            get {
+                return ResourceManager.GetString("StudentsGroupsSubHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Student.
         /// </summary>
         public static string StudentSwitchLabel {
             get {
                 return ResourceManager.GetString("StudentSwitchLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to where you are a teacher.
-        /// </summary>
-        public static string SubHeaderGroups {
-            get {
-                return ResourceManager.GetString("SubHeaderGroups", resourceCulture);
             }
         }
         
@@ -453,6 +480,15 @@ namespace Teachersteams.Presentation.Resources {
         public static string TeachersGridUidColumnName {
             get {
                 return ResourceManager.GetString("TeachersGridUidColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to where you are a teacher.
+        /// </summary>
+        public static string TeachersGroupsSubHeader {
+            get {
+                return ResourceManager.GetString("TeachersGroupsSubHeader", resourceCulture);
             }
         }
         

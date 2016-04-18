@@ -1,25 +1,12 @@
 ﻿var app = angular.module("ttControllers");
-app.controller('ttGroupUsersTabBaseController', [
+app.controller('ttUsersTabBaseController', [
     '$scope',
-    'ngDialog',
     'uiGridConstants',
     '$stateParams',
     '$gridHelper',
-    function ($scope, ngDialog, uiGridConstants, $stateParams, $gridHelper) {
-        $scope.inviteDilaogController = null;
-        $scope.inviteDialogData = null;
+    function ($scope, uiGridConstants, $stateParams, $gridHelper) {
         $scope.gridItemsCountFn = null;
         $scope.gridItemsGetFn = null;
-
-        $scope.invite = function (e) {
-            var dialog = ngDialog.open({ template: '/Teacher/Group/InviteUserDialog', controller: $scope.inviteDilaogController, data: $scope.inviteDialogData });
-            dialog.closePromise.then(function (newUser) {
-                var result = newUser.value;
-                if ((typeof result !== "undefined") && result.hasOwnProperty('Id') && (typeof result.Id !== "undefined")) {
-                    $gridHelper.getPage();
-                }
-            });
-        }
 
         $scope.gridOptions = {
             rowHeight: 50,

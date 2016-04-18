@@ -189,7 +189,7 @@
   <data name="StudentSwitchLabel" xml:space="preserve">
     <value>Студент</value>
   </data>
-  <data name="SubHeaderGroups" xml:space="preserve">
+  <data name="TeachersGroupsSubHeader" xml:space="preserve">
     <value>в которых вы преподаете</value>
   </data>
   <data name="TeacherSwitchLabel" xml:space="preserve">
@@ -257,5 +257,17 @@
   </data>
   <data name="InviteStudentDilaogTitle" xml:space="preserve">
     <value>Пригласить студента</value>
+  </data>
+  <data name="StudentsGroupsSubHeader" xml:space="preserve">
+    <value>в которых вы учитесь</value>
+  </data>
+  <data name="NoGroupsMessage" xml:space="preserve">
+    <value>Пусто.</value>
+  </data>
+  <data name="NoGroupsDescriptionForStudent" xml:space="preserve">
+    <value>Вы еще не начали обучаться ни в одной группе.</value>
+  </data>
+  <data name="NoGroupsDescriptionForTeacher" xml:space="preserve">
+    <value>Нет ни одной группы, которая соответствуют выбранному фильтру.</value>
   </data>
 </root>
