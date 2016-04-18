@@ -1,1 +1,9 @@
-﻿Students tab
+﻿@using Teachersteams.Presentation.Resources
+
+<section ng-controller="ttStudentsTabForStudentController" class="tt-tab-content">
+    <div class="row">
+        <div id="studentsGrid" ui-grid="gridOptions" ui-grid-pagination class="grid" no-items-message data-show-empty-msg="@Resource.NoItems"></div>
+    </div>
+</section>
+
+@Html.Partial("PhotoTemplate")
