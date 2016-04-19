@@ -270,4 +270,13 @@
   <data name="NoGroupsDescriptionForTeacher" xml:space="preserve">
     <value>Нет ни одной группы, которая соответствуют выбранному фильтру.</value>
   </data>
+  <data name="AllGroupsFilterText" xml:space="preserve">
+    <value>Все</value>
+  </data>
+  <data name="AssistantGroupsFilterText" xml:space="preserve">
+    <value>Помощник</value>
+  </data>
+  <data name="OwnGroupsFilterText" xml:space="preserve">
+    <value>Мои</value>
+  </data>
 </root>

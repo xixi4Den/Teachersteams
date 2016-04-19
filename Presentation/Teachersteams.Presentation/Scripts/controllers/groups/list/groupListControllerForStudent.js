@@ -2,7 +2,7 @@
 app.controller('ttGroupListControllerForStudent', ['$scope', 'GroupFilterType', '$controller', function ($scope, GroupFilterType, $controller) {
     $controller('ttGroupListBaseController', { $scope: $scope });
 
-    $scope.filterType = GroupFilterType.ForStudent;
+    $scope.availableFilters = [{ Id: GroupFilterType.AllForStudent, Text: "" }];
 
-    $scope.getGroups($scope.index);
+    $scope.applyFilter();
 }]);

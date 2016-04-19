@@ -270,4 +270,13 @@
   <data name="NoGroupsDescriptionForTeacher" xml:space="preserve">
     <value>There are not groups that satisfied the selected filter.</value>
   </data>
+  <data name="AllGroupsFilterText" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="AssistantGroupsFilterText" xml:space="preserve">
+    <value>Assistant</value>
+  </data>
+  <data name="OwnGroupsFilterText" xml:space="preserve">
+    <value>Own</value>
+  </data>
 </root>

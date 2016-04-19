@@ -39,8 +39,8 @@ namespace Teachersteams.Business.Modules
         {
             RegisterGroupRetriever<AllTeacherGroupRetriever>(builder);
             RegisterGroupRetriever<OwnGroupRetriever>(builder);
-            RegisterGroupRetriever<TeacherAssistantRetriever>(builder);
-            RegisterGroupRetriever<StudentGroupRetriever>(builder);
+            RegisterGroupRetriever<AssistantGroupRetriever>(builder);
+            RegisterGroupRetriever<AllStudentGroupRetriever>(builder);
         }
 
         private void RegisterGroupRetriever<T>(ContainerBuilder builder)

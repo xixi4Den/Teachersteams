@@ -1,40 +1,23 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System;
+using System.Linq.Expressions;
 using AutoMapper;
 using Teachersteams.Business.Attributes;
 using Teachersteams.Business.Enums;
-using Teachersteams.Business.Extensions;
-using Teachersteams.Business.Retrievers.Group.Contract;
-using Teachersteams.Business.ViewModels.Group;
 using Teachersteams.Domain;
-using Teachersteams.Domain.Query;
 using DataGroup = Teachersteams.Domain.Entities.Group;
 
 namespace Teachersteams.Business.Retrievers.Group
 {
     [GroupRetrieverMeta(GroupFilterType.Own)]
-    public class OwnGroupRetriever: IGroupRetriever
+    public class OwnGroupRetriever: BaseGroupRetriever
     {
-        private readonly IUnitOfWork unitOfWork;
-        private readonly IMapper mapper;
-
-        public OwnGroupRetriever(IUnitOfWork unitOfWork,
-            IMapper mapper)
+        public OwnGroupRetriever(IUnitOfWork unitOfWork, IMapper mapper) : base(unitOfWork, mapper)
         {
-            this.unitOfWork = unitOfWork;
-            this.mapper = mapper;
         }
 
-        public IEnumerable<GroupTitleViewModel> Retrieve(string uid, int pageIndex, int pageSize)
+        protected override Expression<Func<DataGroup, bool>> SpecifyFilter(string uid, int pageIndex, int pageSize)
         {
-            var parameters = new QueryParameters<DataGroup>
-            {
-                FilterRules = x => x.OwnerId == uid,
-                PageRules = new PageSettings(pageIndex, pageSize),
-                SortRules = x => x.OrderByDescending(group => group.CreateDate)
-            };
-            var groups = unitOfWork.GetAll(parameters);
-            return mapper.MapManyTo<GroupTitleViewModel>(groups);
+            return x => x.OwnerId == uid;
         }
     }
 }
