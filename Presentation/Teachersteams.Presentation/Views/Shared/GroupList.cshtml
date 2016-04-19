@@ -6,6 +6,18 @@
 }
 
 <div class="tt-group-list" ng-controller="@ngController">
+
+    <div ng-if="isFilterVisible()" class="tt-group-filter">
+        <div class="btn-group dropup btn-block" uib-dropdown>
+            <button id="filter-button" type="button" class="btn btn-info tt-btn-filter-text">{{selectedFilter.Text}}</button>
+            <button type="button" class="btn btn-info tt-btn-filter-caret" uib-dropdown-toggle>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="filter-button">
+                <li role="menuitem" ng-repeat="filter in availableFilters"><a href="#" ng-click="applyFilter(filter.Id)">{{filter.Text}}</a></li>
+            </ul>
+        </div>
+    </div>
     <div ng-hide="isEmpty">
         <div class="list-group tt-group-items">
             <a ng-repeat="group in groups"

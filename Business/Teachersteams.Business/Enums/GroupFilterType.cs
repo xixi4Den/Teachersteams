@@ -4,7 +4,7 @@
     {
         AllForTeacher = 0,
         Own = 1,
-        ForTeacherAssistant = 2,
-        ForStudent = 3,
+        Assistant = 2,
+        AllForStudent = 3,
     }
 }

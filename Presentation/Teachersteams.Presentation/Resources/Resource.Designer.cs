@@ -70,6 +70,24 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All.
+        /// </summary>
+        public static string AllGroupsFilterText {
+            get {
+                return ResourceManager.GetString("AllGroupsFilterText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assistant.
+        /// </summary>
+        public static string AssistantGroupsFilterText {
+            get {
+                return ResourceManager.GetString("AssistantGroupsFilterText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Board.
         /// </summary>
         public static string BoardTabTitle {
@@ -390,6 +408,15 @@ namespace Teachersteams.Presentation.Resources {
         public static string OhhSecondPart {
             get {
                 return ResourceManager.GetString("OhhSecondPart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Own.
+        /// </summary>
+        public static string OwnGroupsFilterText {
+            get {
+                return ResourceManager.GetString("OwnGroupsFilterText", resourceCulture);
             }
         }
         

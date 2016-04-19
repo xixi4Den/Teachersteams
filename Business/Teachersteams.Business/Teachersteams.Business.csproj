@@ -64,7 +64,8 @@
     <Compile Include="Helpers\GridOptionsHelper.cs" />
     <Compile Include="Helpers\IGridOptionsHelper.cs" />
     <Compile Include="Modules\BusinessModule.cs" />
-    <Compile Include="Retrievers\Group\StudentGroupRetriever.cs" />
+    <Compile Include="Retrievers\Group\BaseGroupRetriever.cs" />
+    <Compile Include="Retrievers\Group\AllStudentGroupRetriever.cs" />
     <Compile Include="Services\IStudentService.cs" />
     <Compile Include="Services\ITeacherService.cs" />
     <Compile Include="Services\Mapping\GroupMapProfile.cs" />
@@ -74,7 +75,7 @@
     <Compile Include="Services\UserBaseService.cs" />
     <Compile Include="Utils\MapperUtils.cs" />
     <Compile Include="Retrievers\Group\AllTeacherGroupRetriever.cs" />
-    <Compile Include="Retrievers\Group\TeacherAssistantRetriever.cs" />
+    <Compile Include="Retrievers\Group\AssistantGroupRetriever.cs" />
     <Compile Include="Retrievers\Group\OwnGroupRetriever.cs" />
     <Compile Include="Retrievers\Group\Contract\IGroupRetriever.cs" />
     <Compile Include="Modules\DataAccessModule.cs" />

@@ -2,11 +2,12 @@
 app.controller('ttGroupListBaseController', ['$scope', '$ttGroupService', function ($scope, $ttGroupService) {
     $scope.maxCount = 5;
     $scope.index = 1;
-    $scope.filterType = null;
     $scope.isEmpty = false;
+    $scope.availableFilters = [];
+    $scope.selectedFilter = {};
 
     $scope.getGroups = function (index) {
-        $ttGroupService.get($scope.filterType, index, $scope.maxCount)
+        $ttGroupService.get($scope.selectedFilter.Id, index, $scope.maxCount)
             .then(function (response) {
                 if (response.data.length > 0) {
                     $scope.groups = response.data;
@@ -30,5 +31,15 @@ app.controller('ttGroupListBaseController', ['$scope', '$ttGroupService', functi
         if (previousIndex >= 1) {
             $scope.getGroups(previousIndex);
         }
+    }
+
+    $scope.applyFilter = function (id) {
+        var filterId = typeof id !== 'undefined' ? id : $scope.availableFilters[0].Id;
+        $scope.selectedFilter = _.findWhere($scope.availableFilters, { Id: filterId });
+        $scope.getGroups(1);
+    }
+
+    $scope.isFilterVisible = function() {
+        return $scope.availableFilters.length > 1;
     }
 }]);
