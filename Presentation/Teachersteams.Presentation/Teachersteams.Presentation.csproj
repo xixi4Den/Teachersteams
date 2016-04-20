@@ -177,6 +177,7 @@
     <Content Include="Scripts\controllers\groups\tabs\users\studentsTabControllerForStudent.js" />
     <Content Include="Scripts\controllers\groups\list\groupListControllerForTeacher.js" />
     <Content Include="Scripts\controllers\groups\tabs\users\teachersTabControllerForStudent.js" />
+    <Content Include="Scripts\controllers\notifications\notificationsBaseController.js" />
     <Content Include="Scripts\directives\noItemsMessageDirective.js" />
     <Content Include="Scripts\groupFilterType.js" />
     <Content Include="Scripts\libs\ui-grid.js" />
@@ -305,6 +306,7 @@
     <Content Include="Views\Shared\PhotoTemplate.cshtml" />
     <Content Include="Views\Shared\GroupInfo.cshtml" />
     <Content Include="Views\Shared\GroupDetails.cshtml" />
+    <Content Include="Views\Shared\NotificationList.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

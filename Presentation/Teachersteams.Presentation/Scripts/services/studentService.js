@@ -3,7 +3,9 @@
         var urls = {
             inviteUrl: 'Student/Post',
             getUrl: 'Student/Get',
-            countUrl: 'Student/Count'
+            countUrl: 'Student/Count',
+            requestsUrl: 'Student/Requests',
+            responseUrl: 'Student/Response'
         }
 
         return angular.extend($ttUserService(urls), {});

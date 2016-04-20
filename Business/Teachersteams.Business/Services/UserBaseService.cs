@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using AutoMapper;
+using Teachersteams.Business.Extensions;
 using Teachersteams.Business.Helpers;
+using Teachersteams.Business.ViewModels;
 using Teachersteams.Business.ViewModels.Grid;
 using Teachersteams.Business.ViewModels.User;
 using Teachersteams.Domain;
 using Teachersteams.Domain.Entities;
+using Teachersteams.Domain.Exceptions;
 using Teachersteams.Domain.Query;
 using Teachersteams.Shared.Validation;
+using DataUserStatus = Teachersteams.Domain.Enums.UserStatus;
 
 namespace Teachersteams.Business.Services
 {
@@ -53,7 +57,7 @@ namespace Teachersteams.Business.Services
                 SortRules = gridOptionsHelper.BuidDynamicOrderedQuery<TEntity>(gridOptions)
             });
 
-            return mapper.Map<IEnumerable<TViewModel>>(teachers);
+            return mapper.MapManyTo<TViewModel>(teachers);
         }
 
         public virtual int Count(Guid groupId)
@@ -64,6 +68,34 @@ namespace Teachersteams.Business.Services
             {
                 FilterRules = x => x.GroupId == groupId
             });
+        }
+
+        public virtual IEnumerable<RequestViewModel> GetRequests(string uid)
+        {
+            var requestsForTeaching = unitOfWork.GetAll(new QueryParameters<TEntity>
+            {
+                FilterRules = x => x.Uid == uid && x.Status == Domain.Enums.UserStatus.Requested,
+                PageRules = new PageSettings(1, 20),
+            });
+
+            return mapper.MapManyTo<RequestViewModel>(requestsForTeaching);
+        }
+
+        public virtual void Response(RequestViewModel viewModel)
+        {
+            Contract.NotNull<ArgumentNullException>(viewModel);
+            Contract.NotNullAndNotEmpty<ArgumentException>(viewModel.UidTo);
+            Contract.NotDefault<Guid, ArgumentException>(viewModel.GroupId);
+
+            var user = unitOfWork.GetFirstOrDefault(new QueryParameters<TEntity>
+            {
+                FilterRules = x => x.Uid == viewModel.UidTo && x.GroupId == viewModel.GroupId,
+            });
+
+            Contract.NotNull<DataNotFoundException>(user);
+            user.ResponseToInvitation((DataUserStatus) viewModel.Response);
+            unitOfWork.InsertOrUpdate(user);
+            unitOfWork.Commit();
         }
     }
 }

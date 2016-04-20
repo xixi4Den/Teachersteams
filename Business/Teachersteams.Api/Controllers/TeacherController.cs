@@ -3,6 +3,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Teachersteams.Business.Services;
+using Teachersteams.Business.ViewModels;
 using Teachersteams.Business.ViewModels.Grid;
 using Teachersteams.Business.ViewModels.User;
 
@@ -42,6 +43,21 @@ namespace Teachersteams.Api.Controllers
         {
             var teachers = teacherService.Count(groupId);
             return Request.CreateResponse(HttpStatusCode.OK, teachers);
+        }
+
+        [HttpGet]
+        public HttpResponseMessage Requests(string userId)
+        {
+            var requests = teacherService.GetRequests(userId);
+            return Request.CreateResponse(HttpStatusCode.OK, requests);
+        }
+
+        [HttpPost]
+        public HttpResponseMessage Response([FromBody]RequestViewModel viewModel, string userId)
+        {
+            viewModel.UidTo = userId;
+            teacherService.Response(viewModel);
+            return Request.CreateResponse(HttpStatusCode.OK, ModelState);
         }
     }
 }

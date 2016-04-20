@@ -1,0 +1,15 @@
+﻿<div class="container-fluid tt-notification-box">
+    <div ng-repeat="request in requests" class="alert alert-info" role="alert">
+        <div class="row tt-notification">
+            <div class="col-md-8 col-sm-8 col-sx-8 tt-notification-body">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                {{messagePattern}}
+                <strong>{{request.GroupName}}</strong>
+            </div>
+            <div class="col-md-4 col-sm-4 col-sx-4 tt-notification-buttons">
+                <button class="btn btn-default pull-right" ng-click="decline(request)">Decline</button>
+                <button class="btn btn-info pull-right" ng-click="accept(request)">Accept</button>
+            </div>
+        </div>
+    </div>
+</div>
