@@ -279,4 +279,16 @@
   <data name="OwnGroupsFilterText" xml:space="preserve">
     <value>Мои</value>
   </data>
+  <data name="InvitationMessageForStudent" xml:space="preserve">
+    <value>Вас пригласили обучаться в группе</value>
+  </data>
+  <data name="InvitationMessageForTeacher" xml:space="preserve">
+    <value>Вас пригласили преподавать в группе</value>
+  </data>
+  <data name="AcceptButtonLabel" xml:space="preserve">
+    <value>Подтвердить</value>
+  </data>
+  <data name="DeclineButtonLabel" xml:space="preserve">
+    <value>Отклонить</value>
+  </data>
 </root>

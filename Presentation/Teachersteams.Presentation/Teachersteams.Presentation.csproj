@@ -179,7 +179,9 @@
     <Content Include="Scripts\controllers\groups\tabs\users\teachersTabControllerForStudent.js" />
     <Content Include="Scripts\controllers\notifications\notificationsBaseController.js" />
     <Content Include="Scripts\directives\noItemsMessageDirective.js" />
-    <Content Include="Scripts\groupFilterType.js" />
+    <Content Include="Scripts\enums\groupFilterType.js" />
+    <Content Include="Scripts\enums\sortingDirection.js" />
+    <Content Include="Scripts\enums\userStatus.js" />
     <Content Include="Scripts\libs\ui-grid.js" />
     <Content Include="Content\ui-grid\ui-grid.min.css" />
     <Content Include="Scripts\libs\ui-grid.min.js" />
@@ -232,7 +234,6 @@
     <Content Include="Scripts\services\userService.js" />
     <Content Include="Scripts\services\vkService.js" />
     <Content Include="Scripts\singlePageApp.js" />
-    <Content Include="Scripts\sortingDirection.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

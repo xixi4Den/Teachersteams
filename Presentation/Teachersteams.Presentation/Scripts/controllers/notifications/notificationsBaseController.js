@@ -1,5 +1,5 @@
 ﻿var app = angular.module("ttControllers");
-app.controller('ttNotificationsBaseController', ['$scope', '$ttStudentService', function ($scope, $ttStudentService) {
+app.controller('ttNotificationsBaseController', ['$scope', 'UserStatus', function ($scope, UserStatus) {
     $scope.messagePattern = "";
     $scope.requestsFn = null;
     $scope.responseFn = null;
@@ -12,19 +12,20 @@ app.controller('ttNotificationsBaseController', ['$scope', '$ttStudentService', 
     }
 
     $scope.accept = function (request) {
-        request.Response = 2;
+        request.Response = UserStatus.Accepted;
         $scope.response(request);
     }
 
     $scope.decline = function (request) {
-        request.Response = 3;
+        request.Response = UserStatus.Declined;
         $scope.response(request);
     }
 
     $scope.response = function (responseData) {
         $scope.responseFn(responseData)
             .then(function () {
-                $scope.requests = _.without($scope.requests, _.findWhere($scope.requests, { GroupId: responseData.GroupId }));
+                var responsedInvitation = _.findWhere($scope.requests, { GroupId: responseData.GroupId });
+                $scope.requests = _.without($scope.requests, responsedInvitation);
             });
     }
 }]);

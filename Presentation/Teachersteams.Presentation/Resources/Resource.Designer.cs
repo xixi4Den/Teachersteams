@@ -70,6 +70,15 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Accept.
+        /// </summary>
+        public static string AcceptButtonLabel {
+            get {
+                return ResourceManager.GetString("AcceptButtonLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All.
         /// </summary>
         public static string AllGroupsFilterText {
@@ -129,6 +138,15 @@ namespace Teachersteams.Presentation.Resources {
         public static string CreateGroupDialogTitle {
             get {
                 return ResourceManager.GetString("CreateGroupDialogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Decline.
+        /// </summary>
+        public static string DeclineButtonLabel {
+            get {
+                return ResourceManager.GetString("DeclineButtonLabel", resourceCulture);
             }
         }
         
@@ -282,6 +300,24 @@ namespace Teachersteams.Presentation.Resources {
         public static string InternalErrorTitle {
             get {
                 return ResourceManager.GetString("InternalErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have been invited to study in group.
+        /// </summary>
+        public static string InvitationMessageForStudent {
+            get {
+                return ResourceManager.GetString("InvitationMessageForStudent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You have been invited to teach in group.
+        /// </summary>
+        public static string InvitationMessageForTeacher {
+            get {
+                return ResourceManager.GetString("InvitationMessageForTeacher", resourceCulture);
             }
         }
         

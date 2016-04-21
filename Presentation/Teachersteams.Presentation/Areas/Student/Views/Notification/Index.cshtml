@@ -1,1 +1,4 @@
-﻿@Html.Partial("NotificationList")
+﻿@Html.Partial("NotificationList", new ViewDataDictionary
+{
+    {"UiRouterGroupsState", "student/groups"}
+})

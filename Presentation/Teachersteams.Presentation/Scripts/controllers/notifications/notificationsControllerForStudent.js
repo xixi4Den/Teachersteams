@@ -6,7 +6,7 @@ app.controller('ttNotificationsControllerForStudent', [
     function ($scope, $controller, $ttStudentService) {
         $controller('ttNotificationsBaseController', { $scope: $scope });
 
-        $scope.messagePattern = "You have been invited to teach in group";
+        $scope.messagePattern = window.resources.invitationMessageForStudent;
         $scope.requestsFn = $ttStudentService.requests;
         $scope.responseFn = $ttStudentService.response;
 
