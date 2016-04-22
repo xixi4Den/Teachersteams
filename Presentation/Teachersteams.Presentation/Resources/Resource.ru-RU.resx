@@ -291,4 +291,22 @@
   <data name="DeclineButtonLabel" xml:space="preserve">
     <value>Отклонить</value>
   </data>
+  <data name="InvitedMessage" xml:space="preserve">
+    <value>Вы приглашены.</value>
+  </data>
+  <data name="NoButtonLabel" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="StudentConfirmationMessage" xml:space="preserve">
+    <value>Вы согласны учиться в этой группе?</value>
+  </data>
+  <data name="TeacherConfirmationMessage" xml:space="preserve">
+    <value>Вы согласны преподавать в этой группе?</value>
+  </data>
+  <data name="YesButtonLabel" xml:space="preserve">
+    <value>Да</value>
+  </data>
+  <data name="NoNotificationsMessage" xml:space="preserve">
+    <value>Новые уведомления отсутствуют.</value>
+  </data>
 </root>

@@ -18,5 +18,7 @@ namespace Teachersteams.Business.Services
         IEnumerable<RequestViewModel> GetRequests(string uid);
 
         void Response(RequestViewModel viewModel);
+
+        bool DoesHaveRequest(string uid, Guid groupId);
     }
 }

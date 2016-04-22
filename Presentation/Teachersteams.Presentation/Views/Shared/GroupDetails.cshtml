@@ -1,7 +1,8 @@
-﻿@using Teachersteams.Presentation.Resources
+﻿@using Teachersteams.Presentation.Helpers
+@using Teachersteams.Presentation.Resources
 
 @{
-    string area = ViewData.ContainsKey("Area") ? ViewData["Area"].ToString() : string.Empty;
+    string area = Html.GetViewDataValue("Area");
 }
 
 <tabset>

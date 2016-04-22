@@ -1,6 +1,10 @@
 ﻿@using Teachersteams.Presentation.Resources
 
 <section ng-controller="ttTeachersTabControllerForTeacher" class="tt-tab-content">
+    @Html.Partial("UserConfirmationSection", new ViewDataDictionary
+    {
+        {"ConfirmationMessage", Resource.TeacherConfirmationMessage}
+    })
     <div class="row invite-user-row">
         <button class="btn btn-info" ng-click="invite()">@Resource.InviteButtonLabel</button>
     </div>

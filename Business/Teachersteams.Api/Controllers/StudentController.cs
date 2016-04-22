@@ -50,6 +50,13 @@ namespace Teachersteams.Api.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, requests);
         }
 
+        [HttpGet]
+        public HttpResponseMessage DoesHaveRequest(string userId, Guid groupId)
+        {
+            var requests = studentService.DoesHaveRequest(userId, groupId);
+            return Request.CreateResponse(HttpStatusCode.OK, requests);
+        }
+
         [HttpPost]
         public HttpResponseMessage Response([FromBody]RequestViewModel viewModel, string userId)
         {

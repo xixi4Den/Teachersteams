@@ -44,6 +44,10 @@
                     return $userHttp.get(urls.requestsUrl);
                 },
 
+                doesHaveRequest: function (groupId) {
+                    return $userHttp.get(urls.doesHaveRequestUrl, {GroupId: groupId});
+                },
+
                 response: function(responseData) {
                     return $userHttp.post(urls.responseUrl, responseData);
                 }

@@ -1,0 +1,15 @@
+﻿@using Teachersteams.Presentation.Helpers
+@using Teachersteams.Presentation.Resources
+
+<div class="row" ng-if="doesHaveRequest">
+    <div class="jumbotron tt-user-confirmation-section">
+        <div>
+            <h3>@Resource.InvitedMessage</h3>
+            <p>@Html.GetViewDataValue("ConfirmationMessage")</p>
+        </div>
+        <div class="pull-right tt-buttons">
+            <button class="btn btn-info" ng-click="accept()">@Resource.YesButtonLabel</button>
+            <button class="btn btn-default" ng-click="decline()">@Resource.NoButtonLabel</button>
+        </div>
+    </div>
+</div>

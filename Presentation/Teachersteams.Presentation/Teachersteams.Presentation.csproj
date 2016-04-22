@@ -133,6 +133,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Resource.en-US.Designer.cs">
       <DependentUpon>Resource.en-US.resx</DependentUpon>
@@ -166,6 +167,7 @@
     <Content Include="Content\switchery\switchery.css" />
     <Content Include="Content\switchery\switchery.min.css" />
     <Content Include="Content\ui-grid\ui-grid.css" />
+    <Content Include="Scripts\controllers\groups\tabs\users\confirm\baseConfirmUserController.js" />
     <Content Include="Scripts\controllers\groups\tabs\users\invite\baseInviteUserController.js" />
     <Content Include="Scripts\controllers\groups\tabs\users\studentsTabBaseController.js" />
     <Content Include="Scripts\controllers\groups\tabs\users\teachersTabBaseController.js" />
@@ -308,6 +310,7 @@
     <Content Include="Views\Shared\GroupInfo.cshtml" />
     <Content Include="Views\Shared\GroupDetails.cshtml" />
     <Content Include="Views\Shared\NotificationList.cshtml" />
+    <Content Include="Views\Shared\UserConfirmationSection.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

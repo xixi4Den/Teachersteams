@@ -72,13 +72,27 @@ namespace Teachersteams.Business.Services
 
         public virtual IEnumerable<RequestViewModel> GetRequests(string uid)
         {
-            var requestsForTeaching = unitOfWork.GetAll(new QueryParameters<TEntity>
+            Contract.NotNullAndNotEmpty<ArgumentException>(uid);
+
+            var requests = unitOfWork.GetAll(new QueryParameters<TEntity>
             {
                 FilterRules = x => x.Uid == uid && x.Status == Domain.Enums.UserStatus.Requested,
                 PageRules = new PageSettings(1, 20),
             });
 
-            return mapper.MapManyTo<RequestViewModel>(requestsForTeaching);
+            return mapper.MapManyTo<RequestViewModel>(requests);
+        }
+
+        public virtual bool DoesHaveRequest(string uid, Guid groupId)
+        {
+            Contract.NotNullAndNotEmpty<ArgumentException>(uid);
+            Contract.NotDefault<Guid, ArgumentException>(groupId);
+
+            return unitOfWork.Any(new QueryParameters<TEntity>
+            {
+                FilterRules = x => x.Uid == uid && x.Status == Domain.Enums.UserStatus.Requested && x.GroupId == groupId,
+                PageRules = new PageSettings(1, 20),
+            });
         }
 
         public virtual void Response(RequestViewModel viewModel)

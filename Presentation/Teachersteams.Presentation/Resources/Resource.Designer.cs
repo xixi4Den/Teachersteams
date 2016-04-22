@@ -331,6 +331,15 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You are invited..
+        /// </summary>
+        public static string InvitedMessage {
+            get {
+                return ResourceManager.GetString("InvitedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invite student.
         /// </summary>
         public static string InviteStudentDilaogTitle {
@@ -345,6 +354,15 @@ namespace Teachersteams.Presentation.Resources {
         public static string InviteTeacherDilaogTitle {
             get {
                 return ResourceManager.GetString("InviteTeacherDilaogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        public static string NoButtonLabel {
+            get {
+                return ResourceManager.GetString("NoButtonLabel", resourceCulture);
             }
         }
         
@@ -381,6 +399,15 @@ namespace Teachersteams.Presentation.Resources {
         public static string NoItems {
             get {
                 return ResourceManager.GetString("NoItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There are no new notifications yet..
+        /// </summary>
+        public static string NoNotificationsMessage {
+            get {
+                return ResourceManager.GetString("NoNotificationsMessage", resourceCulture);
             }
         }
         
@@ -484,6 +511,15 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you accept to study in this group?.
+        /// </summary>
+        public static string StudentConfirmationMessage {
+            get {
+                return ResourceManager.GetString("StudentConfirmationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to where you are a student.
         /// </summary>
         public static string StudentsGroupsSubHeader {
@@ -498,6 +534,15 @@ namespace Teachersteams.Presentation.Resources {
         public static string StudentSwitchLabel {
             get {
                 return ResourceManager.GetString("StudentSwitchLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you accept to teach in this group?.
+        /// </summary>
+        public static string TeacherConfirmationMessage {
+            get {
+                return ResourceManager.GetString("TeacherConfirmationMessage", resourceCulture);
             }
         }
         
@@ -579,6 +624,15 @@ namespace Teachersteams.Presentation.Resources {
         public static string UnexpectedErrorTitle {
             get {
                 return ResourceManager.GetString("UnexpectedErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        public static string YesButtonLabel {
+            get {
+                return ResourceManager.GetString("YesButtonLabel", resourceCulture);
             }
         }
     }
