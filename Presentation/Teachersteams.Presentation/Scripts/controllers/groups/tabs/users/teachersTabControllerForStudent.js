@@ -1,9 +1,12 @@
 ﻿var app = angular.module("ttControllers");
 app.controller('ttTeachersTabControllerForStudent', [
     '$scope',
+    'UserType',
     '$controller',
-    function ($scope, $controller) {
+    function ($scope, UserType, $controller) {
         $controller('ttTeachersTabBaseController', { $scope: $scope });
+
+        $scope.userType = UserType.Student;
 
         $scope.gridOptions.columnDefs = [
               { name: window.resources.photoColumnName, field: 'Photo', enableSorting: false, width: 70, cellClass: 'ui-grid-hcenter', cellTemplate: 'photo-template' },

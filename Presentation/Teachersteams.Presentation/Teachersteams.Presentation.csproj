@@ -171,7 +171,7 @@
     <Content Include="Scripts\controllers\groups\tabs\users\invite\baseInviteUserController.js" />
     <Content Include="Scripts\controllers\groups\tabs\users\studentsTabBaseController.js" />
     <Content Include="Scripts\controllers\groups\tabs\users\teachersTabBaseController.js" />
-    <Content Include="Scripts\controllers\groups\tabs\users\studentsTabForTeacherController.js" />
+    <Content Include="Scripts\controllers\groups\tabs\users\studentsTabControllerForTeacher.js" />
     <Content Include="Scripts\controllers\groups\tabs\users\usersTabBaseController.js" />
     <Content Include="Scripts\controllers\groups\tabs\users\invite\inviteUserDilaogBaseController.js" />
     <Content Include="Scripts\controllers\groups\tabs\users\invite\inviteStudentDialogController.js" />
@@ -188,6 +188,7 @@
     <Content Include="Scripts\enums\groupFilterType.js" />
     <Content Include="Scripts\enums\sortingDirection.js" />
     <Content Include="Scripts\enums\userStatus.js" />
+    <Content Include="Scripts\enums\userType.js" />
     <Content Include="Scripts\libs\ui-grid.js" />
     <Content Include="Content\ui-grid\ui-grid.min.css" />
     <Content Include="Scripts\libs\ui-grid.min.js" />

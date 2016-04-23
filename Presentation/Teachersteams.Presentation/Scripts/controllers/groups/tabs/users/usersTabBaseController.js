@@ -24,7 +24,7 @@ app.controller('ttUsersTabBaseController', [
         };
 
         $scope.initialize = function() {
-            $gridHelper.initialize($scope.gridItemsCountFn, $scope.gridItemsGetFn, [$stateParams.groupId], $scope.gridOptions);
+            $gridHelper.initialize($scope.gridItemsCountFn, $scope.gridItemsGetFn, [$stateParams.groupId, $scope.userType], $scope.gridOptions);
             $gridHelper.getPage();
         }
 

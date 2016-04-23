@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using AutoMapper;
+using Teachersteams.Business.Enums;
 using Teachersteams.Business.Extensions;
 using Teachersteams.Business.Helpers;
 using Teachersteams.Business.ViewModels;
@@ -22,6 +24,13 @@ namespace Teachersteams.Business.Services
         private readonly IUnitOfWork unitOfWork;
         private readonly IMapper mapper;
         private readonly IGridOptionsHelper gridOptionsHelper;
+
+        private readonly IDictionary<UserType, IEnumerable<DataUserStatus>> applicableUserStatuses = new Dictionary
+            <UserType, IEnumerable<DataUserStatus>>
+        {
+            {UserType.Student, new List<DataUserStatus> {DataUserStatus.Accepted}},
+            {UserType.Teacher, new List<DataUserStatus> {DataUserStatus.Accepted, DataUserStatus.Requested}}
+        };
 
         protected UserBaseService(IUnitOfWork unitOfWork,
             IMapper mapper,
@@ -46,13 +55,15 @@ namespace Teachersteams.Business.Services
 
         protected abstract TEntity CreateNewUser(TViewModel viewModel);
 
-        public virtual IEnumerable<TViewModel> GetUsers(Guid groupId, GridOptions gridOptions)
+        public virtual IEnumerable<TViewModel> GetUsers(Guid groupId, GridOptions gridOptions, UserType userType)
         {
             Contract.NotDefault<Guid, ArgumentException>(groupId);
 
+            var statuses = applicableUserStatuses[userType];
+
             var teachers = unitOfWork.GetAll(new QueryParameters<TEntity>
             {
-                FilterRules = x => x.GroupId == groupId,
+                FilterRules = x => x.GroupId == groupId && statuses.Contains(x.Status),
                 PageRules = new PageSettings(gridOptions.PageNumber, gridOptions.PageSize),
                 SortRules = gridOptionsHelper.BuidDynamicOrderedQuery<TEntity>(gridOptions)
             });

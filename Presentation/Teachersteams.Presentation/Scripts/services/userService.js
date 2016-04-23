@@ -6,10 +6,11 @@
                     return $userHttp.post(urls.inviteUrl, viewModel);
                 },
 
-                get: function(groupId, paginationOptions) {
+                get: function(groupId, userType, paginationOptions) {
                     var data = null;
                     return $userHttp.get(urls.getUrl, {
                         groupId: groupId,
+                        userType: userType,
                         pageNumber: paginationOptions.PageNumber,
                         pageSize: paginationOptions.PageSize,
                         sortingColumn: paginationOptions.SortingColumn,

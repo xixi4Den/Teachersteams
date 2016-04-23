@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Teachersteams.Business.Enums;
 using Teachersteams.Business.ViewModels;
 using Teachersteams.Business.ViewModels.Grid;
 using Teachersteams.Business.ViewModels.User;
@@ -11,7 +12,7 @@ namespace Teachersteams.Business.Services
     {
         TeacherViewModel Invite(TeacherViewModel viewModel);
 
-        IEnumerable<TeacherViewModel> GetUsers(Guid groupId, GridOptions gridOptions);
+        IEnumerable<TeacherViewModel> GetUsers(Guid groupId, GridOptions gridOptions, UserType userType);
 
         int Count(Guid groupId);
 
