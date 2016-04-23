@@ -1,5 +1,5 @@
 ﻿var app = angular.module("ttControllers");
-app.controller('ttNotificationsBaseController', ['$scope', 'UserStatus', function ($scope, UserStatus) {
+app.controller('ttNotificationsBaseController', ['$scope', '$rootScope', 'UserStatus', function ($scope, $rootScope, UserStatus) {
     $scope.messagePattern = "";
     $scope.requestsFn = null;
     $scope.responseFn = null;
@@ -26,6 +26,7 @@ app.controller('ttNotificationsBaseController', ['$scope', 'UserStatus', functio
             .then(function () {
                 var responsedInvitation = _.findWhere($scope.requests, { GroupId: responseData.GroupId });
                 $scope.requests = _.without($scope.requests, responsedInvitation);
+                $rootScope.$broadcast('$notificationsCountChanged', null);
             });
     }
 }]);

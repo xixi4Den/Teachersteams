@@ -44,8 +44,12 @@
                     return $userHttp.get(urls.requestsUrl);
                 },
 
-                doesHaveRequest: function (groupId) {
-                    return $userHttp.get(urls.doesHaveRequestUrl, {GroupId: groupId});
+                anyRequest: function (groupId) {
+                    return $userHttp.get(urls.anyRequestUrl, {GroupId: groupId});
+                },
+
+                requestsCount: function () {
+                    return $userHttp.get(urls.requestsCountUrl);
                 },
 
                 response: function(responseData) {

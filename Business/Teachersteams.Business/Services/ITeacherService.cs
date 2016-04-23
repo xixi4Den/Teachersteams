@@ -19,6 +19,8 @@ namespace Teachersteams.Business.Services
 
         void Response(RequestViewModel viewModel);
 
-        bool DoesHaveRequest(string uid, Guid groupId);
+        bool AnyRequest(string uid, Guid groupId);
+
+        int RequestsCount(string uid);
     }
 }

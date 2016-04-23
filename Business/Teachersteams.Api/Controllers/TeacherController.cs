@@ -53,10 +53,17 @@ namespace Teachersteams.Api.Controllers
         }
 
         [HttpGet]
-        public HttpResponseMessage DoesHaveRequest(string userId, Guid groupId)
+        public HttpResponseMessage AnyRequest(string userId, Guid groupId)
         {
-            var requests = teacherService.DoesHaveRequest(userId, groupId);
+            var requests = teacherService.AnyRequest(userId, groupId);
             return Request.CreateResponse(HttpStatusCode.OK, requests);
+        }
+
+        [HttpGet]
+        public HttpResponseMessage RequestsCount(string userId)
+        {
+            var count = teacherService.RequestsCount(userId);
+            return Request.CreateResponse(HttpStatusCode.OK, count);
         }
 
         [HttpPost]

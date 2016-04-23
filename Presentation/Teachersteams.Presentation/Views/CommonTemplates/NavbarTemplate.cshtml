@@ -1,6 +1,6 @@
 ﻿@using Teachersteams.Presentation.Resources
 
-<nav ng-controller="ttNavigationController" class="navbar navbar-default navbar-fixed-top">
+<nav ng-controller="ttNavigationCompositeController" class="navbar navbar-default navbar-fixed-top tt-navbar">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed">
@@ -12,21 +12,31 @@
             <a class="navbar-brand" href="#/page1">@Resource.SiteHeaderText</a>
         </div>
         <div class="navbar-collapse" ng-class="isCollapsed ? 'collapse' : 'in'">
-            <ul class="nav navbar-nav" ng-show="isTeacher">
+            <ul class="nav navbar-nav tt-nav" ng-show="isTeacher" ng-controller="ttNavigationControllerForTeacher">
                 <li ui-sref-active="active"><a ui-sref="teacher/groups">@Resource.GroupsTabTitle</a></li>
                 <li ui-sref-active="active"><a ui-sref="teacher/board">@Resource.BoardTabTitle</a></li>
-                <li ui-sref-active="active"><a ui-sref="teacher/notifications">@Resource.NotificationsTabTitle</a></li>
+                <li ui-sref-active="active">
+                    <a ui-sref="teacher/notifications">
+                        @Resource.NotificationsTabTitle
+                        <span ng-if="isNotificationsBudgeVisible()" ng-bind="notificationsCount" class="badge"></span>
+                    </a>
+                </li>
                 <li ui-sref-active="active"><a ui-sref="about">@Resource.AboutTabTitle</a></li>
             </ul>
-            <ul class="nav navbar-nav" ng-hide="isTeacher">
+            <ul class="nav navbar-nav tt-nav" ng-hide="isTeacher" ng-controller="ttNavigationControllerForStudent">
                 <li ui-sref-active="active"><a ui-sref="student/groups">@Resource.GroupsTabTitle</a></li>
                 <li ui-sref-active="active"><a ui-sref="student/board">@Resource.BoardTabTitle</a></li>
-                <li ui-sref-active="active"><a ui-sref="student/notifications">@Resource.NotificationsTabTitle</a></li>
+                <li ui-sref-active="active">
+                    <a ui-sref="student/notifications">
+                        @Resource.NotificationsTabTitle
+                        <span ng-if="isNotificationsBudgeVisible()" ng-bind="notificationsCount" class="badge"></span>
+                    </a>
+                </li>
                 <li ui-sref-active="active"><a ui-sref="about">@Resource.AboutTabTitle</a></li>
             </ul>
             <form class="navbar-form navbar-right">
                 <span>@Resource.StudentSwitchLabel</span>
-                <input type="checkbox" ng-model="$parent.$parent.isTeacher" ui-switch="{color: '#FFF', secondaryColor: '#5BC0DE'}" class="js-switch" />
+                <input type="checkbox" ng-model="$parent.$parent.$parent.isTeacher" ui-switch="{color: '#FFF', secondaryColor: '#5BC0DE'}" class="js-switch" />
                 <span>@Resource.TeacherSwitchLabel</span>
             </form>
         </div>

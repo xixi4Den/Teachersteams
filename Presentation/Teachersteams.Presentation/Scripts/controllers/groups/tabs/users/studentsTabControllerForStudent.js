@@ -7,7 +7,7 @@ app.controller('ttStudentsTabControllerForStudent', [
         $controller('ttStudentsTabBaseController', { $scope: $scope });
         $controller('ttBaseConfirmUserController', { $scope: $scope });
 
-        $scope.doesHaveRequestFn = $ttStudentService.doesHaveRequest;
+        $scope.anyRequestFn = $ttStudentService.anyRequest;
         $scope.responseFn = $ttStudentService.response;
         $scope.checkRequest();
 

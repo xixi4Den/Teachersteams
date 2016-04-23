@@ -22,7 +22,7 @@ app.controller('ttTeachersTabControllerForTeacher', [
             console.log(row);
         }
 
-        $scope.doesHaveRequestFn = $ttTeacherService.doesHaveRequest;
+        $scope.anyRequestFn = $ttTeacherService.anyRequest;
         $scope.responseFn = $ttTeacherService.response;
         $scope.checkRequest();
 

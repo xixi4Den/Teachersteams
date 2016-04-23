@@ -83,7 +83,7 @@ namespace Teachersteams.Business.Services
             return mapper.MapManyTo<RequestViewModel>(requests);
         }
 
-        public virtual bool DoesHaveRequest(string uid, Guid groupId)
+        public virtual bool AnyRequest(string uid, Guid groupId)
         {
             Contract.NotNullAndNotEmpty<ArgumentException>(uid);
             Contract.NotDefault<Guid, ArgumentException>(groupId);
@@ -92,6 +92,16 @@ namespace Teachersteams.Business.Services
             {
                 FilterRules = x => x.Uid == uid && x.Status == Domain.Enums.UserStatus.Requested && x.GroupId == groupId,
                 PageRules = new PageSettings(1, 20),
+            });
+        }
+
+        public virtual int RequestsCount(string uid)
+        {
+            Contract.NotNullAndNotEmpty<ArgumentException>(uid);
+
+            return unitOfWork.Count(new QueryParameters<TEntity>
+            {
+                FilterRules = x => x.Uid == uid && x.Status == Domain.Enums.UserStatus.Requested
             });
         }
 

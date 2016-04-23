@@ -1,12 +1,13 @@
 ﻿var app = angular.module("ttControllers");
 app.controller('ttBaseConfirmUserController', [
     '$scope',
+    '$rootScope',
     'UserStatus',
     '$stateParams',
-    function ($scope, UserStatus, $stateParams) {
+    function ($scope, $rootScope, UserStatus, $stateParams) {
         $scope.checkRequest = function () {
-            $scope.doesHaveRequestFn($stateParams.groupId).then(function (response) {
-                $scope.doesHaveRequest = response.data;
+            $scope.anyRequestFn($stateParams.groupId).then(function (response) {
+                $scope.anyRequest = response.data;
         });}
 
         $scope.accept = function () {
@@ -28,7 +29,8 @@ app.controller('ttBaseConfirmUserController', [
         $scope.response = function (responseData) {
             $scope.responseFn(responseData)
                 .then(function () {
-                    $scope.doesHaveRequest = false;
+                    $scope.anyRequest = false;
+                    $rootScope.$broadcast('$notificationsCountChanged', null);
                     $scope.reload();
                 });
         }

@@ -5,7 +5,8 @@
             getUrl: 'Teacher/Get',
             countUrl: 'Teacher/Count',
             requestsUrl: 'Teacher/Requests',
-            doesHaveRequestUrl: 'Teacher/DoesHaveRequest',
+            anyRequestUrl: 'Teacher/AnyRequest',
+            requestsCountUrl: 'Teacher/RequestsCount',
             responseUrl: 'Teacher/Response'
         }
 

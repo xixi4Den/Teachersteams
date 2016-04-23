@@ -10,18 +10,18 @@
     <script src="https://vk.com/js/api/xd_connection.js?2" type="text/javascript"></script>
 </head>
 <body ng-controller="ttMainController">
-    <div class="body-wrapper">
+    <div ng-if="isInitDone" class="body-wrapper">
         <div ng-include="'@Url.Action("NavbarTemplate", "CommonTemplates")'"></div>
         <div loader></div>
         <toast></toast>
-        <div ng-if="isInitDone" class="container main-content">
+        <div class="container main-content">
             <div ui-view class="appear-animation"></div>
         </div>
         <div class="push"></div>
-    <footer>
-        <p>&copy; @DateTime.Now.Year - @Resource.SiteTitle</p>
-    </footer>
-</div>
+        <footer>
+            <p>&copy; @DateTime.Now.Year - @Resource.SiteTitle</p>
+        </footer>
+    </div>
 @Scripts.Render("~/bundles/libs")
 @Scripts.Render("~/bundles/scripts")
 </body>

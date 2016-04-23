@@ -179,6 +179,10 @@
     <Content Include="Scripts\controllers\groups\tabs\users\studentsTabControllerForStudent.js" />
     <Content Include="Scripts\controllers\groups\list\groupListControllerForTeacher.js" />
     <Content Include="Scripts\controllers\groups\tabs\users\teachersTabControllerForStudent.js" />
+    <Content Include="Scripts\controllers\navigation\navigationCompositeController.js" />
+    <Content Include="Scripts\controllers\navigation\navigationControllerForStudent.js" />
+    <Content Include="Scripts\controllers\navigation\navigationControllerForTeacher.js" />
+    <Content Include="Scripts\controllers\navigation\userSpecificNavigationBaseController.js" />
     <Content Include="Scripts\controllers\notifications\notificationsBaseController.js" />
     <Content Include="Scripts\directives\noItemsMessageDirective.js" />
     <Content Include="Scripts\enums\groupFilterType.js" />
@@ -197,7 +201,6 @@
     <Content Include="Scripts\controllers\groups\tabs\users\teachersTabControllerForTeacher.js" />
     <Content Include="Scripts\controllers\groups\tabs\users\invite\inviteTeacherDialogController.js" />
     <Content Include="Scripts\controllers\mainController.js" />
-    <Content Include="Scripts\controllers\navigationController.js" />
     <Content Include="Scripts\controllers\board\boardControllerForStudent.js" />
     <Content Include="Scripts\controllers\groups\groupsControllerForStudent.js" />
     <Content Include="Scripts\controllers\notifications\notificationsControllerForStudent.js" />
