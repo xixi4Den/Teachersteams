@@ -53,6 +53,12 @@
     <Compile Include="Query\QueryParameters.cs" />
     <Compile Include="Query\PageSettings.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\Teachersteams.Shared\Teachersteams.Shared.csproj">
+      <Project>{2b0636e0-a6de-46a3-bb49-202bca860b6b}</Project>
+      <Name>Teachersteams.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

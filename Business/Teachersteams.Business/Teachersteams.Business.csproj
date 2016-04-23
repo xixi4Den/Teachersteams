@@ -58,6 +58,7 @@
     <Compile Include="Enums\GroupFilterType.cs" />
     <Compile Include="Enums\SortingDirection.cs" />
     <Compile Include="Enums\UserStatus.cs" />
+    <Compile Include="Enums\UserType.cs" />
     <Compile Include="Exceptions\BusinessException.cs" />
     <Compile Include="Exceptions\GroupTitleAlreadyExistsException.cs" />
     <Compile Include="Extensions\MapperExtensions.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="ViewModels\Group\AddGroupViewModel.cs" />
     <Compile Include="ViewModels\Group\GroupInfoViewModel.cs" />
     <Compile Include="ViewModels\Group\GroupTitleViewModel.cs" />
+    <Compile Include="ViewModels\RequestViewModel.cs" />
     <Compile Include="ViewModels\User\StudentViewModel.cs" />
     <Compile Include="ViewModels\User\TeacherViewModel.cs" />
     <Compile Include="ViewModels\User\UserBaseViewModel.cs" />

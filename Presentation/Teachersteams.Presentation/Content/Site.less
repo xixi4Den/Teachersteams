@@ -80,7 +80,17 @@ body {
     padding-top: 50px;
     padding-bottom: 20px;
 
-    .body-wrapper{
+    .body-wrapper {
+        .tt-navbar{
+            .tt-nav{
+                .badge{
+                    position: absolute;
+                    top: 40px;
+                    right: 5px;
+                }
+            }
+        }
+
         .main-content {
             margin: 0 15px;
 
@@ -98,16 +108,12 @@ body {
                 .tt-group-list {
                     padding: 0;
 
-                    .tt-group-filter{
+                    .tt-group-filter {
                         margin: 10px 0px;
 
-                        .tt-btn-filter-text{
+                        .tt-btn-filter-text {
                             width: 80%;
                         }
-
-                        /*.tt-btn-filter-caret{
-                            width: 10%;
-                        }*/
                     }
 
                     .tt-group-items {
@@ -118,29 +124,64 @@ body {
                         }
                     }
 
-                    .no-groups{
+                    .no-groups {
                         margin-top: 10px;
                         text-align: center;
 
-                        .jumbotron{
+                        .jumbotron {
                             padding: 10px 5px 20px;
-                            
-                            h3{
+
+                            h3 {
                                 margin-bottom: 30px;
                             }
 
-                            p{
+                            p {
                                 font-size: 16px;
                             }
                         }
                     }
                 }
 
-                .tt-tab-content{
+                .tt-tab-content {
                     padding: 20px;
 
-                    .invite-user-row{
+                    .invite-user-row {
                         margin-bottom: 10px;
+                    }
+
+                    .tt-user-confirmation-section{
+                        padding: 10px 20px 50px 20px;
+                        margin: 0px 0px 10px 0px;
+
+                        h3{
+                            margin: 0px;
+                            padding: 0px;
+                        }
+
+                        p{
+                            margin: 10px 0px;
+                        }
+
+                        .tt-buttons{
+                            margin: 5px;
+                        }
+                    }
+                }
+            }
+
+            .tt-notifications-content {
+                margin-top: 10px;
+
+                .alert {
+                    padding: 10px;
+
+                    .tt-notification-body {
+                    }
+
+                    .tt-notification-buttons {
+                        button {
+                            margin: 0px 5px;
+                        }
                     }
                 }
             }

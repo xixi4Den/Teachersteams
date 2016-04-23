@@ -27,4 +27,8 @@ app.controller('ttUsersTabBaseController', [
             $gridHelper.initialize($scope.gridItemsCountFn, $scope.gridItemsGetFn, [$stateParams.groupId], $scope.gridOptions);
             $gridHelper.getPage();
         }
+
+        $scope.reload = function () {
+            $gridHelper.getPage();
+        }
     }]);

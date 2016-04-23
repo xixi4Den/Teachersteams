@@ -19,6 +19,8 @@ namespace Teachersteams.DataAccess.Mappings
             Property(t => t.Uid).HasColumnName("Uid").IsRequired();
             Property(t => t.GroupId).HasColumnName("GroupId").IsRequired();
             Property(t => t.Status).HasColumnName("Status").IsRequired();
+
+            HasRequired(x => x.Group).WithMany().HasForeignKey(x => x.GroupId);
         }
     }
 }

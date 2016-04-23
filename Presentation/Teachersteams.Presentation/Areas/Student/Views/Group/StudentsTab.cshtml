@@ -1,6 +1,10 @@
 ﻿@using Teachersteams.Presentation.Resources
 
 <section ng-controller="ttStudentsTabControllerForStudent" class="tt-tab-content">
+    @Html.Partial("UserConfirmationSection", new ViewDataDictionary
+    {
+        {"ConfirmationMessage", Resource.StudentConfirmationMessage}
+    })
     <div class="row">
         <div id="studentsGrid" ui-grid="gridOptions" ui-grid-pagination class="grid" no-items-message data-show-empty-msg="@Resource.NoItems"></div>
     </div>

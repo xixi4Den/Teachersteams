@@ -1,9 +1,15 @@
 ﻿var app = angular.module("ttControllers");
 app.controller('ttStudentsTabControllerForStudent', [
     '$scope',
+    '$ttStudentService',
     '$controller',
-    function ($scope, $controller) {
+    function ($scope, $ttStudentService, $controller) {
         $controller('ttStudentsTabBaseController', { $scope: $scope });
+        $controller('ttBaseConfirmUserController', { $scope: $scope });
+
+        $scope.anyRequestFn = $ttStudentService.anyRequest;
+        $scope.responseFn = $ttStudentService.response;
+        $scope.checkRequest();
 
         $scope.initialize();
     }]);

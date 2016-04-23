@@ -1,10 +1,12 @@
 ﻿var app = angular.module("ttControllers");
 app.controller('ttTeachersTabControllerForTeacher', [
     '$scope',
+    '$ttTeacherService',
     '$controller',
-    function ($scope, $controller) {
+    function ($scope, $ttTeacherService, $controller) {
         $controller('ttTeachersTabBaseController', { $scope: $scope });
         $controller('ttBaseInviteUserController', { $scope: $scope });
+        $controller('ttBaseConfirmUserController', { $scope: $scope });
 
         $scope.inviteDilaogController = 'ttInviteTeacherDialogController';
         $scope.inviteDialogData = { title: window.resources.inviteTeacherDilaogTitle };
@@ -19,6 +21,10 @@ app.controller('ttTeachersTabControllerForTeacher', [
         $scope.test = function (grid, row) {
             console.log(row);
         }
+
+        $scope.anyRequestFn = $ttTeacherService.anyRequest;
+        $scope.responseFn = $ttTeacherService.response;
+        $scope.checkRequest();
 
         $scope.initialize();
     }]);

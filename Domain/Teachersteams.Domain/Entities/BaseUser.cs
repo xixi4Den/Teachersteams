@@ -1,5 +1,6 @@
 ﻿using System;
 using Teachersteams.Domain.Enums;
+using Teachersteams.Shared.Validation;
 
 namespace Teachersteams.Domain.Entities
 {
@@ -18,6 +19,16 @@ namespace Teachersteams.Domain.Entities
 
         public Guid GroupId { get; set; }
 
+        public virtual Group Group { get; set; }
+
         public UserStatus Status { get; protected set; }
+
+        public void ResponseToInvitation(UserStatus response)
+        {
+            Contract.Assert<InvalidOperationException>(Status == UserStatus.Requested);
+            Contract.Assert<InvalidOperationException>(response == UserStatus.Accepted || response == UserStatus.Declined);
+
+            Status = response;
+        }
     }
 }

@@ -1,0 +1,23 @@
+﻿@using Teachersteams.Presentation.Helpers
+@using Teachersteams.Presentation.Resources
+
+<div class="container-fluid tt-notifications-content">
+    <div ng-repeat="request in requests" class="alert alert-info" role="alert">
+        <div class="row tt-notification">
+            <div class="col-md-8 col-sm-8 col-sx-8 tt-notification-body">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                {{messagePattern}}
+                <strong><a ui-sref="@String.Concat(Html.GetViewDataValue("UiRouterGroupsState"), ".details({ groupId: request.GroupId })")">{{request.GroupName}}</a></strong>
+            </div>
+            <div class="col-md-4 col-sm-4 col-sx-4 tt-notification-buttons">
+                <button class="btn btn-default pull-right" ng-click="decline(request)">@Resource.DeclineButtonLabel</button>
+                <button class="btn btn-info pull-right" ng-click="accept(request)">@Resource.AcceptButtonLabel</button>
+            </div>
+        </div>
+    </div>
+    <div ng-hide="requests.length" class="row tt-no-notifications">
+        <div class="jumbotron">
+            <h3>@Resource.NoNotificationsMessage</h3>
+        </div>
+    </div>
+</div>
