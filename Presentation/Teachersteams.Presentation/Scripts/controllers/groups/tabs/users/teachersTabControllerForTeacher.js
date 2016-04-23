@@ -4,8 +4,9 @@ app.controller('ttTeachersTabControllerForTeacher', [
     '$ttTeacherService',
     'UserStatus',
     'UserType',
+    'ngDialog',
     '$controller',
-    function ($scope, $ttTeacherService, UserStatus, UserType, $controller) {
+    function ($scope, $ttTeacherService, UserStatus, UserType, ngDialog, $controller) {
         $controller('ttTeachersTabBaseController', { $scope: $scope });
         $controller('ttBaseInviteUserController', { $scope: $scope });
         $controller('ttBaseConfirmUserController', { $scope: $scope });
@@ -32,11 +33,23 @@ app.controller('ttTeachersTabControllerForTeacher', [
         }
 
         $scope.editPermissions = function (grid, row) {
-            console.log(row);
+            var dialog = ngDialog.open({ template: '/Teacher/Group/EditTeacherPermissionsDialog', data: { uid: row.entity.Uid, groupId: $scope.groupId } });
+            dialog.closePromise.then(function (response) {
+                var result = response.value;
+                if (typeof result !== "undefined" && result === true) {
+                    $scope.reload();
+                }
+            });
         }
 
         $scope.delete = function (grid, row) {
-            console.log(row);
+            var dialog = ngDialog.open({ template: '/Teacher/Group/DeleteUserDialog', controller: "ttDeleteTeacherDialogController", data: { user: row.entity, groupId: $scope.groupId } });
+            dialog.closePromise.then(function (response) {
+                var result = response.value;
+                if (typeof result !== "undefined" && result === true) {
+                    $scope.reload();
+                }
+            });
         }
 
         $scope.anyRequestFn = $ttTeacherService.anyRequest;

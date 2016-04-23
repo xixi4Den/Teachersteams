@@ -309,4 +309,28 @@
   <data name="NoNotificationsMessage" xml:space="preserve">
     <value>There are no new notifications yet.</value>
   </data>
+  <data name="DeleteStudentTooltipMessage" xml:space="preserve">
+    <value>Remove this user from list of students.</value>
+  </data>
+  <data name="DeleteTeacherTooltipMessage" xml:space="preserve">
+    <value>Remove this user from list of teachers.</value>
+  </data>
+  <data name="DeleteUserConfirmationMessage" xml:space="preserve">
+    <value>Do you really want to remove</value>
+  </data>
+  <data name="DeleteUserDialogTitle" xml:space="preserve">
+    <value>Delete User</value>
+  </data>
+  <data name="EditPermissionsDialogTitle" xml:space="preserve">
+    <value>Edit permissions</value>
+  </data>
+  <data name="EditPermissionsTooltipMessage" xml:space="preserve">
+    <value>Edit permissions of this user.</value>
+  </data>
+  <data name="ViewGradesDialogTitle" xml:space="preserve">
+    <value>View Grades</value>
+  </data>
+  <data name="ViewGradesTooltipMessage" xml:space="preserve">
+    <value>View grades of this student.</value>
+  </data>
 </root>

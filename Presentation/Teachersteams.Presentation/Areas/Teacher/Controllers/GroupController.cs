@@ -38,5 +38,20 @@ namespace Teachersteams.Presentation.Areas.Teacher.Controllers
         {
             return View();
         }
+
+        public ActionResult DeleteUserDialog()
+        {
+            return View();
+        }
+
+        public ActionResult EditTeacherPermissionsDialog()
+        {
+            return View();
+        }
+
+        public ActionResult ViewGradesDialog()
+        {
+            return View();
+        }
 	}
 }

@@ -23,5 +23,7 @@ namespace Teachersteams.Business.Services
         bool AnyRequest(string uid, Guid groupId);
 
         int RequestsCount(string uid);
+
+        void Delete(string uid, Guid groupId);
     }
 }

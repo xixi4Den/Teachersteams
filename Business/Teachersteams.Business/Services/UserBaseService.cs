@@ -41,6 +41,8 @@ namespace Teachersteams.Business.Services
             this.gridOptionsHelper = gridOptionsHelper;
         }
 
+        protected abstract TEntity CreateNewUser(TViewModel viewModel);
+
         public virtual TViewModel Invite(TViewModel viewModel)
         {
             Contract.NotNull<ArgumentNullException>(viewModel);
@@ -52,8 +54,6 @@ namespace Teachersteams.Business.Services
             unitOfWork.Commit();
             return mapper.Map<TViewModel>(insertedEntity);
         }
-
-        protected abstract TEntity CreateNewUser(TViewModel viewModel);
 
         public virtual IEnumerable<TViewModel> GetUsers(Guid groupId, GridOptions gridOptions, UserType userType)
         {
@@ -129,6 +129,22 @@ namespace Teachersteams.Business.Services
 
             Contract.NotNull<DataNotFoundException>(user);
             user.ResponseToInvitation((DataUserStatus) viewModel.Response);
+            unitOfWork.InsertOrUpdate(user);
+            unitOfWork.Commit();
+        }
+
+        public virtual void Delete(string uid, Guid groupId)
+        {
+            Contract.NotNullAndNotEmpty<ArgumentException>(uid);
+            Contract.NotDefault<Guid, ArgumentException>(groupId);
+
+            var user = unitOfWork.GetSingleOrDefault(new QueryParameters<TEntity>
+            {
+                FilterRules = x => x.Uid == uid && x.GroupId == groupId,
+            });
+            Contract.NotNull<InvalidOperationException>(user);
+
+            user.Delete();
             unitOfWork.InsertOrUpdate(user);
             unitOfWork.Commit();
         }

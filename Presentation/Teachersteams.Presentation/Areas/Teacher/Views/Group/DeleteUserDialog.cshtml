@@ -1,0 +1,14 @@
+﻿@using Teachersteams.Presentation.Resources
+
+<div class="dialog-contents">
+    <div class="delete-user-dialog">
+        <h4>@Resource.DeleteUserDialogTitle</h4>
+        <div>
+            <p>@Resource.DeleteUserConfirmationMessage {{ngDialogData.user.FullName}}?</p>
+        </div>
+        <div class="tt-buttons ngdialog-buttons">
+            <button class="btn btn-default ngdialog-button" ng-click="no()">@Resource.NoButtonLabel</button>
+            <button class="btn btn-info ngdialog-button" ng-click="yes()">@Resource.YesButtonLabel</button>
+        </div>
+    </div>
+</div>

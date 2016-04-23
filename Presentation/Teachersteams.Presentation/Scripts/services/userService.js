@@ -55,6 +55,10 @@
 
                 response: function(responseData) {
                     return $userHttp.post(urls.responseUrl, responseData);
+                },
+
+                delete: function(uid, groupId) {
+                    return $userHttp.delete(urls.deleteUrl, uid, groupId);
                 }
             }
         }

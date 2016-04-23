@@ -309,4 +309,28 @@
   <data name="NoNotificationsMessage" xml:space="preserve">
     <value>Новые уведомления отсутствуют.</value>
   </data>
+  <data name="DeleteStudentTooltipMessage" xml:space="preserve">
+    <value>Удалить пользователя из списка студентов.</value>
+  </data>
+  <data name="DeleteTeacherTooltipMessage" xml:space="preserve">
+    <value>Удалить пользователя из списка учителей.</value>
+  </data>
+  <data name="DeleteUserConfirmationMessage" xml:space="preserve">
+    <value>Вы действительно хотите удалить </value>
+  </data>
+  <data name="DeleteUserDialogTitle" xml:space="preserve">
+    <value>Удалить пользователя</value>
+  </data>
+  <data name="EditPermissionsDialogTitle" xml:space="preserve">
+    <value>Редактирование прав пользователя</value>
+  </data>
+  <data name="EditPermissionsTooltipMessage" xml:space="preserve">
+    <value>Редактировать права пользователя.</value>
+  </data>
+  <data name="ViewGradesDialogTitle" xml:space="preserve">
+    <value>Оценки</value>
+  </data>
+  <data name="ViewGradesTooltipMessage" xml:space="preserve">
+    <value>Посмотреть оценки студента.</value>
+  </data>
 </root>

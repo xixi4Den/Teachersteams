@@ -72,5 +72,12 @@ namespace Teachersteams.Api.Controllers
             teacherService.Response(viewModel);
             return Request.CreateResponse(HttpStatusCode.OK, ModelState);
         }
+
+        [HttpDelete]
+        public HttpResponseMessage Delete(string uid, Guid groupId, string userId)
+        {
+            teacherService.Delete(uid, groupId);
+            return Request.CreateResponse(HttpStatusCode.OK, ModelState);
+        }
     }
 }

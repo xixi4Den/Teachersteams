@@ -151,6 +151,60 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Remove this user from list of students..
+        /// </summary>
+        public static string DeleteStudentTooltipMessage {
+            get {
+                return ResourceManager.GetString("DeleteStudentTooltipMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove this user from list of teachers..
+        /// </summary>
+        public static string DeleteTeacherTooltipMessage {
+            get {
+                return ResourceManager.GetString("DeleteTeacherTooltipMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you really want to remove.
+        /// </summary>
+        public static string DeleteUserConfirmationMessage {
+            get {
+                return ResourceManager.GetString("DeleteUserConfirmationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete User.
+        /// </summary>
+        public static string DeleteUserDialogTitle {
+            get {
+                return ResourceManager.GetString("DeleteUserDialogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit permissions.
+        /// </summary>
+        public static string EditPermissionsDialogTitle {
+            get {
+                return ResourceManager.GetString("EditPermissionsDialogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit permissions of this user..
+        /// </summary>
+        public static string EditPermissionsTooltipMessage {
+            get {
+                return ResourceManager.GetString("EditPermissionsTooltipMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please fill in this field. It cannot be empty..
         /// </summary>
         public static string FieldIsRequiredValidationMessage {
@@ -624,6 +678,24 @@ namespace Teachersteams.Presentation.Resources {
         public static string UnexpectedErrorTitle {
             get {
                 return ResourceManager.GetString("UnexpectedErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Grades.
+        /// </summary>
+        public static string ViewGradesDialogTitle {
+            get {
+                return ResourceManager.GetString("ViewGradesDialogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View grades of this student..
+        /// </summary>
+        public static string ViewGradesTooltipMessage {
+            get {
+                return ResourceManager.GetString("ViewGradesTooltipMessage", resourceCulture);
             }
         }
         

@@ -7,7 +7,8 @@
             requestsUrl: 'Student/Requests',
             anyRequestUrl: 'Student/AnyRequest',
             requestsCountUrl: 'Student/RequestsCount',
-            responseUrl: 'Student/Response'
+            responseUrl: 'Student/Response',
+            deleteUrl: 'Student/Delete'
         }
 
         return angular.extend($ttUserService(urls), {});
