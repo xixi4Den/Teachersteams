@@ -42,4 +42,8 @@ app.controller('ttGroupListBaseController', ['$scope', '$ttGroupService', functi
     $scope.isFilterVisible = function() {
         return $scope.availableFilters.length > 1;
     }
+
+    $scope.$on('$groupListChanged', function () {
+        $scope.getGroups($scope.index);
+    });
 }]);

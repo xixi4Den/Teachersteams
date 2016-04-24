@@ -37,5 +37,12 @@ namespace Teachersteams.Domain.Entities
 
             Status = UserStatus.Deleted;
         }
+
+        public void InviteAgain()
+        {
+            Contract.Assert<InvalidOperationException>(Status == UserStatus.Declined || Status == UserStatus.Deleted);
+
+            Status = UserStatus.Requested;
+        }
     }
 }

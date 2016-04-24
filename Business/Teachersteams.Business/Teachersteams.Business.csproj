@@ -61,6 +61,9 @@
     <Compile Include="Enums\UserType.cs" />
     <Compile Include="Exceptions\BusinessException.cs" />
     <Compile Include="Exceptions\GroupTitleAlreadyExistsException.cs" />
+    <Compile Include="Exceptions\InvitedUserIsGroupOwnerException.cs" />
+    <Compile Include="Exceptions\UserAlreadyInvitedException.cs" />
+    <Compile Include="Exceptions\UserCannotBeStudentAndTeacherException.cs" />
     <Compile Include="Extensions\MapperExtensions.cs" />
     <Compile Include="Helpers\GridOptionsHelper.cs" />
     <Compile Include="Helpers\IGridOptionsHelper.cs" />

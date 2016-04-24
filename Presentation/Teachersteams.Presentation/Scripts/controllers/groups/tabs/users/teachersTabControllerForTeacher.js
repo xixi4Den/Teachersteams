@@ -52,6 +52,7 @@ app.controller('ttTeachersTabControllerForTeacher', [
             });
         }
 
+        $scope.previousState = 'teacher/groups';
         $scope.anyRequestFn = $ttTeacherService.anyRequest;
         $scope.responseFn = $ttTeacherService.response;
         $scope.checkRequest();

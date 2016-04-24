@@ -16,6 +16,7 @@ app.controller('ttStudentsTabControllerForStudent', [
               { name: window.resources.fullnameColumnName, field: 'FullName', enableSorting: false, width: 170, cellClass: 'ui-grid-vcenter' }
         ];
 
+        $scope.previousState = 'student/groups';
         $scope.anyRequestFn = $ttStudentService.anyRequest;
         $scope.responseFn = $ttStudentService.response;
         $scope.checkRequest();

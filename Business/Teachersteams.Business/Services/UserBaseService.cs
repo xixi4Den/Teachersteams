@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
 using Teachersteams.Business.Enums;
+using Teachersteams.Business.Exceptions;
 using Teachersteams.Business.Extensions;
 using Teachersteams.Business.Helpers;
 using Teachersteams.Business.ViewModels;
@@ -21,7 +22,7 @@ namespace Teachersteams.Business.Services
         where TEntity : BaseUser
         where TViewModel : UserBaseViewModel
     {
-        private readonly IUnitOfWork unitOfWork;
+        protected readonly IUnitOfWork unitOfWork;
         private readonly IMapper mapper;
         private readonly IGridOptionsHelper gridOptionsHelper;
 
@@ -49,10 +50,28 @@ namespace Teachersteams.Business.Services
             Contract.NotNullAndNotEmpty<ArgumentException>(viewModel.Uid);
             Contract.NotDefault<Guid, ArgumentException>(viewModel.GroupId);
 
-            var newEntity = CreateNewUser(viewModel);
-            var insertedEntity = unitOfWork.InsertOrUpdate(newEntity);
+            ValidateInvitation(viewModel);
+
+            var user = GetOrCreateUser(viewModel);
+            var insertedEntity = unitOfWork.InsertOrUpdate(user);
             unitOfWork.Commit();
             return mapper.Map<TViewModel>(insertedEntity);
+        }
+
+        private TEntity GetOrCreateUser(TViewModel viewModel)
+        {
+            var oldUser = unitOfWork.GetSingleOrDefault(new QueryParameters<TEntity>
+            {
+                FilterRules = x => x.Uid == viewModel.Uid && x.GroupId == viewModel.GroupId && (x.Status == DataUserStatus.Deleted || x.Status == DataUserStatus.Declined)
+            });
+
+            if (oldUser != null)
+            {
+                oldUser.InviteAgain();
+                return oldUser;
+            }
+
+            return CreateNewUser(viewModel);
         }
 
         public virtual IEnumerable<TViewModel> GetUsers(Guid groupId, GridOptions gridOptions, UserType userType)
@@ -147,6 +166,38 @@ namespace Teachersteams.Business.Services
             user.Delete();
             unitOfWork.InsertOrUpdate(user);
             unitOfWork.Commit();
+        }
+
+        protected abstract void ValidateUserIsNotTeacherAndStudentAtSameTime(TViewModel viewModel);
+
+        private void ValidateInvitation(TViewModel viewModel)
+        {
+            ValidateUserIsNotOwner(viewModel);
+            ValidateUserDoesNotExist(viewModel);
+            ValidateUserIsNotTeacherAndStudentAtSameTime(viewModel);
+        }
+
+        private void ValidateUserDoesNotExist(TViewModel viewModel)
+        {
+            var isUserExist = unitOfWork.Any(new QueryParameters<TEntity>
+            {
+                FilterRules = x => x.GroupId == viewModel.GroupId && x.Uid == viewModel.Uid && (x.Status == DataUserStatus.Accepted || x.Status == DataUserStatus.Requested)
+            });
+
+            if (isUserExist)
+            {
+                throw new UserAlreadyInvitedException();
+            }
+        }
+
+        private void ValidateUserIsNotOwner(TViewModel viewModel)
+        {
+            var group = unitOfWork.Get<Group>(viewModel.GroupId);
+
+            if (group.OwnerId == viewModel.Uid)
+            {
+                throw new InvitedUserIsGroupOwnerException();
+            }
         }
     }
 }
