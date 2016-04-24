@@ -4,7 +4,8 @@ app.controller('ttBaseConfirmUserController', [
     '$rootScope',
     'UserStatus',
     '$stateParams',
-    function ($scope, $rootScope, UserStatus, $stateParams) {
+    '$state',
+    function ($scope, $rootScope, UserStatus, $stateParams, $state) {
         $scope.checkRequest = function () {
             $scope.anyRequestFn($stateParams.groupId).then(function (response) {
                 $scope.anyRequest = response.data;
@@ -31,7 +32,8 @@ app.controller('ttBaseConfirmUserController', [
                 .then(function () {
                     $scope.anyRequest = false;
                     $rootScope.$broadcast('$notificationsCountChanged', null);
-                    $scope.reload();
+                    $state.go($scope.previousState);
+                    $rootScope.$broadcast('$groupListChanged', null);
                 });
         }
     }]);

@@ -9,6 +9,7 @@ using Teachersteams.Domain;
 using Teachersteams.Domain.Entities;
 using Teachersteams.Domain.Query;
 using DataGroup = Teachersteams.Domain.Entities.Group;
+using UserStatus = Teachersteams.Domain.Enums.UserStatus;
 
 namespace Teachersteams.Business.Retrievers.Group
 {
@@ -30,7 +31,7 @@ namespace Teachersteams.Business.Retrievers.Group
         {
             var parameters = new QueryParameters<Teacher>
             {
-                FilterRules = x => x.Uid == uid,
+                FilterRules = x => x.Uid == uid && (x.Status == UserStatus.Requested || x.Status == UserStatus.Accepted),
                 PageRules = new PageSettings(pageIndex, pageSize)
             };
             return UnitOfWork.GetAll(parameters).Select(x => x.GroupId);

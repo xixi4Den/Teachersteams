@@ -1,1 +1,8 @@
-﻿
+﻿@using Teachersteams.Presentation.Resources
+
+<script type="text/ng-template" id="students-actions-template">
+    <div class="ui-grid-cell-contents">
+        <button class="btn btn-default" ng-show="grid.appScope.isViewGradesActionVisible(row)" ng-click="grid.appScope.viewGrades(grid, row)" uib-tooltip="@Resource.ViewGradesTooltipMessage" tooltip-placement="bottom"><span class="glyphicon glyphicon-stats"></span></button>
+        <button class="btn btn-default" ng-show="grid.appScope.isDeleteActionVisible(row)" ng-click="grid.appScope.delete(grid, row)" uib-tooltip="@Resource.DeleteStudentTooltipMessage" tooltip-placement="bottom"><span class="glyphicon glyphicon-trash"></span></button>
+    </div>
+</script>

@@ -113,6 +113,7 @@
     <Folder Include="Areas\Student\Views\Shared\" />
     <Folder Include="Areas\Teacher\Models\" />
     <Folder Include="Models\" />
+    <Folder Include="Scripts\controllers\groups\tabs\users\permissions\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -168,10 +169,13 @@
     <Content Include="Content\switchery\switchery.min.css" />
     <Content Include="Content\ui-grid\ui-grid.css" />
     <Content Include="Scripts\controllers\groups\tabs\users\confirm\baseConfirmUserController.js" />
+    <Content Include="Scripts\controllers\groups\tabs\users\delete\deleteStudentDialogController.js" />
+    <Content Include="Scripts\controllers\groups\tabs\users\delete\deleteTeacherDialogController.js" />
+    <Content Include="Scripts\controllers\groups\tabs\users\delete\deleteUserDilaogBaseController.js" />
     <Content Include="Scripts\controllers\groups\tabs\users\invite\baseInviteUserController.js" />
     <Content Include="Scripts\controllers\groups\tabs\users\studentsTabBaseController.js" />
     <Content Include="Scripts\controllers\groups\tabs\users\teachersTabBaseController.js" />
-    <Content Include="Scripts\controllers\groups\tabs\users\studentsTabForTeacherController.js" />
+    <Content Include="Scripts\controllers\groups\tabs\users\studentsTabControllerForTeacher.js" />
     <Content Include="Scripts\controllers\groups\tabs\users\usersTabBaseController.js" />
     <Content Include="Scripts\controllers\groups\tabs\users\invite\inviteUserDilaogBaseController.js" />
     <Content Include="Scripts\controllers\groups\tabs\users\invite\inviteStudentDialogController.js" />
@@ -188,6 +192,7 @@
     <Content Include="Scripts\enums\groupFilterType.js" />
     <Content Include="Scripts\enums\sortingDirection.js" />
     <Content Include="Scripts\enums\userStatus.js" />
+    <Content Include="Scripts\enums\userType.js" />
     <Content Include="Scripts\libs\ui-grid.js" />
     <Content Include="Content\ui-grid\ui-grid.min.css" />
     <Content Include="Scripts\libs\ui-grid.min.js" />
@@ -300,6 +305,9 @@
     <Content Include="Areas\Student\Views\Group\InfoTab.cshtml" />
     <Content Include="Areas\Student\Views\Group\TeachersTab.cshtml" />
     <Content Include="Areas\Student\Views\Group\StudentsTab.cshtml" />
+    <Content Include="Areas\Teacher\Views\Group\DeleteUserDialog.cshtml" />
+    <Content Include="Areas\Teacher\Views\Group\EditTeacherPermissionsDialog.cshtml" />
+    <Content Include="Areas\Teacher\Views\Group\ViewGradesDialog.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\CommonTemplates\NavbarTemplate.cshtml" />
     <Content Include="Views\Home\About.cshtml" />

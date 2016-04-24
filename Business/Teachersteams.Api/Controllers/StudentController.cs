@@ -2,6 +2,7 @@
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Teachersteams.Business.Enums;
 using Teachersteams.Business.Services;
 using Teachersteams.Business.ViewModels;
 using Teachersteams.Business.ViewModels.Grid;
@@ -30,9 +31,9 @@ namespace Teachersteams.Api.Controllers
         }
 
         [HttpGet]
-        public HttpResponseMessage Get(Guid groupId, string userId, [FromUri]GridOptions options)
+        public HttpResponseMessage Get(Guid groupId, UserType userType, string userId, [FromUri]GridOptions options)
         {
-            var teachers = studentService.GetUsers(groupId, options);
+            var teachers = studentService.GetUsers(groupId, options, userType);
             return Request.CreateResponse(HttpStatusCode.OK, teachers);
         }
 
@@ -69,6 +70,13 @@ namespace Teachersteams.Api.Controllers
         {
             viewModel.UidTo = userId;
             studentService.Response(viewModel);
+            return Request.CreateResponse(HttpStatusCode.OK, ModelState);
+        }
+
+        [HttpDelete]
+        public HttpResponseMessage Delete(string uid, Guid groupId, string userId)
+        {
+            studentService.Delete(uid, groupId);
             return Request.CreateResponse(HttpStatusCode.OK, ModelState);
         }
     }

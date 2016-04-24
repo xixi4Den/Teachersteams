@@ -6,10 +6,11 @@
                     return $userHttp.post(urls.inviteUrl, viewModel);
                 },
 
-                get: function(groupId, paginationOptions) {
+                get: function(groupId, userType, paginationOptions) {
                     var data = null;
                     return $userHttp.get(urls.getUrl, {
                         groupId: groupId,
+                        userType: userType,
                         pageNumber: paginationOptions.PageNumber,
                         pageSize: paginationOptions.PageSize,
                         sortingColumn: paginationOptions.SortingColumn,
@@ -54,6 +55,10 @@
 
                 response: function(responseData) {
                     return $userHttp.post(urls.responseUrl, responseData);
+                },
+
+                delete: function(uid, groupId) {
+                    return $userHttp.delete(urls.deleteUrl, uid, groupId);
                 }
             }
         }

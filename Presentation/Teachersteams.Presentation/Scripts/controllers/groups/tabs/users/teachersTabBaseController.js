@@ -5,7 +5,6 @@ app.controller('ttTeachersTabBaseController', [
     '$controller',
     function ($scope, $ttTeacherService, $controller) {
         $controller('ttUsersTabBaseController', { $scope: $scope });
-
         
         $scope.gridItemsCountFn = $ttTeacherService.count;
         $scope.gridItemsGetFn = $ttTeacherService.get;

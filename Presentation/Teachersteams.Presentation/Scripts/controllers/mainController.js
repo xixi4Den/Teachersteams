@@ -1,7 +1,8 @@
 ﻿var app = angular.module("ttControllers");
-app.controller('ttMainController', ['$scope', '$vk', '$state', '$http', 'AppContext', function ($scope, $vk, $state, $http, AppContext) {
+app.controller('ttMainController', ['$scope', '$vk', '$state', '$http', 'AppContext', '$rootScope', function ($scope, $vk, $state, $http, AppContext, $rootScope) {
     $scope.isTeacher = false;
     $scope.$watch('isTeacher', function (newValue, oldValue) {
+        $rootScope.$broadcast('$notificationsCountChanged', null);
         if (newValue) {
             $state.go('teacher/groups');
         } else {

@@ -1,6 +1,7 @@
-﻿<script type="text/ng-template" id="actions-template">
+﻿@using Teachersteams.Presentation.Resources
+<script type="text/ng-template" id="teachers-actions-template">
     <div class="ui-grid-cell-contents">
-        <button class="btn btn-info" ng-show="isApproved(row)" ng-click="grid.appScope.test(grid, row)"><span class="glyphicon glyphicon-flag"></span></button>
-        <button class="btn btn-danger" ng-show="isApproved(row)" ng-click="grid.appScope.test(grid, row)"><span class="glyphicon glyphicon-trash"></span></button>
+        <button class="btn btn-default" ng-show="grid.appScope.isEditPermissionsActionVisible(row)" ng-click="grid.appScope.editPermissions(grid, row)" uib-tooltip="@Resource.EditPermissionsTooltipMessage" tooltip-placement="bottom"><span class="glyphicon glyphicon-flag"></span></button>
+        <button class="btn btn-default" ng-show="grid.appScope.isDeleteActionVisible(row)" ng-click="grid.appScope.delete(grid, row)" uib-tooltip="@Resource.DeleteTeacherTooltipMessage" tooltip-placement="bottom"><span class="glyphicon glyphicon-trash"></span></button>
     </div>
 </script>

@@ -39,6 +39,18 @@
                     ngToast.danger(response.data.Message);
                     return $q.reject(response);
                 });
+            },
+
+            delete: function (relativePath, params) {
+                var url = buildUrl(relativePath);
+                var userSpecificParams = buildParams(params);
+
+                return $http.delete(url, {
+                    params: userSpecificParams
+                }).catch(function (response) {
+                    ngToast.danger(response.data.Message);
+                    return $q.reject(response);
+                });
             }
         }
     }]);
