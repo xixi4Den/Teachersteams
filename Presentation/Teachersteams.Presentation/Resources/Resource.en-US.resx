@@ -333,4 +333,10 @@
   <data name="ViewGradesTooltipMessage" xml:space="preserve">
     <value>View grades of this student.</value>
   </data>
+  <data name="AllUsersUserSearchTypeName" xml:space="preserve">
+    <value>All Users</value>
+  </data>
+  <data name="OnlyFriendsUserSearchTypeName" xml:space="preserve">
+    <value>Only Friends</value>
+  </data>
 </root>
