@@ -333,4 +333,10 @@
   <data name="ViewGradesTooltipMessage" xml:space="preserve">
     <value>Посмотреть оценки студента.</value>
   </data>
+  <data name="AllUsersUserSearchTypeName" xml:space="preserve">
+    <value>Все пользователи</value>
+  </data>
+  <data name="OnlyFriendsUserSearchTypeName" xml:space="preserve">
+    <value>Только друзья</value>
+  </data>
 </root>

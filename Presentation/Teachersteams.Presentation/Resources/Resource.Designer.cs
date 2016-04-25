@@ -88,6 +88,15 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All Users.
+        /// </summary>
+        public static string AllUsersUserSearchTypeName {
+            get {
+                return ResourceManager.GetString("AllUsersUserSearchTypeName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Assistant.
         /// </summary>
         public static string AssistantGroupsFilterText {
@@ -525,6 +534,15 @@ namespace Teachersteams.Presentation.Resources {
         public static string OhhSecondPart {
             get {
                 return ResourceManager.GetString("OhhSecondPart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Only Friends.
+        /// </summary>
+        public static string OnlyFriendsUserSearchTypeName {
+            get {
+                return ResourceManager.GetString("OnlyFriendsUserSearchTypeName", resourceCulture);
             }
         }
         
