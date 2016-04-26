@@ -40,11 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Assignment.cs" />
     <Compile Include="Entities\Group.cs" />
     <Compile Include="Entities\BaseUser.cs" />
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Entities\Teacher.cs" />
     <Compile Include="Entity.cs" />
+    <Compile Include="Enums\AssignmentStatus.cs" />
     <Compile Include="Enums\UserStatus.cs" />
     <Compile Include="Exceptions\DataNotFoundException.cs" />
     <Compile Include="IRepository.cs" />

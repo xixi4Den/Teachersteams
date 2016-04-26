@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context.cs" />
+    <Compile Include="Mappings\AssignmentMap.cs" />
     <Compile Include="Mappings\GroupMap.cs" />
     <Compile Include="Mappings\StudentMap.cs" />
     <Compile Include="Mappings\TeacherMap.cs" />
