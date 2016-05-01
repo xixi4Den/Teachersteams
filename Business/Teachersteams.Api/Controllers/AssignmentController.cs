@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web.Http;
 using Teachersteams.Business.Enums;
@@ -41,9 +42,21 @@ namespace Teachersteams.Api.Controllers
             }
         }
 
-        public Task<HttpResponseMessage> Download(FileType fileType, string file)
+        [HttpGet]
+        public HttpResponseMessage Download(FileType fileType, string file)
         {
-            throw new NotImplementedException();
+            var task = Task.Run(() => fileManager.Download("Assignments", file));
+            var buffer = task.Result;
+            var result = new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new ByteArrayContent(buffer)
+            };
+            result.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
+            {
+                FileName = file,
+            };
+            result.Content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+            return result;
         }
 
         [HttpPost]
