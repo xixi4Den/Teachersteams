@@ -90,13 +90,15 @@ namespace Teachersteams.Business.Services
             return mapper.MapManyTo<TViewModel>(teachers);
         }
 
-        public virtual int Count(Guid groupId)
+        public virtual int Count(Guid groupId, UserType userType)
         {
             Contract.NotDefault<Guid, ArgumentException>(groupId);
 
+            var statuses = applicableUserStatuses[userType];
+
             return unitOfWork.Count(new QueryParameters<TEntity>
             {
-                FilterRules = x => x.GroupId == groupId
+                FilterRules = x => x.GroupId == groupId && statuses.Contains(x.Status),
             });
         }
 

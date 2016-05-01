@@ -165,6 +165,8 @@
     <Content Include="Content\switchery\switchery.css" />
     <Content Include="Content\switchery\switchery.min.css" />
     <Content Include="Content\ui-grid\ui-grid.css" />
+    <Content Include="Scripts\controllers\groups\tabs\assignments\assignmentsTabBaseController.js" />
+    <Content Include="Scripts\controllers\groups\tabs\assignments\assignmentsTabControllerForStudent.js" />
     <Content Include="Scripts\controllers\groups\tabs\assignments\assignmentsTabControllerForTeacher.js" />
     <Content Include="Scripts\controllers\groups\tabs\assignments\createAssignmentDialogController.js" />
     <Content Include="Scripts\controllers\groups\tabs\users\confirm\baseConfirmUserController.js" />

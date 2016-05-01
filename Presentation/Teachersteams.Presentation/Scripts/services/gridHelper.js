@@ -1,7 +1,7 @@
 ﻿angular.module('ttServices')
     .factory('$gridHelper', ['SortingDirection', function (SortingDirection) {
         var refreshHeight = function (options) {
-            var newHeight = Math.floor(options.data.length * 50 + 30);
+            var newHeight = options.data.length > 0 ? Math.floor(options.data.length * 50 + 30) : 70;
             angular.element(document.getElementsByClassName('grid')[0]).css('height', (newHeight + 30) + 'px');
             angular.element(document.getElementsByClassName('ui-grid-viewport')[0]).css('height', newHeight + 'px');
         };

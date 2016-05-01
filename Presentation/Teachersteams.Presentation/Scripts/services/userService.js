@@ -25,19 +25,23 @@
                             fields: "uid, first_name, last_name, photo"
                         });
                     }).then(function(r) {
-                        _.each(r.response, function(item) {
-                            var originalItem = _.findWhere(data, { Uid: item.uid.toString() });
-                            var name = item.last_name + ', ' + item.first_name;
-                            originalItem["FullName"] = name;
-                            originalItem["Photo"] = item.photo;
+                            _.each(r.response, function(item) {
+                                var originalItem = _.findWhere(data, { Uid: item.uid.toString() });
+                                var name = item.last_name + ', ' + item.first_name;
+                                originalItem["FullName"] = name;
+                                originalItem["Photo"] = item.photo;
+                            });
+                            return data;
+                        },
+                        function() {
+                            return data;
                         });
-                        return data;
-                    });
                 },
 
-                count: function(groupId) {
+                count: function(groupId, userType) {
                     return $userHttp.get(urls.countUrl, {
-                        groupId: groupId
+                        groupId: groupId,
+                        userType: userType
                     });
                 },
 
