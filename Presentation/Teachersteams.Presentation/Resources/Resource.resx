@@ -216,8 +216,8 @@
   <data name="GroupStudentsTabTitle" xml:space="preserve">
     <value>Students</value>
   </data>
-  <data name="GroupTasksTabTitle" xml:space="preserve">
-    <value>Tasks</value>
+  <data name="GroupAssignmentsTabTitle" xml:space="preserve">
+    <value>Assignments</value>
   </data>
   <data name="GroupTeachersTabTitle" xml:space="preserve">
     <value>Teachers</value>
@@ -338,5 +338,47 @@
   </data>
   <data name="OnlyFriendsUserSearchTypeName" xml:space="preserve">
     <value>Only Friends</value>
+  </data>
+  <data name="CreateAssignmentButtonLabel" xml:space="preserve">
+    <value>Create assignment</value>
+  </data>
+  <data name="AddAssignmentDialogCloseConfirmationMessage" xml:space="preserve">
+    <value>Are you sure you want to close without saving your changes?</value>
+  </data>
+  <data name="AssignmentCreatedMessage" xml:space="preserve">
+    <value>A new assignment has been created.</value>
+  </data>
+  <data name="AssignmentDescriptionIsLongValidationMessage" xml:space="preserve">
+    <value>Assignment description is too long.</value>
+  </data>
+  <data name="AssignmentDescriptionPlaceholderMessage" xml:space="preserve">
+    <value>Here you can describe assignment in more details</value>
+  </data>
+  <data name="AssignmentExpirationDateIsInvalidValidationMessage" xml:space="preserve">
+    <value>Assignment expiration date is invalid.</value>
+  </data>
+  <data name="AssignmentExpirationDateIsRequiredValidationMessage" xml:space="preserve">
+    <value>Assignment expiration date is required.</value>
+  </data>
+  <data name="AssignmentTitleIsLongValidationMessage" xml:space="preserve">
+    <value>Assignment title is too long.</value>
+  </data>
+  <data name="AssignmentTitleIsRequiredValidationMessage" xml:space="preserve">
+    <value>Assignment title is required.</value>
+  </data>
+  <data name="AssignmentTitlePlaceholderMessage" xml:space="preserve">
+    <value>Enter a assignment title</value>
+  </data>
+  <data name="BrowseButtonLabel" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="CreateAssignmentDialogTitle" xml:space="preserve">
+    <value>Create Assignment</value>
+  </data>
+  <data name="FileIsNotAttachedMessage" xml:space="preserve">
+    <value>Please attach a file.</value>
+  </data>
+  <data name="UploadingToCloudMessage" xml:space="preserve">
+    <value>Uploading to cloud...</value>
   </data>
 </root>

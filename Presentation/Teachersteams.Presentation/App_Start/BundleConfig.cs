@@ -21,6 +21,7 @@ namespace Teachersteams.Presentation
                 .Include("~/Scripts/libs/ngDialog.js")
                 .Include("~/Scripts/libs/ngToast.js")
                 .Include("~/Scripts/libs/ui-grid.js")
+                .Include("~/Scripts/libs/angular-file-upload.js")
                 .Include("~/Scripts/libs/underscore.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/scripts")

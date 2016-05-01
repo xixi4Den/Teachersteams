@@ -216,7 +216,7 @@
   <data name="GroupStudentsTabTitle" xml:space="preserve">
     <value>Студенты</value>
   </data>
-  <data name="GroupTasksTabTitle" xml:space="preserve">
+  <data name="GroupAssignmentsTabTitle" xml:space="preserve">
     <value>Задачи</value>
   </data>
   <data name="GroupTeachersTabTitle" xml:space="preserve">
@@ -338,5 +338,47 @@
   </data>
   <data name="OnlyFriendsUserSearchTypeName" xml:space="preserve">
     <value>Только друзья</value>
+  </data>
+  <data name="CreateAssignmentButtonLabel" xml:space="preserve">
+    <value>Создать задание</value>
+  </data>
+  <data name="AddAssignmentDialogCloseConfirmationMessage" xml:space="preserve">
+    <value>Вы уверены, что хотите закрыть окно без сохранения изменений?</value>
+  </data>
+  <data name="AssignmentCreatedMessage" xml:space="preserve">
+    <value>Новое задание создано.</value>
+  </data>
+  <data name="AssignmentDescriptionIsLongValidationMessage" xml:space="preserve">
+    <value>Описание задания слишком длинное.</value>
+  </data>
+  <data name="AssignmentDescriptionPlaceholderMessage" xml:space="preserve">
+    <value>Здесь Вы можете описать задание более детально</value>
+  </data>
+  <data name="AssignmentExpirationDateIsInvalidValidationMessage" xml:space="preserve">
+    <value>Дата активности задания некорректна.</value>
+  </data>
+  <data name="AssignmentExpirationDateIsRequiredValidationMessage" xml:space="preserve">
+    <value>Дата активности задания обязательна для ввода.</value>
+  </data>
+  <data name="AssignmentTitleIsLongValidationMessage" xml:space="preserve">
+    <value>Название задания слишком длинное.</value>
+  </data>
+  <data name="AssignmentTitleIsRequiredValidationMessage" xml:space="preserve">
+    <value>Название задания обязательно для ввода.</value>
+  </data>
+  <data name="AssignmentTitlePlaceholderMessage" xml:space="preserve">
+    <value>Введине название задания</value>
+  </data>
+  <data name="BrowseButtonLabel" xml:space="preserve">
+    <value>Обзор</value>
+  </data>
+  <data name="CreateAssignmentDialogTitle" xml:space="preserve">
+    <value>Создать задание</value>
+  </data>
+  <data name="FileIsNotAttachedMessage" xml:space="preserve">
+    <value>Прикрепите файл.</value>
+  </data>
+  <data name="UploadingToCloudMessage" xml:space="preserve">
+    <value>Загрузка в облоко...</value>
   </data>
 </root>

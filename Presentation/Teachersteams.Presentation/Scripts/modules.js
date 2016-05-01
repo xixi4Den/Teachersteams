@@ -9,6 +9,7 @@
     'ngToast',
     'ui.grid',
     'ui.grid.pagination',
+    'angularFileUpload',
     'ttControllers',
     'ttDirectives'
 ]);

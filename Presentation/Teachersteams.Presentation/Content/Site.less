@@ -60,6 +60,7 @@ p.no-items{
     padding: 5px;
     margin: 5px 10px 0px;
     color: @light-font-color;
+    z-index: 1000;
     
     p{
         margin: 0px;
@@ -74,6 +75,27 @@ p.no-items{
         border-width: 0 10px 10px 10px;
         border-color: transparent transparent @error-color transparent;
     }
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+} 
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
 }
 
 body {
@@ -208,5 +230,26 @@ body {
 
     .photo{
         margin: 10px;
+    }
+}
+
+.tt-add-assignment-dialog{
+    .tt-assignment-uploading{
+        .tt-browse-container{
+            
+        }
+
+        .tt-progress-bar{
+            .progress {
+                margin-top: 5px;
+                margin-bottom: 0px;
+            }
+
+            .tt-uploading-to-cloud-label{
+                text-align: center;
+                margin: 0px;
+                padding: 0px;
+            }
+        }
     }
 }
