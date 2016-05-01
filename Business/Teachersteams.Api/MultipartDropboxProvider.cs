@@ -5,7 +5,6 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Teachersteams.Business.Enums;
 using Teachersteams.Business.Services;
-using Teachersteams.Shared.Dependency;
 using Teachersteams.Shared.Validation;
 
 namespace Teachersteams.Api
@@ -14,9 +13,12 @@ namespace Teachersteams.Api
     {
         private readonly IFileManager fileManager;
 
-        public MultipartDropboxProvider(IFileManager fileManager) 
+        public FileType FileType { get; set; }
+
+        public MultipartDropboxProvider(IFileManager fileManager, FileType fileType) 
         {
             this.fileManager = fileManager;
+            FileType = fileType;
         }
 
         public string FileName { get; set; }
@@ -26,20 +28,20 @@ namespace Teachersteams.Api
             Contract.Assert<InvalidOperationException>(Contents.Count == 1);
 
             var content = Contents.Single();
-            var folder = ResolveFolder(FileType.Assignment);
+            var folder = ResolveFolder();
             var uniqueFileName = FormUniqueFileName(content);
             FileName = await fileManager.Upload(folder, uniqueFileName, await content.ReadAsStreamAsync());
 
             await base.ExecutePostProcessingAsync();
         }
 
-        private string ResolveFolder(FileType fileType)
+        private string ResolveFolder()
         {
-            if (fileType == FileType.Assignment)
+            if (FileType == FileType.Assignment)
             {
                 return "Assignments";
             }
-            if (fileType == FileType.Result)
+            if (FileType == FileType.Result)
             {
                 return "Results";
             }

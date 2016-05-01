@@ -3,19 +3,23 @@ app.controller('ttCreateAssignmentsDialogController', [
     '$scope',
     'FileUploader',
     'ngToast',
-    function ($scope, FileUploader, ngToast) {
-        $scope.file = null;
+    '$ttAssignmentService',
+    'AppContext',
+    '$stateParams',
+    function ($scope, FileUploader, ngToast, $ttAssignmentService, AppContext, $stateParams) {
+        $scope.data = {
+            file: null,
+        };
 
         $scope.uploader = new FileUploader({
-            url: 'https://localhost:44302/api/Assignment/Upload?fileType=1',
+            url: AppContext.apiUrl + 'Assignment/Upload?fileType=1',
             autoUpload: true,
             queueLimit: 1,
             removeAfterUpload: true,
         });
 
         $scope.uploader.onSuccessItem = function(item, response, status, headers) {
-            $scope.file = response.FileName;
-            
+            $scope.data.file = response.FileName;
         }
 
         $scope.uploader.onErrorItem = function (item, response, status, headers) {
@@ -24,11 +28,11 @@ app.controller('ttCreateAssignmentsDialogController', [
 
 
         $scope.isProgressBarVisible = function () {
-            return $scope.uploader.isUploading || $scope.file;
+            return $scope.uploader.isUploading || $scope.data.file;
         }
 
         $scope.getProgress = function () {
-            return $scope.file ? 100 : $scope.uploader.progress;
+            return $scope.data.file ? 100 : $scope.uploader.progress;
         }
 
         $scope.isUploadingToCloud = function() {
@@ -55,16 +59,16 @@ app.controller('ttCreateAssignmentsDialogController', [
 
         $scope.create = function (e) {
             if ($scope.addAssignmetForm.$valid) {
-                if (!$scope.file) {
+                if (!$scope.data.file) {
                     ngToast.danger(window.resources.fileIsNotAttachedMessage);
                     return;
                 }
-                ngToast.success(window.resources.assignmentCreatedMessage);
-                //$ttAssignmentService.create($scope.data)
-                //    .then(function (response) {
-                //        ngToast.success("New assignment has been added");
-                //        $scope.closeThisDialog(response.data);
-                //    });
+                $scope.data.groupId = $stateParams.groupId;
+                $ttAssignmentService.create($scope.data)
+                    .then(function (response) {
+                        ngToast.success(window.resources.assignmentCreatedMessage);
+                        $scope.closeThisDialog(response.data);
+                    });
             }
         }
 

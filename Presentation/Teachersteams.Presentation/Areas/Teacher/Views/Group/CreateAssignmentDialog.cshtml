@@ -31,7 +31,7 @@
                 <div class="form-group" ng-class="{ 'has-error': addAssignmetForm.expirationDate.$touched && addAssignmetForm.expirationDate.$invalid,
                  'has-success': addAssignmetForm.expirationDate.$touched && addAssignmetForm.expirationDate.$valid }">
                     <div class="input-group">
-                        <input type="text" name="expirationDate" class="form-control" uib-datepicker-popup ng-model="expirationDate"
+                        <input type="text" name="expirationDate" class="form-control" uib-datepicker-popup ng-model="data.expirationDate"
                                is-open="expirationDatePopup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close"
                                ng-click="expirationDatePopup.open()"/>
                         <span ng-show="addAssignmetForm.expirationDate.$untouched" ng-click="expirationDatePopup.open()"

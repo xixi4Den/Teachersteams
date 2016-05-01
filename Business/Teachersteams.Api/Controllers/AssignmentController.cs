@@ -1,21 +1,23 @@
 ﻿using System;
-using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using Teachersteams.Business.Enums;
 using Teachersteams.Business.Services;
+using Teachersteams.Business.ViewModels.Assignment;
 
 namespace Teachersteams.Api.Controllers
 {
     public class AssignmentController : ApiController
     {
         private readonly IFileManager fileManager;
+        private readonly IAssignmentService assignmentService;
 
-        public AssignmentController(IFileManager fileManager)
+        public AssignmentController(IFileManager fileManager, IAssignmentService assignmentService)
         {
             this.fileManager = fileManager;
+            this.assignmentService = assignmentService;
         }
 
         [HttpPost]
@@ -25,63 +27,28 @@ namespace Teachersteams.Api.Controllers
             {
                 return Request.CreateErrorResponse(HttpStatusCode.UnsupportedMediaType, "media type");
             }
-
-            var provider = new MultipartDropboxProvider(fileManager);
-
-            var result = await Request.Content.ReadAsMultipartAsync(provider);
-
-            return Request.CreateResponse(HttpStatusCode.OK, result);
-            //    .ContinueWith(t =>
-            //{
-            //    if (t.IsFaulted)
-            //    {
-            //        throw t.Exception;
-            //    }
-
-            //    return t.Result.FileName;
-            //});
-
-            //foreach (var stream in provider.Contents)
-            //{
-            //    var folder = ResolveFolder(fileType);
-            //    var uniqueFileName = FormUniqueFileName(stream);
-            //    var data = await stream.ReadAsStreamAsync();
-            //    var result = await fileManager.Upload(folder, uniqueFileName, data);
-            //    return Request.CreateResponse(HttpStatusCode.OK, result);
-            //}
-            //return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "unexpected");
+            
+            try
+            {
+                var provider = new MultipartDropboxProvider(fileManager, fileType);
+                var result = await Request.Content.ReadAsMultipartAsync(provider);
+                return Request.CreateResponse(HttpStatusCode.OK, result);
+            }
+            catch (Exception)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "file uploading");
+            }
         }
 
-        private string ResolveFolder(FileType fileType)
+        [HttpPost]
+        public HttpResponseMessage Post(string userId, [FromBody]AssignmentViewModel viewModel)
         {
-            if (fileType == FileType.Assignment)
+            if (ModelState.IsValid)
             {
-                return "Assignments";
+                var assignment = assignmentService.Create(userId, viewModel);
+                return Request.CreateResponse(HttpStatusCode.Created, assignment);
             }
-            if (fileType == FileType.Result)
-            {
-                return "Results";
-            }
-            throw new ArgumentOutOfRangeException();
-        }
-
-        private static string FormUniqueFileName(HttpContent stream)
-        {
-            var uniqueFileName = Guid.NewGuid().ToString();
-
-            var ext = GetExtensionOfOriginalFile(stream);
-            if (ext != null)
-            {
-                uniqueFileName = Path.ChangeExtension(uniqueFileName, ext);
-            }
-            return uniqueFileName;
-        }
-
-        private static string GetExtensionOfOriginalFile(HttpContent stream)
-        {
-            var originalFileName = stream.Headers.ContentDisposition.FileName;
-            originalFileName = originalFileName.Replace("\"", "");
-            return Path.GetExtension(originalFileName);
+            return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
         }
     }
 }
