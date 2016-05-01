@@ -1,0 +1,69 @@
+﻿@using Teachersteams.Presentation.Resources
+
+<div class="dialog-contents">
+    <div class="tt-add-assignment-dialog">
+        <h4>@Resource.CreateAssignmentDialogTitle</h4>
+        <div>
+            <form novalidate name="addAssignmetForm">
+                <div class="form-group" ng-class="{ 'has-error': addAssignmetForm.title.$touched && addAssignmetForm.title.$invalid,
+                 'has-success': addAssignmetForm.title.$touched && addAssignmetForm.title.$valid }">
+                    <div class="input-group">
+                        <input type="text" name="title" ng-model="data.title" class="form-control" placeholder="@Resource.AssignmentTitlePlaceholderMessage" required ng-maxlength="30"/>
+                        <span ng-show="addAssignmetForm.title.$touched && addAssignmetForm.title.$invalid"
+                              class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                        <span ng-show="addAssignmetForm.title.$touched && addAssignmetForm.title.$valid"
+                              class="input-group-addon"><span class="glyphicon glyphicon-ok"></span></span>
+                    </div>
+                    <div class="error-messages" ng-messages="addAssignmetForm.title.$error" ng-show="addAssignmetForm.title.$touched && addAssignmetForm.title.$invalid">
+                        <p ng-message="required">@Resource.AssignmentTitleIsRequiredValidationMessage</p>
+                        <p ng-message="maxlength">@Resource.AssignmentTitleIsLongValidationMessage</p>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error': addAssignmetForm.description.$touched && addAssignmetForm.description.$invalid,
+                 'has-success': addAssignmetForm.description.$touched && addAssignmetForm.description.$valid }">
+                    <textarea name="description" ng-model="data.description" class="form-control" rows="5" placeholder="@Resource.AssignmentDescriptionPlaceholderMessage" ng-maxlength="500"></textarea>
+                    <div class="error-messages" ng-messages="addAssignmetForm.description.$error" ng-show="addAssignmetForm.description.$touched && addAssignmetForm.description.$invalid">
+                        <p ng-message="maxlength">@Resource.AssignmentDescriptionIsLongValidationMessage</p>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error': addAssignmetForm.expirationDate.$touched && addAssignmetForm.expirationDate.$invalid,
+                 'has-success': addAssignmetForm.expirationDate.$touched && addAssignmetForm.expirationDate.$valid }">
+                    <div class="input-group">
+                        <input type="text" name="expirationDate" class="form-control" uib-datepicker-popup ng-model="data.expirationDate"
+                               is-open="expirationDatePopup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close"
+                               ng-click="expirationDatePopup.open()"/>
+                        <span ng-show="addAssignmetForm.expirationDate.$untouched" ng-click="expirationDatePopup.open()"
+                              class="input-group-addon"><span class="glyphicon glyphicon-plane"></span></span>
+                        <span ng-show="addAssignmetForm.expirationDate.$touched && addAssignmetForm.expirationDate.$invalid" ng-click="expirationDatePopup.open()"
+                              class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                        <span ng-show="addAssignmetForm.expirationDate.$touched && addAssignmetForm.expirationDate.$valid" ng-click="expirationDatePopup.open()"
+                              class="input-group-addon"><span class="glyphicon glyphicon-ok"></span></span>
+                    </div>
+                    <div class="error-messages" ng-messages="addAssignmetForm.expirationDate.$error" ng-show="addAssignmetForm.expirationDate.$touched && addAssignmetForm.expirationDate.$invalid">
+                        <p ng-message="required">@Resource.AssignmentExpirationDateIsRequiredValidationMessage</p>
+                        <p ng-message="date">@Resource.AssignmentExpirationDateIsInvalidValidationMessage</p>
+                    </div>
+                </div>
+                <div class="form-group tt-assignment-uploading">
+                    <div class="input-group">
+                        <div class="col-sm-3 col-md-3 col-lg-3 tt-browse-container">
+                            <span class="btn btn-default btn-file">
+                                @Resource.BrowseButtonLabel<input type="file" nv-file-select uploader="uploader" />
+                            </span>
+                        </div>
+                        <div class="tt-progress-bar" class="col-sm-9 col-md-9 col-lg-9">
+                            <uib-progressbar ng-show="isProgressBarVisible()" value="getProgress()" ng-class="{active: uploader.isUploading, 'progress-striped': true}" type="info"><i>{{getProgress() + '%'}}</i></uib-progressbar>
+                            <p ng-show="isUploadingToCloud()" class="tt-uploading-to-cloud-label">@Resource.UploadingToCloudMessage</p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="ngdialog-buttons">
+            <button type="button" class="btn-default ngdialog-button" ng-click="cancel()">@Resource.CloseButtonLabel</button>
+            <button type="button" class="btn-info ngdialog-button" ng-click="create()">@Resource.CreateButtonLabel</button>
+        </div>
+    </div>
+</div>

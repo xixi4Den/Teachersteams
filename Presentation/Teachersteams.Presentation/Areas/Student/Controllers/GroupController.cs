@@ -28,5 +28,10 @@ namespace Teachersteams.Presentation.Areas.Student.Controllers
         {
             return View();
         }
+
+        public ActionResult AssignmentsTab()
+        {
+            return View();
+        }
 	}
 }

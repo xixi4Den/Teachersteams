@@ -58,6 +58,10 @@
     <Compile Include="Migrations\201604202215036_StudentAndTeacherTablesAddForeignKeyToGroupTable.Designer.cs">
       <DependentUpon>201604202215036_StudentAndTeacherTablesAddForeignKeyToGroupTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604262019266_AddAssignmentTable.cs" />
+    <Compile Include="Migrations\201604262019266_AddAssignmentTable.Designer.cs">
+      <DependentUpon>201604262019266_AddAssignmentTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -80,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604202215036_StudentAndTeacherTablesAddForeignKeyToGroupTable.resx">
       <DependentUpon>201604202215036_StudentAndTeacherTablesAddForeignKeyToGroupTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604262019266_AddAssignmentTable.resx">
+      <DependentUpon>201604262019266_AddAssignmentTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

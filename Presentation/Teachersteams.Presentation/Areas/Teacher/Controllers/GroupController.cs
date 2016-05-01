@@ -53,5 +53,15 @@ namespace Teachersteams.Presentation.Areas.Teacher.Controllers
         {
             return View();
         }
+
+        public ActionResult AssignmentsTab()
+        {
+            return View();
+        }
+
+        public ActionResult CreateAssignmentDialog()
+        {
+            return View();
+        }
 	}
 }

@@ -18,7 +18,8 @@ namespace Teachersteams.DataAccess
         public UnitOfWork(Context context,
             Func<DbContext, IRepository<Group>> groupRepositoryFactory,
             Func<DbContext, IRepository<Teacher>> teacherRepositoryFactory,
-            Func<DbContext, IRepository<Student>> studentRepositoryFactory)
+            Func<DbContext, IRepository<Student>> studentRepositoryFactory,
+            Func<DbContext, IRepository<Assignment>> assignmentRepositoryFactory)
         {
             Contract.Requires<ArgumentNullException>(context != null, "context cannot be null");
             repositories = new Dictionary<Type,object>();
@@ -27,6 +28,7 @@ namespace Teachersteams.DataAccess
             RegisterRepository(groupRepositoryFactory(context));
             RegisterRepository(teacherRepositoryFactory(context));
             RegisterRepository(studentRepositoryFactory(context));
+            RegisterRepository(assignmentRepositoryFactory(context));
         }
 
         public void Commit()

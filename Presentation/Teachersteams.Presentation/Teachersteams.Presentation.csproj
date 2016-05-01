@@ -91,9 +91,6 @@
       <Private>True</Private>
       <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http">
     </Reference>
     <Reference Include="System.Net.Http.WebRequest">
@@ -168,6 +165,8 @@
     <Content Include="Content\switchery\switchery.css" />
     <Content Include="Content\switchery\switchery.min.css" />
     <Content Include="Content\ui-grid\ui-grid.css" />
+    <Content Include="Scripts\controllers\groups\tabs\assignments\assignmentsTabControllerForTeacher.js" />
+    <Content Include="Scripts\controllers\groups\tabs\assignments\createAssignmentDialogController.js" />
     <Content Include="Scripts\controllers\groups\tabs\users\confirm\baseConfirmUserController.js" />
     <Content Include="Scripts\controllers\groups\tabs\users\delete\deleteStudentDialogController.js" />
     <Content Include="Scripts\controllers\groups\tabs\users\delete\deleteTeacherDialogController.js" />
@@ -194,6 +193,8 @@
     <Content Include="Scripts\enums\userSearchType.js" />
     <Content Include="Scripts\enums\userStatus.js" />
     <Content Include="Scripts\enums\userType.js" />
+    <Content Include="Scripts\libs\angular-file-upload.js" />
+    <Content Include="Scripts\libs\angular-file-upload.min.js" />
     <Content Include="Scripts\libs\ui-grid.js" />
     <Content Include="Content\ui-grid\ui-grid.min.css" />
     <Content Include="Scripts\libs\ui-grid.min.js" />
@@ -237,6 +238,7 @@
     <Content Include="Scripts\libs\underscore.js" />
     <Content Include="Scripts\libs\underscore.min.js" />
     <Content Include="Scripts\modules.js" />
+    <Content Include="Scripts\services\assignmentService.js" />
     <Content Include="Scripts\services\gridHelper.js" />
     <Content Include="Scripts\services\groupService.js" />
     <Content Include="Scripts\services\studentService.js" />
@@ -309,6 +311,9 @@
     <Content Include="Areas\Teacher\Views\Group\DeleteUserDialog.cshtml" />
     <Content Include="Areas\Teacher\Views\Group\EditTeacherPermissionsDialog.cshtml" />
     <Content Include="Areas\Teacher\Views\Group\ViewGradesDialog.cshtml" />
+    <Content Include="Areas\Teacher\Views\Group\AssignmentsTab.cshtml" />
+    <Content Include="Areas\Student\Views\Group\AssignmentsTab.cshtml" />
+    <Content Include="Areas\Teacher\Views\Group\CreateAssignmentDialog.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\CommonTemplates\NavbarTemplate.cshtml" />
     <Content Include="Views\Home\About.cshtml" />

@@ -79,6 +79,15 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to close without saving your changes?.
+        /// </summary>
+        public static string AddAssignmentDialogCloseConfirmationMessage {
+            get {
+                return ResourceManager.GetString("AddAssignmentDialogCloseConfirmationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All.
         /// </summary>
         public static string AllGroupsFilterText {
@@ -93,6 +102,78 @@ namespace Teachersteams.Presentation.Resources {
         public static string AllUsersUserSearchTypeName {
             get {
                 return ResourceManager.GetString("AllUsersUserSearchTypeName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A new assignment has been created..
+        /// </summary>
+        public static string AssignmentCreatedMessage {
+            get {
+                return ResourceManager.GetString("AssignmentCreatedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assignment description is too long..
+        /// </summary>
+        public static string AssignmentDescriptionIsLongValidationMessage {
+            get {
+                return ResourceManager.GetString("AssignmentDescriptionIsLongValidationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Here you can describe assignment in more details.
+        /// </summary>
+        public static string AssignmentDescriptionPlaceholderMessage {
+            get {
+                return ResourceManager.GetString("AssignmentDescriptionPlaceholderMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assignment expiration date is invalid..
+        /// </summary>
+        public static string AssignmentExpirationDateIsInvalidValidationMessage {
+            get {
+                return ResourceManager.GetString("AssignmentExpirationDateIsInvalidValidationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assignment expiration date is required..
+        /// </summary>
+        public static string AssignmentExpirationDateIsRequiredValidationMessage {
+            get {
+                return ResourceManager.GetString("AssignmentExpirationDateIsRequiredValidationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assignment title is too long..
+        /// </summary>
+        public static string AssignmentTitleIsLongValidationMessage {
+            get {
+                return ResourceManager.GetString("AssignmentTitleIsLongValidationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assignment title is required..
+        /// </summary>
+        public static string AssignmentTitleIsRequiredValidationMessage {
+            get {
+                return ResourceManager.GetString("AssignmentTitleIsRequiredValidationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter a assignment title.
+        /// </summary>
+        public static string AssignmentTitlePlaceholderMessage {
+            get {
+                return ResourceManager.GetString("AssignmentTitlePlaceholderMessage", resourceCulture);
             }
         }
         
@@ -115,11 +196,38 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Browse.
+        /// </summary>
+        public static string BrowseButtonLabel {
+            get {
+                return ResourceManager.GetString("BrowseButtonLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Close.
         /// </summary>
         public static string CloseButtonLabel {
             get {
                 return ResourceManager.GetString("CloseButtonLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create assignment.
+        /// </summary>
+        public static string CreateAssignmentButtonLabel {
+            get {
+                return ResourceManager.GetString("CreateAssignmentButtonLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Assignment.
+        /// </summary>
+        public static string CreateAssignmentDialogTitle {
+            get {
+                return ResourceManager.GetString("CreateAssignmentDialogTitle", resourceCulture);
             }
         }
         
@@ -223,6 +331,24 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please attach a file..
+        /// </summary>
+        public static string FileIsNotAttachedMessage {
+            get {
+                return ResourceManager.GetString("FileIsNotAttachedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assignments.
+        /// </summary>
+        public static string GroupAssignmentsTabTitle {
+            get {
+                return ResourceManager.GetString("GroupAssignmentsTabTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Creation Date.
         /// </summary>
         public static string GroupCreateDateLabel {
@@ -291,15 +417,6 @@ namespace Teachersteams.Presentation.Resources {
         public static string GroupStudentsTabTitle {
             get {
                 return ResourceManager.GetString("GroupStudentsTabTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Tasks.
-        /// </summary>
-        public static string GroupTasksTabTitle {
-            get {
-                return ResourceManager.GetString("GroupTasksTabTitle", resourceCulture);
             }
         }
         
@@ -696,6 +813,15 @@ namespace Teachersteams.Presentation.Resources {
         public static string UnexpectedErrorTitle {
             get {
                 return ResourceManager.GetString("UnexpectedErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uploading to cloud....
+        /// </summary>
+        public static string UploadingToCloudMessage {
+            get {
+                return ResourceManager.GetString("UploadingToCloudMessage", resourceCulture);
             }
         }
         
