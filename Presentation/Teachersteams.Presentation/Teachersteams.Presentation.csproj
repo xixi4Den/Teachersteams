@@ -328,6 +328,8 @@
     <Content Include="Views\Shared\GroupDetails.cshtml" />
     <Content Include="Views\Shared\NotificationList.cshtml" />
     <Content Include="Views\Shared\UserConfirmationSection.cshtml" />
+    <Content Include="Views\Shared\AssignmentLinkTemplate.cshtml" />
+    <Content Include="Views\Shared\GridCellDateTemplate.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

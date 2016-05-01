@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using AutoMapper;
+using Teachersteams.Business.Extensions;
+using Teachersteams.Business.Helpers;
 using Teachersteams.Business.ViewModels.Assignment;
+using Teachersteams.Business.ViewModels.Grid;
 using Teachersteams.Domain;
 using Teachersteams.Domain.Entities;
 using Teachersteams.Domain.Enums;
@@ -11,14 +15,17 @@ namespace Teachersteams.Business.Services
 {
     public class AssignmentService: IAssignmentService
     {
-        public readonly IUnitOfWork unitOfWork;
-        public readonly IMapper mapper;
+        private readonly IUnitOfWork unitOfWork;
+        private readonly IMapper mapper;
+        private readonly IGridOptionsHelper gridOptionsHelper;
 
         public AssignmentService(IUnitOfWork unitOfWork,
-            IMapper mapper)
+            IMapper mapper,
+            IGridOptionsHelper gridOptionsHelper)
         {
             this.unitOfWork = unitOfWork;
             this.mapper = mapper;
+            this.gridOptionsHelper = gridOptionsHelper;
         }
 
         public AssignmentViewModel Create(string uid, AssignmentViewModel viewModel)
@@ -30,6 +37,25 @@ namespace Teachersteams.Business.Services
             var insertedEntity = unitOfWork.InsertOrUpdate(entity);
             unitOfWork.Commit();
             return mapper.Map<AssignmentViewModel>(insertedEntity);
+        }
+
+        public IEnumerable<AssignmentViewModel> GetAll(Guid groupId, GridOptions gridOptions)
+        {
+            var assignments = unitOfWork.GetAll(new QueryParameters<Assignment>
+            {
+                FilterRules = x => x.GroupId == groupId,
+                PageRules = new PageSettings(gridOptions.PageNumber, gridOptions.PageSize),
+                SortRules = gridOptionsHelper.BuidDynamicOrderedQuery<Assignment>(gridOptions)
+            });
+            return mapper.MapManyTo<AssignmentViewModel>(assignments);
+        }
+
+        public int Count(Guid groupId)
+        {
+            return unitOfWork.Count(new QueryParameters<Assignment>
+            {
+                FilterRules = x => x.GroupId == groupId,
+            });
         }
 
         private void Validate(string uid, AssignmentViewModel viewModel)
