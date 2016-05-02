@@ -1,5 +1,7 @@
-﻿<script type="text/ng-template" id="assignment-link-template">
+﻿@using Teachersteams.Presentation.Resources
+
+<script type="text/ng-template" id="assignment-link-template">
     <div class="ui-grid-cell-contents">
-        <a ng-href="{{row.entity.FileUrl}}" target="_blank">Download</a>
+        <a ng-href="{{row.entity.FileUrl}}" target="_blank">@Resource.DownloadLinkLabel</a>
     </div>
 </script>

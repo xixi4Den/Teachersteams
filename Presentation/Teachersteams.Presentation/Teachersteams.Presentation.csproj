@@ -190,6 +190,7 @@
     <Content Include="Scripts\controllers\navigation\userSpecificNavigationBaseController.js" />
     <Content Include="Scripts\controllers\notifications\notificationsBaseController.js" />
     <Content Include="Scripts\directives\noItemsMessageDirective.js" />
+    <Content Include="Scripts\enums\assignmentStatus.js" />
     <Content Include="Scripts\enums\groupFilterType.js" />
     <Content Include="Scripts\enums\sortingDirection.js" />
     <Content Include="Scripts\enums\userSearchType.js" />

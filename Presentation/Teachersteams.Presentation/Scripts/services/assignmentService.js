@@ -2,10 +2,12 @@
     .factory('$ttAssignmentService', [
         '$userHttp',
         'AppContext',
-        function ($userHttp, AppContext) {
+        'AssignmentStatus',
+        function ($userHttp, AppContext, AssignmentStatus) {
             var createUrl = 'assignment/Post';
             var getAllUrl = 'assignment/GetAll';
             var countUrl = 'assignment/Count';
+            var downloadFileUrl = 'Assignment/Download?fileType=1&file=';
 
             return {
                 create: function (newAssignment) {
@@ -21,18 +23,8 @@
                         sortingDirection: paginationOptions.SortingDirection
                     }).then(function (r) {
                         _.map(r.data, function (val, key) {
-                            switch(val.Status) {
-                                case 1:
-                                    val.StatusName = "Draft";
-                                    break;
-                                case 2:
-                                    val.StatusName = "Active";
-                                    break;
-                                case 3:
-                                    val.StatusName = "Expired";
-                                    break;
-                            }
-                            val.FileUrl = AppContext.apiUrl + 'Assignment/Download?fileType=1&file=' + val.File;
+                            val.StatusName = AssignmentStatus.localizedName[val.Status]();
+                            val.FileUrl = '' + AppContext.apiUrl + downloadFileUrl + val.File;
                             return val;
                         });
                         return r.data;

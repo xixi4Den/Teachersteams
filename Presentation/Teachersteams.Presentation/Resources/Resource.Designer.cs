@@ -151,6 +151,69 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Expiration.
+        /// </summary>
+        public static string AssignmentsGridExpirationColumnName {
+            get {
+                return ResourceManager.GetString("AssignmentsGridExpirationColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File.
+        /// </summary>
+        public static string AssignmentsGridFileColumnName {
+            get {
+                return ResourceManager.GetString("AssignmentsGridFileColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string AssignmentsGridStatusColumnName {
+            get {
+                return ResourceManager.GetString("AssignmentsGridStatusColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        public static string AssignmentsGridTitleColumnName {
+            get {
+                return ResourceManager.GetString("AssignmentsGridTitleColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Active.
+        /// </summary>
+        public static string AssignmentStatusEnumActive {
+            get {
+                return ResourceManager.GetString("AssignmentStatusEnumActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Draft.
+        /// </summary>
+        public static string AssignmentStatusEnumDraft {
+            get {
+                return ResourceManager.GetString("AssignmentStatusEnumDraft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expired.
+        /// </summary>
+        public static string AssignmentStatusEnumExpired {
+            get {
+                return ResourceManager.GetString("AssignmentStatusEnumExpired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Assignment title is too long..
         /// </summary>
         public static string AssignmentTitleIsLongValidationMessage {
@@ -300,6 +363,15 @@ namespace Teachersteams.Presentation.Resources {
         public static string DeleteUserDialogTitle {
             get {
                 return ResourceManager.GetString("DeleteUserDialogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download.
+        /// </summary>
+        public static string DownloadLinkLabel {
+            get {
+                return ResourceManager.GetString("DownloadLinkLabel", resourceCulture);
             }
         }
         

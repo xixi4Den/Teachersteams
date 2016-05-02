@@ -381,4 +381,28 @@
   <data name="UploadingToCloudMessage" xml:space="preserve">
     <value>Загрузка в облоко...</value>
   </data>
+  <data name="AssignmentsGridExpirationColumnName" xml:space="preserve">
+    <value>Срок</value>
+  </data>
+  <data name="AssignmentsGridFileColumnName" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="AssignmentsGridStatusColumnName" xml:space="preserve">
+    <value>Статус</value>
+  </data>
+  <data name="AssignmentsGridTitleColumnName" xml:space="preserve">
+    <value>Заголовок</value>
+  </data>
+  <data name="AssignmentStatusEnumActive" xml:space="preserve">
+    <value>Активное</value>
+  </data>
+  <data name="AssignmentStatusEnumDraft" xml:space="preserve">
+    <value>Черновик</value>
+  </data>
+  <data name="AssignmentStatusEnumExpired" xml:space="preserve">
+    <value>Неактивное</value>
+  </data>
+  <data name="DownloadLinkLabel" xml:space="preserve">
+    <value>Скачать</value>
+  </data>
 </root>
