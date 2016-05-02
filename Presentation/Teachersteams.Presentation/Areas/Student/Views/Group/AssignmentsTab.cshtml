@@ -1,1 +1,10 @@
-﻿Student's Assignments
+﻿@using Teachersteams.Presentation.Resources
+
+<section ng-controller="ttAssignmentsTabControllerForStudent" class="tt-tab-content">
+    <div class="row">
+        <div id="assignmentsGrid" ui-grid="gridOptions" ui-grid-pagination class="grid" no-items-message data-show-empty-msg="@Resource.NoItems"></div>
+    </div>
+</section>
+
+@Html.Partial("AssignmentLinkTemplate")
+@Html.Partial("GridCellDateTemplate")

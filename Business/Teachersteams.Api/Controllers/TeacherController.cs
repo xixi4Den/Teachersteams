@@ -38,9 +38,9 @@ namespace Teachersteams.Api.Controllers
         }
 
         [HttpGet]
-        public HttpResponseMessage Count(Guid groupId, string userId)
+        public HttpResponseMessage Count(Guid groupId, string userId, UserType userType)
         {
-            var teachers = teacherService.Count(groupId);
+            var teachers = teacherService.Count(groupId, userType);
             return Request.CreateResponse(HttpStatusCode.OK, teachers);
         }
 

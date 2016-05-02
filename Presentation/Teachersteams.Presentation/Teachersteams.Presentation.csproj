@@ -165,6 +165,8 @@
     <Content Include="Content\switchery\switchery.css" />
     <Content Include="Content\switchery\switchery.min.css" />
     <Content Include="Content\ui-grid\ui-grid.css" />
+    <Content Include="Scripts\controllers\groups\tabs\assignments\assignmentsTabBaseController.js" />
+    <Content Include="Scripts\controllers\groups\tabs\assignments\assignmentsTabControllerForStudent.js" />
     <Content Include="Scripts\controllers\groups\tabs\assignments\assignmentsTabControllerForTeacher.js" />
     <Content Include="Scripts\controllers\groups\tabs\assignments\createAssignmentDialogController.js" />
     <Content Include="Scripts\controllers\groups\tabs\users\confirm\baseConfirmUserController.js" />
@@ -188,6 +190,7 @@
     <Content Include="Scripts\controllers\navigation\userSpecificNavigationBaseController.js" />
     <Content Include="Scripts\controllers\notifications\notificationsBaseController.js" />
     <Content Include="Scripts\directives\noItemsMessageDirective.js" />
+    <Content Include="Scripts\enums\assignmentStatus.js" />
     <Content Include="Scripts\enums\groupFilterType.js" />
     <Content Include="Scripts\enums\sortingDirection.js" />
     <Content Include="Scripts\enums\userSearchType.js" />
@@ -328,6 +331,8 @@
     <Content Include="Views\Shared\GroupDetails.cshtml" />
     <Content Include="Views\Shared\NotificationList.cshtml" />
     <Content Include="Views\Shared\UserConfirmationSection.cshtml" />
+    <Content Include="Views\Shared\AssignmentLinkTemplate.cshtml" />
+    <Content Include="Views\Shared\GridCellDateTemplate.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

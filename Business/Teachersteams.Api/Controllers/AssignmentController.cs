@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web.Http;
 using Teachersteams.Business.Enums;
 using Teachersteams.Business.Services;
 using Teachersteams.Business.ViewModels.Assignment;
+using Teachersteams.Business.ViewModels.Grid;
 
 namespace Teachersteams.Api.Controllers
 {
@@ -40,6 +42,23 @@ namespace Teachersteams.Api.Controllers
             }
         }
 
+        [HttpGet]
+        public HttpResponseMessage Download(FileType fileType, string file)
+        {
+            var task = Task.Run(() => fileManager.Download("Assignments", file));
+            var buffer = task.Result;
+            var result = new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new ByteArrayContent(buffer)
+            };
+            result.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
+            {
+                FileName = file,
+            };
+            result.Content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+            return result;
+        }
+
         [HttpPost]
         public HttpResponseMessage Post(string userId, [FromBody]AssignmentViewModel viewModel)
         {
@@ -49,6 +68,20 @@ namespace Teachersteams.Api.Controllers
                 return Request.CreateResponse(HttpStatusCode.Created, assignment);
             }
             return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+        }
+
+        [HttpGet]
+        public HttpResponseMessage GetAll(Guid groupId, string userId, [FromUri]GridOptions options)
+        {
+            var teachers = assignmentService.GetAll(groupId, options);
+            return Request.CreateResponse(HttpStatusCode.OK, teachers);
+        }
+
+        [HttpGet]
+        public HttpResponseMessage Count(Guid groupId, string userId)
+        {
+            var teachers = assignmentService.Count(groupId);
+            return Request.CreateResponse(HttpStatusCode.OK, teachers);
         }
     }
 }

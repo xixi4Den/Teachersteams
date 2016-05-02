@@ -14,7 +14,7 @@ namespace Teachersteams.Business.Services
 
         IEnumerable<TeacherViewModel> GetUsers(Guid groupId, GridOptions gridOptions, UserType userType);
 
-        int Count(Guid groupId);
+        int Count(Guid groupId, UserType userType);
 
         IEnumerable<RequestViewModel> GetRequests(string uid);
 
