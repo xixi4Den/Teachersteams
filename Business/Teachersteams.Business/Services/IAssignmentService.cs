@@ -13,5 +13,7 @@ namespace Teachersteams.Business.Services
         IEnumerable<AssignmentViewModel> GetAllAssignments(Guid groupId, GridOptions gridOptions);
 
         int AssignmentCount(Guid groupId);
+
+        void CompleteAssignment(string uid, AssignmentCompletionViewModel viewModel);
     }
 }

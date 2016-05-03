@@ -42,10 +42,7 @@ namespace Teachersteams.Business.Services.Mapping
         private void MapAssignmentCompletionViewModelToAssignmentResult()
         {
             CreateMap<AssignmentCompletionViewModel, AssignmentResult>()
-                .ForMember(m => m.Id, s => s.MapFrom(o => o.Id))
                 .ForMember(m => m.AssignmentId, s => s.MapFrom(o => o.AssignmentId))
-                .ForMember(m => m.StudentId, s => s.MapFrom(o => o.StudentId))
-                .ForMember(m => m.CompletionDate, s => s.MapFrom(o => o.CompletionDate))
                 .ForMember(m => m.File, s => s.MapFrom(o => o.File));
         }
     }

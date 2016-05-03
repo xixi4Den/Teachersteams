@@ -83,5 +83,12 @@ namespace Teachersteams.Api.Controllers
             var teachers = assignmentService.AssignmentCount(groupId);
             return Request.CreateResponse(HttpStatusCode.OK, teachers);
         }
+
+        [HttpPost]
+        public HttpResponseMessage CompleteAssignment(string userId, [FromBody]AssignmentCompletionViewModel viewModel)
+        {
+            assignmentService.CompleteAssignment(userId, viewModel);
+            return Request.CreateResponse(HttpStatusCode.OK, "");
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using AutoMapper;
+using Teachersteams.Business.Exceptions;
 using Teachersteams.Business.Extensions;
 using Teachersteams.Business.Helpers;
 using Teachersteams.Business.ViewModels.Assignment;
@@ -30,7 +31,7 @@ namespace Teachersteams.Business.Services
 
         public AssignmentViewModel CreateAssignment(string uid, AssignmentViewModel viewModel)
         {
-            Validate(uid, viewModel);
+            ValidateCreator(uid, viewModel);
 
             var entity = mapper.Map<Assignment>(viewModel);
             entity.Status = AssignmentStatus.Active;
@@ -58,17 +59,22 @@ namespace Teachersteams.Business.Services
             });
         }
 
-        private void Validate(string uid, AssignmentViewModel viewModel)
+        public void CompleteAssignment(string uid, AssignmentCompletionViewModel viewModel)
+        {
+            var assignment = unitOfWork.Get<Assignment>(viewModel.AssignmentId);
+            var newEntity = mapper.Map<AssignmentResult>(viewModel);
+            SetStudent(newEntity, uid, assignment.GroupId);
+            SetComplitionDate(newEntity, assignment);
+            unitOfWork.InsertOrUpdate(newEntity);
+            unitOfWork.Commit();
+        }
+
+        private void ValidateCreator(string uid, AssignmentViewModel viewModel)
         {
             Contract.NotNull<ArgumentNullException>(viewModel);
             Contract.NotDefault<Guid, ArgumentException>(viewModel.GroupId);
             Contract.NotNullAndNotEmpty<ArgumentException>(viewModel.File);
 
-            ValidateCreator(uid, viewModel);
-        }
-
-        private void ValidateCreator(string uid, AssignmentViewModel viewModel)
-        {
             var isValidTeacher = unitOfWork.Any(new QueryParameters<Teacher>
             {
                 FilterRules = x => x.Uid == uid && x.GroupId == viewModel.GroupId
@@ -80,6 +86,34 @@ namespace Teachersteams.Business.Services
             });
 
             Contract.Assert<UnauthorizedAccessException>(isValidTeacher || isOwner);
+        }
+
+        private void SetStudent(AssignmentResult newEntity, string uid, Guid groupId)
+        {
+            var student = unitOfWork.GetSingleOrDefault(new QueryParameters<Student>
+            {
+                FilterRules = x => x.Uid == uid && x.GroupId == groupId
+            });
+
+            newEntity.StudentId = student.Id;
+        }
+
+        private void SetComplitionDate(AssignmentResult newEntity, Assignment assignment)
+        {
+            newEntity.CompletionDate = DateTime.UtcNow;
+
+            if (newEntity.CompletionDate > assignment.ExpirationDate)
+            {
+                ExpireAssignment(assignment);
+                throw new ExpiredAssignmentException();
+            }
+        }
+
+        private void ExpireAssignment(Assignment assignment)
+        {
+            assignment.Status = AssignmentStatus.Expired;
+            unitOfWork.InsertOrUpdate(assignment);
+            unitOfWork.Commit();
         }
     }
 }
