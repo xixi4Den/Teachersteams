@@ -20,7 +20,13 @@ app.controller('ttAssignmentsTabControllerForStudent', [
         }
 
         $scope.complete = function(grid, row) {
-            
+            var dialog = ngDialog.open({ template: '/Student/Group/CompleteAssignmentDialog', controller: 'ttCompleteAssignmentDialogController', data: { id: row.entity.Id, title: row.entity.Title }, closeByEscape: false, closeByNavigation: false, closeByDocument: false, showClose: false });
+            dialog.closePromise.then(function (newAssignmentResult) {
+                var result = newAssignmentResult.value;
+                if ((typeof result !== "undefined") && result.hasOwnProperty('Id') && (typeof result.Id !== "undefined")) {
+                    $scope.reloadGrid();
+                }
+            });
         }
 
         $scope.isSeeResultActionVisible = function (row) {

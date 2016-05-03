@@ -7,7 +7,8 @@
             var createUrl = 'assignment/Post';
             var getAllUrl = 'assignment/GetAll';
             var countUrl = 'assignment/Count';
-            var downloadFileUrl = 'Assignment/Download?fileType=1&file=';
+            var downloadFileUrl = 'assignment/Download?fileType=1&file=';
+            var completeUrl = 'assignment/CompleteAssignment';
 
             return {
                 create: function (newAssignment) {
@@ -35,6 +36,10 @@
                     return $userHttp.get(countUrl, {
                         groupId: groupId
                     });
+                },
+
+                complete: function (result) {
+                    return $userHttp.post(completeUrl, result);
                 },
             }
     }]);

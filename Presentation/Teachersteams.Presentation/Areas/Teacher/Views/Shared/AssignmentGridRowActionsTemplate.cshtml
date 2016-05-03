@@ -1,7 +1,7 @@
-﻿<script type="text/ng-template" id="assignment-actions-template-for-teacher">
+﻿@using Teachersteams.Presentation.Resources
+
+<script type="text/ng-template" id="assignment-actions-template-for-teacher">
     <div class="ui-grid-cell-contents">
-        <a ng-href="{{row.entity.FileUrl}}" target="_blank" class="btn btn-default" role="button" uib-tooltip="Download assignment" tooltip-placement="bottom"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>
-        @*<button class="btn btn-default" ng-show="grid.appScope.isCompleteActionVisible(row)" ng-click="grid.appScope.complete(grid, row)" uib-tooltip="Click to select your answers and to send it for checking" tooltip-placement="bottom"><span class="glyphicon glyphicon-edit"></span></button>
-        <button class="btn btn-default" ng-show="grid.appScope.isSeeResultActionVisible(row)" ng-click="grid.appScope.seeResult(grid, row)" uib-tooltip="Click to see your results" tooltip-placement="bottom"><span class="glyphicon glyphicon-eye-open"></span></button>*@
+        <a ng-href="{{row.entity.FileUrl}}" target="_blank" class="btn btn-default" role="button" uib-tooltip="@Resource.DownloadAssignmentActionTooltip" tooltip-placement="bottom"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>
     </div>
 </script>

@@ -106,6 +106,15 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Assignment has been completed successfully..
+        /// </summary>
+        public static string AssignmentCompletedSuccessMessage {
+            get {
+                return ResourceManager.GetString("AssignmentCompletedSuccessMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A new assignment has been created..
         /// </summary>
         public static string AssignmentCreatedMessage {
@@ -268,6 +277,33 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Click to select your answers and to send it for checking..
+        /// </summary>
+        public static string CompleteAssignmentActionTooltip {
+            get {
+                return ResourceManager.GetString("CompleteAssignmentActionTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Complete assignment .
+        /// </summary>
+        public static string CompleteAssignmentDialogTitle {
+            get {
+                return ResourceManager.GetString("CompleteAssignmentDialogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Complete.
+        /// </summary>
+        public static string CompleteButtonLabel {
+            get {
+                return ResourceManager.GetString("CompleteButtonLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create assignment.
         /// </summary>
         public static string CreateAssignmentButtonLabel {
@@ -354,6 +390,15 @@ namespace Teachersteams.Presentation.Resources {
         public static string DeleteUserDialogTitle {
             get {
                 return ResourceManager.GetString("DeleteUserDialogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click to download assignment..
+        /// </summary>
+        public static string DownloadAssignmentActionTooltip {
+            get {
+                return ResourceManager.GetString("DownloadAssignmentActionTooltip", resourceCulture);
             }
         }
         
@@ -876,6 +921,15 @@ namespace Teachersteams.Presentation.Resources {
         public static string UploadingToCloudMessage {
             get {
                 return ResourceManager.GetString("UploadingToCloudMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click to see your results..
+        /// </summary>
+        public static string ViewAssignmentResultActionTooltip {
+            get {
+                return ResourceManager.GetString("ViewAssignmentResultActionTooltip", resourceCulture);
             }
         }
         

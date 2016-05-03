@@ -11,7 +11,7 @@ app.controller('ttAssignmentsTabControllerForTeacher', [
             dialog.closePromise.then(function (newAssignment) {
                 var result = newAssignment.value;
                 if ((typeof result !== "undefined") && result.hasOwnProperty('Id') && (typeof result.Id !== "undefined")) {
-                    $scope.$broadcast('create_group', result);
+                    $scope.reloadGrid();
                 }
             });
         }

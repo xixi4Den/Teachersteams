@@ -399,4 +399,22 @@
   <data name="AssignmentStatusEnumExpired" xml:space="preserve">
     <value>Expired</value>
   </data>
+  <data name="AssignmentCompletedSuccessMessage" xml:space="preserve">
+    <value>Assignment has been completed successfully.</value>
+  </data>
+  <data name="CompleteAssignmentActionTooltip" xml:space="preserve">
+    <value>Click to select your answers and to send it for checking.</value>
+  </data>
+  <data name="CompleteAssignmentDialogTitle" xml:space="preserve">
+    <value>Complete assignment </value>
+  </data>
+  <data name="CompleteButtonLabel" xml:space="preserve">
+    <value>Complete</value>
+  </data>
+  <data name="DownloadAssignmentActionTooltip" xml:space="preserve">
+    <value>Click to download assignment.</value>
+  </data>
+  <data name="ViewAssignmentResultActionTooltip" xml:space="preserve">
+    <value>Click to see your results.</value>
+  </data>
 </root>

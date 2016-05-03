@@ -399,4 +399,22 @@
   <data name="AssignmentStatusEnumExpired" xml:space="preserve">
     <value>Неактивное</value>
   </data>
+  <data name="AssignmentCompletedSuccessMessage" xml:space="preserve">
+    <value>Задание упешно завершено.</value>
+  </data>
+  <data name="CompleteAssignmentActionTooltip" xml:space="preserve">
+    <value>Кликние чтобы отправить ответы на проверку.</value>
+  </data>
+  <data name="CompleteAssignmentDialogTitle" xml:space="preserve">
+    <value>Завершить задание</value>
+  </data>
+  <data name="CompleteButtonLabel" xml:space="preserve">
+    <value>Завершить</value>
+  </data>
+  <data name="DownloadAssignmentActionTooltip" xml:space="preserve">
+    <value>Кликните чтобы скачать задание.</value>
+  </data>
+  <data name="ViewAssignmentResultActionTooltip" xml:space="preserve">
+    <value>Кликните чтобы увидеть выши результаты.</value>
+  </data>
 </root>
