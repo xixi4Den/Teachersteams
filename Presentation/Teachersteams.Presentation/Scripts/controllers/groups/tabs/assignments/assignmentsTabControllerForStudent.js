@@ -29,11 +29,11 @@ app.controller('ttAssignmentsTabControllerForStudent', [
             });
         }
 
-        $scope.isSeeResultActionVisible = function (row) {
+        $scope.isViewResultActionVisible = function (row) {
             return true;
         }
 
-        $scope.seeResult = function (grid, row) {
+        $scope.viewResult = function (grid, row) {
 
         }
     }]);

@@ -26,6 +26,7 @@ namespace Teachersteams.DataAccess.Mappings
 
             HasRequired(t => t.Assignment).WithMany().HasForeignKey(t => t.AssignmentId);
             HasRequired(t => t.Student).WithMany().HasForeignKey(t => t.StudentId);
+            HasOptional(t => t.AssigneeTeacher).WithMany().HasForeignKey(t => t.AssigneeTeacherId);
         }
     }
 }

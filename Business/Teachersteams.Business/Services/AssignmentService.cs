@@ -65,8 +65,21 @@ namespace Teachersteams.Business.Services
             var newEntity = mapper.Map<AssignmentResult>(viewModel);
             SetStudent(newEntity, uid, assignment.GroupId);
             SetComplitionDate(newEntity, assignment);
+            ValidateAssignmnetResult(newEntity);
             unitOfWork.InsertOrUpdate(newEntity);
             unitOfWork.Commit();
+        }
+
+        public IEnumerable<AssignmentResultViewModel> GetAssignmentResults(Guid assignmentId, GridOptions gridOptions)
+        {
+            var results = unitOfWork.GetAll(new QueryParameters<AssignmentResult>
+            {
+                FilterRules = x => x.AssignmentId == assignmentId,
+                PageRules = new PageSettings(gridOptions.PageNumber, gridOptions.PageSize),
+                SortRules = gridOptionsHelper.BuidDynamicOrderedQuery<AssignmentResult>(gridOptions)
+            });
+
+            return mapper.MapManyTo<AssignmentResultViewModel>(results);
         }
 
         private void ValidateCreator(string uid, AssignmentViewModel viewModel)
@@ -114,6 +127,19 @@ namespace Teachersteams.Business.Services
             assignment.Status = AssignmentStatus.Expired;
             unitOfWork.InsertOrUpdate(assignment);
             unitOfWork.Commit();
+        }
+
+        private void ValidateAssignmnetResult(AssignmentResult newEntity)
+        {
+            var doesResultExist = unitOfWork.Any(new QueryParameters<AssignmentResult>
+            {
+                FilterRules = x => x.StudentId == newEntity.StudentId && x.AssignmentId == newEntity.AssignmentId
+            });
+
+            if (doesResultExist)
+            {
+                throw new InvalidOperationException();
+            }
         }
     }
 }

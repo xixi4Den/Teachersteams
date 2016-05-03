@@ -4,6 +4,6 @@
     <div class="ui-grid-cell-contents">
         <a ng-href="{{row.entity.FileUrl}}" target="_blank" class="btn btn-default" role="button" uib-tooltip="@Resource.DownloadAssignmentActionTooltip" tooltip-placement="bottom"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>
         <button class="btn btn-default" ng-show="grid.appScope.isCompleteActionVisible(row)" ng-click="grid.appScope.complete(grid, row)" uib-tooltip="@Resource.CompleteAssignmentActionTooltip" tooltip-placement="bottom"><span class="glyphicon glyphicon-edit"></span></button>
-        <button class="btn btn-default" ng-show="grid.appScope.isSeeResultActionVisible(row)" ng-click="grid.appScope.seeResult(grid, row)" uib-tooltip="@Resource.ViewAssignmentResultActionTooltip" tooltip-placement="bottom"><span class="glyphicon glyphicon-eye-open"></span></button>
+        <button class="btn btn-default" ng-show="grid.appScope.isViewResultActionVisible(row)" ng-click="grid.appScope.viewResult(grid, row)" uib-tooltip="@Resource.ViewAssignmentResultActionTooltip" tooltip-placement="bottom"><span class="glyphicon glyphicon-eye-open"></span></button>
 </div>
 </script>

@@ -66,6 +66,10 @@
     <Compile Include="Migrations\201605031905066_CreateAssignmentResultTable.Designer.cs">
       <DependentUpon>201605031905066_CreateAssignmentResultTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605032227378_AssignmentResultTable_AsigneeTecher_AddForeignKey.cs" />
+    <Compile Include="Migrations\201605032227378_AssignmentResultTable_AsigneeTecher_AddForeignKey.Designer.cs">
+      <DependentUpon>201605032227378_AssignmentResultTable_AsigneeTecher_AddForeignKey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -94,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605031905066_CreateAssignmentResultTable.resx">
       <DependentUpon>201605031905066_CreateAssignmentResultTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605032227378_AssignmentResultTable_AsigneeTecher_AddForeignKey.resx">
+      <DependentUpon>201605032227378_AssignmentResultTable_AsigneeTecher_AddForeignKey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

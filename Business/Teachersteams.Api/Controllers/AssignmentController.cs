@@ -80,8 +80,8 @@ namespace Teachersteams.Api.Controllers
         [HttpGet]
         public HttpResponseMessage Count(Guid groupId, string userId)
         {
-            var teachers = assignmentService.AssignmentCount(groupId);
-            return Request.CreateResponse(HttpStatusCode.OK, teachers);
+            var count = assignmentService.AssignmentCount(groupId);
+            return Request.CreateResponse(HttpStatusCode.OK, count);
         }
 
         [HttpPost]
@@ -89,6 +89,13 @@ namespace Teachersteams.Api.Controllers
         {
             assignmentService.CompleteAssignment(userId, viewModel);
             return Request.CreateResponse(HttpStatusCode.OK, "");
+        }
+
+        [HttpGet]
+        public HttpResponseMessage GetAssignmentResults(string userId, Guid assignmentId, [FromUri]GridOptions options)
+        {
+            var results = assignmentService.GetAssignmentResults(assignmentId, options);
+            return Request.CreateResponse(HttpStatusCode.OK, results);
         }
     }
 }

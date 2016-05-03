@@ -102,7 +102,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\GroupService.cs" />
     <Compile Include="Services\IGroupService.cs" />
-    <Compile Include="ViewModels\Assignment\AssignmentCheckViewModel.cs" />
+    <Compile Include="ViewModels\Assignment\AssignmentResultViewModel.cs" />
     <Compile Include="ViewModels\Assignment\AssignmentCompletionViewModel.cs" />
     <Compile Include="ViewModels\Assignment\AssignmentViewModel.cs" />
     <Compile Include="ViewModels\Grid\GridOptions.cs" />

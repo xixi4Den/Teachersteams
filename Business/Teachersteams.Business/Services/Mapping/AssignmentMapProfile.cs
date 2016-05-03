@@ -11,6 +11,7 @@ namespace Teachersteams.Business.Services.Mapping
             MapAssignmentToAssignmentViewModel();
             MapAssignmentViewModelToAssignment();
             MapAssignmentCompletionViewModelToAssignmentResult();
+            MapAssignmentResultToAssignmentResultViewModel();
         }
 
         private void MapAssignmentToAssignmentViewModel()
@@ -44,6 +45,19 @@ namespace Teachersteams.Business.Services.Mapping
             CreateMap<AssignmentCompletionViewModel, AssignmentResult>()
                 .ForMember(m => m.AssignmentId, s => s.MapFrom(o => o.AssignmentId))
                 .ForMember(m => m.File, s => s.MapFrom(o => o.File));
+        }
+
+        private void MapAssignmentResultToAssignmentResultViewModel()
+        {
+            CreateMap<AssignmentResult, AssignmentResultViewModel>()
+                .ForMember(m => m.Id, s => s.MapFrom(o => o.Id))
+                .ForMember(m => m.AssignmentId, s => s.MapFrom(o => o.AssignmentId))
+                .ForMember(m => m.StudentUid, s => s.MapFrom(o => o.Student.Uid))
+                .ForMember(m => m.CompletionDate, s => s.MapFrom(o => o.CompletionDate))
+                .ForMember(m => m.File, s => s.MapFrom(o => o.File))
+                .ForMember(m => m.AssigneeTeacherUid, s => s.MapFrom(o => o.AssigneeTeacher.Uid))
+                .ForMember(m => m.Grade, s => s.MapFrom(o => o.Grade))
+                .ForMember(m => m.CheckDate, s => s.MapFrom(o => o.CheckDate));
         }
     }
 }

@@ -24,4 +24,12 @@ app.controller('ttAssignmentsTabControllerForTeacher', [
         ];
 
         $scope.initializeGrid();
+
+        $scope.isViewResultsActionVisible = function (row) {
+            return true;
+        }
+
+        $scope.viewResults = function (grid, row) {
+
+        }
     }]);

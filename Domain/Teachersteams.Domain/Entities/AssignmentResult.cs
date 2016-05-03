@@ -22,6 +22,8 @@ namespace Teachersteams.Domain.Entities
 
         public virtual Student Student { get; set; }
 
+        public virtual Teacher AssigneeTeacher { get; set; }
+
         public virtual Assignment Assignment { get; set; }
     }
 }
