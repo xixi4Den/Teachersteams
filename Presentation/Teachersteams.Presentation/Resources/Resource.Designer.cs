@@ -160,15 +160,6 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to File.
-        /// </summary>
-        public static string AssignmentsGridFileColumnName {
-            get {
-                return ResourceManager.GetString("AssignmentsGridFileColumnName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Status.
         /// </summary>
         public static string AssignmentsGridStatusColumnName {
@@ -363,15 +354,6 @@ namespace Teachersteams.Presentation.Resources {
         public static string DeleteUserDialogTitle {
             get {
                 return ResourceManager.GetString("DeleteUserDialogTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Download.
-        /// </summary>
-        public static string DownloadLinkLabel {
-            get {
-                return ResourceManager.GetString("DownloadLinkLabel", resourceCulture);
             }
         }
         

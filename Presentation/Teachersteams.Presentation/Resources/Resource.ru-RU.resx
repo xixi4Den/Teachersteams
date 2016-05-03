@@ -384,9 +384,6 @@
   <data name="AssignmentsGridExpirationColumnName" xml:space="preserve">
     <value>Срок</value>
   </data>
-  <data name="AssignmentsGridFileColumnName" xml:space="preserve">
-    <value>Файл</value>
-  </data>
   <data name="AssignmentsGridStatusColumnName" xml:space="preserve">
     <value>Статус</value>
   </data>
@@ -401,8 +398,5 @@
   </data>
   <data name="AssignmentStatusEnumExpired" xml:space="preserve">
     <value>Неактивное</value>
-  </data>
-  <data name="DownloadLinkLabel" xml:space="preserve">
-    <value>Скачать</value>
   </data>
 </root>
