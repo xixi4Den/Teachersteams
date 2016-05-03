@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using Teachersteams.Domain.Enums;
 
 namespace Teachersteams.Domain.Entities
@@ -20,5 +22,7 @@ namespace Teachersteams.Domain.Entities
         public virtual Group Group { get; set; }
 
         public Guid? Creator { get; set; }
+
+        public virtual ICollection<AssignmentResult> Results { get; set; }
     }
 }

@@ -8,10 +8,10 @@ namespace Teachersteams.Business.Services
 {
     public interface IAssignmentService: IRequestDependency
     {
-        AssignmentViewModel Create(string uid, AssignmentViewModel viewModel);
+        AssignmentViewModel CreateAssignment(string uid, AssignmentViewModel viewModel);
 
-        IEnumerable<AssignmentViewModel> GetAll(Guid groupId, GridOptions gridOptions);
+        IEnumerable<AssignmentViewModel> GetAllAssignments(Guid groupId, GridOptions gridOptions);
 
-        int Count(Guid groupId);
+        int AssignmentCount(Guid groupId);
     }
 }

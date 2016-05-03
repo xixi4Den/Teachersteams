@@ -28,7 +28,7 @@ namespace Teachersteams.Business.Services
             this.gridOptionsHelper = gridOptionsHelper;
         }
 
-        public AssignmentViewModel Create(string uid, AssignmentViewModel viewModel)
+        public AssignmentViewModel CreateAssignment(string uid, AssignmentViewModel viewModel)
         {
             Validate(uid, viewModel);
 
@@ -39,7 +39,7 @@ namespace Teachersteams.Business.Services
             return mapper.Map<AssignmentViewModel>(insertedEntity);
         }
 
-        public IEnumerable<AssignmentViewModel> GetAll(Guid groupId, GridOptions gridOptions)
+        public IEnumerable<AssignmentViewModel> GetAllAssignments(Guid groupId, GridOptions gridOptions)
         {
             var assignments = unitOfWork.GetAll(new QueryParameters<Assignment>
             {
@@ -50,7 +50,7 @@ namespace Teachersteams.Business.Services
             return mapper.MapManyTo<AssignmentViewModel>(assignments);
         }
 
-        public int Count(Guid groupId)
+        public int AssignmentCount(Guid groupId)
         {
             return unitOfWork.Count(new QueryParameters<Assignment>
             {

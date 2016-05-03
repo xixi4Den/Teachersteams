@@ -64,7 +64,7 @@ namespace Teachersteams.Api.Controllers
         {
             if (ModelState.IsValid)
             {
-                var assignment = assignmentService.Create(userId, viewModel);
+                var assignment = assignmentService.CreateAssignment(userId, viewModel);
                 return Request.CreateResponse(HttpStatusCode.Created, assignment);
             }
             return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
@@ -73,14 +73,14 @@ namespace Teachersteams.Api.Controllers
         [HttpGet]
         public HttpResponseMessage GetAll(Guid groupId, string userId, [FromUri]GridOptions options)
         {
-            var teachers = assignmentService.GetAll(groupId, options);
+            var teachers = assignmentService.GetAllAssignments(groupId, options);
             return Request.CreateResponse(HttpStatusCode.OK, teachers);
         }
 
         [HttpGet]
         public HttpResponseMessage Count(Guid groupId, string userId)
         {
-            var teachers = assignmentService.Count(groupId);
+            var teachers = assignmentService.AssignmentCount(groupId);
             return Request.CreateResponse(HttpStatusCode.OK, teachers);
         }
     }
