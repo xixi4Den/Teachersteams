@@ -3,12 +3,62 @@
         '$userHttp',
         'AppContext',
         'AssignmentStatus',
-        function ($userHttp, AppContext, AssignmentStatus) {
+        '$vk',
+        '$q',
+        function ($userHttp, AppContext, AssignmentStatus, $vk, $q) {
             var createUrl = 'assignment/Post';
             var getAllUrl = 'assignment/GetAll';
             var countUrl = 'assignment/Count';
-            var downloadFileUrl = 'assignment/Download?fileType=1&file=';
+            var downloadAssignmentUrl = 'assignment/Download?fileType=1&file=';
+            var downloadResultUrl = 'assignment/Download?fileType=2&file=';
             var completeUrl = 'assignment/CompleteAssignment';
+            var getResultsUrl = 'assignment/GetAssignmentResults';
+            var resultsCountUrl = 'assignment/ResultsCount';
+
+            function addDownloadResultUrl(collection) {
+                return _.map(collection, function (val) {
+                    val.FileUrl = '' + AppContext.apiUrl + downloadResultUrl + val.File;
+                    return val;
+                });
+            }
+
+            function getStudentName(data) {
+                var uids = _.map(data, function (item) {
+                    return item.StudentUid;
+                });
+                return $vk.call('users.get', {
+                    uids: uids,
+                    fields: "uid, first_name, last_name, photo"
+                });
+            }
+
+            function getAssigneeName(data) {
+                var uids = _.map(data, function (item) {
+                    return item.AssigneeTeacherUid;
+                });
+                uids = _.without(uids, null);
+                return $vk.call('users.get', {
+                    uids: uids,
+                    fields: "uid, first_name, last_name"
+                });
+            }
+
+            function addStudentName(data, studentsInfo) {
+                _.each(studentsInfo.response, function (item) {
+                    var originalItem = _.findWhere(data, { StudentUid: item.uid.toString() });
+                    var name = item.last_name + ', ' + item.first_name;
+                    originalItem["StudentName"] = name;
+                    originalItem["Photo"] = item.photo;
+                });
+            }
+
+            function addAssigneeName(data, assigneesInfo) {
+                _.each(assigneesInfo.response, function (item) {
+                    var originalItem = _.findWhere(data, { AssigneeTeacherUid: item.uid.toString() });
+                    var name = item.last_name + ', ' + item.first_name;
+                    originalItem["AssigneeName"] = name;
+                });
+            }
 
             return {
                 create: function (newAssignment) {
@@ -25,7 +75,7 @@
                     }).then(function (r) {
                         _.map(r.data, function (val, key) {
                             val.StatusName = AssignmentStatus.localizedName[val.Status]();
-                            val.FileUrl = '' + AppContext.apiUrl + downloadFileUrl + val.File;
+                            val.FileUrl = '' + AppContext.apiUrl + downloadAssignmentUrl + val.File;
                             return val;
                         });
                         return r.data;
@@ -41,5 +91,29 @@
                 complete: function (result) {
                     return $userHttp.post(completeUrl, result);
                 },
+
+                getResults: function (assignmentId, paginationOptions) {
+                    var data = null;
+                    return $userHttp.get(getResultsUrl, {
+                        assignmentId: assignmentId,
+                        pageNumber: paginationOptions.PageNumber,
+                        pageSize: paginationOptions.PageSize,
+                        sortingColumn: paginationOptions.SortingColumn,
+                        sortingDirection: paginationOptions.SortingDirection
+                    }).then(function(r) {
+                        data = addDownloadResultUrl(r.data);
+                        return $q.all([getStudentName(data), getAssigneeName(data)]);
+                    }).then(function(values) {
+                        addStudentName(data, values[0]);
+                        addAssigneeName(data, values[1]);
+                        return data;
+                    });
+                },
+
+                resultsCount: function (assignmentId) {
+                    return $userHttp.get(resultsCountUrl, {
+                        assignmentId: assignmentId
+                    });
+                }
             }
     }]);

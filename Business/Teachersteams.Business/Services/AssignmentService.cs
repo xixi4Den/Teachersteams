@@ -82,6 +82,14 @@ namespace Teachersteams.Business.Services
             return mapper.MapManyTo<AssignmentResultViewModel>(results);
         }
 
+        public int ResultCount(Guid assignmentId)
+        {
+            return unitOfWork.Count(new QueryParameters<AssignmentResult>
+            {
+                FilterRules = x => x.AssignmentId == assignmentId,
+            });
+        }
+
         private void ValidateCreator(string uid, AssignmentViewModel viewModel)
         {
             Contract.NotNull<ArgumentNullException>(viewModel);

@@ -417,4 +417,25 @@
   <data name="ViewAssignmentResultActionTooltip" xml:space="preserve">
     <value>Кликните чтобы увидеть выши результаты.</value>
   </data>
+  <data name="AssignmentResultsDialogTitle" xml:space="preserve">
+    <value>Результаты задания</value>
+  </data>
+  <data name="AssignmentResultsGridAssigneeColumnName" xml:space="preserve">
+    <value>Уполномоченный</value>
+  </data>
+  <data name="AssignmentResultsGridCheckedColumnName" xml:space="preserve">
+    <value>Проверено</value>
+  </data>
+  <data name="AssignmentResultsGridFinishedColumnName" xml:space="preserve">
+    <value>Завершено</value>
+  </data>
+  <data name="AssignmentResultsGridGradeColumnName" xml:space="preserve">
+    <value>Оценка</value>
+  </data>
+  <data name="AssignmentResultsGridPhotoColumnName" xml:space="preserve">
+    <value>Фото</value>
+  </data>
+  <data name="AssignmentResultsGridStudentColumnName" xml:space="preserve">
+    <value>Студент</value>
+  </data>
 </root>

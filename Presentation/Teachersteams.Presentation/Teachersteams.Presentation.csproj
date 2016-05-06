@@ -169,6 +169,7 @@
     <Content Include="Scripts\controllers\groups\tabs\assignments\assignmentsTabControllerForTeacher.js" />
     <Content Include="Scripts\controllers\groups\tabs\assignments\completeAssignmentDialogController.js" />
     <Content Include="Scripts\controllers\groups\tabs\assignments\createAssignmentDialogController.js" />
+    <Content Include="Scripts\controllers\groups\tabs\assignments\viewAssignmentResultsDialogController.js" />
     <Content Include="Scripts\controllers\groups\tabs\users\confirm\baseConfirmUserController.js" />
     <Content Include="Scripts\controllers\groups\tabs\users\delete\deleteStudentDialogController.js" />
     <Content Include="Scripts\controllers\groups\tabs\users\delete\deleteTeacherDialogController.js" />

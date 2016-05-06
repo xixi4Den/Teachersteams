@@ -160,6 +160,69 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Assignment Results.
+        /// </summary>
+        public static string AssignmentResultsDialogTitle {
+            get {
+                return ResourceManager.GetString("AssignmentResultsDialogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assignee.
+        /// </summary>
+        public static string AssignmentResultsGridAssigneeColumnName {
+            get {
+                return ResourceManager.GetString("AssignmentResultsGridAssigneeColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Checked.
+        /// </summary>
+        public static string AssignmentResultsGridCheckedColumnName {
+            get {
+                return ResourceManager.GetString("AssignmentResultsGridCheckedColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Finished.
+        /// </summary>
+        public static string AssignmentResultsGridFinishedColumnName {
+            get {
+                return ResourceManager.GetString("AssignmentResultsGridFinishedColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grade.
+        /// </summary>
+        public static string AssignmentResultsGridGradeColumnName {
+            get {
+                return ResourceManager.GetString("AssignmentResultsGridGradeColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Photo.
+        /// </summary>
+        public static string AssignmentResultsGridPhotoColumnName {
+            get {
+                return ResourceManager.GetString("AssignmentResultsGridPhotoColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Student.
+        /// </summary>
+        public static string AssignmentResultsGridStudentColumnName {
+            get {
+                return ResourceManager.GetString("AssignmentResultsGridStudentColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Expiration.
         /// </summary>
         public static string AssignmentsGridExpirationColumnName {

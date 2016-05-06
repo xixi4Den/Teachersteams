@@ -417,4 +417,25 @@
   <data name="ViewAssignmentResultActionTooltip" xml:space="preserve">
     <value>Click to see your results.</value>
   </data>
+  <data name="AssignmentResultsDialogTitle" xml:space="preserve">
+    <value>Assignment Results</value>
+  </data>
+  <data name="AssignmentResultsGridAssigneeColumnName" xml:space="preserve">
+    <value>Assignee</value>
+  </data>
+  <data name="AssignmentResultsGridCheckedColumnName" xml:space="preserve">
+    <value>Checked</value>
+  </data>
+  <data name="AssignmentResultsGridFinishedColumnName" xml:space="preserve">
+    <value>Finished</value>
+  </data>
+  <data name="AssignmentResultsGridGradeColumnName" xml:space="preserve">
+    <value>Grade</value>
+  </data>
+  <data name="AssignmentResultsGridPhotoColumnName" xml:space="preserve">
+    <value>Photo</value>
+  </data>
+  <data name="AssignmentResultsGridStudentColumnName" xml:space="preserve">
+    <value>Student</value>
+  </data>
 </root>

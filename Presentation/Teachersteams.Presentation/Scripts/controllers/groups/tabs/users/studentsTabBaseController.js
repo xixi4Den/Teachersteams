@@ -6,6 +6,8 @@ app.controller('ttStudentsTabBaseController', [
     function ($scope, $ttStudentService, $controller) {
         $controller('ttUsersTabBaseController', { $scope: $scope });
 
+        $scope.gridOptions.gridElementId = 'studentsGrid';
+
         $scope.gridItemsCountFn = $ttStudentService.count;
         $scope.gridItemsGetFn = $ttStudentService.get;
     }]);

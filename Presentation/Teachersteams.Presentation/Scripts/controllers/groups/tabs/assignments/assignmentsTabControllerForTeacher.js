@@ -30,6 +30,11 @@ app.controller('ttAssignmentsTabControllerForTeacher', [
         }
 
         $scope.viewResults = function (grid, row) {
-
+            ngDialog.open({
+                template: '/Teacher/Group/ViewAssignmentResultsDialog',
+                controller: 'ttViewAssignmentResultsDialogController',
+                data: { assignmentId: row.entity.Id, assignmentTitle: row.entity.Title },
+                className: 'wide-dialog ngdialog-theme-default'
+            });
         }
     }]);
