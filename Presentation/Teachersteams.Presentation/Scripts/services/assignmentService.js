@@ -28,6 +28,11 @@
                 var uids = _.map(data, function (item) {
                     return item.StudentUid;
                 });
+                if (!uids.length) {
+                    var deferred = $q.defer();
+                    deferred.resolve({ response: [] });
+                    return deferred.promise;
+                }
                 return $vk.call('users.get', {
                     uids: uids,
                     fields: "uid, first_name, last_name, photo"

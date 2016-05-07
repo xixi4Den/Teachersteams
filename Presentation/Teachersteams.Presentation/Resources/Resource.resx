@@ -447,4 +447,10 @@
   <data name="RateAssignmnetResultActionTooltip" xml:space="preserve">
     <value>Click to rate assignment result.</value>
   </data>
+  <data name="GradeAssignmentResultDialogTitle" xml:space="preserve">
+    <value>Grade Assignment Result</value>
+  </data>
+  <data name="OkButtonLabel" xml:space="preserve">
+    <value>Ok</value>
+  </data>
 </root>

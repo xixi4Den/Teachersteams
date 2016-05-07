@@ -520,6 +520,15 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Grade Assignment Result.
+        /// </summary>
+        public static string GradeAssignmentResultDialogTitle {
+            get {
+                return ResourceManager.GetString("GradeAssignmentResultDialogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Assignments.
         /// </summary>
         public static string GroupAssignmentsTabTitle {
@@ -831,6 +840,15 @@ namespace Teachersteams.Presentation.Resources {
         public static string OhhSecondPart {
             get {
                 return ResourceManager.GetString("OhhSecondPart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ok.
+        /// </summary>
+        public static string OkButtonLabel {
+            get {
+                return ResourceManager.GetString("OkButtonLabel", resourceCulture);
             }
         }
         

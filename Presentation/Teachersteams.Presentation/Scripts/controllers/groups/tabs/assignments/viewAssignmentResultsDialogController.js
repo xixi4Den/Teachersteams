@@ -5,7 +5,8 @@ app.controller('ttViewAssignmentResultsDialogController', [
     '$gridHelper',
     'uiGridConstants',
     'AppContext',
-    function ($scope, $ttAssignmentService, $gridHelper, uiGridConstants, AppContext) {
+    'ngDialog',
+    function ($scope, $ttAssignmentService, $gridHelper, uiGridConstants, AppContext, ngDialog) {
         $scope.gridOptions = {
             rowHeight: 50,
             paginationPageSizes: [10],
@@ -27,7 +28,7 @@ app.controller('ttViewAssignmentResultsDialogController', [
               { name: window.resources.assignmentResultsGridStudentColumnName, field: 'StudentName', enableSorting: false, width: 130, cellClass: 'ui-grid-vcenter' },
               { name: window.resources.assignmentResultsGridFinishedColumnName, field: 'CompletionDate', enableSorting: true, width: 100, cellClass: 'ui-grid-vcenter', cellTemplate: 'date-template' },
               { name: window.resources.assignmentResultsGridAssigneeColumnName, field: 'AssigneeName', enableSorting: false, width: 130, cellClass: 'ui-grid-vcenter' },
-              { name: window.resources.assignmentResultsGridGradeColumnName, field: 'Grade', enableSorting: true, width: 60, cellClass: 'ui-grid-vcenter' },
+              { name: window.resources.assignmentResultsGridGradeColumnName, field: 'Grade', enableSorting: true, width: 60, cellClass: 'ui-grid-vcenter ui-grid-hcenter' },
               { name: window.resources.assignmentResultsGridCheckedColumnName, field: 'CheckDate', enableSorting: true, width: 100, cellClass: 'ui-grid-vcenter', cellTemplate: 'date-template' },
               { name: window.resources.actionsColumnName, enableSorting: false, cellTemplate: 'assignment-results-actions-template' }
         ];
@@ -54,8 +55,17 @@ app.controller('ttViewAssignmentResultsDialogController', [
         }
 
         $scope.rate = function (grid, row) {
-            $ttAssignmentService.rateResult(row.entity.Id, 0);
-            $gridHelper.getPage();
+            var dialog = ngDialog.open({
+                template: '/Teacher/Group/GradeAssignmentResultDialog',
+                controller: 'ttGradeAssignmentResultDialogController',
+                data: { id: row.entity.Id, student: row.entity.StudentName }
+            });
+            dialog.closePromise.then(function (result) {
+                var grade = result.value;
+                if ((typeof grade !== "undefined")) {
+                    $gridHelper.getPage();
+                }
+            });
         }
 
         $scope.cancel = function (e) {
@@ -71,6 +81,6 @@ app.controller('ttViewAssignmentResultsDialogController', [
         }
 
         function isRated(row) {
-            return row.entity.Grade;
+            return typeof row.entity.Grade !== "undefined" && row.entity.Grade !== null;
         }
     }]);

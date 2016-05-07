@@ -169,6 +169,7 @@
     <Content Include="Scripts\controllers\groups\tabs\assignments\assignmentsTabControllerForTeacher.js" />
     <Content Include="Scripts\controllers\groups\tabs\assignments\completeAssignmentDialogController.js" />
     <Content Include="Scripts\controllers\groups\tabs\assignments\createAssignmentDialogController.js" />
+    <Content Include="Scripts\controllers\groups\tabs\assignments\gradeAssignmentResultDialogController.js" />
     <Content Include="Scripts\controllers\groups\tabs\assignments\viewAssignmentResultsDialogController.js" />
     <Content Include="Scripts\controllers\groups\tabs\users\confirm\baseConfirmUserController.js" />
     <Content Include="Scripts\controllers\groups\tabs\users\delete\deleteStudentDialogController.js" />
@@ -323,6 +324,7 @@
     <Content Include="Areas\Student\Views\Group\CompleteAssignmentDialog.cshtml" />
     <Content Include="Areas\Teacher\Views\Group\ViewAssignmentResultsDialog.cshtml" />
     <Content Include="Areas\Teacher\Views\Shared\AssignmentResultsGridRowActionsTemplate.cshtml" />
+    <Content Include="Areas\Teacher\Views\Group\GradeAssignmentResultDialog.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\CommonTemplates\NavbarTemplate.cshtml" />
     <Content Include="Views\Home\About.cshtml" />

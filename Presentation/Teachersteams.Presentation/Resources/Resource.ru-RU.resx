@@ -447,4 +447,10 @@
   <data name="RateAssignmnetResultActionTooltip" xml:space="preserve">
     <value>Кликните чтобы выставить оценку за выполненное задание.</value>
   </data>
+  <data name="GradeAssignmentResultDialogTitle" xml:space="preserve">
+    <value>Оценить выполненное задание</value>
+  </data>
+  <data name="OkButtonLabel" xml:space="preserve">
+    <value>Ок</value>
+  </data>
 </root>
