@@ -322,6 +322,7 @@
     <Content Include="Areas\Teacher\Views\Shared\AssignmentGridRowActionsTemplate.cshtml" />
     <Content Include="Areas\Student\Views\Group\CompleteAssignmentDialog.cshtml" />
     <Content Include="Areas\Teacher\Views\Group\ViewAssignmentResultsDialog.cshtml" />
+    <Content Include="Areas\Teacher\Views\Shared\AssignmentResultsGridRowActionsTemplate.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\CommonTemplates\NavbarTemplate.cshtml" />
     <Content Include="Views\Home\About.cshtml" />

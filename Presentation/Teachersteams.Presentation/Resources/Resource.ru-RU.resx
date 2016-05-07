@@ -438,4 +438,13 @@
   <data name="AssignmentResultsGridStudentColumnName" xml:space="preserve">
     <value>Студент</value>
   </data>
+  <data name="AssignToMeAssignmnetResultActionTooltip" xml:space="preserve">
+    <value>Кликните чтобы закрепить за собой выполненное задание для проверки.</value>
+  </data>
+  <data name="DownloadAssignmentResultActionTooltip" xml:space="preserve">
+    <value>Кликните чтобы скачать выполненное задание.</value>
+  </data>
+  <data name="RateAssignmnetResultActionTooltip" xml:space="preserve">
+    <value>Кликните чтобы выставить оценку за выполненное задание.</value>
+  </data>
 </root>

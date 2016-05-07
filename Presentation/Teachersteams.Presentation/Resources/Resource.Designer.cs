@@ -304,6 +304,15 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Click to assignm to myself this assignment result for checking..
+        /// </summary>
+        public static string AssignToMeAssignmnetResultActionTooltip {
+            get {
+                return ResourceManager.GetString("AssignToMeAssignmnetResultActionTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Assistant.
         /// </summary>
         public static string AssistantGroupsFilterText {
@@ -462,6 +471,15 @@ namespace Teachersteams.Presentation.Resources {
         public static string DownloadAssignmentActionTooltip {
             get {
                 return ResourceManager.GetString("DownloadAssignmentActionTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click to download assignment result..
+        /// </summary>
+        public static string DownloadAssignmentResultActionTooltip {
+            get {
+                return ResourceManager.GetString("DownloadAssignmentResultActionTooltip", resourceCulture);
             }
         }
         
@@ -831,6 +849,15 @@ namespace Teachersteams.Presentation.Resources {
         public static string OwnGroupsFilterText {
             get {
                 return ResourceManager.GetString("OwnGroupsFilterText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click to rate assignment result..
+        /// </summary>
+        public static string RateAssignmnetResultActionTooltip {
+            get {
+                return ResourceManager.GetString("RateAssignmnetResultActionTooltip", resourceCulture);
             }
         }
         

@@ -1,0 +1,9 @@
+﻿@using Teachersteams.Presentation.Resources
+
+<script type="text/ng-template" id="assignment-results-actions-template">
+    <div class="ui-grid-cell-contents">
+        <button class="btn btn-default" ng-show="grid.appScope.isAssignToMeItemVisible(row)" ng-click="grid.appScope.assignToMe(grid, row)" uib-tooltip="@Resource.AssignToMeAssignmnetResultActionTooltip" tooltip-placement="bottom"><span class="glyphicon glyphicon-magnet"></span></button>
+        <a ng-href="{{row.entity.FileUrl}}" target="_blank" ng-show="grid.appScope.isDownloadAssignmentResultItemVisible(row)" class="btn btn-default" role="button" uib-tooltip="@Resource.DownloadAssignmentResultActionTooltip" tooltip-placement="bottom"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>
+        <button class="btn btn-default" ng-show="grid.appScope.isRateAssignmentResultItemVisible(row)" ng-click="grid.appScope.rate(grid, row)" uib-tooltip="@Resource.RateAssignmnetResultActionTooltip" tooltip-placement="bottom"><span class="glyphicon glyphicon-star"></span></button>
+    </div>
+</script>

@@ -90,6 +90,62 @@ namespace Teachersteams.Business.Services
             });
         }
 
+        public void AssignResult(Guid assignmentResultId, string teacherUid)
+        {
+            var assignmentResult = unitOfWork.Get<AssignmentResult>(assignmentResultId);
+
+            if (assignmentResult.AssigneeTeacherId.HasValue)
+            {
+                throw new AssignmentResultAlreadyAssignedException();
+            }
+
+            var teacher = unitOfWork.GetSingleOrDefault(new QueryParameters<Teacher>
+            {
+                FilterRules = x => x.Uid == teacherUid
+            });
+
+            if (assignmentResult.Assignment.GroupId != teacher.GroupId)
+            {
+                throw new InvalidOperationException();
+            }
+
+            assignmentResult.AssigneeTeacherId = teacher.Id;
+
+            unitOfWork.InsertOrUpdate(assignmentResult);
+            unitOfWork.Commit();
+        }
+
+        public void GradeAssignmentResult(Guid assignmentResultId, byte grade, string teacherUid)
+        {
+            var assignmentResult = unitOfWork.Get<AssignmentResult>(assignmentResultId);
+
+            if (grade > 10)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
+            var teacher = unitOfWork.GetSingleOrDefault(new QueryParameters<Teacher>
+            {
+                FilterRules = x => x.Uid == teacherUid
+            });
+
+            if (assignmentResult.Assignment.GroupId != teacher.GroupId)
+            {
+                throw new InvalidOperationException();
+            }
+
+            if (!assignmentResult.AssigneeTeacherId.HasValue || assignmentResult.AssigneeTeacherId != teacher.Id)
+            {
+                throw new InvalidOperationException();
+            }
+
+            assignmentResult.Grade = grade;
+            assignmentResult.CheckDate = DateTime.UtcNow;
+
+            unitOfWork.InsertOrUpdate(assignmentResult);
+            unitOfWork.Commit();
+        }
+
         private void ValidateCreator(string uid, AssignmentViewModel viewModel)
         {
             Contract.NotNull<ArgumentNullException>(viewModel);

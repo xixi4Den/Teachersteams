@@ -14,6 +14,8 @@
             var completeUrl = 'assignment/CompleteAssignment';
             var getResultsUrl = 'assignment/GetAssignmentResults';
             var resultsCountUrl = 'assignment/ResultsCount';
+            var assignResultUrl = 'assignment/assignResult';
+            var gradeResultUrl = 'assignment/gradeResult';
 
             function addDownloadResultUrl(collection) {
                 return _.map(collection, function (val) {
@@ -37,6 +39,11 @@
                     return item.AssigneeTeacherUid;
                 });
                 uids = _.without(uids, null);
+                if (!uids.length) {
+                    var deferred = $q.defer();
+                    deferred.resolve({ response: [] });
+                    return deferred.promise;
+                }
                 return $vk.call('users.get', {
                     uids: uids,
                     fields: "uid, first_name, last_name"
@@ -53,10 +60,12 @@
             }
 
             function addAssigneeName(data, assigneesInfo) {
-                _.each(assigneesInfo.response, function (item) {
-                    var originalItem = _.findWhere(data, { AssigneeTeacherUid: item.uid.toString() });
-                    var name = item.last_name + ', ' + item.first_name;
-                    originalItem["AssigneeName"] = name;
+                _.each(assigneesInfo.response, function (teacher) {
+                    var originalItems = _.filter(data, function (item) { return item.AssigneeTeacherUid === teacher.uid.toString() });
+                    var name = teacher.last_name + ', ' + teacher.first_name;
+                    _.each(originalItems, function(item) {
+                        item["AssigneeName"] = name;
+                    });
                 });
             }
 
@@ -113,6 +122,19 @@
                 resultsCount: function (assignmentId) {
                     return $userHttp.get(resultsCountUrl, {
                         assignmentId: assignmentId
+                    });
+                },
+
+                assignResult: function(assignmentResultId) {
+                    return $userHttp.post(assignResultUrl, null, {
+                        assignmentResultId: assignmentResultId
+                    });
+                },
+
+                gradeResult: function (assignmentResultId, grade) {
+                    return $userHttp.post(gradeResultUrl, null, {
+                        assignmentResultId: assignmentResultId,
+                        grade: grade
                     });
                 }
             }

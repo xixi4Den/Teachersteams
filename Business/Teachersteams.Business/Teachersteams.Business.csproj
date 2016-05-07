@@ -69,6 +69,7 @@
     <Compile Include="Enums\SortingDirection.cs" />
     <Compile Include="Enums\UserStatus.cs" />
     <Compile Include="Enums\UserType.cs" />
+    <Compile Include="Exceptions\AssignmentResultAlreadyAssignedException.cs" />
     <Compile Include="Exceptions\ExpiredAssignmentException.cs" />
     <Compile Include="Exceptions\BusinessException.cs" />
     <Compile Include="Exceptions\GroupTitleAlreadyExistsException.cs" />

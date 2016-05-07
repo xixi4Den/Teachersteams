@@ -104,5 +104,19 @@ namespace Teachersteams.Api.Controllers
             var count = assignmentService.ResultCount(assignmentId);
             return Request.CreateResponse(HttpStatusCode.OK, count);
         }
+
+        [HttpPost]
+        public HttpResponseMessage AssignResult(string userId, Guid assignmentResultId)
+        {
+            assignmentService.AssignResult(assignmentResultId, userId);
+            return Request.CreateResponse(HttpStatusCode.OK, "");
+        }
+
+        [HttpPost]
+        public HttpResponseMessage GradeResult(string userId, byte grade, Guid assignmentResultId)
+        {
+            assignmentService.GradeAssignmentResult(assignmentResultId, grade, userId);
+            return Request.CreateResponse(HttpStatusCode.OK, "");
+        }
     }
 }

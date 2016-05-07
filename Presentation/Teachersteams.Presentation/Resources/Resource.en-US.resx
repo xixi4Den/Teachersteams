@@ -438,4 +438,13 @@
   <data name="AssignmentResultsGridStudentColumnName" xml:space="preserve">
     <value>Student</value>
   </data>
+  <data name="AssignToMeAssignmnetResultActionTooltip" xml:space="preserve">
+    <value>Click to assignm to myself this assignment result for checking.</value>
+  </data>
+  <data name="DownloadAssignmentResultActionTooltip" xml:space="preserve">
+    <value>Click to download assignment result.</value>
+  </data>
+  <data name="RateAssignmnetResultActionTooltip" xml:space="preserve">
+    <value>Click to rate assignment result.</value>
+  </data>
 </root>
