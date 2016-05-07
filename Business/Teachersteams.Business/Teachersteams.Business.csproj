@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\GroupRetrieverMetaAttribute.cs" />
+    <Compile Include="Attributes\UserTypeSpecificRetrieverMetaAttribute.cs" />
     <Compile Include="Enums\AssignmentStatus.cs" />
     <Compile Include="Enums\FileType.cs" />
     <Compile Include="Enums\GroupFilterType.cs" />
@@ -80,6 +81,10 @@
     <Compile Include="Helpers\GridOptionsHelper.cs" />
     <Compile Include="Helpers\IGridOptionsHelper.cs" />
     <Compile Include="Modules\BusinessModule.cs" />
+    <Compile Include="Retrievers\Assignment\AssignmentRetrieverForStudent.cs" />
+    <Compile Include="Retrievers\Assignment\AssignmentRetrieverForTeacher.cs" />
+    <Compile Include="Retrievers\Assignment\BaseAssignmentRetriever.cs" />
+    <Compile Include="Retrievers\Assignment\IAssignmentRetriever.cs" />
     <Compile Include="Retrievers\Group\BaseGroupRetriever.cs" />
     <Compile Include="Retrievers\Group\AllStudentGroupRetriever.cs" />
     <Compile Include="Services\AssignmentService.cs" />
@@ -106,6 +111,7 @@
     <Compile Include="ViewModels\Assignment\AssignmentResultViewModel.cs" />
     <Compile Include="ViewModels\Assignment\AssignmentCompletionViewModel.cs" />
     <Compile Include="ViewModels\Assignment\AssignmentViewModel.cs" />
+    <Compile Include="ViewModels\Assignment\AssignmentViewModelForStudent.cs" />
     <Compile Include="ViewModels\Grid\GridOptions.cs" />
     <Compile Include="ViewModels\Group\AddGroupViewModel.cs" />
     <Compile Include="ViewModels\Group\GroupInfoViewModel.cs" />

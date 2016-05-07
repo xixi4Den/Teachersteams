@@ -71,9 +71,9 @@ namespace Teachersteams.Api.Controllers
         }
 
         [HttpGet]
-        public HttpResponseMessage GetAll(Guid groupId, string userId, [FromUri]GridOptions options)
+        public HttpResponseMessage GetAll(Guid groupId, UserType userType, string userId, [FromUri]GridOptions options)
         {
-            var assignmnets = assignmentService.GetAllAssignments(groupId, options);
+            var assignmnets = assignmentService.GetAllAssignments(groupId, userType, userId, options);
             return Request.CreateResponse(HttpStatusCode.OK, assignmnets);
         }
 

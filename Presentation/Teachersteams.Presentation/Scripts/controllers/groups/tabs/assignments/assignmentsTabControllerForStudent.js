@@ -3,8 +3,11 @@ app.controller('ttAssignmentsTabControllerForStudent', [
     '$scope',
     'ngDialog',
     '$controller',
-    function ($scope, ngDialog, $controller) {
+    'UserType',
+    function ($scope, ngDialog, $controller, UserType) {
         $controller('ttAssignmentsTabBaseController', { $scope: $scope });
+
+        $scope.userType = UserType.Student;
 
         $scope.gridOptions.columnDefs = [
               { name: window.resources.assignmentsGridTitleColumnName, field: 'Title', enableSorting: true, width: 140, cellClass: 'ui-grid-vcenter' },
@@ -16,7 +19,7 @@ app.controller('ttAssignmentsTabControllerForStudent', [
         $scope.initializeGrid();
 
         $scope.isCompleteActionVisible = function(row) {
-            return true;
+            return !row.entity.IsCompleted;
         }
 
         $scope.complete = function(grid, row) {
@@ -30,7 +33,7 @@ app.controller('ttAssignmentsTabControllerForStudent', [
         }
 
         $scope.isViewResultActionVisible = function (row) {
-            return true;
+            return row.entity.IsCompleted;
         }
 
         $scope.viewResult = function (grid, row) {

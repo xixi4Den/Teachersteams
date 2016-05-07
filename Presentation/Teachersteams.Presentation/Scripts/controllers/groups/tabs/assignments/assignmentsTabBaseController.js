@@ -26,7 +26,7 @@ app.controller('ttAssignmentsTabBaseController', [
         };
 
         $scope.initializeGrid = function () {
-            $gridHelper.initialize($ttAssignmentService.count, $ttAssignmentService.get, [$stateParams.groupId], $scope.gridOptions);
+            $gridHelper.initialize($ttAssignmentService.count, $ttAssignmentService.get, [$stateParams.groupId, $scope.userType], $scope.gridOptions);
             $gridHelper.getPage();
         }
 

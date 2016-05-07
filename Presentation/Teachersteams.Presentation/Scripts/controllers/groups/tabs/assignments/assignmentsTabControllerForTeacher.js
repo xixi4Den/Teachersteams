@@ -3,8 +3,11 @@ app.controller('ttAssignmentsTabControllerForTeacher', [
     '$scope',
     'ngDialog',
     '$controller',
-    function ($scope, ngDialog, $controller) {
+    'UserType',
+    function ($scope, ngDialog, $controller, UserType) {
         $controller('ttAssignmentsTabBaseController', { $scope: $scope });
+
+        $scope.userType = UserType.Teacher;
 
         $scope.create = function (e) {
             var dialog = ngDialog.open({ template: '/Teacher/Group/CreateAssignmentDialog', controller: 'ttCreateAssignmentsDialogController', closeByEscape: false, closeByNavigation: false, closeByDocument: false, showClose: false });

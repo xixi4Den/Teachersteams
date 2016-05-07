@@ -8,15 +8,16 @@ namespace Teachersteams.Business.Services.Mapping
     {
         protected override void Configure()
         {
-            MapAssignmentToAssignmentViewModel();
+            MapAssignmentToAssignmentViewModel<AssignmentViewModel>();
+            MapAssignmentToAssignmentViewModel<AssignmentViewModelForStudent>();
             MapAssignmentViewModelToAssignment();
             MapAssignmentCompletionViewModelToAssignmentResult();
             MapAssignmentResultToAssignmentResultViewModel();
         }
 
-        private void MapAssignmentToAssignmentViewModel()
+        private void MapAssignmentToAssignmentViewModel<T>() where T: AssignmentViewModel
         {
-            CreateMap<Assignment, AssignmentViewModel>()
+            CreateMap<Assignment, T>()
                 .ForMember(m => m.Id, s => s.MapFrom(o => o.Id))
                 .ForMember(m => m.Title, s => s.MapFrom(o => o.Title))
                 .ForMember(m => m.Description, s => s.MapFrom(o => o.Description))

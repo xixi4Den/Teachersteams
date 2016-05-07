@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using Autofac.Features.Indexed;
 using AutoMapper;
+using Teachersteams.Business.Enums;
 using Teachersteams.Business.Exceptions;
 using Teachersteams.Business.Extensions;
 using Teachersteams.Business.Helpers;
+using Teachersteams.Business.Retrievers.Assignment;
 using Teachersteams.Business.ViewModels.Assignment;
 using Teachersteams.Business.ViewModels.Grid;
 using Teachersteams.Domain;
 using Teachersteams.Domain.Entities;
-using Teachersteams.Domain.Enums;
 using Teachersteams.Domain.Query;
 using Teachersteams.Shared.Validation;
+using AssignmentStatus = Teachersteams.Domain.Enums.AssignmentStatus;
 
 namespace Teachersteams.Business.Services
 {
@@ -19,14 +22,17 @@ namespace Teachersteams.Business.Services
         private readonly IUnitOfWork unitOfWork;
         private readonly IMapper mapper;
         private readonly IGridOptionsHelper gridOptionsHelper;
+        private readonly IIndex<UserType, IAssignmentRetriever> assignmentRetrievers;
 
         public AssignmentService(IUnitOfWork unitOfWork,
             IMapper mapper,
-            IGridOptionsHelper gridOptionsHelper)
+            IGridOptionsHelper gridOptionsHelper,
+            IIndex<UserType, IAssignmentRetriever> assignmentRetrievers)
         {
             this.unitOfWork = unitOfWork;
             this.mapper = mapper;
             this.gridOptionsHelper = gridOptionsHelper;
+            this.assignmentRetrievers = assignmentRetrievers;
         }
 
         public AssignmentViewModel CreateAssignment(string uid, AssignmentViewModel viewModel)
@@ -40,15 +46,9 @@ namespace Teachersteams.Business.Services
             return mapper.Map<AssignmentViewModel>(insertedEntity);
         }
 
-        public IEnumerable<AssignmentViewModel> GetAllAssignments(Guid groupId, GridOptions gridOptions)
+        public IEnumerable<AssignmentViewModel> GetAllAssignments(Guid groupId, UserType userType, string uid, GridOptions gridOptions)
         {
-            var assignments = unitOfWork.GetAll(new QueryParameters<Assignment>
-            {
-                FilterRules = x => x.GroupId == groupId,
-                PageRules = new PageSettings(gridOptions.PageNumber, gridOptions.PageSize),
-                SortRules = gridOptionsHelper.BuidDynamicOrderedQuery<Assignment>(gridOptions)
-            });
-            return mapper.MapManyTo<AssignmentViewModel>(assignments);
+            return assignmentRetrievers[userType].Retrieve(groupId, uid, gridOptions);
         }
 
         public int AssignmentCount(Guid groupId)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Teachersteams.Business.Enums;
 using Teachersteams.Business.ViewModels.Assignment;
 using Teachersteams.Business.ViewModels.Grid;
 using Teachersteams.Shared.Dependency;
@@ -10,7 +11,7 @@ namespace Teachersteams.Business.Services
     {
         AssignmentViewModel CreateAssignment(string uid, AssignmentViewModel viewModel);
 
-        IEnumerable<AssignmentViewModel> GetAllAssignments(Guid groupId, GridOptions gridOptions);
+        IEnumerable<AssignmentViewModel> GetAllAssignments(Guid groupId, UserType userType, string uid, GridOptions gridOptions);
 
         int AssignmentCount(Guid groupId);
 

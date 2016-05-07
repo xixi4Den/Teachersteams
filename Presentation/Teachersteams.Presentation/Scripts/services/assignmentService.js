@@ -79,9 +79,10 @@
                     return $userHttp.post(createUrl, newAssignment);
                 },
 
-                get: function (groupId, paginationOptions) {
+                get: function (groupId, userType, paginationOptions) {
                     return $userHttp.get(getAllUrl, {
                         groupId: groupId,
+                        userType: userType,
                         pageNumber: paginationOptions.PageNumber,
                         pageSize: paginationOptions.PageSize,
                         sortingColumn: paginationOptions.SortingColumn,
