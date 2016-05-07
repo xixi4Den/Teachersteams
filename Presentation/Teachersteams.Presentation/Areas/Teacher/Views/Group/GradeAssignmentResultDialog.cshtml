@@ -1,0 +1,15 @@
+﻿@using Teachersteams.Presentation.Resources
+
+<div class="dialog-contents">
+    <div class="tt-grade-assignment-result-dialog">
+        <h4>@Resource.GradeAssignmentResultDialogTitle - {{ngDialogData.student}}</h4>
+        <div class="tt-rate-container">
+            <uib-rating ng-model="rate" max="max" read-only="false" on-hover="hoveringOver(value)" on-leave="hoveringOut()" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
+            <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar">{{percent}}%</span>
+        </div>
+        <div class="ngdialog-buttons">
+            <button type="button" class="btn-default ngdialog-button" ng-click="cancel()">@Resource.CloseButtonLabel</button>
+            <button type="button" class="btn-info ngdialog-button" ng-click="grade()">@Resource.OkButtonLabel</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+﻿@using Teachersteams.Presentation.Resources
+
+<script type="text/ng-template" id="assignment-actions-template-for-teacher">
+    <div class="ui-grid-cell-contents">
+        <a ng-href="{{row.entity.FileUrl}}" target="_blank" class="btn btn-default" role="button" uib-tooltip="@Resource.DownloadAssignmentActionTooltip" tooltip-placement="bottom"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>
+        <button class="btn btn-default" ng-show="grid.appScope.isViewResultsActionVisible(row)" ng-click="grid.appScope.viewResults(grid, row)" uib-tooltip="@Resource.ViewAssignmentResultActionTooltip" tooltip-placement="bottom"><span class="glyphicon glyphicon-eye-open"></span></button>
+    </div>
+</script>

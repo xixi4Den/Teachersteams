@@ -384,9 +384,6 @@
   <data name="AssignmentsGridExpirationColumnName" xml:space="preserve">
     <value>Срок</value>
   </data>
-  <data name="AssignmentsGridFileColumnName" xml:space="preserve">
-    <value>Файл</value>
-  </data>
   <data name="AssignmentsGridStatusColumnName" xml:space="preserve">
     <value>Статус</value>
   </data>
@@ -402,7 +399,61 @@
   <data name="AssignmentStatusEnumExpired" xml:space="preserve">
     <value>Неактивное</value>
   </data>
-  <data name="DownloadLinkLabel" xml:space="preserve">
-    <value>Скачать</value>
+  <data name="AssignmentCompletedSuccessMessage" xml:space="preserve">
+    <value>Задание упешно завершено.</value>
+  </data>
+  <data name="CompleteAssignmentActionTooltip" xml:space="preserve">
+    <value>Кликние чтобы отправить ответы на проверку.</value>
+  </data>
+  <data name="CompleteAssignmentDialogTitle" xml:space="preserve">
+    <value>Завершить задание</value>
+  </data>
+  <data name="CompleteButtonLabel" xml:space="preserve">
+    <value>Завершить</value>
+  </data>
+  <data name="DownloadAssignmentActionTooltip" xml:space="preserve">
+    <value>Кликните чтобы скачать задание.</value>
+  </data>
+  <data name="ViewAssignmentResultActionTooltip" xml:space="preserve">
+    <value>Кликните чтобы увидеть выши результаты.</value>
+  </data>
+  <data name="AssignmentResultsDialogTitle" xml:space="preserve">
+    <value>Результаты задания</value>
+  </data>
+  <data name="AssignmentResultsGridAssigneeColumnName" xml:space="preserve">
+    <value>Уполномоченный</value>
+  </data>
+  <data name="AssignmentResultsGridCheckedColumnName" xml:space="preserve">
+    <value>Проверено</value>
+  </data>
+  <data name="AssignmentResultsGridFinishedColumnName" xml:space="preserve">
+    <value>Завершено</value>
+  </data>
+  <data name="AssignmentResultsGridGradeColumnName" xml:space="preserve">
+    <value>Оценка</value>
+  </data>
+  <data name="AssignmentResultsGridPhotoColumnName" xml:space="preserve">
+    <value>Фото</value>
+  </data>
+  <data name="AssignmentResultsGridStudentColumnName" xml:space="preserve">
+    <value>Студент</value>
+  </data>
+  <data name="AssignToMeAssignmnetResultActionTooltip" xml:space="preserve">
+    <value>Кликните чтобы закрепить за собой выполненное задание для проверки.</value>
+  </data>
+  <data name="DownloadAssignmentResultActionTooltip" xml:space="preserve">
+    <value>Кликните чтобы скачать выполненное задание.</value>
+  </data>
+  <data name="RateAssignmnetResultActionTooltip" xml:space="preserve">
+    <value>Кликните чтобы выставить оценку за выполненное задание.</value>
+  </data>
+  <data name="GradeAssignmentResultDialogTitle" xml:space="preserve">
+    <value>Оценить выполненное задание</value>
+  </data>
+  <data name="OkButtonLabel" xml:space="preserve">
+    <value>Ок</value>
+  </data>
+  <data name="AssignmentResultDialogTitle" xml:space="preserve">
+    <value>Результаты выполнения задания</value>
   </data>
 </root>

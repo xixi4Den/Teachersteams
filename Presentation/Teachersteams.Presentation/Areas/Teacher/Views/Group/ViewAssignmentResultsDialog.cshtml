@@ -1,0 +1,17 @@
+﻿@using Teachersteams.Presentation.Resources
+
+<div class="dialog-contents">
+    <div class="tt-view-assignment-results-dialog">
+        <h4>@Resource.AssignmentResultsDialogTitle - {{ngDialogData.assignmentTitle}}</h4>
+        <div class="tt-assignment-results-grid-container">
+            <div id="assignmentResultsGrid" ui-grid="gridOptions" ui-grid-pagination class="grid" no-items-message data-show-empty-msg="@Resource.NoItems"></div>
+        </div>
+        <div class="ngdialog-buttons">
+            <button type="button" class="btn-default ngdialog-button" ng-click="cancel()">@Resource.CloseButtonLabel</button>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("PhotoTemplate")
+@Html.Partial("GridCellDateTemplate")
+@Html.Partial("AssignmentResultsGridRowActionsTemplate")

@@ -1,0 +1,14 @@
+﻿@using Teachersteams.Presentation.Resources
+
+<div class="dialog-contents">
+    <div class="tt-view-assignment-result-dialog">
+        <h4>@Resource.AssignmentResultDialogTitle - {{ngDialogData.assignmentTitle}}</h4>
+        <div class="tt-rate-container">
+            <uib-rating ng-if="isChecked()" ng-model="data.Grade" max="max" data-readonly="true" aria-labelledby="default-rating"></uib-rating>
+            <span ng-if="!isChecked()">Not checked yet</span>
+        </div>
+        <div class="ngdialog-buttons">
+            <button type="button" class="btn-default ngdialog-button" ng-click="cancel()">@Resource.CloseButtonLabel</button>
+        </div>
+    </div>
+</div>

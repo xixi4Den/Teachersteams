@@ -384,9 +384,6 @@
   <data name="AssignmentsGridExpirationColumnName" xml:space="preserve">
     <value>Expiration</value>
   </data>
-  <data name="AssignmentsGridFileColumnName" xml:space="preserve">
-    <value>File</value>
-  </data>
   <data name="AssignmentsGridStatusColumnName" xml:space="preserve">
     <value>Status</value>
   </data>
@@ -402,7 +399,61 @@
   <data name="AssignmentStatusEnumExpired" xml:space="preserve">
     <value>Expired</value>
   </data>
-  <data name="DownloadLinkLabel" xml:space="preserve">
-    <value>Download</value>
+  <data name="AssignmentCompletedSuccessMessage" xml:space="preserve">
+    <value>Assignment has been completed successfully.</value>
+  </data>
+  <data name="CompleteAssignmentActionTooltip" xml:space="preserve">
+    <value>Click to select your answers and to send it for checking.</value>
+  </data>
+  <data name="CompleteAssignmentDialogTitle" xml:space="preserve">
+    <value>Complete assignment </value>
+  </data>
+  <data name="CompleteButtonLabel" xml:space="preserve">
+    <value>Complete</value>
+  </data>
+  <data name="DownloadAssignmentActionTooltip" xml:space="preserve">
+    <value>Click to download assignment.</value>
+  </data>
+  <data name="ViewAssignmentResultActionTooltip" xml:space="preserve">
+    <value>Click to see your results.</value>
+  </data>
+  <data name="AssignmentResultsDialogTitle" xml:space="preserve">
+    <value>Assignment Results</value>
+  </data>
+  <data name="AssignmentResultsGridAssigneeColumnName" xml:space="preserve">
+    <value>Assignee</value>
+  </data>
+  <data name="AssignmentResultsGridCheckedColumnName" xml:space="preserve">
+    <value>Checked</value>
+  </data>
+  <data name="AssignmentResultsGridFinishedColumnName" xml:space="preserve">
+    <value>Finished</value>
+  </data>
+  <data name="AssignmentResultsGridGradeColumnName" xml:space="preserve">
+    <value>Grade</value>
+  </data>
+  <data name="AssignmentResultsGridPhotoColumnName" xml:space="preserve">
+    <value>Photo</value>
+  </data>
+  <data name="AssignmentResultsGridStudentColumnName" xml:space="preserve">
+    <value>Student</value>
+  </data>
+  <data name="AssignToMeAssignmnetResultActionTooltip" xml:space="preserve">
+    <value>Click to assignm to myself this assignment result for checking.</value>
+  </data>
+  <data name="DownloadAssignmentResultActionTooltip" xml:space="preserve">
+    <value>Click to download assignment result.</value>
+  </data>
+  <data name="RateAssignmnetResultActionTooltip" xml:space="preserve">
+    <value>Click to rate assignment result.</value>
+  </data>
+  <data name="GradeAssignmentResultDialogTitle" xml:space="preserve">
+    <value>Grade Assignment Result</value>
+  </data>
+  <data name="OkButtonLabel" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="AssignmentResultDialogTitle" xml:space="preserve">
+    <value>Assignment Result</value>
   </data>
 </root>

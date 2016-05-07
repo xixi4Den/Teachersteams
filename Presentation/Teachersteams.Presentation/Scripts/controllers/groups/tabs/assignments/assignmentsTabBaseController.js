@@ -21,11 +21,12 @@ app.controller('ttAssignmentsTabBaseController', [
                 $scope.gridApi = gridApi;
                 $scope.gridApi.core.on.sortChanged($scope, $gridHelper.sortChanged);
                 $scope.gridApi.pagination.on.paginationChanged($scope, $gridHelper.paginationChanged);
-            }
+            },
+            gridElementId: 'assignmentsGrid'
         };
 
         $scope.initializeGrid = function () {
-            $gridHelper.initialize($ttAssignmentService.count, $ttAssignmentService.get, [$stateParams.groupId], $scope.gridOptions);
+            $gridHelper.initialize($ttAssignmentService.count, $ttAssignmentService.get, [$stateParams.groupId, $scope.userType], $scope.gridOptions);
             $gridHelper.getPage();
         }
 

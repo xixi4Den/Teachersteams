@@ -19,6 +19,14 @@ html, body{
     padding: 0px;
 }
 
+.wide-dialog .ngdialog-content{
+    width : 95% !important;
+}
+
+.ui-grid-pager-panel {
+    box-sizing: border-box !important;
+}
+
 .input-group .form-control {
     margin: 0px;
 }
@@ -233,12 +241,8 @@ body {
     }
 }
 
-.tt-add-assignment-dialog{
-    .tt-assignment-uploading{
-        .tt-browse-container{
-            
-        }
-
+.tt-add-assignment-dialog, .tt-complete-assignment-dialog{
+    .tt-assignment-uploading, .tt-assignment-result-uploading{
         .tt-progress-bar{
             .progress {
                 margin-top: 5px;
@@ -251,5 +255,34 @@ body {
                 padding: 0px;
             }
         }
+    }
+}
+
+.tt-complete-assignment-dialog{
+    h4{
+        margin-bottom: 30px;
+    }
+}
+
+.tt-view-assignment-results-dialog {
+    .tt-assignment-results-grid-container {
+        margin: 20px 0px;
+    }
+}
+
+.tt-grade-assignment-result-dialog{
+    .tt-rate-container{
+        margin: auto;
+        padding: 10px 0;
+        width: 60%;
+    }
+}
+
+.tt-view-assignment-result-dialog{
+    .tt-rate-container{
+        margin: auto;
+        padding: 10px 0;
+        width: 60%;
+        text-align: center;
     }
 }

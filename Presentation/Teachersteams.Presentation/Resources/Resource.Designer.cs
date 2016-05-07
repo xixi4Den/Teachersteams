@@ -106,6 +106,15 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Assignment has been completed successfully..
+        /// </summary>
+        public static string AssignmentCompletedSuccessMessage {
+            get {
+                return ResourceManager.GetString("AssignmentCompletedSuccessMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A new assignment has been created..
         /// </summary>
         public static string AssignmentCreatedMessage {
@@ -151,20 +160,83 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Assignment Result.
+        /// </summary>
+        public static string AssignmentResultDialogTitle {
+            get {
+                return ResourceManager.GetString("AssignmentResultDialogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assignment Results.
+        /// </summary>
+        public static string AssignmentResultsDialogTitle {
+            get {
+                return ResourceManager.GetString("AssignmentResultsDialogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assignee.
+        /// </summary>
+        public static string AssignmentResultsGridAssigneeColumnName {
+            get {
+                return ResourceManager.GetString("AssignmentResultsGridAssigneeColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Checked.
+        /// </summary>
+        public static string AssignmentResultsGridCheckedColumnName {
+            get {
+                return ResourceManager.GetString("AssignmentResultsGridCheckedColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Finished.
+        /// </summary>
+        public static string AssignmentResultsGridFinishedColumnName {
+            get {
+                return ResourceManager.GetString("AssignmentResultsGridFinishedColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grade.
+        /// </summary>
+        public static string AssignmentResultsGridGradeColumnName {
+            get {
+                return ResourceManager.GetString("AssignmentResultsGridGradeColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Photo.
+        /// </summary>
+        public static string AssignmentResultsGridPhotoColumnName {
+            get {
+                return ResourceManager.GetString("AssignmentResultsGridPhotoColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Student.
+        /// </summary>
+        public static string AssignmentResultsGridStudentColumnName {
+            get {
+                return ResourceManager.GetString("AssignmentResultsGridStudentColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Expiration.
         /// </summary>
         public static string AssignmentsGridExpirationColumnName {
             get {
                 return ResourceManager.GetString("AssignmentsGridExpirationColumnName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to File.
-        /// </summary>
-        public static string AssignmentsGridFileColumnName {
-            get {
-                return ResourceManager.GetString("AssignmentsGridFileColumnName", resourceCulture);
             }
         }
         
@@ -241,6 +313,15 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Click to assignm to myself this assignment result for checking..
+        /// </summary>
+        public static string AssignToMeAssignmnetResultActionTooltip {
+            get {
+                return ResourceManager.GetString("AssignToMeAssignmnetResultActionTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Assistant.
         /// </summary>
         public static string AssistantGroupsFilterText {
@@ -273,6 +354,33 @@ namespace Teachersteams.Presentation.Resources {
         public static string CloseButtonLabel {
             get {
                 return ResourceManager.GetString("CloseButtonLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click to select your answers and to send it for checking..
+        /// </summary>
+        public static string CompleteAssignmentActionTooltip {
+            get {
+                return ResourceManager.GetString("CompleteAssignmentActionTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Complete assignment .
+        /// </summary>
+        public static string CompleteAssignmentDialogTitle {
+            get {
+                return ResourceManager.GetString("CompleteAssignmentDialogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Complete.
+        /// </summary>
+        public static string CompleteButtonLabel {
+            get {
+                return ResourceManager.GetString("CompleteButtonLabel", resourceCulture);
             }
         }
         
@@ -367,11 +475,20 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Download.
+        ///   Looks up a localized string similar to Click to download assignment..
         /// </summary>
-        public static string DownloadLinkLabel {
+        public static string DownloadAssignmentActionTooltip {
             get {
-                return ResourceManager.GetString("DownloadLinkLabel", resourceCulture);
+                return ResourceManager.GetString("DownloadAssignmentActionTooltip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click to download assignment result..
+        /// </summary>
+        public static string DownloadAssignmentResultActionTooltip {
+            get {
+                return ResourceManager.GetString("DownloadAssignmentResultActionTooltip", resourceCulture);
             }
         }
         
@@ -408,6 +525,15 @@ namespace Teachersteams.Presentation.Resources {
         public static string FileIsNotAttachedMessage {
             get {
                 return ResourceManager.GetString("FileIsNotAttachedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grade Assignment Result.
+        /// </summary>
+        public static string GradeAssignmentResultDialogTitle {
+            get {
+                return ResourceManager.GetString("GradeAssignmentResultDialogTitle", resourceCulture);
             }
         }
         
@@ -727,6 +853,15 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ok.
+        /// </summary>
+        public static string OkButtonLabel {
+            get {
+                return ResourceManager.GetString("OkButtonLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Only Friends.
         /// </summary>
         public static string OnlyFriendsUserSearchTypeName {
@@ -741,6 +876,15 @@ namespace Teachersteams.Presentation.Resources {
         public static string OwnGroupsFilterText {
             get {
                 return ResourceManager.GetString("OwnGroupsFilterText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click to rate assignment result..
+        /// </summary>
+        public static string RateAssignmnetResultActionTooltip {
+            get {
+                return ResourceManager.GetString("RateAssignmnetResultActionTooltip", resourceCulture);
             }
         }
         
@@ -894,6 +1038,15 @@ namespace Teachersteams.Presentation.Resources {
         public static string UploadingToCloudMessage {
             get {
                 return ResourceManager.GetString("UploadingToCloudMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click to see your results..
+        /// </summary>
+        public static string ViewAssignmentResultActionTooltip {
+            get {
+                return ResourceManager.GetString("ViewAssignmentResultActionTooltip", resourceCulture);
             }
         }
         

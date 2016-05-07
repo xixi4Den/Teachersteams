@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Threading.Tasks;
+using Teachersteams.Business.Enums;
 using Teachersteams.Shared.Dependency;
 
 namespace Teachersteams.Business.Services
@@ -8,6 +9,6 @@ namespace Teachersteams.Business.Services
     {
         Task<string> Upload(string folder, string file, Stream stream);
 
-        Task<byte[]> Download(string folder, string file);
+        Task<byte[]> Download(FileType fileType, string file);
     }
 }

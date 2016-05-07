@@ -25,6 +25,7 @@ namespace Teachersteams.DataAccess.Mappings
             Property(t => t.Creator).HasColumnName("Creator").IsOptional();
 
             HasRequired(t => t.Group).WithMany().HasForeignKey(t => t.GroupId);
+            HasMany(t => t.Results).WithRequired().HasForeignKey(t => t.AssignmentId);
         }
     }
 }

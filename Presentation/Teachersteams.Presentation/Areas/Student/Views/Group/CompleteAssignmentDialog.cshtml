@@ -1,0 +1,28 @@
+﻿@using Teachersteams.Presentation.Resources
+
+<div class="dialog-contents">
+    <div class="tt-complete-assignment-dialog">
+        <h4>@Resource.CompleteAssignmentDialogTitle - {{ngDialogData.title}}</h4>
+        <div>
+            <form novalidate name="completeAssignmetForm">
+                <div class="form-group tt-assignment-result-uploading">
+                    <div class="input-group">
+                        <div class="col-sm-3 col-md-3 col-lg-3 tt-browse-container">
+                            <span class="btn btn-default btn-file">
+                                @Resource.BrowseButtonLabel<input type="file" nv-file-select uploader="uploader" />
+                            </span>
+                        </div>
+                        <div class="tt-progress-bar" class="col-sm-9 col-md-9 col-lg-9">
+                            <uib-progressbar ng-show="isProgressBarVisible()" value="getProgress()" ng-class="{active: uploader.isUploading, 'progress-striped': true}" type="info"><i>{{getProgress() + '%'}}</i></uib-progressbar>
+                            <p ng-show="isUploadingToCloud()" class="tt-uploading-to-cloud-label">@Resource.UploadingToCloudMessage</p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="ngdialog-buttons">
+            <button type="button" class="btn-default ngdialog-button" ng-click="cancel()">@Resource.CloseButtonLabel</button>
+            <button type="button" class="btn-info ngdialog-button" ng-click="complete()">@Resource.CompleteButtonLabel</button>
+        </div>
+    </div>
+</div>

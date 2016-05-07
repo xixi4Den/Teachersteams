@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Assignment.cs" />
+    <Compile Include="Entities\AssignmentResult.cs" />
     <Compile Include="Entities\Group.cs" />
     <Compile Include="Entities\BaseUser.cs" />
     <Compile Include="Entities\Student.cs" />

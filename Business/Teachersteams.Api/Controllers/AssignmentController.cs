@@ -45,7 +45,7 @@ namespace Teachersteams.Api.Controllers
         [HttpGet]
         public HttpResponseMessage Download(FileType fileType, string file)
         {
-            var task = Task.Run(() => fileManager.Download("Assignments", file));
+            var task = Task.Run(() => fileManager.Download(fileType, file));
             var buffer = task.Result;
             var result = new HttpResponseMessage(HttpStatusCode.OK)
             {
@@ -64,24 +64,66 @@ namespace Teachersteams.Api.Controllers
         {
             if (ModelState.IsValid)
             {
-                var assignment = assignmentService.Create(userId, viewModel);
+                var assignment = assignmentService.CreateAssignment(userId, viewModel);
                 return Request.CreateResponse(HttpStatusCode.Created, assignment);
             }
             return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
         }
 
         [HttpGet]
-        public HttpResponseMessage GetAll(Guid groupId, string userId, [FromUri]GridOptions options)
+        public HttpResponseMessage GetAll(Guid groupId, UserType userType, string userId, [FromUri]GridOptions options)
         {
-            var teachers = assignmentService.GetAll(groupId, options);
-            return Request.CreateResponse(HttpStatusCode.OK, teachers);
+            var assignmnets = assignmentService.GetAllAssignments(groupId, userType, userId, options);
+            return Request.CreateResponse(HttpStatusCode.OK, assignmnets);
         }
 
         [HttpGet]
         public HttpResponseMessage Count(Guid groupId, string userId)
         {
-            var teachers = assignmentService.Count(groupId);
-            return Request.CreateResponse(HttpStatusCode.OK, teachers);
+            var count = assignmentService.AssignmentCount(groupId);
+            return Request.CreateResponse(HttpStatusCode.OK, count);
+        }
+
+        [HttpPost]
+        public HttpResponseMessage CompleteAssignment(string userId, [FromBody]AssignmentCompletionViewModel viewModel)
+        {
+            assignmentService.CompleteAssignment(userId, viewModel);
+            return Request.CreateResponse(HttpStatusCode.OK, "");
+        }
+
+        [HttpGet]
+        public HttpResponseMessage GetAssignmentResults(string userId, Guid assignmentId, [FromUri]GridOptions options)
+        {
+            var results = assignmentService.GetAssignmentResults(assignmentId, options);
+            return Request.CreateResponse(HttpStatusCode.OK, results);
+        }
+
+        [HttpGet]
+        public HttpResponseMessage ResultsCount(string userId, Guid assignmentId)
+        {
+            var count = assignmentService.ResultCount(assignmentId);
+            return Request.CreateResponse(HttpStatusCode.OK, count);
+        }
+
+        [HttpGet]
+        public HttpResponseMessage GetAssignmentResult(string userId, Guid assignmentId)
+        {
+            var result = assignmentService.GetAssignmentResult(assignmentId, userId);
+            return Request.CreateResponse(HttpStatusCode.OK, result);
+        }
+
+        [HttpPost]
+        public HttpResponseMessage AssignResult(string userId, Guid assignmentResultId)
+        {
+            assignmentService.AssignResult(assignmentResultId, userId);
+            return Request.CreateResponse(HttpStatusCode.OK, "");
+        }
+
+        [HttpPost]
+        public HttpResponseMessage GradeResult(string userId, byte grade, Guid assignmentResultId)
+        {
+            assignmentService.GradeAssignmentResult(assignmentResultId, grade, userId);
+            return Request.CreateResponse(HttpStatusCode.OK, "");
         }
     }
 }

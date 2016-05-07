@@ -19,6 +19,7 @@ namespace Teachersteams.DataAccess
             modelBuilder.Configurations.Add(new TeacherMap());
             modelBuilder.Configurations.Add(new StudentMap());
             modelBuilder.Configurations.Add(new AssignmentMap());
+            modelBuilder.Configurations.Add(new AssignmentResultMap());
         }
     }
 }
