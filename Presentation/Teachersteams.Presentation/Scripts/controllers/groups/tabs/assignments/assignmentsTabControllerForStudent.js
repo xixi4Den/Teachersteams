@@ -37,6 +37,10 @@ app.controller('ttAssignmentsTabControllerForStudent', [
         }
 
         $scope.viewResult = function (grid, row) {
-
+            ngDialog.open({
+                template: '/Student/Group/ViewAssignmentResultDialog',
+                controller: 'ttViewAssignmentResultDialogController',
+                data: { id: row.entity.Id, assignmentTitle: row.entity.Title }
+            });
         }
     }]);

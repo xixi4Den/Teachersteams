@@ -14,6 +14,7 @@
             var completeUrl = 'assignment/CompleteAssignment';
             var getResultsUrl = 'assignment/GetAssignmentResults';
             var resultsCountUrl = 'assignment/ResultsCount';
+            var getResultUrl = 'assignment/GetAssignmentResult';
             var assignResultUrl = 'assignment/assignResult';
             var gradeResultUrl = 'assignment/gradeResult';
 
@@ -127,6 +128,12 @@
 
                 resultsCount: function (assignmentId) {
                     return $userHttp.get(resultsCountUrl, {
+                        assignmentId: assignmentId
+                    });
+                },
+
+                getResult: function (assignmentId) {
+                    return $userHttp.get(getResultUrl, {
                         assignmentId: assignmentId
                     });
                 },

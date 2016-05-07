@@ -105,6 +105,13 @@ namespace Teachersteams.Api.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, count);
         }
 
+        [HttpGet]
+        public HttpResponseMessage GetAssignmentResult(string userId, Guid assignmentId)
+        {
+            var result = assignmentService.GetAssignmentResult(assignmentId, userId);
+            return Request.CreateResponse(HttpStatusCode.OK, result);
+        }
+
         [HttpPost]
         public HttpResponseMessage AssignResult(string userId, Guid assignmentResultId)
         {

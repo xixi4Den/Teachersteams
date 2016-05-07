@@ -453,4 +453,7 @@
   <data name="OkButtonLabel" xml:space="preserve">
     <value>Ok</value>
   </data>
+  <data name="AssignmentResultDialogTitle" xml:space="preserve">
+    <value>Assignment Result</value>
+  </data>
 </root>

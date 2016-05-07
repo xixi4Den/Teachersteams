@@ -90,6 +90,16 @@ namespace Teachersteams.Business.Services
             });
         }
 
+        public AssignmentResultViewModel GetAssignmentResult(Guid assignmentId, string studentUid)
+        {
+            var result = unitOfWork.GetSingleOrDefault(new QueryParameters<AssignmentResult>
+            {
+                FilterRules = x => x.AssignmentId == assignmentId && x.Student.Uid == studentUid
+            });
+            return mapper.Map<AssignmentResultViewModel>(result);
+        }
+
+
         public void AssignResult(Guid assignmentResultId, string teacherUid)
         {
             var assignmentResult = unitOfWork.Get<AssignmentResult>(assignmentResultId);
@@ -104,7 +114,7 @@ namespace Teachersteams.Business.Services
                 FilterRules = x => x.Uid == teacherUid
             });
 
-            if (assignmentResult.Assignment.GroupId != teacher.GroupId)
+            if (assignmentResult.Assignment.Group.OwnerId != teacherUid && assignmentResult.Assignment.GroupId != teacher.GroupId)
             {
                 throw new InvalidOperationException();
             }
@@ -129,7 +139,7 @@ namespace Teachersteams.Business.Services
                 FilterRules = x => x.Uid == teacherUid
             });
 
-            if (assignmentResult.Assignment.GroupId != teacher.GroupId)
+            if (assignmentResult.Assignment.Group.OwnerId != teacherUid && assignmentResult.Assignment.GroupId != teacher.GroupId)
             {
                 throw new InvalidOperationException();
             }

@@ -160,6 +160,15 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Assignment Result.
+        /// </summary>
+        public static string AssignmentResultDialogTitle {
+            get {
+                return ResourceManager.GetString("AssignmentResultDialogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Assignment Results.
         /// </summary>
         public static string AssignmentResultsDialogTitle {

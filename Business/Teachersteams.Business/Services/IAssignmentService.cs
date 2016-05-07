@@ -21,6 +21,8 @@ namespace Teachersteams.Business.Services
 
         int ResultCount(Guid assignmentId);
 
+        AssignmentResultViewModel GetAssignmentResult(Guid assignmentId, string studentUid);
+
         void AssignResult(Guid assignmentResultId, string teacherUid);
 
         void GradeAssignmentResult(Guid assignmnetResultId, byte grade, string teacherUid);
