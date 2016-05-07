@@ -45,7 +45,7 @@ namespace Teachersteams.Api.Controllers
         [HttpGet]
         public HttpResponseMessage Download(FileType fileType, string file)
         {
-            var task = Task.Run(() => fileManager.Download("Assignments", file));
+            var task = Task.Run(() => fileManager.Download(fileType, file));
             var buffer = task.Result;
             var result = new HttpResponseMessage(HttpStatusCode.OK)
             {

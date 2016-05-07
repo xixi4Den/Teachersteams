@@ -1,7 +1,9 @@
-﻿using Dropbox.Api;
+﻿using System;
+using Dropbox.Api;
 using System.IO;
 using System.Threading.Tasks;
 using Dropbox.Api.Files;
+using Teachersteams.Business.Enums;
 
 
 namespace Teachersteams.Business.Services
@@ -20,10 +22,11 @@ namespace Teachersteams.Business.Services
             }
         }
 
-        public async Task<byte[]> Download(string folder, string file)
+        public async Task<byte[]> Download(FileType fileType, string file)
         {
             using (var dbx = new DropboxClient(accessToken))
             {
+                var folder = GetFileFolder(fileType);
                 var path = FormatPath(folder, file);
 
                 using (var response = await dbx.Files.DownloadAsync(path))
@@ -37,6 +40,19 @@ namespace Teachersteams.Business.Services
         private static string FormatPath(string folder, string file)
         {
             return "/" + folder + "/" + file;
+        }
+
+        private string GetFileFolder(FileType fileType)
+        {
+            switch (fileType)
+            {
+                case FileType.Assignment:
+                    return "Assignments";
+                case FileType.Result:
+                    return "Results";
+                default: 
+                    throw new NotImplementedException();
+            }
         }
     }
 }
