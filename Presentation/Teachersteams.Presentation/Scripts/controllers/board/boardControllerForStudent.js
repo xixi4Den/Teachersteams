@@ -5,7 +5,8 @@ app.controller('ttBoardControllerForStudent', [
     'uiGridConstants',
     '$ttBoardService',
     'StudentBoardFilterType',
-    function ($scope, $gridHelper, uiGridConstants, $ttBoardService, StudentBoardFilterType) {
+    'ngDialog',
+    function ($scope, $gridHelper, uiGridConstants, $ttBoardService, StudentBoardFilterType, ngDialog) {
         $scope.availableFilters = [
             { Id: StudentBoardFilterType.New, Text: window.resources.studentDashboardFilterNameNew },
             { Id: StudentBoardFilterType.Expired, Text: window.resources.studentDashboardFilterNameExpired },
@@ -43,8 +44,34 @@ app.controller('ttBoardControllerForStudent', [
             { name: window.resources.studentDashboardGridExpirationColumnName, field: 'ExpirationDate', enableSorting: true, width: 100, cellClass: 'ui-grid-vcenter', cellTemplate: 'date-template' },
             { name: window.resources.studentDashboardGridAssigneeColumnName, field: 'AssigneeName', enableSorting: false, width: 130, cellClass: 'ui-grid-vcenter' },
             { name: window.resources.studentDashboardGridGradeColumnName, field: 'Grade', enableSorting: false, width: 60, cellClass: 'ui-grid-vcenter ui-grid-hcenter' },
-            { name: window.resources.actionsColumnName, enableSorting: false, width: 150 }
+            { name: window.resources.actionsColumnName, enableSorting: false, width: 150, cellTemplate: 'dashboard-grid-actions-template-for-student' }
         ];
 
         $scope.refresh();
+
+        $scope.isDownloadResultActionVisible = function(row) {
+            return typeof row.entity.AssignmentResultFileUrl !== 'undefined';
+        }
+
+        $scope.isCompleteActionVisible = function (row) {
+            return $scope.selectedFilter.id === StudentBoardFilterType.New;
+        }
+
+        $scope.complete = function (grid, row) {
+            var dialog = ngDialog.open({
+                template: '/Student/Group/CompleteAssignmentDialog',
+                controller: 'ttCompleteAssignmentDialogController',
+                data: { id: row.entity.AssignmentId, title: row.entity.Title },
+                closeByEscape: false,
+                closeByNavigation: false,
+                closeByDocument: false,
+                showClose: false
+            });
+            dialog.closePromise.then(function (newAssignmentResult) {
+                var result = newAssignmentResult.value;
+                if ((typeof result !== "undefined") && result) {
+                    $scope.refresh();
+                }
+            });
+        }
     }]);

@@ -1,0 +1,9 @@
+﻿@using Teachersteams.Presentation.Resources
+
+<script type="text/ng-template" id="dashboard-grid-actions-template-for-student">
+    <div class="ui-grid-cell-contents">
+        <a ng-href="{{row.entity.AssignmentFileUrl}}" target="_blank" class="btn btn-default" role="button" uib-tooltip="@Resource.DownloadAssignmentActionTooltip" tooltip-placement="bottom"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>
+        <a ng-href="{{row.entity.AssignmentResultFileUrl}}" ng-show="grid.appScope.isDownloadResultActionVisible(row)" target="_blank" class="btn btn-default" role="button" uib-tooltip="@Resource.DownloadAssignmentResultActionTooltip" tooltip-placement="bottom"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>
+        <button class="btn btn-default" ng-show="grid.appScope.isCompleteActionVisible(row)" ng-click="grid.appScope.complete(grid, row)" uib-tooltip="@Resource.CompleteAssignmentActionTooltip" tooltip-placement="bottom"><span class="glyphicon glyphicon-edit"></span></button>
+    </div>
+</script>

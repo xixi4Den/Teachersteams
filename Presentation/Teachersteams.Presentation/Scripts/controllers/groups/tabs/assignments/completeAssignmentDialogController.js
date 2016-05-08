@@ -48,7 +48,7 @@ app.controller('ttCompleteAssignmentDialogController', [
                 $ttAssignmentService.complete($scope.data)
                     .then(function (response) {
                         ngToast.success(window.resources.assignmentCompletedSuccessMessage);
-                        $scope.closeThisDialog(response.data);
+                        $scope.closeThisDialog(true);
                     });
             }
         }
