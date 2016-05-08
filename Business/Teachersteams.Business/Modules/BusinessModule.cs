@@ -4,6 +4,7 @@ using AutoMapper;
 using AutoMapper.Internal;
 using Teachersteams.Business.Attributes;
 using Teachersteams.Business.Retrievers.Assignment;
+using Teachersteams.Business.Retrievers.Board.Student;
 using Teachersteams.Business.Retrievers.Group;
 using Teachersteams.Business.Retrievers.Group.Contract;
 using Teachersteams.Business.Utils;
@@ -20,6 +21,7 @@ namespace Teachersteams.Business.Modules
             builder.RegisterDependencies(Assembly.GetExecutingAssembly());
             RegisterGroupRetrievers(builder);
             RegisterAssignmentRetrievers(builder);
+            RegisterStudentBoardItemsRetrievers(builder);
 
             base.Load(builder);
         }
@@ -51,6 +53,11 @@ namespace Teachersteams.Business.Modules
             RegisterAssignmentRetriever<AssignmentRetrieverForTeacher>(builder);
         }
 
+        private void RegisterStudentBoardItemsRetrievers(ContainerBuilder builder)
+        {
+            RegisterStudentBoardItemsRetriever<NewStudentBoardItemsRetriever>(builder);
+        }
+
         private void RegisterGroupRetriever<T>(ContainerBuilder builder) where T: IGroupRetriever
         {
             var filterType = typeof (T).GetCustomAttribute<GroupRetrieverMetaAttribute>().FilterType;
@@ -64,6 +71,14 @@ namespace Teachersteams.Business.Modules
             var userType = typeof(T).GetCustomAttribute<UserTypeSpecificRetrieverMetaAttribute>().UserType;
             builder.RegisterType<T>()
                 .Keyed<IAssignmentRetriever>(userType)
+                .InstancePerLifetimeScope();
+        }
+
+        private void RegisterStudentBoardItemsRetriever<T>(ContainerBuilder builder) where T : IStudentBoardItemsRetriever
+        {
+            var userType = typeof(T).GetCustomAttribute<StudentBoardItemsRetrieverMetaAttribute>().FilterType;
+            builder.RegisterType<T>()
+                .Keyed<IStudentBoardItemsRetriever>(userType)
                 .InstancePerLifetimeScope();
         }
     }

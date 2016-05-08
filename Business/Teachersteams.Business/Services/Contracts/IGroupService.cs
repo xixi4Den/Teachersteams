@@ -4,7 +4,7 @@ using Teachersteams.Business.Enums;
 using Teachersteams.Business.ViewModels.Group;
 using Teachersteams.Shared.Dependency;
 
-namespace Teachersteams.Business.Services
+namespace Teachersteams.Business.Services.Contracts
 {
     public interface IGroupService : IRequestDependency
     {

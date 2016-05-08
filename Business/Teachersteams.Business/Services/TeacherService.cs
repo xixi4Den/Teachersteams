@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Teachersteams.Business.Exceptions;
 using Teachersteams.Business.Helpers;
+using Teachersteams.Business.Services.Contracts;
 using Teachersteams.Business.ViewModels.User;
 using Teachersteams.Domain;
 using Teachersteams.Domain.Entities;

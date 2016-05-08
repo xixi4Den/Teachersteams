@@ -1,1 +1,12 @@
-﻿Student's board
+﻿@using Teachersteams.Presentation.Resources
+
+<div class="container-fluid">
+    <div class="page-header">
+        <h1>Dashboard</h1>
+    </div>
+    <div class="tt-students-board-grid-container">
+        <div id="boardGridForStudent" ui-grid="gridOptions" ui-grid-pagination class="grid" no-items-message data-show-empty-msg="@Resource.NoItems"></div>
+    </div>
+</div>
+
+@Html.Partial("GridCellDateTemplate")

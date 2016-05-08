@@ -5,7 +5,7 @@ using Teachersteams.Business.ViewModels.Assignment;
 using Teachersteams.Business.ViewModels.Grid;
 using Teachersteams.Shared.Dependency;
 
-namespace Teachersteams.Business.Services
+namespace Teachersteams.Business.Services.Contracts
 {
     public interface IAssignmentService: IRequestDependency
     {

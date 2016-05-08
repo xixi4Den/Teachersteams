@@ -245,6 +245,7 @@
     <Content Include="Scripts\libs\underscore.min.js" />
     <Content Include="Scripts\modules.js" />
     <Content Include="Scripts\services\assignmentService.js" />
+    <Content Include="Scripts\services\boardService.js" />
     <Content Include="Scripts\services\gridHelper.js" />
     <Content Include="Scripts\services\groupService.js" />
     <Content Include="Scripts\services\studentService.js" />
