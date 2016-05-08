@@ -87,6 +87,7 @@
     <Compile Include="Retrievers\Assignment\AssignmentRetrieverForTeacher.cs" />
     <Compile Include="Retrievers\Assignment\BaseAssignmentRetriever.cs" />
     <Compile Include="Retrievers\Assignment\IAssignmentRetriever.cs" />
+    <Compile Include="Retrievers\Board\Student\BaseStudentBoardItemsRetriever.cs" />
     <Compile Include="Retrievers\Board\Student\CheckedStudentBoardItemsRetriever.cs" />
     <Compile Include="Retrievers\Board\Student\CompletedStudentBoardItemsRetriever.cs" />
     <Compile Include="Retrievers\Board\Student\ExpiredStudentBoardItemsRetriever.cs" />

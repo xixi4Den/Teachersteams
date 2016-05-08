@@ -1,48 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using AutoMapper;
 using Teachersteams.Business.Attributes;
 using Teachersteams.Business.Enums;
-using Teachersteams.Business.Extensions;
 using Teachersteams.Business.Helpers;
 using Teachersteams.Business.ViewModels.Board;
-using Teachersteams.Business.ViewModels.Grid;
 using Teachersteams.Domain;
-using Teachersteams.Domain.Query;
 using DataAssignment = Teachersteams.Domain.Entities.Assignment;
 using DataStudent = Teachersteams.Domain.Entities.Student;
 
 namespace Teachersteams.Business.Retrievers.Board.Student
 {
     [StudentBoardItemsRetrieverMeta(StudentBoardFilterType.Checked)]
-    public class CheckedStudentBoardItemsRetriever : IStudentBoardItemsRetriever
+    public class CheckedStudentBoardItemsRetriever : BaseStudentBoardItemsRetriever
     {
-        private readonly IUnitOfWork unitOfWork;
-        private readonly IMapper mapper;
-        private readonly IGridOptionsHelper gridOptionsHelper;
-
         public CheckedStudentBoardItemsRetriever(IUnitOfWork unitOfWork,
             IMapper mapper,
-            IGridOptionsHelper gridOptionsHelper)
+            IGridOptionsHelper gridOptionsHelper) : base(unitOfWork, mapper, gridOptionsHelper)
         {
-            this.unitOfWork = unitOfWork;
-            this.mapper = mapper;
-            this.gridOptionsHelper = gridOptionsHelper;
         }
 
-        public IEnumerable<StudentBoardItemViewModel> Retrieve(string studentUid, GridOptions gridOptions)
+        protected override Expression<Func<DataAssignment, bool>> GetFilterExpression(string studentUid, IEnumerable<Guid> groupIds)
         {
-            var groupIds = GetGroupIds(studentUid);
+            return x => groupIds.Contains(x.GroupId) 
+                && x.Results.Any(r => r.Student.Uid == studentUid && r.Grade.HasValue);
+        }
 
-            var assignments = unitOfWork.GetAll(new QueryParameters<DataAssignment>
-            {
-                FilterRules = x => groupIds.Contains(x.GroupId) && x.Results.Any(r => r.Student.Uid == studentUid && r.Grade.HasValue),
-                PageRules = new PageSettings(gridOptions.PageNumber, gridOptions.PageSize),
-                SortRules = gridOptionsHelper.BuidDynamicOrderedQuery<DataAssignment>(gridOptions)
-            }).ToList();
-
-            var boardItems = mapper.MapManyTo<StudentBoardItemViewModel>(assignments).ToList();
+        protected override void FillAdditionalFields(string studentUid, List<StudentBoardItemViewModel> boardItems, List<DataAssignment> assignments)
+        {
+            base.FillAdditionalFields(studentUid, boardItems, assignments);
 
             foreach (var item in boardItems)
             {
@@ -58,26 +46,6 @@ namespace Teachersteams.Business.Retrievers.Board.Student
                     item.CheckDate = result.CheckDate;
                 }
             }
-
-            return boardItems;
-        }
-
-        public int Count(string studentUid)
-        {
-            var groupIds = GetGroupIds(studentUid);
-
-            return unitOfWork.Count(new QueryParameters<DataAssignment>
-            {
-                FilterRules = x => groupIds.Contains(x.GroupId) && x.Results.Any(r => r.Student.Uid == studentUid && r.Grade.HasValue)
-            });
-        }
-
-        private IEnumerable<Guid> GetGroupIds(string studentUid)
-        {
-            return unitOfWork.GetAll(new QueryParameters<DataStudent>
-            {
-                FilterRules = x => x.Uid == studentUid
-            }).Select(x => x.GroupId);
         }
     }
 }
