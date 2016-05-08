@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Teachersteams.Business.Enums;
 using Teachersteams.Shared.Dependency;
 
-namespace Teachersteams.Business.Services
+namespace Teachersteams.Business.Services.Contracts
 {
     public interface IFileManager: IRequestDependency
     {

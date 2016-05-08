@@ -6,13 +6,13 @@ using Teachersteams.Business.ViewModels.Grid;
 using Teachersteams.Business.ViewModels.User;
 using Teachersteams.Shared.Dependency;
 
-namespace Teachersteams.Business.Services
+namespace Teachersteams.Business.Services.Contracts
 {
-    public interface IStudentService: IRequestDependency
+    public interface ITeacherService: IRequestDependency
     {
-        StudentViewModel Invite(StudentViewModel viewModel);
+        TeacherViewModel Invite(TeacherViewModel viewModel);
 
-        IEnumerable<StudentViewModel> GetUsers(Guid groupId, GridOptions gridOptions, UserType userType);
+        IEnumerable<TeacherViewModel> GetUsers(Guid groupId, GridOptions gridOptions, UserType userType);
 
         int Count(Guid groupId, UserType userType);
 

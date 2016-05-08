@@ -196,6 +196,7 @@
     <Content Include="Scripts\enums\assignmentStatus.js" />
     <Content Include="Scripts\enums\groupFilterType.js" />
     <Content Include="Scripts\enums\sortingDirection.js" />
+    <Content Include="Scripts\enums\studentBoardFilterType.js" />
     <Content Include="Scripts\enums\userSearchType.js" />
     <Content Include="Scripts\enums\userStatus.js" />
     <Content Include="Scripts\enums\userType.js" />
@@ -245,6 +246,7 @@
     <Content Include="Scripts\libs\underscore.min.js" />
     <Content Include="Scripts\modules.js" />
     <Content Include="Scripts\services\assignmentService.js" />
+    <Content Include="Scripts\services\boardService.js" />
     <Content Include="Scripts\services\gridHelper.js" />
     <Content Include="Scripts\services\groupService.js" />
     <Content Include="Scripts\services\studentService.js" />
@@ -327,6 +329,7 @@
     <Content Include="Areas\Teacher\Views\Shared\AssignmentResultsGridRowActionsTemplate.cshtml" />
     <Content Include="Areas\Teacher\Views\Group\GradeAssignmentResultDialog.cshtml" />
     <Content Include="Areas\Student\Views\Group\ViewAssignmentResultDialog.cshtml" />
+    <Content Include="Areas\Student\Views\Shared\StudentBoardGridRowActionsTemplate.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\CommonTemplates\NavbarTemplate.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
