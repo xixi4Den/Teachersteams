@@ -5,8 +5,10 @@ app.controller('ttViewAssignmentResultDialogController', [
     function ($scope, $ttAssignmentService) {
         $scope.max = 10;
 
+        $scope.data = {}
+
         $scope.isChecked = function() {
-            return $scope.data.Grade;
+            return !(typeof $scope.data.Grade === 'undefined' || $scope.data.Grade === null);
         }
 
         $ttAssignmentService.getResult($scope.ngDialogData.id).then(function (r) {
