@@ -1,12 +1,15 @@
 ﻿angular.module('ttServices')
     .factory('$ttBoardService', [
         '$userHttp',
-        function ($userHttp) {
+        '$q',
+        '$vk',
+        function ($userHttp, $q, $vk) {
             var getForStudentUrl = 'board/GetForStudent';
             var countForStudentUrl = 'board/CountForStudent';
 
             return { 
                 getForStudent: function (filterType, paginationOptions) {
+                    var data = null;
                     return $userHttp.get(getForStudentUrl, {
                         filterType: filterType,
                         pageNumber: paginationOptions.PageNumber,
@@ -14,7 +17,27 @@
                         sortingColumn: paginationOptions.SortingColumn,
                         sortingDirection: paginationOptions.SortingDirection
                     }).then(function (r) {
-                        return r.data;
+                        data = r.data;
+                        var uids = _.map(data, function (item) {
+                            return item.AssigneeTeacherUid;
+                        });
+                        uids = _.without(uids, null);
+                        if (!uids.length) {
+                            var deferred = $q.defer();
+                            deferred.resolve({ response: [] });
+                            return deferred.promise;
+                        }
+                        return $vk.call('users.get', {
+                            uids: uids,
+                            fields: "uid, first_name, last_name"
+                        });
+                    }).then(function(r) {
+                        _.each(r.response, function(item) {
+                            var originalItem = _.findWhere(data, { AssigneeTeacherUid: item.uid.toString() });
+                            var name = item.last_name + ', ' + item.first_name;
+                            originalItem["AssigneeName"] = name;
+                        });
+                        return data;
                     });
                 },
 

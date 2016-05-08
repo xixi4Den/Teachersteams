@@ -925,6 +925,96 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Checked.
+        /// </summary>
+        public static string StudentDashboardFilterNameChecked {
+            get {
+                return ResourceManager.GetString("StudentDashboardFilterNameChecked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Completed.
+        /// </summary>
+        public static string StudentDashboardFilterNameCompleted {
+            get {
+                return ResourceManager.GetString("StudentDashboardFilterNameCompleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expired.
+        /// </summary>
+        public static string StudentDashboardFilterNameExpired {
+            get {
+                return ResourceManager.GetString("StudentDashboardFilterNameExpired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New.
+        /// </summary>
+        public static string StudentDashboardFilterNameNew {
+            get {
+                return ResourceManager.GetString("StudentDashboardFilterNameNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assignee.
+        /// </summary>
+        public static string StudentDashboardGridAssigneeColumnName {
+            get {
+                return ResourceManager.GetString("StudentDashboardGridAssigneeColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assignment.
+        /// </summary>
+        public static string StudentDashboardGridAssignmentColumnName {
+            get {
+                return ResourceManager.GetString("StudentDashboardGridAssignmentColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expiration.
+        /// </summary>
+        public static string StudentDashboardGridExpirationColumnName {
+            get {
+                return ResourceManager.GetString("StudentDashboardGridExpirationColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grade.
+        /// </summary>
+        public static string StudentDashboardGridGradeColumnName {
+            get {
+                return ResourceManager.GetString("StudentDashboardGridGradeColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Group.
+        /// </summary>
+        public static string StudentDashboardGridGroupColumnName {
+            get {
+                return ResourceManager.GetString("StudentDashboardGridGroupColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Student&apos;s Dashboard.
+        /// </summary>
+        public static string StudentDashboardTitle {
+            get {
+                return ResourceManager.GetString("StudentDashboardTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to where you are a student.
         /// </summary>
         public static string StudentsGroupsSubHeader {

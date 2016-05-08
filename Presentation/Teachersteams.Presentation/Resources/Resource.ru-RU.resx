@@ -456,4 +456,34 @@
   <data name="AssignmentResultDialogTitle" xml:space="preserve">
     <value>Результаты выполнения задания</value>
   </data>
+  <data name="StudentDashboardFilterNameChecked" xml:space="preserve">
+    <value>Проверенные</value>
+  </data>
+  <data name="StudentDashboardFilterNameCompleted" xml:space="preserve">
+    <value>Завершенные</value>
+  </data>
+  <data name="StudentDashboardFilterNameExpired" xml:space="preserve">
+    <value>Истекшие</value>
+  </data>
+  <data name="StudentDashboardFilterNameNew" xml:space="preserve">
+    <value>Новые</value>
+  </data>
+  <data name="StudentDashboardGridAssigneeColumnName" xml:space="preserve">
+    <value>Уполномоченный</value>
+  </data>
+  <data name="StudentDashboardGridAssignmentColumnName" xml:space="preserve">
+    <value>Задание</value>
+  </data>
+  <data name="StudentDashboardGridExpirationColumnName" xml:space="preserve">
+    <value>Срок</value>
+  </data>
+  <data name="StudentDashboardGridGradeColumnName" xml:space="preserve">
+    <value>Оценка</value>
+  </data>
+  <data name="StudentDashboardGridGroupColumnName" xml:space="preserve">
+    <value>Группы</value>
+  </data>
+  <data name="StudentDashboardTitle" xml:space="preserve">
+    <value>Доска студента</value>
+  </data>
 </root>

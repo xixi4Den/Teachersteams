@@ -22,7 +22,7 @@ namespace Teachersteams.Business.ViewModels.Board
 
         public string AssignmentResultFile { get; set; }
 
-        public Guid? AssigneeTeacherId { get; set; }
+        public string AssigneeTeacherUid { get; set; }
 
         public byte? Grade { get; set; }
 

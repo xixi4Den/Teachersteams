@@ -16,14 +16,14 @@ using DataStudent = Teachersteams.Domain.Entities.Student;
 
 namespace Teachersteams.Business.Retrievers.Board.Student
 {
-    [StudentBoardItemsRetrieverMeta(StudentBoardFilterType.New)]
-    public class NewStudentBoardItemsRetriever: IStudentBoardItemsRetriever
+    [StudentBoardItemsRetrieverMeta(StudentBoardFilterType.Expired)]
+    public class ExpiredStudentBoardItemsRetriever: IStudentBoardItemsRetriever
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly IMapper mapper;
         private readonly IGridOptionsHelper gridOptionsHelper;
 
-        public NewStudentBoardItemsRetriever(IUnitOfWork unitOfWork,
+        public ExpiredStudentBoardItemsRetriever(IUnitOfWork unitOfWork,
             IMapper mapper,
             IGridOptionsHelper gridOptionsHelper)
         {
@@ -38,7 +38,7 @@ namespace Teachersteams.Business.Retrievers.Board.Student
 
             var assignments = unitOfWork.GetAll(new QueryParameters<DataAssignment>
             {
-                FilterRules = x => groupIds.Contains(x.GroupId) && x.Results.All(r => r.Student.Uid != studentUid) && (x.Status == AssignmentStatus.Active && x.ExpirationDate > DateTime.UtcNow),
+                FilterRules = x => groupIds.Contains(x.GroupId) && x.Results.All(r => r.Student.Uid != studentUid) && (x.Status == AssignmentStatus.Expired || x.ExpirationDate <= DateTime.UtcNow),
                 PageRules = new PageSettings(gridOptions.PageNumber, gridOptions.PageSize),
                 SortRules = gridOptionsHelper.BuidDynamicOrderedQuery<DataAssignment>(gridOptions)
             }).ToList();
@@ -54,7 +54,7 @@ namespace Teachersteams.Business.Retrievers.Board.Student
 
             return unitOfWork.Count(new QueryParameters<DataAssignment>
             {
-                FilterRules = x => groupIds.Contains(x.GroupId) && x.Results.All(r => r.Student.Uid != studentUid) && (x.Status == AssignmentStatus.Active && x.ExpirationDate > DateTime.UtcNow)
+                FilterRules = x => groupIds.Contains(x.GroupId) && x.Results.All(r => r.Student.Uid != studentUid) && x.Status == AssignmentStatus.Expired
             });
         }
 

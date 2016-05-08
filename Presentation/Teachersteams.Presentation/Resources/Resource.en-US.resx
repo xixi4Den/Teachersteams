@@ -456,4 +456,34 @@
   <data name="AssignmentResultDialogTitle" xml:space="preserve">
     <value>Assignment Result</value>
   </data>
+  <data name="StudentDashboardFilterNameChecked" xml:space="preserve">
+    <value>Checked</value>
+  </data>
+  <data name="StudentDashboardFilterNameCompleted" xml:space="preserve">
+    <value>Completed</value>
+  </data>
+  <data name="StudentDashboardFilterNameExpired" xml:space="preserve">
+    <value>Expired</value>
+  </data>
+  <data name="StudentDashboardFilterNameNew" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="StudentDashboardGridAssigneeColumnName" xml:space="preserve">
+    <value>Assignee</value>
+  </data>
+  <data name="StudentDashboardGridAssignmentColumnName" xml:space="preserve">
+    <value>Assignment</value>
+  </data>
+  <data name="StudentDashboardGridExpirationColumnName" xml:space="preserve">
+    <value>Expiration</value>
+  </data>
+  <data name="StudentDashboardGridGradeColumnName" xml:space="preserve">
+    <value>Grade</value>
+  </data>
+  <data name="StudentDashboardGridGroupColumnName" xml:space="preserve">
+    <value>Group</value>
+  </data>
+  <data name="StudentDashboardTitle" xml:space="preserve">
+    <value>Student's Dashboard</value>
+  </data>
 </root>

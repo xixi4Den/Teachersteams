@@ -196,6 +196,7 @@
     <Content Include="Scripts\enums\assignmentStatus.js" />
     <Content Include="Scripts\enums\groupFilterType.js" />
     <Content Include="Scripts\enums\sortingDirection.js" />
+    <Content Include="Scripts\enums\studentBoardFilterType.js" />
     <Content Include="Scripts\enums\userSearchType.js" />
     <Content Include="Scripts\enums\userStatus.js" />
     <Content Include="Scripts\enums\userType.js" />

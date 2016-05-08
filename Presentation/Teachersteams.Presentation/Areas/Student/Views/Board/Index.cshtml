@@ -1,8 +1,11 @@
 ﻿@using Teachersteams.Presentation.Resources
 
-<div class="container-fluid">
+<div class="container-fluid tt-dashboard-content">
     <div class="page-header">
-        <h1>Dashboard</h1>
+        <h1>@Resource.StudentDashboardTitle</h1>
+    </div>
+    <div class="btn-group dashboard-filters-section">
+        <label class="btn btn-primary" ng-repeat="filter in availableFilters" ng-model="selectedFilter.id" uib-btn-radio="filter.Id" ng-click="refresh()">{{filter.Text}}</label>
     </div>
     <div class="tt-students-board-grid-container">
         <div id="boardGridForStudent" ui-grid="gridOptions" ui-grid-pagination class="grid" no-items-message data-show-empty-msg="@Resource.NoItems"></div>

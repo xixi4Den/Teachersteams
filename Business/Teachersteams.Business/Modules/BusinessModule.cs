@@ -56,6 +56,9 @@ namespace Teachersteams.Business.Modules
         private void RegisterStudentBoardItemsRetrievers(ContainerBuilder builder)
         {
             RegisterStudentBoardItemsRetriever<NewStudentBoardItemsRetriever>(builder);
+            RegisterStudentBoardItemsRetriever<ExpiredStudentBoardItemsRetriever>(builder);
+            RegisterStudentBoardItemsRetriever<CompletedStudentBoardItemsRetriever>(builder);
+            RegisterStudentBoardItemsRetriever<CheckedStudentBoardItemsRetriever>(builder);
         }
 
         private void RegisterGroupRetriever<T>(ContainerBuilder builder) where T: IGroupRetriever
