@@ -1,1 +1,20 @@
-﻿Teacher's board
+﻿@using Teachersteams.Presentation.Resources
+
+<div class="container-fluid tt-dashboard-content">
+    <div class="page-header">
+        <h1>@Resource.TeacherDashboardTitle</h1>
+    </div>
+    <div class="row dashboard-filters-section">
+        <div class="btn-group pull-left" ng-show="isCheckFilterSectionVisible()">
+            <label class="btn btn-primary" ng-repeat="filter in availableCheckFilters" ng-model="selectedFilters.check" uib-btn-radio="filter.Id" ng-click="refresh()">{{filter.Text}}</label>
+        </div>
+        <div class="btn-group pull-right">
+            <label class="btn btn-primary" ng-repeat="filter in availableAssignFilters" ng-model="selectedFilters.assign" uib-btn-radio="filter.Id" ng-click="refresh()">{{filter.Text}}</label>
+        </div>
+    </div>
+    <div class="tt-teachers-board-grid-container">
+        <div id="boardGridForTeacher" ui-grid="gridOptions" ui-grid-pagination class="grid" no-items-message data-show-empty-msg="@Resource.NoItems"></div>
+    </div>
+</div>
+
+@Html.Partial("GridCellDateTemplate")
