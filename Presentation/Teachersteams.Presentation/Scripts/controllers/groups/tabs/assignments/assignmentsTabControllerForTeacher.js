@@ -13,7 +13,7 @@ app.controller('ttAssignmentsTabControllerForTeacher', [
             var dialog = ngDialog.open({ template: '/Teacher/Group/CreateAssignmentDialog', controller: 'ttCreateAssignmentsDialogController', closeByEscape: false, closeByNavigation: false, closeByDocument: false, showClose: false });
             dialog.closePromise.then(function (newAssignment) {
                 var result = newAssignment.value;
-                if ((typeof result !== "undefined") && result.hasOwnProperty('Id') && (typeof result.Id !== "undefined")) {
+                if ((typeof result !== "undefined") && result) {
                     $scope.reloadGrid();
                 }
             });

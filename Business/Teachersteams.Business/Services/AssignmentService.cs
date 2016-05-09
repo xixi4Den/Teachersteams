@@ -112,7 +112,7 @@ namespace Teachersteams.Business.Services
 
             var teacher = unitOfWork.GetSingleOrDefault(new QueryParameters<Teacher>
             {
-                FilterRules = x => x.Uid == teacherUid
+                FilterRules = x => x.Uid == teacherUid && x.GroupId == assignmentResult.Assignment.GroupId
             });
 
             if (assignmentResult.Assignment.Group.OwnerId != teacherUid && assignmentResult.Assignment.GroupId != teacher.GroupId)
@@ -137,7 +137,7 @@ namespace Teachersteams.Business.Services
 
             var teacher = unitOfWork.GetSingleOrDefault(new QueryParameters<Teacher>
             {
-                FilterRules = x => x.Uid == teacherUid
+                FilterRules = x => x.Uid == teacherUid && x.GroupId == assignmentResult.Assignment.GroupId
             });
 
             if (assignmentResult.Assignment.Group.OwnerId != teacherUid && assignmentResult.Assignment.GroupId != teacher.GroupId)

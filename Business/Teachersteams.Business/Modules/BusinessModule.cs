@@ -5,6 +5,7 @@ using AutoMapper.Internal;
 using Teachersteams.Business.Attributes;
 using Teachersteams.Business.Retrievers.Assignment;
 using Teachersteams.Business.Retrievers.Board.Student;
+using Teachersteams.Business.Retrievers.Board.Teacher;
 using Teachersteams.Business.Retrievers.Group;
 using Teachersteams.Business.Retrievers.Group.Contract;
 using Teachersteams.Business.Utils;
@@ -22,6 +23,7 @@ namespace Teachersteams.Business.Modules
             RegisterGroupRetrievers(builder);
             RegisterAssignmentRetrievers(builder);
             RegisterStudentBoardItemsRetrievers(builder);
+            RegisterTeacherBoardItemsRetrievers(builder);
 
             base.Load(builder);
         }
@@ -61,6 +63,15 @@ namespace Teachersteams.Business.Modules
             RegisterStudentBoardItemsRetriever<CheckedStudentBoardItemsRetriever>(builder);
         }
 
+        private void RegisterTeacherBoardItemsRetrievers(ContainerBuilder builder)
+        {
+            RegisterTeacherBoardItemsRetriever<NotAssignedTeacherBoardItemsRetriever>(builder);
+            RegisterTeacherBoardItemsRetriever<UncheckedAssignedToMeTeacherBoardItemsRetriever>(builder);
+            RegisterTeacherBoardItemsRetriever<CheckedAssignedToMeTeacherBoardItemsRetriever>(builder);
+            RegisterTeacherBoardItemsRetriever<UncheckedAssignedToOthersTeacherBoardItemsRetriever>(builder);
+            RegisterTeacherBoardItemsRetriever<CheckedAssignedToOthersTeacherBoardItemsRetriever>(builder);
+        }
+
         private void RegisterGroupRetriever<T>(ContainerBuilder builder) where T: IGroupRetriever
         {
             var filterType = typeof (T).GetCustomAttribute<GroupRetrieverMetaAttribute>().FilterType;
@@ -82,6 +93,14 @@ namespace Teachersteams.Business.Modules
             var userType = typeof(T).GetCustomAttribute<StudentBoardItemsRetrieverMetaAttribute>().FilterType;
             builder.RegisterType<T>()
                 .Keyed<IStudentBoardItemsRetriever>(userType)
+                .InstancePerLifetimeScope();
+        }
+
+        private void RegisterTeacherBoardItemsRetriever<T>(ContainerBuilder builder) where T : ITeacherBoardItemsRetriever
+        {
+            var userType = typeof(T).GetCustomAttribute<TeacherBoardItemsRetrieverMetaAttribute>().FilterType;
+            builder.RegisterType<T>()
+                .Keyed<ITeacherBoardItemsRetriever>(userType)
                 .InstancePerLifetimeScope();
         }
     }

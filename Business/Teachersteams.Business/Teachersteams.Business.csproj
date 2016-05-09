@@ -64,12 +64,16 @@
   <ItemGroup>
     <Compile Include="Attributes\GroupRetrieverMetaAttribute.cs" />
     <Compile Include="Attributes\StudentBoardItemsRetrieverMetaAttribute.cs" />
+    <Compile Include="Attributes\TeacherBoardItemsRetrieverMetaAttribute.cs" />
     <Compile Include="Attributes\UserTypeSpecificRetrieverMetaAttribute.cs" />
     <Compile Include="Enums\AssignmentStatus.cs" />
     <Compile Include="Enums\FileType.cs" />
     <Compile Include="Enums\GroupFilterType.cs" />
     <Compile Include="Enums\SortingDirection.cs" />
     <Compile Include="Enums\StudentBoardFilterType.cs" />
+    <Compile Include="Enums\TeacherBoardAssignFilterType.cs" />
+    <Compile Include="Enums\TeacherBoardCheckFilterType.cs" />
+    <Compile Include="Enums\TeacherBoardCompositeFilterType.cs" />
     <Compile Include="Enums\UserStatus.cs" />
     <Compile Include="Enums\UserType.cs" />
     <Compile Include="Exceptions\AssignmentResultAlreadyAssignedException.cs" />
@@ -93,6 +97,13 @@
     <Compile Include="Retrievers\Board\Student\ExpiredStudentBoardItemsRetriever.cs" />
     <Compile Include="Retrievers\Board\Student\IStudentBoardItemsRetriever.cs" />
     <Compile Include="Retrievers\Board\Student\NewStudentBoardItemsRetriever.cs" />
+    <Compile Include="Retrievers\Board\Teacher\CheckedAssignedToMeTeacherBoardItemsRetriever.cs" />
+    <Compile Include="Retrievers\Board\Teacher\CheckedAssignedToOthersTeacherBoardItemsRetriever.cs" />
+    <Compile Include="Retrievers\Board\Teacher\ITeacherBoardItemsRetriever.cs" />
+    <Compile Include="Retrievers\Board\Teacher\BaseTeacherBoardItemsRetriever.cs" />
+    <Compile Include="Retrievers\Board\Teacher\NotAssignedTeacherBoardItemsRetriever.cs" />
+    <Compile Include="Retrievers\Board\Teacher\UncheckedAssignedToMeTeacherBoardItemsRetriever.cs" />
+    <Compile Include="Retrievers\Board\Teacher\UncheckedAssignedToOthersTeacherBoardItemsRetriever.cs" />
     <Compile Include="Retrievers\Group\BaseGroupRetriever.cs" />
     <Compile Include="Retrievers\Group\AllStudentGroupRetriever.cs" />
     <Compile Include="Services\AssignmentService.cs" />
@@ -101,6 +112,7 @@
     <Compile Include="Services\Contracts\IGroupService.cs" />
     <Compile Include="Services\Contracts\IStudentBoardItemsProvider.cs" />
     <Compile Include="Services\Contracts\IStudentService.cs" />
+    <Compile Include="Services\Contracts\ITeacherBoardItemsProvider.cs" />
     <Compile Include="Services\Contracts\ITeacherService.cs" />
     <Compile Include="Services\FileManager.cs" />
     <Compile Include="Services\Mapping\AssignmentMapProfile.cs" />
@@ -108,8 +120,10 @@
     <Compile Include="Services\Mapping\UserMapProfile.cs" />
     <Compile Include="Services\StudentBoardItemsProvider.cs" />
     <Compile Include="Services\StudentService.cs" />
+    <Compile Include="Services\TeacherBoardItemsProvider.cs" />
     <Compile Include="Services\TeacherService.cs" />
     <Compile Include="Services\UserBaseService.cs" />
+    <Compile Include="Utils\EnumUtils.cs" />
     <Compile Include="Utils\MapperUtils.cs" />
     <Compile Include="Retrievers\Group\AllTeacherGroupRetriever.cs" />
     <Compile Include="Retrievers\Group\AssistantGroupRetriever.cs" />
@@ -123,6 +137,7 @@
     <Compile Include="ViewModels\Assignment\AssignmentViewModel.cs" />
     <Compile Include="ViewModels\Assignment\AssignmentViewModelForStudent.cs" />
     <Compile Include="ViewModels\Board\StudentBoardItemViewModel.cs" />
+    <Compile Include="ViewModels\Board\TeacherBoardItemViewModel.cs" />
     <Compile Include="ViewModels\Grid\GridOptions.cs" />
     <Compile Include="ViewModels\Group\AddGroupViewModel.cs" />
     <Compile Include="ViewModels\Group\GroupInfoViewModel.cs" />

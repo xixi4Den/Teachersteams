@@ -1042,6 +1042,105 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Assigned to Me.
+        /// </summary>
+        public static string TeacherDashboardAssignFilterNameAssignedToMe {
+            get {
+                return ResourceManager.GetString("TeacherDashboardAssignFilterNameAssignedToMe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assigned to Others.
+        /// </summary>
+        public static string TeacherDashboardAssignFilterNameAssignedToOthers {
+            get {
+                return ResourceManager.GetString("TeacherDashboardAssignFilterNameAssignedToOthers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not Assigned.
+        /// </summary>
+        public static string TeacherDashboardAssignFilterNameNotAssigned {
+            get {
+                return ResourceManager.GetString("TeacherDashboardAssignFilterNameNotAssigned", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Checked.
+        /// </summary>
+        public static string TeacherDashboardCheckFilterNameCkecked {
+            get {
+                return ResourceManager.GetString("TeacherDashboardCheckFilterNameCkecked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unchecked.
+        /// </summary>
+        public static string TeacherDashboardCheckFilterNameUnckecked {
+            get {
+                return ResourceManager.GetString("TeacherDashboardCheckFilterNameUnckecked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assignee.
+        /// </summary>
+        public static string TeacherDashboardGridAssigneeColumnName {
+            get {
+                return ResourceManager.GetString("TeacherDashboardGridAssigneeColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assignment.
+        /// </summary>
+        public static string TeacherDashboardGridAssignmentColumnName {
+            get {
+                return ResourceManager.GetString("TeacherDashboardGridAssignmentColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grade.
+        /// </summary>
+        public static string TeacherDashboardGridGradeColumnName {
+            get {
+                return ResourceManager.GetString("TeacherDashboardGridGradeColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Group.
+        /// </summary>
+        public static string TeacherDashboardGridGroupColumnName {
+            get {
+                return ResourceManager.GetString("TeacherDashboardGridGroupColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Student.
+        /// </summary>
+        public static string TeacherDashboardGridStudentColumnName {
+            get {
+                return ResourceManager.GetString("TeacherDashboardGridStudentColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Teacher&apos;s Dashboard.
+        /// </summary>
+        public static string TeacherDashboardTitle {
+            get {
+                return ResourceManager.GetString("TeacherDashboardTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Type user name here.
         /// </summary>
         public static string TeacherNamePlaseholderMessage {

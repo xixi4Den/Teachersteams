@@ -486,4 +486,37 @@
   <data name="StudentDashboardTitle" xml:space="preserve">
     <value>Student's Dashboard</value>
   </data>
+  <data name="TeacherDashboardTitle" xml:space="preserve">
+    <value>Teacher's Dashboard</value>
+  </data>
+  <data name="TeacherDashboardGridAssigneeColumnName" xml:space="preserve">
+    <value>Assignee</value>
+  </data>
+  <data name="TeacherDashboardGridAssignmentColumnName" xml:space="preserve">
+    <value>Assignment</value>
+  </data>
+  <data name="TeacherDashboardGridGradeColumnName" xml:space="preserve">
+    <value>Grade</value>
+  </data>
+  <data name="TeacherDashboardGridGroupColumnName" xml:space="preserve">
+    <value>Group</value>
+  </data>
+  <data name="TeacherDashboardGridStudentColumnName" xml:space="preserve">
+    <value>Student</value>
+  </data>
+  <data name="TeacherDashboardAssignFilterNameAssignedToMe" xml:space="preserve">
+    <value>Assigned to Me</value>
+  </data>
+  <data name="TeacherDashboardAssignFilterNameAssignedToOthers" xml:space="preserve">
+    <value>Assigned to Others</value>
+  </data>
+  <data name="TeacherDashboardAssignFilterNameNotAssigned" xml:space="preserve">
+    <value>Not Assigned</value>
+  </data>
+  <data name="TeacherDashboardCheckFilterNameCkecked" xml:space="preserve">
+    <value>Checked</value>
+  </data>
+  <data name="TeacherDashboardCheckFilterNameUnckecked" xml:space="preserve">
+    <value>Unchecked</value>
+  </data>
 </root>

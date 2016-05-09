@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using AutoMapper;
+﻿using AutoMapper;
 using Teachersteams.Business.ViewModels.Assignment;
 using Teachersteams.Business.ViewModels.Board;
 using Teachersteams.Domain.Entities;
@@ -16,6 +15,7 @@ namespace Teachersteams.Business.Services.Mapping
             MapAssignmentCompletionViewModelToAssignmentResult();
             MapAssignmentResultToAssignmentResultViewModel();
             MapAssignmentToStudentBoardItemViewModel();
+            MapAssignmentResultToTeacherBoardItemViewModel();
         }
 
         private void MapAssignmentToAssignmentViewModel<T>() where T: AssignmentViewModel
@@ -73,6 +73,23 @@ namespace Teachersteams.Business.Services.Mapping
                 .ForMember(m => m.ExpirationDate, s => s.MapFrom(o => o.ExpirationDate))
                 .ForMember(m => m.GroupId, s => s.MapFrom(o => o.GroupId))
                 .ForMember(m => m.GroupTitle, s => s.MapFrom(o => o.Group.Title));
+        }
+
+        private void MapAssignmentResultToTeacherBoardItemViewModel()
+        {
+            CreateMap<AssignmentResult, TeacherBoardItemViewModel>()
+                .ForMember(m => m.AssignmentId, s => s.MapFrom(o => o.Assignment.Id))
+                .ForMember(m => m.Title, s => s.MapFrom(o => o.Assignment.Title))
+                .ForMember(m => m.AssignmentFile, s => s.MapFrom(o => o.Assignment.File))
+                .ForMember(m => m.GroupId, s => s.MapFrom(o => o.Assignment.GroupId))
+                .ForMember(m => m.GroupTitle, s => s.MapFrom(o => o.Assignment.Group.Title))
+                .ForMember(m => m.AssignmentResultId, s => s.MapFrom(o => o.Id))
+                .ForMember(m => m.StudentUid, s => s.MapFrom(o => o.Student.Uid))
+                .ForMember(m => m.CompletionDate, s => s.MapFrom(o => o.CompletionDate))
+                .ForMember(m => m.AssignmentResultFile, s => s.MapFrom(o => o.File))
+                .ForMember(m => m.AssigneeTeacherUid, s => s.MapFrom(o => o.AssigneeTeacher.Uid))
+                .ForMember(m => m.Grade, s => s.MapFrom(o => o.Grade))
+                .ForMember(m => m.CheckDate, s => s.MapFrom(o => o.CheckDate));
         }
     }
 }

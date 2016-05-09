@@ -4,6 +4,26 @@ html, body{
     height:100%;
 }
 
+.btn-info, .btn-info:focus, .progress-bar-info, .btn-primary, .open > .dropdown-toggle.btn-info:hover{
+    background-color: @blue-color;
+    border-color: @blue-color;
+
+    &:hover, &.active{
+        background-color: @active-blue-color;
+        border-color: @active-blue-color;
+    }
+}
+
+.alert-success{
+    background-color: @background-blue-color;
+    border-color: @background-blue-color;
+    color: @blue-color;
+}
+
+a{
+    color: @blue-color;
+}
+
 .overlay{
   opacity:    0.5; 
   background: #000; 

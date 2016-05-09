@@ -147,10 +147,10 @@
     <Content Include="Content\bootstrap\bootstrap.css" />
     <Content Include="Content\bootstrap\bootstrap.min.css" />
     <Content Include="Content\error.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\images\error\bg.png" />
     <Content Include="Content\images\error\bg1.png" />
     <Content Include="Content\images\error\error404.png" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\images\error\error500.png" />
     <Content Include="Content\loader.css" />
     <Content Include="Content\ngDialog\ngDialog-custom-width.css" />
@@ -197,6 +197,8 @@
     <Content Include="Scripts\enums\groupFilterType.js" />
     <Content Include="Scripts\enums\sortingDirection.js" />
     <Content Include="Scripts\enums\studentBoardFilterType.js" />
+    <Content Include="Scripts\enums\teacherBoardAssignFilterType.js" />
+    <Content Include="Scripts\enums\teacherBoardCheckFilterType.js" />
     <Content Include="Scripts\enums\userSearchType.js" />
     <Content Include="Scripts\enums\userStatus.js" />
     <Content Include="Scripts\enums\userType.js" />
@@ -283,8 +285,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="Content\bootstrap\bootstrap.css.map" />
-    <Content Include="Content\bootstrap\bootstrap.min.css.map" />
     <Content Include="Content\site.less" />
     <Content Include="Content\colors.less" />
     <Content Include="Areas\Teacher\Views\web.config" />
@@ -298,10 +298,6 @@
     <Content Include="Areas\Student\Views\Board\Index.cshtml" />
     <Content Include="Areas\Student\Views\Notification\Index.cshtml" />
     <Content Include="Areas\Teacher\Views\Group\CreateGroupDialog.cshtml" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Content\transitions.less" />
     <Content Include="Areas\Teacher\Views\Group\InfoTab.cshtml" />
     <Content Include="Areas\Teacher\Views\Group\TeachersTab.cshtml" />
@@ -330,6 +326,13 @@
     <Content Include="Areas\Teacher\Views\Group\GradeAssignmentResultDialog.cshtml" />
     <Content Include="Areas\Student\Views\Group\ViewAssignmentResultDialog.cshtml" />
     <Content Include="Areas\Student\Views\Shared\StudentBoardGridRowActionsTemplate.cshtml" />
+    <Content Include="Areas\Teacher\Views\Shared\TeacherBoardGridRowActionsTemplate.cshtml" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\bootstrap\bootstrap.css.map" />
+    <Content Include="Content\bootstrap\bootstrap.min.css.map" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\CommonTemplates\NavbarTemplate.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
