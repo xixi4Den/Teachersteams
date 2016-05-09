@@ -32,10 +32,10 @@
                  'has-success': addAssignmetForm.expirationDate.$touched && addAssignmetForm.expirationDate.$valid }">
                     <div class="input-group">
                         <input type="text" name="expirationDate" class="form-control" uib-datepicker-popup ng-model="data.expirationDate"
-                               is-open="expirationDatePopup.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close"
-                               ng-click="expirationDatePopup.open()"/>
+                               is-open="expirationDatePopup.opened" datepicker-options="dateOptions" ng-required="true"
+                               ng-click="expirationDatePopup.open()" show-button-bar="false" />
                         <span ng-show="addAssignmetForm.expirationDate.$untouched" ng-click="expirationDatePopup.open()"
-                              class="input-group-addon"><span class="glyphicon glyphicon-plane"></span></span>
+                              class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                         <span ng-show="addAssignmetForm.expirationDate.$touched && addAssignmetForm.expirationDate.$invalid" ng-click="expirationDatePopup.open()"
                               class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                         <span ng-show="addAssignmetForm.expirationDate.$touched && addAssignmetForm.expirationDate.$valid" ng-click="expirationDatePopup.open()"

@@ -6,8 +6,8 @@
         <div>
             <form novalidate name="inviteUserForm">
                 <div class="btn-group">
-                    <label class="btn btn-default" ng-model="searchType" uib-btn-radio="1">@Resource.OnlyFriendsUserSearchTypeName</label>
-                    <label class="btn btn-default" ng-model="searchType" uib-btn-radio="2">@Resource.AllUsersUserSearchTypeName</label>
+                    <label class="btn btn-primary" ng-model="searchType" uib-btn-radio="1">@Resource.OnlyFriendsUserSearchTypeName</label>
+                    <label class="btn btn-primary" ng-model="searchType" uib-btn-radio="2">@Resource.AllUsersUserSearchTypeName</label>
                 </div>
                 <div class="form-group" ng-class="{ 'has-error': inviteUserForm.user.$touched && inviteUserForm.user.$invalid,
                  'has-success': inviteUserForm.user.$touched && inviteUserForm.user.$valid }">
