@@ -519,4 +519,7 @@
   <data name="TeacherDashboardCheckFilterNameUnckecked" xml:space="preserve">
     <value>Unchecked</value>
   </data>
+  <data name="NotCheckedAssignmentResultMessage" xml:space="preserve">
+    <value>Not checked yet</value>
+  </data>
 </root>

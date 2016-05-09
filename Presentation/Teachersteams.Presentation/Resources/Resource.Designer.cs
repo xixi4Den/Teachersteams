@@ -799,6 +799,15 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Not checked yet.
+        /// </summary>
+        public static string NotCheckedAssignmentResultMessage {
+            get {
+                return ResourceManager.GetString("NotCheckedAssignmentResultMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You Requested the page that is no longer There..
         /// </summary>
         public static string NotFoundDescription {
