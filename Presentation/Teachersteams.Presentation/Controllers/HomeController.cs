@@ -10,11 +10,6 @@ namespace Teachersteams.Presentation.Controllers
             return View();
         }
 
-        public ActionResult About()
-        {
-            return View();
-        }
-
         public JsonResult Settings()
         {
             return Json(new

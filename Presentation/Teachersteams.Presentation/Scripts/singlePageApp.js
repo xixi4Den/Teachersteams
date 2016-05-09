@@ -44,11 +44,6 @@ app.config(function ($stateProvider) {
             url: '/student/notifications',
             templateUrl: '/Student/Notification',
             controller: 'ttNotificationsControllerForStudent'
-        })
-        .state('about', {
-            url: '/about',
-            templateUrl: '/Home/About',
-            controller: 'ttAboutController'
         });
 });
 

@@ -522,4 +522,31 @@
   <data name="NotCheckedAssignmentResultMessage" xml:space="preserve">
     <value>Not checked yet</value>
   </data>
+  <data name="IntroDialogDoneLabel" xml:space="preserve">
+    <value>Thanks</value>
+  </data>
+  <data name="IntroDialogExitLabel" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="IntroDialogNextLabel" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="IntroDialogPreviousLabel" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="IntroMessageBoardTab" xml:space="preserve">
+    <value>As a student you can see all available assignments for you on your Students's Dashboard. It combines all assignments from all groups where you are studying.&lt;br/&gt;&lt;br/&gt;As a teacher you can see all completed assignments which are available for checking. It combines all assignments from all groups where you teach.</value>
+  </data>
+  <data name="IntroMessageCommon" xml:space="preserve">
+    <value>TeacherTeam is an application for building and managing process of knowledge control.</value>
+  </data>
+  <data name="IntroMessageGroupsTab" xml:space="preserve">
+    <value>As a student you can see a list of groups where you are studying and other information related to these groups: teachers list, list of other students, assignments, your grades and etc. &lt;br/&gt;&lt;br/&gt;As a teacher you can see a list of groups where you teach and other information related to these groups: teachers list, students list, assignments, progress of students and etc. Also here you can invite students or other teacher into group, create assignments, check assignments and many others.</value>
+  </data>
+  <data name="IntroMessageNotificationsTab" xml:space="preserve">
+    <value>Here you can see invitations for participation in groups and other notifications.</value>
+  </data>
+  <data name="IntroMessageSeparateUserMode" xml:space="preserve">
+    <value>Each user can act both as teacher and as student, moreover his activities within each role are isolated from each other. &lt;br/&gt;&lt;br/&gt;You can switch an user mode here.</value>
+  </data>
 </root>

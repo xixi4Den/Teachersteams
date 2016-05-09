@@ -522,4 +522,31 @@
   <data name="NotCheckedAssignmentResultMessage" xml:space="preserve">
     <value>Еще не проверено</value>
   </data>
+  <data name="IntroDialogDoneLabel" xml:space="preserve">
+    <value>Спасибо</value>
+  </data>
+  <data name="IntroDialogExitLabel" xml:space="preserve">
+    <value>Выйти</value>
+  </data>
+  <data name="IntroDialogNextLabel" xml:space="preserve">
+    <value>Следующий</value>
+  </data>
+  <data name="IntroDialogPreviousLabel" xml:space="preserve">
+    <value>Предыдущий</value>
+  </data>
+  <data name="IntroMessageBoardTab" xml:space="preserve">
+    <value>Как студент вы можете увидеть здесь полный список доступных для Вас заданий. Здесь собраны задания из всех групп в которых вы учитесь. &lt;br/&gt;&lt;br/&gt; Как учитель вы можете увидеть здесь список всех доступных для проверки завершенных задания. Здесь собраны задания для проверки из всех групп, к которых вы преподаете. </value>
+  </data>
+  <data name="IntroMessageCommon" xml:space="preserve">
+    <value>УчительТим - это приложения для построения и управления процессом контроля знаний.</value>
+  </data>
+  <data name="IntroMessageGroupsTab" xml:space="preserve">
+    <value>Как студент вы можете увидеть список групп, в которых вы учитесь, а также свзанную с этими группами информацию: списки учителей и студентов, задания, ваши оценки и т.д. &lt;br/&gt;&lt;br/&gt; Как учитель вы можете увидеть список групп, в которых вы преподаете, а также свзанную с этими группами информацию: списки студентов и учителей, задания, прогресс студентов. Также здесь вы можете пригласить студентов и преподавателей в группы, создавать задания, затем проверять выполненные задания, и многое другое.</value>
+  </data>
+  <data name="IntroMessageNotificationsTab" xml:space="preserve">
+    <value>Здесь вы можете увидеть приглашения в учебные группы и другие оповещения.</value>
+  </data>
+  <data name="IntroMessageSeparateUserMode" xml:space="preserve">
+    <value>Каждый пользователь может выступать в двух ролях: учитель и студент. Причем активности пользователя внутри каждой роли разделены друг от друга. &lt;br/&gt;&lt;br/&gt; Здесь вы можете переключить роль.</value>
+  </data>
 </root>

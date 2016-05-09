@@ -682,6 +682,87 @@ namespace Teachersteams.Presentation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thanks.
+        /// </summary>
+        public static string IntroDialogDoneLabel {
+            get {
+                return ResourceManager.GetString("IntroDialogDoneLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exit.
+        /// </summary>
+        public static string IntroDialogExitLabel {
+            get {
+                return ResourceManager.GetString("IntroDialogExitLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Next.
+        /// </summary>
+        public static string IntroDialogNextLabel {
+            get {
+                return ResourceManager.GetString("IntroDialogNextLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Previous.
+        /// </summary>
+        public static string IntroDialogPreviousLabel {
+            get {
+                return ResourceManager.GetString("IntroDialogPreviousLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to As a student you can see all available assignments for you on your Students&apos;s Dashboard. It combines all assignments from all groups where you are studying.&lt;br/&gt;&lt;br/&gt;As a teacher you can see all completed assignments which are available for checking. It combines all assignments from all groups where you teach..
+        /// </summary>
+        public static string IntroMessageBoardTab {
+            get {
+                return ResourceManager.GetString("IntroMessageBoardTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TeacherTeam is an application for building and managing process of knowledge control..
+        /// </summary>
+        public static string IntroMessageCommon {
+            get {
+                return ResourceManager.GetString("IntroMessageCommon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to As a student you can see a list of groups where you are studying and other information related to these groups: teachers list, list of other students, assignments, your grades and etc. &lt;br/&gt;&lt;br/&gt;As a teacher you can see a list of groups where you teach and other information related to these groups: teachers list, students list, assignments, progress of students and etc. Also here you can invite students or other teacher into group, create assignments, check assignments and many others..
+        /// </summary>
+        public static string IntroMessageGroupsTab {
+            get {
+                return ResourceManager.GetString("IntroMessageGroupsTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Here you can see invitations for participation in groups and other notifications..
+        /// </summary>
+        public static string IntroMessageNotificationsTab {
+            get {
+                return ResourceManager.GetString("IntroMessageNotificationsTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Each user can act both as teacher and as student, moreover his activities within each role are isolated from each other. &lt;br/&gt;&lt;br/&gt;You can switch an user mode here..
+        /// </summary>
+        public static string IntroMessageSeparateUserMode {
+            get {
+                return ResourceManager.GetString("IntroMessageSeparateUserMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You have been invited to study in group.
         /// </summary>
         public static string InvitationMessageForStudent {
