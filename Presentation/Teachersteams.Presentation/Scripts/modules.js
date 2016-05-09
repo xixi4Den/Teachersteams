@@ -11,7 +11,8 @@
     'ui.grid.pagination',
     'angularFileUpload',
     'ttControllers',
-    'ttDirectives'
+    'ttDirectives',
+    'angular-intro'
 ]);
 
 angular.module('ttControllers', ['ttServices', 'ngAnimate']);

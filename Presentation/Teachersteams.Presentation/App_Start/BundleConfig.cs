@@ -6,10 +6,7 @@ namespace Teachersteams.Presentation
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/libs")
-                //.Include("~/Scripts/libs/modernizr-*")
                 .Include("~/Scripts/libs/angular/angular.js")
                 .Include("~/Scripts/libs/angular/angular-ui-router.js")
                 .Include("~/Scripts/libs/angular/angular-animate.js")
@@ -22,7 +19,9 @@ namespace Teachersteams.Presentation
                 .Include("~/Scripts/libs/ngToast.js")
                 .Include("~/Scripts/libs/ui-grid.js")
                 .Include("~/Scripts/libs/angular-file-upload.js")
-                .Include("~/Scripts/libs/underscore.js"));
+                .Include("~/Scripts/libs/underscore.js")
+                .Include("~/Scripts/libs/intro.js")
+                .Include("~/Scripts/libs/angular-intro.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/scripts")
                 .Include("~/Scripts/modules.js")
@@ -41,7 +40,8 @@ namespace Teachersteams.Presentation
                 .Include("~/Content/loader.css")
                 .IncludeDirectory("~/Content/ngDialog", "*.css")
                 .IncludeDirectory("~/Content/ngToast", "*.css")
-                .Include("~/Content/ui-grid/ui-grid.css"));
+                .Include("~/Content/ui-grid/ui-grid.css")
+                .Include("~/Content/introjs.css"));
         }
     }
 }

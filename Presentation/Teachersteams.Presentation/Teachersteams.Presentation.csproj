@@ -152,6 +152,7 @@
     <Content Include="Content\images\error\bg1.png" />
     <Content Include="Content\images\error\error404.png" />
     <Content Include="Content\images\error\error500.png" />
+    <Content Include="Content\introjs.css" />
     <Content Include="Content\loader.css" />
     <Content Include="Content\ngDialog\ngDialog-custom-width.css" />
     <Content Include="Content\ngDialog\ngDialog-theme-default.css" />
@@ -204,6 +205,8 @@
     <Content Include="Scripts\enums\userType.js" />
     <Content Include="Scripts\libs\angular-file-upload.js" />
     <Content Include="Scripts\libs\angular-file-upload.min.js" />
+    <Content Include="Scripts\libs\angular-intro.js" />
+    <Content Include="Scripts\libs\intro.js" />
     <Content Include="Scripts\libs\ui-grid.js" />
     <Content Include="Content\ui-grid\ui-grid.min.css" />
     <Content Include="Scripts\libs\ui-grid.min.js" />
@@ -335,7 +338,6 @@
     <Content Include="Content\bootstrap\bootstrap.min.css.map" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\CommonTemplates\NavbarTemplate.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Error\InternalError.cshtml" />
     <Content Include="Views\Error\_ErrorLayout.cshtml" />
