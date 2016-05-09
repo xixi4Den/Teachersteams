@@ -4,9 +4,24 @@ app.controller('ttBoardControllerForTeacher', [
     '$gridHelper',
     'uiGridConstants',
     '$ttBoardService',
+    '$ttAssignmentService',
     'TeacherBoardAssignFilterType',
     'TeacherBoardCheckFilterType',
-    function ($scope, $gridHelper, uiGridConstants, $ttBoardService, TeacherBoardAssignFilterType, TeacherBoardCheckFilterType) {
+    'ngDialog',
+    'AppContext',
+    function ($scope, $gridHelper, uiGridConstants, $ttBoardService, $ttAssignmentService, TeacherBoardAssignFilterType, TeacherBoardCheckFilterType, ngDialog, AppContext) {
+        function isAssigned(row) {
+            return row.entity.AssigneeTeacherUid;
+        }
+
+        function isAssignedToMe(row) {
+            return row.entity.AssigneeTeacherUid === AppContext.uid.toString();
+        }
+
+        function isRated(row) {
+            return typeof row.entity.Grade !== "undefined" && row.entity.Grade !== null;
+        }
+
         $scope.availableCheckFilters = [
             { Id: TeacherBoardCheckFilterType.Unchecked, Text: window.resources.teacherDashboardCheckFilterNameUnchecked },
             { Id: TeacherBoardCheckFilterType.Checked, Text: window.resources.teacherDashboardCheckFilterNameChecked }];
@@ -60,8 +75,37 @@ app.controller('ttBoardControllerForTeacher', [
             { name: window.resources.teacherDashboardGridStudentColumnName, field: 'StudentName', enableSorting: true, width: 120, cellClass: 'ui-grid-vcenter' },
             { name: window.resources.teacherDashboardGridAssigneeColumnName, field: 'AssigneeName', enableSorting: false, width: 120, cellClass: 'ui-grid-vcenter' },
             { name: window.resources.teacherDashboardGridGradeColumnName, field: 'Grade', enableSorting: false, width: 60, cellClass: 'ui-grid-vcenter ui-grid-hcenter' },
-            { name: window.resources.actionsColumnName, enableSorting: false, width: 150 }
+            { name: window.resources.actionsColumnName, enableSorting: false, width: 150, cellTemplate: 'dashboard-grid-actions-template-for-teacher' }
         ];
 
         $scope.refresh();
+
+
+        $scope.isAssignToMeItemVisible = function (row) {
+            return !isAssigned(row);
+        }
+
+        $scope.isRateAssignmentResultItemVisible = function (row) {
+            return isAssignedToMe(row) && !isRated(row);
+        }
+
+        $scope.assignToMe = function (grid, row) {
+            $ttAssignmentService.assignResult(row.entity.AssignmentResultId).then(function () {
+                $scope.refresh();
+            });
+        }
+
+        $scope.rate = function (grid, row) {
+            var dialog = ngDialog.open({
+                template: '/Teacher/Group/GradeAssignmentResultDialog',
+                controller: 'ttGradeAssignmentResultDialogController',
+                data: { id: row.entity.AssignmentResultId, student: row.entity.StudentName }
+            });
+            dialog.closePromise.then(function (result) {
+                var grade = result.value;
+                if ((typeof grade !== "undefined")) {
+                    $scope.refresh();
+                }
+            });
+        }
 }]);
